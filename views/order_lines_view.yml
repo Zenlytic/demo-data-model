@@ -6,6 +6,13 @@ sql_table_name: DEMO_RAW.ORDER_LINES
 default_date: order_at
 row_label: TODO - Label row
 fields:
+- name: order_line_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.ORDER_LINE_ID
+  primary_key: yes
+  hidden: yes
+
 - name: customer_id
   field_type: dimension
   type: string
@@ -20,11 +27,6 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.PRODUCT_ID
-
-- name: order_line_id
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.ORDER_LINE_ID
 
 - name: discount
   field_type: dimension
