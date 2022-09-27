@@ -118,3 +118,15 @@ fields:
   value_format_name: usd
   extra:
     zenlytic.show: yes
+
+- name: subscription_revenue
+  field_type: measure
+  type: sum
+  sql: ${revenue}
+  description: "Subscription revenue = revenue from product sales + shipping revenues (for subscriptions only)"
+  value_format_name: usd
+  filters:
+  - field: subscription_vs_otp
+    value: Subscription
+  extra:
+    zenlytic.show: yes
