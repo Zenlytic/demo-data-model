@@ -3,7 +3,13 @@ type: view
 name: customers
 model_name: base_model
 sql_table_name: DEMO_RAW.CUSTOMERS
-row_label: TODO - Label row
+row_label: Customer
+
+identifiers:
+- name: customer_id
+  type: primary
+  sql: ${customer_id}
+
 fields:
 - name: customer_id
   field_type: dimension

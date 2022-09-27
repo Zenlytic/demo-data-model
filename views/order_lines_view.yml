@@ -4,7 +4,16 @@ name: order_lines
 model_name: base_model
 sql_table_name: DEMO_RAW.ORDER_LINES
 default_date: order_at
-row_label: TODO - Label row
+row_label: Order line
+
+identifiers:
+- name: product_id
+  type: foreign
+  sql: ${product_id}
+- name: customer_id
+  type: foreign
+  sql: ${customer_id}
+
 fields:
 - name: order_line_id
   field_type: dimension
@@ -17,16 +26,19 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.CUSTOMER_ID
+  hidden: yes
 
 - name: order_id
   field_type: dimension
   type: string
   sql: ${TABLE}.ORDER_ID
+  hidden: yes
 
 - name: product_id
   field_type: dimension
   type: string
   sql: ${TABLE}.PRODUCT_ID
+  hidden: yes
 
 - name: discount
   field_type: dimension
