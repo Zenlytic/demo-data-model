@@ -6,6 +6,14 @@ sql_table_name: DEMO_RAW.ORDER_LINES
 default_date: order_at
 row_label: Order line
 
+fields_for_analysis:
+- subscription_vs_otp
+- marketing_source
+- marketing_channel
+- promotion
+- campaign
+- products.product_title
+
 identifiers:
 - name: product_id
   type: foreign
@@ -42,38 +50,42 @@ fields:
 
 - name: discount
   field_type: dimension
-  type: string
+  type: number
   sql: ${TABLE}.DISCOUNT
+  hidden: yes
+
+- name: revenue
+  field_type: dimension
+  type: number
+  sql: ${TABLE}.REVENUE
+  hidden: yes
+
+- name: price
+  field_type: dimension
+  type: number
+  sql: ${TABLE}.PRICE
+  hidden: yes
+
+- name: quantity
+  field_type: dimension
+  type: number
+  sql: ${TABLE}.QUANTITY
+  hidden: yes
 
 - name: campaign
   field_type: dimension
   type: string
   sql: ${TABLE}.CAMPAIGN
 
-- name: revenue
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.REVENUE
-
 - name: promotion
   field_type: dimension
   type: string
   sql: ${TABLE}.PROMOTION
 
-- name: price
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.PRICE
-
 - name: subscription_vs_otp
   field_type: dimension
   type: string
   sql: ${TABLE}.SUBSCRIPTION_VS_OTP
-
-- name: quantity
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.QUANTITY
 
 - name: marketing_source
   field_type: dimension
@@ -103,5 +115,6 @@ fields:
   type: sum
   sql: ${revenue}
   description: "Total gross revenue = revenue from product sales + shipping revenues"
+  value_format_name: usd
   extra:
     zenlytic.show: yes
