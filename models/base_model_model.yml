@@ -1,0 +1,4 @@
+version: 1
+type: model
+name: base_model
+connection: demo

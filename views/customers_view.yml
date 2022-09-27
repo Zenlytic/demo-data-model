@@ -1,0 +1,55 @@
+version: 1
+type: view
+name: customers
+model_name: base_model
+sql_table_name: DEMO_RAW.CUSTOMERS
+row_label: TODO - Label row
+fields:
+- name: customer_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.CUSTOMER_ID
+
+- name: accepts_marketing
+  field_type: dimension
+  type: yesno
+  sql: ${TABLE}.ACCEPTS_MARKETING
+
+- name: email
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.EMAIL
+
+- name: zipcode
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.ZIPCODE
+
+- name: first_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.FIRST_NAME
+
+- name: state
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.STATE
+
+- name: last_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.LAST_NAME
+
+- name: address
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.ADDRESS
+
+- name: city
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.CITY
+
+- name: count
+  field_type: measure
+  type: count

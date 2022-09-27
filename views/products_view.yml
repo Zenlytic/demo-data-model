@@ -1,0 +1,30 @@
+version: 1
+type: view
+name: products
+model_name: base_model
+sql_table_name: DEMO_RAW.PRODUCTS
+row_label: TODO - Label row
+fields:
+- name: product_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.PRODUCT_ID
+
+- name: product_type
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.PRODUCT_TYPE
+
+- name: price
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.PRICE
+
+- name: product_title
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.PRODUCT_TITLE
+
+- name: count
+  field_type: measure
+  type: count

@@ -1,0 +1,54 @@
+version: 1
+type: view
+name: subscriptions
+model_name: base_model
+sql_table_name: DEMO_RAW.SUBSCRIPTIONS
+default_date: subscribe_at
+row_label: TODO - Label row
+fields:
+- name: product_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.PRODUCT_ID
+
+- name: subscription_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.SUBSCRIPTION_ID
+
+- name: customer_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.CUSTOMER_ID
+
+- name: subscription_quantity
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.SUBSCRIPTION_QUANTITY
+
+- name: subscription_length
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.SUBSCRIPTION_LENGTH
+
+- name: subscription_frequency
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.SUBSCRIPTION_FREQUENCY
+
+- name: subscribe_at
+  field_type: dimension_group
+  type: time
+  datatype: timestamp
+  timeframes:
+  - raw
+  - date
+  - week
+  - month
+  - quarter
+  - year
+  sql: ${TABLE}.SUBSCRIBE_AT
+
+- name: count
+  field_type: measure
+  type: count

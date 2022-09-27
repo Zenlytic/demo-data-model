@@ -1,1 +1,1 @@
-# demo-data-model
+# Zenlytic Demo Data Model
