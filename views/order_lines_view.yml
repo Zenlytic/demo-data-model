@@ -84,6 +84,10 @@ fields:
   - year
   sql: ${TABLE}.ORDER_AT
 
-- name: count
+- name: total_gross_revenue
   field_type: measure
-  type: count
+  type: sum
+  sql: ${revenue}
+  description: "Total gross revenue = revenue from product sales + shipping revenues"
+  extra:
+    zenlytic.show: yes
