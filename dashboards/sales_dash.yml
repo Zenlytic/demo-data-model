@@ -30,11 +30,11 @@ elements:
     slice_by: [order_lines.order_date, order_lines.marketing_channel]
     time_period: 3 months
 
-  - title: Facebook orders breakdown
+  - title: Facebook orders breakdown (MTD)
     model: pure_organics
     metric: order_lines.number_of_orders
-    slice_by: [order_lines.order_date, products.product_type]
-    time_period: 3 months
+    slice_by: [products.product_type]
+    time_period: month to date
     filters:
     - field: order_lines.marketing_channel
       value: Facebook
