@@ -49,3 +49,16 @@ elements:
     sort: 
       - field: order_lines.total_gross_revenue
         value: desc
+
+  - title: Product and channel mix (MTD)
+    model: pure_organics
+    metric: order_lines.total_gross_revenue
+    slice_by: [products.product_type, order_lines.marketing_channel]
+    time_period: month to date
+
+  - title: Subscription vs OTP customers (MTD)
+    model: pure_organics
+    metric: order_lines.number_of_customers_with_orders
+    slice_by: [order_lines.subscription_vs_otp]
+    time_period: month to date
+    
