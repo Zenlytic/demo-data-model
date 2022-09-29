@@ -44,7 +44,7 @@ fields:
   type: string
   sql: ${TABLE}.ORDER_ID
   tags: ['order']
-  drill_fields: [order_at_date, subscription_vs_otp, marketing_channel, campaign, promotion, total_gross_revenue]
+  drill_fields: [order_date, subscription_vs_otp, marketing_channel, campaign, promotion, total_gross_revenue]
   hidden: yes
 
 - name: product_id
