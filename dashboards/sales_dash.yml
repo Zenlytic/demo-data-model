@@ -22,6 +22,7 @@ elements:
     - order_lines.total_net_revenue 
     slice_by: [products.product_type]
     time_period: last month
+    show_totals: yes
 
   - title: Marketing channel performance (orders)
     model: pure_organics
@@ -41,8 +42,9 @@ elements:
   - title: Top performing campaigns (MTD)
     model: pure_organics
     metric: order_lines.total_gross_revenue
-    slice_by: [order_lines.campaign]
+    slice_by: [order_lines.marketing_channel, order_lines.marketing_source, order_lines.campaign]
     time_period: month to date
+    size: full
     force_table: yes
     sort: 
       - field: order_lines.total_gross_revenue
