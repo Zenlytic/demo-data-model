@@ -30,6 +30,7 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.PRODUCT_TITLE
+  tags: ['product']
 
 - name: count
   field_type: measure

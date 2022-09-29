@@ -19,6 +19,7 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.ANONYMOUS_ID
+  tags: ['customer']
   hidden: yes
 
 - name: click_id

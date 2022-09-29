@@ -5,6 +5,7 @@ model_name: base_model
 sql_table_name: DEMO_RAW.ORDER_LINES
 default_date: order_at
 row_label: Order line
+event_name: Purchase
 
 fields_for_analysis:
 - subscription_vs_otp
@@ -34,12 +35,14 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.CUSTOMER_ID
+  tags: ['customer']
   hidden: yes
 
 - name: order_id
   field_type: dimension
   type: string
   sql: ${TABLE}.ORDER_ID
+  tags: ['order']
   hidden: yes
 
 - name: product_id
