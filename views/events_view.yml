@@ -1,7 +1,7 @@
 version: 1
 type: view
 name: events
-model_name: base_model
+model_name: pure_organics
 sql_table_name: demo_raw.site_events
 default_date: event
 row_label: Event
@@ -44,131 +44,158 @@ fields:
   field_type: dimension
   type: yesno
   sql: ${TABLE}.DEVICE_IS_MOBILE
-
-- name: os_name
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.OS_NAME
-
-- name: browser_user_agent
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.BROWSER_USER_AGENT
-
-- name: geo_latitude
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.GEO_LATITUDE
-
-- name: utm_medium
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.UTM_MEDIUM
-
-- name: utm_source
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.UTM_SOURCE
-
-- name: device_type
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.DEVICE_TYPE
-
-- name: browser_language
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.BROWSER_LANGUAGE
-
-- name: promotion
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.PROMOTION
-
-- name: geo_country
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.GEO_COUNTRY
-
-- name: os_timezone
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.OS_TIMEZONE
-
-- name: geo_region_name
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.GEO_REGION_NAME
-
-- name: page_url
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.PAGE_URL
+  description: Whether the device is mobile or not
 
 - name: marketing_channel
   field_type: dimension
   type: string
   sql: ${TABLE}.MARKETING_CHANNEL
+  description: The marketing channel the user came through to reach the site initially 
 
-- name: geo_longitude
+- name: utm_medium
   field_type: dimension
   type: string
-  sql: ${TABLE}.GEO_LONGITUDE
+  sql: ${TABLE}.UTM_MEDIUM
+  description: The marketing medium the user came through to reach the site initially 
 
-- name: referer_url
+- name: utm_source
   field_type: dimension
   type: string
-  sql: ${TABLE}.REFERER_URL
+  sql: ${TABLE}.UTM_SOURCE
+  description: The marketing source the user came through to reach the site initially 
+
+- name: promotion
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.PROMOTION
+  description: The promotion the user came through to reach the site initially 
+
+- name: device_type
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.DEVICE_TYPE
+  description: The user's device type (hardware)
+
+- name: browser_user_agent
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.BROWSER_USER_AGENT
+  description: The user's browser user agent used to access the site
+
+- name: browser_language
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.BROWSER_LANGUAGE
+  description: The user's browser language setting
 
 - name: ip_address
+  label: IP address
   field_type: dimension
   type: string
   sql: ${TABLE}.IP_ADDRESS
-
-- name: referer_url_scheme
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.REFERER_URL_SCHEME
+  description: The user's IP address
 
 - name: browser_name
   field_type: dimension
   type: string
   sql: ${TABLE}.BROWSER_NAME
+  description: The user's browser
+
+- name: geo_region_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.GEO_REGION_NAME
+  description: The user's geographical region 
+
+- name: geo_country
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.GEO_COUNTRY
+  description: The user's country
+
+- name: geo_latitude
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.GEO_LATITUDE
+  description: The user's latitude
+
+- name: geo_longitude
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.GEO_LONGITUDE
+  description: The user's longitude
 
 - name: geo_timezone
   field_type: dimension
   type: string
   sql: ${TABLE}.GEO_TIMEZONE
+  description: The user's (geographical) timezone 
 
 - name: os
   field_type: dimension
   type: string
   sql: ${TABLE}.OS
+  description: The full description of the user's operating system 
+
+- name: os_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.OS_NAME
+  description: The name of the user's operating system 
+
+- name: os_timezone
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.OS_TIMEZONE
+  description: The user's (operating system) timezone 
+
+- name: referer_url
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.REFERER_URL
+  description: The full referring url (where the user came from)
+
+- name: referer_url_scheme
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.REFERER_URL_SCHEME
+  description: The referring url scheme (where the user came from)
 
 - name: referer_url_port
   field_type: dimension
   type: string
   sql: ${TABLE}.REFERER_URL_PORT
+  description: The referring url port (where the user came from)
 
 - name: referer_medium
   field_type: dimension
   type: string
   sql: ${TABLE}.REFERER_MEDIUM
+  description: The referring medium (where the user came from)
 
 - name: event_name
   field_type: dimension
   type: string
   sql: ${TABLE}.EVENT_NAME
+  description: The action the user took on the site
 
 - name: page_url_path
   field_type: dimension
   type: string
   sql: ${TABLE}.PAGE_URL_PATH
+  description: The page url path (partial) the user was on at the time of the event
+
+- name: page_url
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.PAGE_URL
+  description: The (full) page url the user was on at the time of the event
 
 - name: utm_campaign
   field_type: dimension
   type: string
   sql: ${TABLE}.UTM_CAMPAIGN
+  description: The campaign the user came in on to the site
 
 - name: event
   field_type: dimension_group
@@ -182,19 +209,30 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.EVENT_TIMESTAMP
+  description: The time of interaction with the site
 
 - name: number_of_events
   field_type: measure
   type: count
+  description: The number of events from interaction with the site
+  value_format_name: decimal_0
+  extra:
+    zenlytic.show: yes
 
 - name: number_of_sessions
   field_type: measure
   type: count_distinct
   sql: ${session_id}
+  description: The number of sessions (usage of the site by a unique user in a 6 hour window)
+  value_format_name: decimal_0
+  extra:
+    zenlytic.show: yes
 
 - name: number_of_users
   field_type: measure
   type: count_distinct
   sql: ${anonymous_id}
+  description: The number of site users (including people who are not logged in / we can't identify)
+  value_format_name: decimal_0
   extra:
     zenlytic.show: yes

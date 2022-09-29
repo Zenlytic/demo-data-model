@@ -1,7 +1,7 @@
 version: 1
 type: view
 name: order_lines
-model_name: base_model
+model_name: pure_organics
 sql_table_name: DEMO_RAW.ORDER_LINES
 default_date: order_at
 row_label: Order line
@@ -36,6 +36,7 @@ fields:
   type: string
   sql: ${TABLE}.CUSTOMER_ID
   tags: ['customer']
+  drill_fields: [customers.email, customers.state, customers.city, customers.zipcode]
   hidden: yes
 
 - name: order_id
@@ -43,6 +44,7 @@ fields:
   type: string
   sql: ${TABLE}.ORDER_ID
   tags: ['order']
+  drill_fields: [order_at_date, subscription_vs_otp, marketing_channel, campaign, promotion, total_gross_revenue]
   hidden: yes
 
 - name: product_id
@@ -79,26 +81,31 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.CAMPAIGN
+  description: The marketing campaign that the customer came through before placing their order.
 
 - name: promotion
   field_type: dimension
   type: string
   sql: ${TABLE}.PROMOTION
+  description: The promotion given to the customer for this order
 
 - name: subscription_vs_otp
   field_type: dimension
   type: string
   sql: ${TABLE}.SUBSCRIPTION_VS_OTP
+  description: Whether the order was from a subscription or a one time purchase (OTP)
 
 - name: marketing_source
   field_type: dimension
   type: string
   sql: ${TABLE}.MARKETING_SOURCE
+  description: The marketing source that the customer came through before placing their order.
 
 - name: marketing_channel
   field_type: dimension
   type: string
   sql: ${TABLE}.MARKETING_CHANNEL
+  description: The marketing channel that the customer came through before placing their order.
 
 - name: order_at
   field_type: dimension_group
@@ -112,6 +119,7 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.ORDER_AT
+  description: The time at which the order was placed. This is the main time field to use for orders
 
 - name: total_gross_revenue
   field_type: measure
@@ -122,14 +130,69 @@ fields:
   extra:
     zenlytic.show: yes
 
+- name: total_discounts
+  field_type: measure
+  type: sum
+  sql: ${discount}
+  description: "All discounts applied to either the order or the product in the order"
+  value_format_name: usd
+  extra:
+    zenlytic.show: yes
+
+- name: total_net_revenue
+  field_type: measure
+  type: number
+  sql: ${total_gross_revenue} - ${total_discounts}
+  description: "Total net revenue = gross revenue - discounts"
+  value_format_name: usd
+  extra:
+    zenlytic.show: yes
+
 - name: subscription_revenue
   field_type: measure
   type: sum
   sql: ${revenue}
-  description: "Subscription revenue = revenue from product sales + shipping revenues (for subscriptions only)"
+  description: "Subscription revenue = gross revenue (product revenues + shipping, for subscriptions only)"
   value_format_name: usd
   filters:
   - field: subscription_vs_otp
     value: Subscription
+  extra:
+    zenlytic.show: yes
+
+- name: number_of_customers_with_orders
+  field_type: measure
+  type: count_distinct
+  sql: ${customer_id}
+  description: "The unique number of customers who placed orders"
+  value_format_name: decimal_0
+  extra:
+    zenlytic.show: yes
+
+- name: number_of_orders
+  field_type: measure
+  type: count_distinct
+  sql: ${order_id}
+  description: "The unique number of orders placed"
+  value_format_name: decimal_0
+  extra:
+    zenlytic.show: yes
+
+- name: gross_aov
+  field_type: measure
+  synonyms: ["Average order value"]
+  type: number
+  sql: ${total_gross_revenue} / ${number_of_orders}
+  description: "Gross AOV = gross revenues / number of orders"
+  value_format_name: usd
+  extra:
+    zenlytic.show: yes
+
+- name: number_of_units
+  field_type: measure
+  type: sum
+  sql: ${quantity}
+  description: "The unique number of units purchased (e.g. customer orders: 2 lip gloss and 1 blush = 3 units sold)"
+  value_format_name: decimal_0
   extra:
     zenlytic.show: yes
