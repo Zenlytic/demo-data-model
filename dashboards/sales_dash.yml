@@ -1,6 +1,6 @@
 version: 1
 type: dashboard
-name: product_dashboard
+name: revenue_dashboard
 label: Revenue Dashboard
 description: Key Pure Organics company revenue metrics 
 filters:
@@ -25,13 +25,13 @@ elements:
 
   - title: Marketing channel performance (orders)
     model: pure_organics
-    metrics: order_lines.number_of_orders
+    metric: order_lines.number_of_orders
     slice_by: [order_lines.order_date, order_lines.marketing_channel]
     time_period: 3 months
 
   - title: Facebook orders breakdown
     model: pure_organics
-    metrics: order_lines.number_of_orders
+    metric: order_lines.number_of_orders
     slice_by: [order_lines.order_date, products.product_type]
     time_period: 3 months
     filters:
@@ -40,7 +40,7 @@ elements:
 
   - title: Top performing campaigns (MTD)
     model: pure_organics
-    metrics: order_lines.total_gross_revenue
+    metric: order_lines.total_gross_revenue
     slice_by: [order_lines.campaign]
     time_period: month to date
     force_table: yes
