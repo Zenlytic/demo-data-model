@@ -82,30 +82,39 @@ fields:
   type: string
   sql: ${TABLE}.CAMPAIGN
   description: The marketing campaign that the customer came through before placing their order.
+  searchable: yes
+  drill_up: marketing_source
 
 - name: promotion
   field_type: dimension
   type: string
   sql: ${TABLE}.PROMOTION
   description: The promotion given to the customer for this order
+  searchable: yes
 
 - name: subscription_vs_otp
   field_type: dimension
   type: string
   sql: ${TABLE}.SUBSCRIPTION_VS_OTP
   description: Whether the order was from a subscription or a one time purchase (OTP)
+  searchable: yes
 
 - name: marketing_source
   field_type: dimension
   type: string
   sql: ${TABLE}.MARKETING_SOURCE
   description: The marketing source that the customer came through before placing their order.
+  searchable: yes
+  drill_up: marketing_channel
+  drill_down: campaign
 
 - name: marketing_channel
   field_type: dimension
   type: string
   sql: ${TABLE}.MARKETING_CHANNEL
   description: The marketing channel that the customer came through before placing their order.
+  searchable: yes
+  drill_down: marketing_source
 
 - name: order
   field_type: dimension_group

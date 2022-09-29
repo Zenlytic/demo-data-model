@@ -178,6 +178,7 @@ fields:
   type: string
   sql: ${TABLE}.EVENT_NAME
   description: The action the user took on the site
+  searchable: yes
 
 - name: page_url_path
   field_type: dimension

@@ -50,18 +50,22 @@ fields:
   type: string
   sql: ${TABLE}.CITY
   description: The customer's city (location)
+  drill_up: state
+  drill_down: zipcode
 
 - name: state
   field_type: dimension
   type: string
   sql: ${TABLE}.STATE
   description: The customer's state (location)
+  drill_down: city
 
 - name: zipcode
   field_type: dimension
   type: string
   sql: ${TABLE}.ZIPCODE
   description: The customer's zip code
+  drill_up: city
 
 - name: number_of_customers
   field_type: measure
