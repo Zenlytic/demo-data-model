@@ -1,0 +1,49 @@
+version: 1
+type: dashboard
+name: product_dashboard
+label: Revenue Dashboard
+description: Key Pure Organics company revenue metrics 
+filters:
+  - field: order_lines.subscription_vs_otp
+    value: Subscription, One Time Purchase
+
+elements:
+  - title: Subscription revenues last 90 days
+    model: pure_organics
+    metric: order_lines.subscription_revenue
+    slice_by: [order_lines.order_date]
+    time_period: 90 days
+
+  - title: Gross vs net breakdown by product type (last month)
+    model: pure_organics
+    metrics: 
+    - order_lines.total_gross_revenue
+    - order_lines.total_discounts
+    - order_lines.total_net_revenue 
+    slice_by: [products.product_type]
+    time_period: last month
+
+  - title: Marketing channel performance (orders)
+    model: pure_organics
+    metrics: order_lines.number_of_orders
+    slice_by: [order_lines.order_date, order_lines.marketing_channel]
+    time_period: 3 months
+
+  - title: Facebook orders breakdown
+    model: pure_organics
+    metrics: order_lines.number_of_orders
+    slice_by: [order_lines.order_date, products.product_type]
+    time_period: 3 months
+    filters:
+    - field: order_lines.marketing_channel
+      value: Facebook
+
+  - title: Top performing campaigns (MTD)
+    model: pure_organics
+    metrics: order_lines.total_gross_revenue
+    slice_by: [order_lines.campaign]
+    time_period: month to date
+    force_table: yes
+    sort: 
+      - field: order_lines.total_gross_revenue
+        value: desc
