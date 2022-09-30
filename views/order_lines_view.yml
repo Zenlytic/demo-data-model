@@ -132,7 +132,7 @@ fields:
 
 - name: total_gross_revenue
   field_type: measure
-  synonyms: [sales]
+  synonyms: ['sales', 'revenue']
   type: sum
   sql: ${revenue}
   description: "Total gross revenue = revenue from product sales + shipping revenues"
