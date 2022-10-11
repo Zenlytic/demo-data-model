@@ -103,7 +103,7 @@ fields:
   name: ltv
   type: number
   description: "LTV for all customers"
-  sql: ${total_lifetime_revenue} / nullif(${number_of_customers}, 0)
+  sql: ${total_lifetime_revenue} / nullif(${number_of_cumulative_customers}, 0)
   value_format_name: usd_0
   extra:
     zenlytic.show: yes

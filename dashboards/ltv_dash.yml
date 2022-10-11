@@ -13,7 +13,7 @@ elements:
     size: full
     time_period: any_time
     filters:
-      - field: ltv.first_order_month
+      - field: customers.first_order_month
         value: after 2020-12-31
         
   - title: LTV by first promotion (user cohorts after 2020) 
@@ -23,7 +23,7 @@ elements:
     cohort_by: ltv.months_between_first_order_and_this_period
     time_period: any_time
     filters:
-      - field: ltv.first_order_month
+      - field: customers.first_order_month
         value: after 2020-12-31
 
   - title: LTV by first channel (user cohorts after 2020) 
@@ -33,5 +33,5 @@ elements:
     cohort_by: ltv.months_between_first_order_and_this_period
     time_period: any_time
     filters:
-      - field: ltv.first_order_month
+      - field: customers.first_order_month
         value: after 2020-12-31
