@@ -17,7 +17,7 @@ elements:
         value: after 2020-12-31
         
   - title: LTV by first promotion (user cohorts after 2020) 
-    model: koio_model
+    model: pure_organics
     metric: ltv.ltv
     slice_by: [customers.first_promotion]
     cohort_by: ltv.months_between_first_order_and_this_period
@@ -27,7 +27,7 @@ elements:
         value: after 2020-12-31
 
   - title: LTV by first channel (user cohorts after 2020) 
-    model: koio_model
+    model: pure_organics
     metric: ltv.ltv
     slice_by: [customers.first_channel]
     cohort_by: ltv.months_between_first_order_and_this_period
