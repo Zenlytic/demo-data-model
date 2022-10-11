@@ -28,6 +28,7 @@ fields:
   type: string
   sql: ${TABLE}.EMAIL
   description: The customer's email address
+  required_access_grants: [pii_access]
 
 - name: first_name
   field_type: dimension
