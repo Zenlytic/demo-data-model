@@ -2,7 +2,7 @@ version: 1
 type: view
 name: products
 model_name: pure_organics
-sql_table_name: DEMO_RAW.PRODUCTS
+sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
 
 identifiers:
