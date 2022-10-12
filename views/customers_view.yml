@@ -68,7 +68,7 @@ fields:
   description: The customer's zip code
   drill_up: city
 
-- name: first_channel
+- name: first_marketing_channel
   field_type: dimension
   type: string
   description: The first marketing channel the user came in through 
