@@ -1,0 +1,43 @@
+version: 1
+type: dashboard
+name: ltv_dashboard
+label: LTV + Cohorts
+description: Pure Organics LTV and cohort analysis
+
+elements:
+  - title: LTV by user cohort
+    model: pure_organics
+    metric: ltv.ltv
+    slice_by: [customers.first_order_month]
+    cohort_by: ltv.months_between_first_order_and_this_period
+    size: full
+    time_period: any_time
+    filters:
+      - field: customers.first_order_month
+        value: after 2020-12-31
+      - field: ltv.months_between_first_order_and_this_period
+        value: ">=0"
+        
+  - title: LTV by first promotion (user cohorts after 2020) 
+    model: pure_organics
+    metric: ltv.ltv
+    slice_by: [customers.first_promotion]
+    cohort_by: ltv.months_between_first_order_and_this_period
+    time_period: any_time
+    filters:
+      - field: customers.first_order_month
+        value: after 2020-12-31
+      - field: ltv.months_between_first_order_and_this_period
+        value: ">=0"
+
+  - title: LTV by first channel (user cohorts after 2020) 
+    model: pure_organics
+    metric: ltv.ltv
+    slice_by: [customers.first_channel]
+    cohort_by: ltv.months_between_first_order_and_this_period
+    time_period: any_time
+    filters:
+      - field: customers.first_order_month
+        value: after 2020-12-31
+      - field: ltv.months_between_first_order_and_this_period
+        value: ">=0"

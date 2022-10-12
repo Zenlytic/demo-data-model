@@ -1,0 +1,109 @@
+version: 1
+type: view
+name: ltv
+model_name: pure_organics
+sql_table_name: DEMO_PROD.LTV
+default_date: fiscal
+row_label: LTV Item
+
+identifiers:
+- name: customer_id
+  type: foreign
+  sql: ${customer_id}
+
+fields:
+- name: unique_key
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.customer_id || ${TABLE}.date_month
+  primary_key: yes
+  hidden: yes
+
+- name: customer_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.CUSTOMER_ID
+  hidden: yes
+
+- datatype: timestamp
+  field_type: dimension_group
+  name: fiscal
+  sql: ${TABLE}.date_month
+  timeframes:
+  - month
+  - quarter
+  - year
+  type: time
+
+- name: between_first_order_and_this_period
+  field_type: dimension_group
+  type: duration
+  sql_start: ${customers.first_order_month}
+  sql_end: ${fiscal_month}
+  intervals: [month, quarter, year]
+
+- field_type: dimension
+  name: gross_sales
+  sql: ${TABLE}.gross_sales
+  type: number
+  hidden: yes
+
+- field_type: dimension
+  name: n_cumulative_orders
+  sql: ${TABLE}.n_cumulative_orders
+  type: number
+  hidden: yes
+
+- field_type: dimension
+  name: n_orders_in_month
+  sql: ${TABLE}.n_orders_in_month
+  type: number
+  hidden: yes
+
+- field_type: dimension
+  name: n_customers_in_month
+  sql: ${TABLE}.n_customers_in_month
+  type: number
+  hidden: yes
+
+- field_type: measure
+  name: total_lifetime_revenue
+  type: sum
+  sql: ${gross_sales}
+  description: Total revenue from all customers (cumulative, must have date present)
+  value_format_name: usd
+
+- field_type: measure
+  name: number_of_cumulative_orders
+  type: sum
+  sql: ${n_cumulative_orders}
+  description: Total number of orders (cumulative, must have date present)
+  value_format_name: decimal_0
+
+- field_type: measure
+  name: number_of_cumulative_customers
+  type: count_distinct
+  sql: ${customer_id}
+  value_format_name: decimal_0
+
+- field_type: measure
+  name: number_of_orders_in_period
+  type: sum
+  sql: ${n_orders_in_month}
+  description: Total number of orders (in the fiscal month, must have date present)
+  value_format_name: decimal_0
+
+- field_type: measure
+  name: number_of_customers_in_period
+  type: sum
+  sql: ${n_customers_in_month}
+  value_format_name: decimal_0
+
+- field_type: measure
+  name: ltv
+  type: number
+  description: "LTV for all customers"
+  sql: ${total_lifetime_revenue} / nullif(${number_of_cumulative_customers}, 0)
+  value_format_name: usd_0
+  extra:
+    zenlytic.show: yes
