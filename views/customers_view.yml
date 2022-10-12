@@ -68,10 +68,10 @@ fields:
   description: The customer's zip code
   drill_up: city
 
-- name: first_marketing_channel
+- name: first_marketing_group
   field_type: dimension
   type: string
-  description: The first marketing channel the user came in through 
+  description: The first marketing group the user came in through 
   sql: ${TABLE}.first_channel
 
 - name: first_promotion
