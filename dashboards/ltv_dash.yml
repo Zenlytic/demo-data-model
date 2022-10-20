@@ -33,7 +33,7 @@ elements:
   - title: LTV by first channel (user cohorts after 2020) 
     model: pure_organics
     metric: ltv.ltv
-    slice_by: [customers.first_channel]
+    slice_by: [customers.first_marketing_group]
     cohort_by: ltv.months_between_first_order_and_this_period
     time_period: any_time
     filters:
