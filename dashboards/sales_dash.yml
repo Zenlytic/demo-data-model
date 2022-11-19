@@ -31,6 +31,7 @@ elements:
     time_period: 3 months
 
   - title: Facebook orders breakdown (MTD)
+    plot_type: bar
     model: pure_organics
     metric: order_lines.number_of_orders
     slice_by: [products.product_type]
