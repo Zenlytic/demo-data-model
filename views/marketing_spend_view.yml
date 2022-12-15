@@ -66,7 +66,7 @@ fields:
   field_type: measure
   is_merged_result: yes
   type: number
-  sql: ${total_marketing_spend} / nullif(${number_of_customers_in_period}, 0)
+  sql: ${total_marketing_spend} / nullif(${ltv.number_of_customers_in_period}, 0)
   description: Total marketing spend across all channels / number of customers who placed orders in that period
   value_format_name: usd
   extra:
