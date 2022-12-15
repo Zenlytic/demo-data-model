@@ -1,0 +1,84 @@
+version: 1
+type: view
+name: marketing_spend
+model_name: pure_organics
+sql_table_name: DEMO_PROD.MARKETING_SPEND
+default_date: spend
+row_label: LTV Item
+
+fields:
+- name: unique_key
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.spend_id
+  primary_key: yes
+  hidden: yes
+
+- name: spend
+  description: The date of the ad spend
+  type: time
+  field_type: dimension_group
+  sql: ${TABLE}.spend_at
+  timeframes:
+  - day
+  - week
+  - month
+  - quarter
+  - year
+  datatype: timestamp
+
+- name: channel
+  description: The channel of the ad spend
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.channel
+
+- name: source
+  description: The source of the ad spend
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.source
+
+- name: campaign
+  description: The campaign of the ad spend
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.campaign
+
+- name: ad_spend
+  description: The amount spent 
+  field_type: dimension
+  type: number
+  sql: ${TABLE}.ad_spend
+  hidden: yes
+
+- name: total_marketing_spend
+  field_type: measure
+  type: sum
+  sql: ${ad_spend}
+  description: Total marketing spend across all channels
+  value_format_name: usd
+  extra:
+    zenlytic.show: yes
+
+- name: cac
+  label: CaC
+  field_type: measure
+  is_merged_result: yes
+  type: number
+  sql: ${total_marketing_spend} / nullif(${number_of_customers_in_period}, 0)
+  description: Total marketing spend across all channels / number of customers who placed orders in that period
+  value_format_name: usd
+  extra:
+    zenlytic.show: yes
+
+- name: cac_ltv
+  label: CaC:LTV Ratio
+  field_type: measure
+  is_merged_result: yes
+  type: number
+  sql: ${cac} / nullif(${ltv.ltv}, 0)  
+  description: Blended CaC / Customer LTV
+  value_format_name: usd
+  extra:
+    zenlytic.show: yes
