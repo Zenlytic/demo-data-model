@@ -60,6 +60,7 @@ fields:
   type: string
   sql: ${TABLE}.STATE
   description: The customer's state (location)
+  searchable: yes
   drill_down: city
 
 - name: zipcode
