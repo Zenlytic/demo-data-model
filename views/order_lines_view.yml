@@ -161,8 +161,6 @@ fields:
   sql: ${discount}
   description: "All discounts applied to either the order or the product in the order"
   value_format_name: usd
-  extra:
-    zenlytic.show: yes
 
 - name: total_net_revenue
   field_type: measure
@@ -170,8 +168,6 @@ fields:
   sql: ${total_gross_revenue} - ${total_discounts}
   description: "Total net revenue = gross revenue - discounts"
   value_format_name: usd
-  extra:
-    zenlytic.show: yes
 
 - name: subscription_revenue
   field_type: measure
@@ -182,8 +178,6 @@ fields:
   filters:
   - field: subscription_vs_otp
     value: Subscription
-  extra:
-    zenlytic.show: yes
 
 - name: number_of_customers_with_orders
   field_type: measure
@@ -191,8 +185,6 @@ fields:
   sql: ${customer_id}
   description: "The unique number of customers who placed orders"
   value_format_name: decimal_0
-  extra:
-    zenlytic.show: yes
 
 - name: number_of_orders
   field_type: measure
@@ -200,24 +192,36 @@ fields:
   sql: ${order_id}
   description: "The unique number of orders placed"
   value_format_name: decimal_0
-  extra:
-    zenlytic.show: yes
+
+- name: number_of_repeat_orders
+  field_type: measure
+  type: count_distinct
+  sql: ${order_id}
+  description: "The unique number of orders placed by customers who have placed at least one order before"
+  value_format_name: decimal_0
+  filters:
+    - field: new_vs_repeat
+      value: Repeat
+
+- name: repurchase_rate
+  field_type: measure
+  synonyms: ["Repeat order rate"]
+  type: number
+  sql: ${number_of_repeat_orders} / ${number_of_orders}
+  description: "Repurchase rate = number of repeat orders / number of orders"
+  value_format_name: percent_1
 
 - name: gross_aov
   field_type: measure
   synonyms: ["Average order value"]
   type: number
-  sql: ${total_gross_revenue} / ${number_of_orders}
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   description: "Gross AOV = gross revenues / number of orders"
   value_format_name: usd
-  extra:
-    zenlytic.show: yes
-
+  
 - name: number_of_units
   field_type: measure
   type: sum
   sql: ${quantity}
   description: "The unique number of units purchased (e.g. customer orders: 2 lip gloss and 1 blush = 3 units sold)"
   value_format_name: decimal_0
-  extra:
-    zenlytic.show: yes
