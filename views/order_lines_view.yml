@@ -186,6 +186,16 @@ fields:
   description: "The unique number of customers who placed orders"
   value_format_name: decimal_0
 
+- name: number_of_new_customers_with_orders
+  field_type: measure
+  type: count_distinct
+  sql: ${customer_id}
+  description: "The unique number of new customers who placed orders"
+  value_format_name: decimal_0
+  filters:
+    - field: new_vs_repeat
+      value: New
+
 - name: number_of_orders
   field_type: measure
   type: count_distinct
