@@ -20,7 +20,7 @@ fields:
   field_type: dimension_group
   sql: ${TABLE}.spend_at
   timeframes:
-  - day
+  - date
   - week
   - month
   - quarter
