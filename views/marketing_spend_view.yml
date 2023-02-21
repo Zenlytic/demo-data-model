@@ -4,7 +4,7 @@ name: marketing_spend
 model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
-row_label: LTV Item
+row_label: Spend Item
 
 fields:
 - name: unique_key
@@ -58,27 +58,12 @@ fields:
   sql: ${ad_spend}
   description: Total marketing spend across all channels
   value_format_name: usd
-  extra:
-    zenlytic.show: yes
 
 - name: cac
   label: CaC
   field_type: measure
   is_merged_result: yes
   type: number
-  sql: ${total_marketing_spend} / nullif(${ltv.number_of_customers_in_period}, 0)
-  description: Total marketing spend across all channels / number of customers who placed orders in that period
+  sql: ${total_marketing_spend} / nullif(${order_lines.number_of_customers_with_orders}, 0)
+  description: Cost of acquisition = Total marketing spend across all channels / number of customers who placed orders in that period
   value_format_name: usd
-  extra:
-    zenlytic.show: yes
-
-- name: cac_ltv
-  label: CaC:LTV Ratio
-  field_type: measure
-  is_merged_result: yes
-  type: number
-  sql: ${cac} / nullif(${ltv.ltv}, 0)  
-  description: Blended CaC / Customer LTV
-  value_format_name: usd
-  extra:
-    zenlytic.show: yes
