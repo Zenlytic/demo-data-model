@@ -64,6 +64,6 @@ fields:
   field_type: measure
   is_merged_result: yes
   type: number
-  sql: ${total_marketing_spend} / nullif(${order_lines.number_of_customers_with_orders}, 0)
-  description: Cost of acquisition = Total marketing spend across all channels / number of customers who placed orders in that period
+  sql: ${total_marketing_spend} / nullif(${order_lines.number_of_new_customers_with_orders}, 0)
+  description: Cost of acquisition = Total marketing spend across all channels / number of new customers who placed orders in that period
   value_format_name: usd
