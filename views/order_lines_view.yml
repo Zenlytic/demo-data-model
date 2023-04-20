@@ -116,6 +116,18 @@ fields:
   searchable: yes
   drill_down: marketing_source
 
+- name: last_click_marketing_channel
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.last_click
+  description: The last click marketing channel that the customer came through before placing their order.
+
+- name: first_click_marketing_channel
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.first_click
+  description: The first click marketing channel that the customer came through before placing their order.
+
 - name: new_vs_repeat
   field_type: dimension
   type: string
@@ -152,8 +164,17 @@ fields:
   sql: ${revenue}
   description: "Total gross revenue = revenue from product sales + shipping revenues"
   value_format_name: usd
-  extra:
-    zenlytic.show: yes
+
+- name: total_gross_revenue_from_advertising
+  field_type: measure
+  synonyms: ['sales', 'revenue']
+  type: sum
+  sql: ${revenue}
+  description: "Total gross revenue = revenue from product sales + shipping revenues"
+  value_format_name: usd
+  filters:
+  - field: marketing_channel
+    value: -Organic
 
 - name: total_discounts
   field_type: measure
@@ -235,3 +256,18 @@ fields:
   sql: ${quantity}
   description: "The unique number of units purchased (e.g. customer orders: 2 lip gloss and 1 blush = 3 units sold)"
   value_format_name: decimal_0
+
+- name: total_cogs
+  label: Total COGS
+  field_type: measure
+  type: sum
+  sql: ${TABLE}.cogs
+  description: "The allocated cost of goods sold to the order line"
+  value_format_name: usd
+
+- name: gross_profit
+  field_type: measure
+  type: number
+  sql: ${total_net_revenue} - ${total_cogs}
+  description: "The total net revenue - allocated cost of goods sold to the order line"
+  value_format_name: usd

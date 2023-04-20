@@ -67,3 +67,29 @@ fields:
   sql: ${total_marketing_spend} / nullif(${order_lines.number_of_new_customers_with_orders}, 0)
   description: Cost of acquisition = Total marketing spend across all channels / number of new customers who placed orders in that period
   value_format_name: usd
+
+- name: cpc
+  label: CPC
+  field_type: measure
+  type: number
+  sql: ${total_marketing_spend} / 1304000
+  description: Cost oer click = Total marketing spend across all channels / number of clicks through ads
+  value_format_name: usd
+
+- name: roas
+  label: ROAS
+  field_type: measure
+  is_merged_result: yes
+  type: number
+  sql: ${order_lines.total_gross_revenue_from_advertising} / nullif(${total_marketing_spend}, 0)
+  description: Return on advertising spend = Total advertising revenue / Total marketing spend across all channels
+  value_format_name: decimal_1
+  
+- name: proas
+  label: PROAS
+  field_type: measure
+  is_merged_result: yes
+  type: number
+  sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
+  description: Profitable return on advertising spend = Total advertising gross profit / Total marketing spend across all channels
+  value_format_name: decimal_1
