@@ -116,6 +116,12 @@ fields:
   searchable: yes
   drill_down: marketing_source
 
+- name: marketing_channel
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.MARKETING_CHANNEL
+  description: The marketing channel that the customer came through before placing their order.
+
 - name: last_click_marketing_channel
   field_type: dimension
   type: string
