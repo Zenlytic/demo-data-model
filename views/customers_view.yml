@@ -5,6 +5,7 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 row_label: Customer
 default_date: first_order
+description: A view for my customers
 
 identifiers:
 - name: customer_id
