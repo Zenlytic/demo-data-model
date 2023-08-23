@@ -5,6 +5,7 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.SUBSCRIPTIONS
 default_date: subscribe
 row_label: Subscription
+description: This view provides a comprehensive overview of customer subscriptions for Pure Organics products, including details such as the subscription ID, product ID, customer ID, subscription quantity, subscription length, subscription frequency, and subscription start date. The `subscribe` field is a dimension group that allows you to group subscriptions by timeframes such as day, week, month, quarter, or year, providing valuable insights into customer behavior and subscription patterns. Additionally, the `number_of_active_subscriptions` measure provides a count of the total number of active subscriptions, allowing you to track subscription growth over time and identify popular products. Use this view to gain a deeper understanding of your customers' subscription preferences and optimize your subscription offerings to drive revenue and growth.
 
 identifiers:
 - name: product_id
