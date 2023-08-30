@@ -1,0 +1,64 @@
+default_date: spend_at
+fields:
+- field_type: dimension
+  name: spend_id
+  primary_key: 'yes'
+  sql: ${TABLE}.SPEND_ID
+  type: string
+- field_type: dimension
+  name: ad_spend
+  sql: ${TABLE}.AD_SPEND
+  type: number
+- field_type: dimension
+  name: source
+  sql: ${TABLE}.SOURCE
+  type: string
+- field_type: dimension
+  name: campaign
+  sql: ${TABLE}.CAMPAIGN
+  type: string
+- field_type: dimension
+  name: channel
+  sql: ${TABLE}.CHANNEL
+  type: string
+- datatype: timestamp
+  field_type: dimension_group
+  name: spend_at
+  sql: ${TABLE}.SPEND_AT
+  timeframes:
+  - raw
+  - date
+  - week
+  - month
+  - quarter
+  - year
+  type: time
+- description: The total amount spent on ads
+  field_type: measure
+  name: total_ad_spend
+  sql: ${ad_spend}
+  type: sum
+- description: The average amount spent on ads
+  field_type: measure
+  name: average_ad_spend
+  sql: ${ad_spend}
+  type: average
+- description: The number of distinct campaigns
+  field_type: measure
+  name: number_of_campaigns
+  sql: ${campaign}
+  type: count_distinct
+- description: The number of distinct channels
+  field_type: measure
+  name: number_of_channels
+  sql: ${channel}
+  type: count_distinct
+identifiers:
+- name: spend_id
+  sql: ${spend_id}
+  type: primary
+model_name: pure_organics
+name: marketing_spend
+sql_table_name: DEMO_PROD.MARKETING_SPEND
+type: view
+version: 1
