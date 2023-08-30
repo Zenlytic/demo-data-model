@@ -94,3 +94,21 @@ fields:
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   description: Profitable return on advertising spend = Total advertising gross profit / Total marketing spend across all channels
   value_format_name: decimal_1
+
+- description: The average amount spent on ads
+  field_type: measure
+  name: average_ad_spend
+  sql: ${ad_spend}
+  type: average
+
+- description: The number of distinct campaigns
+  field_type: measure
+  name: number_of_campaigns
+  sql: ${campaign}
+  type: count_distinct
+  
+- description: The number of distinct channels
+  field_type: measure
+  name: number_of_channels
+  sql: ${channel}
+  type: count_distinct
