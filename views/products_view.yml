@@ -38,5 +38,5 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.PRICE
-  description: The price of the product
+  description: Blahabababbaba
 
