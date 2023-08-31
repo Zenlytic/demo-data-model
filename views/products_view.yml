@@ -38,5 +38,9 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.PRICE
+<<<<<<< HEAD
   description: yoyoyoyoyo
+=======
+  description: Blahabababbaba
+>>>>>>> 01ad786d58b2a6ecda04700aa4ee11b388d79ba0
 
