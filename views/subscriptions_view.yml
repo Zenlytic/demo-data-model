@@ -1,5 +1,5 @@
 version: 1
-# type: view
+type: view
 name: subscriptions
 model_name: pure_organics
 sql_table_name: DEMO_PROD.SUBSCRIPTIONS
