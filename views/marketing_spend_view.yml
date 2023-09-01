@@ -13,7 +13,6 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.SPEND_ID
-  primary_key: 'yes'
 - name: ad_spend
   field_type: dimension
   type: number
@@ -52,12 +51,12 @@ fields:
   type: average
   sql: ${ad_spend}
   description: The average amount spent on ads
-- name: number_of_campaigns
+- name: count_campaigns
   field_type: measure
   type: count_distinct
   sql: ${campaign}
   description: The number of distinct campaigns
-- name: number_of_channels
+- name: count_channels
   field_type: measure
   type: count_distinct
   sql: ${channel}
