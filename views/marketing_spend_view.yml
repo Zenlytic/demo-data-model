@@ -49,6 +49,7 @@ fields:
   description: The total amount spent on ads
 - name: distinct_sources
   field_type: measure
+<<<<<<< HEAD
   type: count_distinct
   sql: ${source}
   description: The number of distinct sources of ad spend
@@ -62,3 +63,20 @@ fields:
   type: count_distinct
   sql: ${channel}
   description: The number of distinct channels
+=======
+  is_merged_result: yes
+  type: number
+  sql: ${order_lines.total_gross_revenue_from_advertising} / nullif(${total_marketing_spend}, 0)
+  description: Return on advertising spend = Total advertising revenue / Total marketing spend across all channels
+  value_format_name: decimal_1
+  
+- name: proas
+  label: PROAS
+  field_type: measure
+  is_merged_result: yes
+  type: number
+  sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
+  description: Profitable return on advertising spend = Total advertising gross profit / Total marketing spend across all channels
+  value_format_name: decimal_1
+
+>>>>>>> 01ad786d58b2a6ecda04700aa4ee11b388d79ba0
