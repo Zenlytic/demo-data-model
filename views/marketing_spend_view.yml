@@ -13,7 +13,6 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.SPEND_ID
-  primary_key: 'yes'
 - name: ad_spend
   field_type: dimension
   type: number
