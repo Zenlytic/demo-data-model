@@ -5,6 +5,7 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
 row_label: Spend Item
+description: A view for marketing spend.
 
 fields:
 - name: unique_key
@@ -93,3 +94,4 @@ fields:
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   description: Profitable return on advertising spend = Total advertising gross profit / Total marketing spend across all channels
   value_format_name: decimal_1
+
