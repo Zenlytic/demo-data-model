@@ -3,7 +3,7 @@ type: view
 name: order_lines
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
-default_date: order
+default_date: order_line_id
 row_label: Order line
 identifiers:
 - name: product_id
@@ -266,7 +266,11 @@ fields:
 - name: gross_aov
   field_type: measure
   type: number
-  descr
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
 
 - name: number_of_units
   field_type: measure
