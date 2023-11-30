@@ -266,11 +266,7 @@ fields:
 - name: gross_aov
   field_type: measure
   type: number
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
+  descr
 
 - name: number_of_units
   field_type: measure
