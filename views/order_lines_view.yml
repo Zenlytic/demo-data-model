@@ -176,7 +176,7 @@ fields:
   label: Total Gross Revenue
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: usd
-  sql: case when subscription_vs_otp = 'Subscription' then ${revenue} end
+  sq
   synonyms:
   - sales
   - revenue
