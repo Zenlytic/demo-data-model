@@ -221,6 +221,7 @@ fields:
     zenlytic.show: true
 
 - name: number_of_sessions
+  label: Total Number of Sessions
   field_type: measure
   type: count_distinct
   description: The number of sessions (usage of the site by a unique user in a 6 hour
