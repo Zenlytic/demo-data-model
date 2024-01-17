@@ -153,6 +153,7 @@ fields:
   - date
   - week
   - month
+  - month_name
   - quarter
   - year
   sql: ${TABLE}.ORDER_AT
