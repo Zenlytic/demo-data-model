@@ -61,6 +61,8 @@ fields:
   - date
   - week
   - month
+  - month_name
+  - month_of_year
   - quarter
   - year
   sql: ${TABLE}.SUBSCRIBE_AT
