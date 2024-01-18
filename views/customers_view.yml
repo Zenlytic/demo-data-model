@@ -98,7 +98,6 @@ fields:
   - week
   - month
   - month_name
-  - month of year
   - quarter
   - year
   sql: ${TABLE}.first_order_at
