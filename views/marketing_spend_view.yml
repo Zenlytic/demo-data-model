@@ -49,6 +49,8 @@ fields:
   - month
   - quarter
   - year
+  - month_name
+  - week_index
   sql: ${TABLE}.spend_at
 
 - name: total_marketing_spend
