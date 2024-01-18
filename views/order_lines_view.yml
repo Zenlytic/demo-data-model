@@ -153,8 +153,8 @@ fields:
   - date
   - week
   - month
-  - month_name
-  - month_of_year
+    - month_name
+  - week_index
   - quarter
   - year
   sql: ${TABLE}.ORDER_AT
