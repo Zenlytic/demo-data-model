@@ -208,6 +208,8 @@ fields:
   - date
   - week
   - month
+  - month_name
+  - week_index
   - quarter
   - year
   sql: ${TABLE}.EVENT_TIMESTAMP
