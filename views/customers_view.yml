@@ -95,7 +95,9 @@ fields:
   timeframes:
   - raw
   - date
+  - week_index
   - week
+  - month_of_year
   - month
   - quarter
   - year

@@ -45,7 +45,9 @@ fields:
   description: The date of the ad spend
   timeframes:
   - date
+  - week_index
   - week
+  - month_of_year
   - month
   - quarter
   - year
