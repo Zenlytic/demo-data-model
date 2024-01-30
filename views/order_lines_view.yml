@@ -175,7 +175,7 @@ fields:
   type: sum
   label: Total Gross Revenue
   description: Total gross revenue = revenue from product sales + shipping revenues
-  value_format_name: usd_2
+  value_format_name: usd
   sql: ${revenue}
   synonyms:
   - sales
