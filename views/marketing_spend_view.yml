@@ -1,6 +1,7 @@
 version: 1
 type: view
 name: marketing_spend
+description: A view for marketing spend.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
@@ -9,8 +10,8 @@ fields:
 - name: unique_key
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.spend_id
 
 - name: channel
@@ -34,7 +35,7 @@ fields:
 - name: ad_spend
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   description: The amount spent
   sql: ${TABLE}.ad_spend
 
@@ -98,4 +99,3 @@ fields:
   value_format_name: decimal_1
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   is_merged_result: true
-description: A view for marketing spend.

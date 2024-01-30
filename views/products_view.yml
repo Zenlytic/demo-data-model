@@ -12,8 +12,8 @@ fields:
 - name: product_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.PRODUCT_ID
 
 - name: product_type

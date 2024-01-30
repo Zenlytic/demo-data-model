@@ -16,14 +16,14 @@ fields:
 - name: order_line_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.ORDER_LINE_ID
 
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   drill_fields:
   - customers.email
   - customers.state
@@ -36,7 +36,7 @@ fields:
 - name: order_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   drill_fields:
   - order_date
   - subscription_vs_otp
@@ -51,31 +51,31 @@ fields:
 - name: product_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.PRODUCT_ID
 
 - name: discount
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.DISCOUNT
 
 - name: revenue
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.REVENUE
 
 - name: price
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.PRICE
 
 - name: quantity
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.QUANTITY
 
 - name: campaign
@@ -175,7 +175,7 @@ fields:
   type: sum
   label: Total Gross Revenue
   description: Total gross revenue = revenue from product sales + shipping revenues
-  value_format_name: usd
+  value_format_name: usd_2
   sql: ${revenue}
   synonyms:
   - sales
