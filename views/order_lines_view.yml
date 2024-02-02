@@ -12,6 +12,9 @@ identifiers:
 - name: customer_id
   type: foreign
   sql: ${customer_id}
+- name: parent_customer_id
+  type: foreign
+  sql: ${parent_customer_id}
 fields:
 - name: order_line_id
   field_type: dimension
@@ -19,6 +22,12 @@ fields:
   hidden: true
   primary_key: true
   sql: ${TABLE}.ORDER_LINE_ID
+
+- name: parent_customer_id
+  field_type: dimension
+  type: string
+  hidden: true
+  sql: ${TABLE}.CUSTOMER_ID
 
 - name: customer_id
   field_type: dimension
