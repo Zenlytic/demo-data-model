@@ -151,7 +151,9 @@ fields:
   timeframes:
   - raw
   - date
+  - week_index
   - week
+  - month_of_year
   - month
   - quarter
   - year
@@ -187,6 +189,7 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: usd
   sql: ${revenue}
+  hidden: yes
   filters:
   - field: marketing_channel
     value: -Organic
