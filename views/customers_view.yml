@@ -13,7 +13,7 @@ identifiers:
   type: primary
   sql: ${customer_id}
   join_as: parent_customer
-  join_as_label: Parent Customer (Adult)
+  join_as_label: Parent
 fields:
 - name: customer_id
   field_type: dimension
