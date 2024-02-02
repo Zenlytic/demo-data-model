@@ -43,7 +43,7 @@ fields:
 - name: address
   field_type: dimension
   type: string
-  description: The customer's address (shipping)
+  description: The customer's address (shipping) abc
   sql: ${TABLE}.ADDRESS
 
 - name: city
