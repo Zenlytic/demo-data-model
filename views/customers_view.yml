@@ -9,6 +9,11 @@ identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
+- name: parent_customer_id
+  type: primary
+  sql: ${customer_id}
+  join_as: parent_customer
+  join_as_label: Parent Customer (Adult)
 fields:
 - name: customer_id
   field_type: dimension
