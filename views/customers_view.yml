@@ -1,6 +1,15 @@
 version: 1
 type: view
 name: customers
+description: This view provides a comprehensive overview of customer data for Pure
+  Organics, including details such as the customer's ID, email address, name, address,
+  and location. The `accepts_marketing` field indicates whether the customer has opted
+  in to marketing communications, while the `first_order` field provides the date
+  and time of the customer's first order. Additionally, the `first_marketing_group`,
+  `first_promotion`, and `first_campaign` fields provide information about the customer's
+  initial marketing interactions with the company. Use this view to gain insights
+  into customer behavior, track customer acquisition and retention, and optimize your
+  marketing campaigns to drive revenue and growth.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
@@ -13,14 +22,16 @@ fields:
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.CUSTOMER_ID
+  label_prefix:
 
 - name: accepts_marketing
   field_type: dimension
   type: yesno
   sql: ${TABLE}.ACCEPTS_MARKETING
+  label_prefix:
 
 - name: email
   field_type: dimension
@@ -29,22 +40,26 @@ fields:
   required_access_grants:
   - pii_access
   sql: ${TABLE}.EMAIL
+  label_prefix:
 
 - name: first_name
   field_type: dimension
   type: string
   sql: ${TABLE}.FIRST_NAME
+  label_prefix:
 
 - name: last_name
   field_type: dimension
   type: string
   sql: ${TABLE}.LAST_NAME
+  label_prefix:
 
 - name: address
   field_type: dimension
   type: string
   description: The customer's address (shipping)
   sql: ${TABLE}.ADDRESS
+  label_prefix:
 
 - name: city
   field_type: dimension
@@ -53,6 +68,7 @@ fields:
   sql: ${TABLE}.CITY
   drill_up: state
   drill_down: zipcode
+  label_prefix:
 
 - name: state
   field_type: dimension
@@ -61,6 +77,7 @@ fields:
   sql: ${TABLE}.STATE
   searchable: true
   drill_down: city
+  label_prefix:
 
 - name: zipcode
   field_type: dimension
@@ -68,24 +85,61 @@ fields:
   description: The customer's zip code
   sql: ${TABLE}.ZIPCODE
   drill_up: city
+  label_prefix:
 
 - name: first_marketing_group
   field_type: dimension
   type: string
   description: The first marketing group the user came in through
   sql: ${TABLE}.first_channel
+  label_prefix:
 
 - name: first_promotion
   field_type: dimension
   type: string
   description: The first promotion the user came in through
   sql: ${TABLE}.first_promotion
+  label_prefix:
 
 - name: first_campaign
   field_type: dimension
   type: string
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
+  label_prefix:
+
+- name: PERSONAL_FIELD_JAJHONV
+  field_type: dimension
+  type: yesno
+  datatype: timestamp
+  hidden: false
+  primary_key: false
+  label: English Breakfast
+  description:
+  required_access_grants: []
+  value_format_name:
+  drill_fields: []
+  sql_distinct_key:
+  tiers: []
+  timeframes: []
+  intervals: []
+  sql_start:
+  sql_end:
+  sql: (${TABLE}.ACCEPTS_MARKETING)
+  filters: []
+  extra: []
+  id: customers.PERSONAL_FIELD_JAJHONV
+  workspace_id: '11'
+  user_id: 622bc4a0-be87-448a-942f-256af905eba8
+  tags: []
+  searchable: false
+  synonyms: []
+  link:
+  convert_tz: false
+  measure:
+  canon_date: customers.first_order
+  non_additive_dimension: []
+  is_personal_field: true
 
 - name: first_order
   field_type: dimension_group
@@ -102,12 +156,37 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.first_order_at
-description: This view provides a comprehensive overview of customer data for Pure
-  Organics, including details such as the customer's ID, email address, name, address,
-  and location. The `accepts_marketing` field indicates whether the customer has opted
-  in to marketing communications, while the `first_order` field provides the date
-  and time of the customer's first order. Additionally, the `first_marketing_group`,
-  `first_promotion`, and `first_campaign` fields provide information about the customer's
-  initial marketing interactions with the company. Use this view to gain insights
-  into customer behavior, track customer acquisition and retention, and optimize your
-  marketing campaigns to drive revenue and growth.
+  label_prefix:
+
+- name: PERSONAL_FIELD_DCJYWGL
+  field_type: measure
+  type: count
+  datatype: timestamp
+  hidden: false
+  primary_key: false
+  label: Count Accepts Marketing
+  description:
+  required_access_grants: []
+  value_format_name:
+  drill_fields: []
+  sql_distinct_key:
+  tiers: []
+  timeframes: []
+  intervals: []
+  sql_start:
+  sql_end:
+  sql: (${TABLE}.ACCEPTS_MARKETING)
+  filters: []
+  extra: []
+  id: customers.PERSONAL_FIELD_DCJYWGL
+  workspace_id: '11'
+  user_id: 622bc4a0-be87-448a-942f-256af905eba8
+  tags: []
+  searchable: false
+  synonyms: []
+  link:
+  convert_tz: false
+  measure:
+  canon_date: customers.first_order
+  non_additive_dimension: []
+  is_personal_field: true
