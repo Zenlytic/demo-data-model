@@ -106,7 +106,7 @@ fields:
 - name: NON_JOINABLE_TEST
   field_type: measure
   type: number
-  sql: ${marketing_spend.total_marketing_spend}/NULLIF(${order_lines.number_of_new_customers_with_orders},
+  sql: SUM(${marketing_spend.ad_spend})/NULLIF(${order_lines.number_of_new_customers_with_orders},
     0)
 
     
