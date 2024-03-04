@@ -310,4 +310,4 @@ fields:
   field_type: measure
   type: number
   label: NON JOINABLE TEST
-  sql: ${marketing_spend.total_marketing_spend} - ${total_cogs}
+  sql: ${customers.unique_customers} - ${total_cogs}
