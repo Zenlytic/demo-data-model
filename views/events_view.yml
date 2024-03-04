@@ -241,8 +241,8 @@ fields:
   sql: ${anonymous_id}
   extra:
     zenlytic.show: true
-event_dimension: event_name
-description: A view for events
+  event_dimension: event_name
+  description: A view for events
 
 - name: NON_JOINABLE_TEST
   field_type: measure
