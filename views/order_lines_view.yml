@@ -297,14 +297,14 @@ fields:
   description: The total net revenue - allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
-event_name: Purchase
-fields_for_analysis:
-- subscription_vs_otp
-- marketing_source
-- marketing_channel
-- promotion
-- campaign
-- products.product_title
+  event_name: Purchase
+  fields_for_analysis:
+  - subscription_vs_otp
+  - marketing_source
+  - marketing_channel
+  - promotion
+  - campaign
+  - products.product_title
 
 - name: non_joinable_test
   field_type: measure
