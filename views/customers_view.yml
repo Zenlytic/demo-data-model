@@ -112,7 +112,8 @@ fields:
     into customer behavior, track customer acquisition and retention, and optimize your
     marketing campaigns to drive revenue and growth.
 
-- name: unique_customers
-  field_type: measure
-  type: count_distinct
-  sql: ${TABLE}.email
+- name: NON_JOINABLE_TEST
+  field_type: dimension
+  type: number
+  sql: ${marketing_spend.total_marketing_spend}/NULLIF(${order_lines.number_of_new_customers_with_orders},
+    0)
