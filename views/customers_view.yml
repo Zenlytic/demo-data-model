@@ -108,6 +108,4 @@ fields:
   type: number
   sql: SUM(${marketing_spend.ad_spend})/NULLIF(${order_lines.number_of_new_customers_with_orders},
     0)
-  is_merged_result: true
-
     
