@@ -111,3 +111,9 @@ description: This view provides a comprehensive overview of customer data for Pu
   initial marketing interactions with the company. Use this view to gain insights
   into customer behavior, track customer acquisition and retention, and optimize your
   marketing campaigns to drive revenue and growth.
+
+- name: unique_customers
+  field_type: measure
+  type: count_distinct
+  description: The first campaign the user came in through
+  sql: ${TABLE}.email
