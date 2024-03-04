@@ -305,9 +305,3 @@ fields:
   - promotion
   - campaign
   - products.product_title
-
-- name: non_joinable_test
-  field_type: measure
-  type: number
-  label: NON JOINABLE TEST
-  sql: ${customers.unique_customers} - ${total_cogs}
