@@ -247,5 +247,4 @@ description: A view for events
 - name: NON_JOINABLE_TEST
   field_type: dimension
   type: number
-  sql: ${marketing_spend.total_marketing_spend}/NULLIF(${order_lines.number_of_new_customers_with_orders},
-    0)
+  sql: ${marketing_spend.total_marketing_spend}/NULLIF(${order_lines.number_of_new_customers_with_orders}, 0)
