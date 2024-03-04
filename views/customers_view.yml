@@ -111,3 +111,8 @@ fields:
     initial marketing interactions with the company. Use this view to gain insights
     into customer behavior, track customer acquisition and retention, and optimize your
     marketing campaigns to drive revenue and growth.
+- name: NON_JOINABLE_TEST
+  field_type: dimension
+  type: number
+  sql: ${marketing_spend.total_marketing_spend}/NULLIF(${order_lines.number_of_new_customers_with_orders},
+    0)
