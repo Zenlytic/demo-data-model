@@ -305,3 +305,8 @@ fields_for_analysis:
 - promotion
 - campaign
 - products.product_title
+
+- name: non_joinable
+  field_type: measure
+  type: number
+  sql: ${marketing_spend.total_marketing_spend} - ${total_cogs}
