@@ -115,5 +115,4 @@ description: This view provides a comprehensive overview of customer data for Pu
 - name: unique_customers
   field_type: measure
   type: count_distinct
-  description: The first campaign the user came in through
   sql: ${TABLE}.email
