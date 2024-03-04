@@ -104,7 +104,7 @@ fields:
   sql: ${TABLE}.first_order_at
   
 - name: NON_JOINABLE_TEST
-  field_type: dimension
+  field_type: measure
   type: number
   sql: ${marketing_spend.total_marketing_spend}/NULLIF(COUNT(DISTINCT(${email})),
     0)
