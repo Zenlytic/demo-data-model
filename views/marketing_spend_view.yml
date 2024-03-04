@@ -69,7 +69,6 @@ fields:
   value_format_name: usd
   sql: ${total_marketing_spend} / nullif(${order_lines.number_of_new_customers_with_orders},
     0)
-  is_merged_result: true
 
 - name: cpc
   field_type: measure
