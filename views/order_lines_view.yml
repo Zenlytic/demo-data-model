@@ -306,7 +306,8 @@ fields_for_analysis:
 - campaign
 - products.product_title
 
-- name: non_joinable
+- name: non_joinable_test
   field_type: measure
   type: number
+  label: NON JOINABLE TEST
   sql: ${marketing_spend.total_marketing_spend} - ${total_cogs}
