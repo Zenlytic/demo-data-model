@@ -101,3 +101,4 @@ fields:
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   is_merged_result: true
   description: A view for marketing spend.
+  description: test
