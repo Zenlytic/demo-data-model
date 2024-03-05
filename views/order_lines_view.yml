@@ -288,6 +288,7 @@ fields:
   type: sum
   label: Total COGS
   description: The allocated cost of goods sold to the order line
+  zoe_description: TEST ZOE DESCRIPTION
   value_format_name: usd
   sql: ${TABLE}.cogs
 
