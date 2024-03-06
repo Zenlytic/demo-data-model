@@ -1,6 +1,15 @@
 version: 1
 type: view
 name: customers
+description: This view provides a comprehensive overview of customer data for Pure
+  Organics, including details such as the customer's ID, email address, name, address,
+  and location. The `accepts_marketing` field indicates whether the customer has opted
+  in to marketing communications, while the `first_order` field provides the date
+  and time of the customer's first order. Additionally, the `first_marketing_group`,
+  `first_promotion`, and `first_campaign` fields provide information about the customer's
+  initial marketing interactions with the company. Use this view to gain insights
+  into customer behavior, track customer acquisition and retention, and optimize your
+  marketing campaigns to drive revenue and growth.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
@@ -13,8 +22,8 @@ fields:
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.CUSTOMER_ID
 
 - name: accepts_marketing
@@ -102,12 +111,3 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.first_order_at
-description: This view provides a comprehensive overview of customer data for Pure
-  Organics, including details such as the customer's ID, email address, name, address,
-  and location. The `accepts_marketing` field indicates whether the customer has opted
-  in to marketing communications, while the `first_order` field provides the date
-  and time of the customer's first order. Additionally, the `first_marketing_group`,
-  `first_promotion`, and `first_campaign` fields provide information about the customer's
-  initial marketing interactions with the company. Use this view to gain insights
-  into customer behavior, track customer acquisition and retention, and optimize your
-  marketing campaigns to drive revenue and growth.

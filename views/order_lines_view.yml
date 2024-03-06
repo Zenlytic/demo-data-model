@@ -16,8 +16,8 @@ fields:
 - name: order_line_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.ORDER_LINE_ID
 
 - name: customer_id
@@ -43,34 +43,35 @@ fields:
   - promotion
   - total_gross_revenue
   sql: ${TABLE}.ORDER_ID
+
 - name: product_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.PRODUCT_ID
 
 - name: discount
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.DISCOUNT
 
 - name: revenue
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.REVENUE
 
 - name: price
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.PRICE
 
 - name: quantity
   field_type: dimension
   type: number
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.QUANTITY
 
 - name: campaign
@@ -181,10 +182,10 @@ fields:
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
+  hidden: yes
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: usd
   sql: ${revenue}
-  hidden: yes
   filters:
   - field: marketing_channel
     value: -Organic
@@ -293,7 +294,6 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   non_additive_dimension: []
-    
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
