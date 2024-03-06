@@ -43,9 +43,6 @@ fields:
   - promotion
   - total_gross_revenue
   sql: ${TABLE}.ORDER_ID
-  tags:
-  - order
-
 - name: product_id
   field_type: dimension
   type: string
