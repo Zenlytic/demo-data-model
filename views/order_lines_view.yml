@@ -23,7 +23,6 @@ fields:
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
   drill_fields:
   - customers.email
   - customers.state
@@ -36,7 +35,6 @@ fields:
 - name: order_id
   field_type: dimension
   type: string
-  hidden: true
   drill_fields:
   - order_date
   - subscription_vs_otp
