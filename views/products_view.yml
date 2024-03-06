@@ -12,13 +12,14 @@ fields:
 - name: product_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.PRODUCT_ID
 
 - name: product_type
   field_type: dimension
   type: string
+  label: Product Type the way you held me up
   description: 'The type of the product sold (Eye, Face, Lip, etc) '
   sql: ${TABLE}.PRODUCT_TYPE
   drill_down: product_title

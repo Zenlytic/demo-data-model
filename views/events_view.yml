@@ -1,6 +1,7 @@
 version: 1
 type: view
 name: events
+description: A view for events
 model_name: pure_organics
 sql_table_name: demo_prod.events
 default_date: event
@@ -9,14 +10,14 @@ fields:
 - name: event_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.EVENT_ID
 
 - name: anonymous_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
   - customer
@@ -24,19 +25,19 @@ fields:
 - name: click_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.CLICK_ID
 
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.CUSTOMER_ID
 
 - name: session_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: yes
   sql: ${TABLE}.SESSION_ID
 
 - name: device_is_mobile
@@ -221,6 +222,7 @@ fields:
   value_format_name: decimal_0
   extra:
     zenlytic.show: true
+  primary_key_count: true
 
 - name: number_of_sessions
   field_type: measure
@@ -242,4 +244,3 @@ fields:
   extra:
     zenlytic.show: true
 event_dimension: event_name
-description: A view for events
