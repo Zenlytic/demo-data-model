@@ -298,6 +298,7 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   non_additive_dimension:
+    value: 
     
 event_name: Purchase
 fields_for_analysis:
