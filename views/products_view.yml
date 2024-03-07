@@ -12,9 +12,10 @@ fields:
 - name: product_id
   field_type: dimension
   type: string
-  hidden: true
-  primary_key: true
+  hidden: yes
+  primary_key: yes
   sql: ${TABLE}.PRODUCT_ID
+  label_prefix:
 
 - name: product_type
   field_type: dimension
@@ -22,6 +23,7 @@ fields:
   description: 'The type of the product sold (Eye, Face, Lip, etc) '
   sql: ${TABLE}.PRODUCT_TYPE
   drill_down: product_title
+  label_prefix:
 
 - name: product_title
   field_type: dimension
@@ -32,9 +34,11 @@ fields:
   - product
   searchable: true
   drill_up: product_type
+  label_prefix:
 
 - name: price
   field_type: dimension
   type: string
   description: Blahabababbaba
   sql: ${TABLE}.PRICE
+  label_prefix:
