@@ -137,9 +137,14 @@ fields:
 - name: new_vs_repeat
   field_type: dimension
   type: tier
-  tiers: [0, 20, 30, 40, 50]
   description: Whether the customer placing the order was a new customer or a returning
     customer
+  tiers:
+  - 0
+  - 20
+  - 30
+  - 40
+  - 50
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
@@ -297,6 +302,14 @@ fields:
   description: The total net revenue - allocated cost of goods sold to the order line
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
+
+- name: personal_field_odzuima
+  field_type: measure
+  type: sum
+  label: Total Gross Revenue From Advertising
+  description: Total gross revenue = revenue from product sales + shipping revenues
+  sql: case when ${marketing_channel}<>'Organic' then ${revenue} end
+  canon_date: order_lines.order
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
