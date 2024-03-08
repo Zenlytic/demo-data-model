@@ -80,9 +80,7 @@ fields:
     label_prefix: null
   - name: campaign
     field_type: dimension
-    type: tier
-    tiers:
-      "test"
+    type: string
     description: >-
       The marketing campaign that the customer came through before placing their
       order.
