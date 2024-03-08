@@ -136,7 +136,7 @@ fields:
 
 - name: new_vs_repeat
   field_type: dimension
-  type: string
+  type: tier
   description: Whether the customer placing the order was a new customer or a returning
     customer
   tiers: test
