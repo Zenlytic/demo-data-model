@@ -148,6 +148,21 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
+- name: personal_field_xofkyye
+  field_type: dimension
+  type: string
+  label: New Vs Repeat
+  description: Whether the customer placing the order was a new customer or a returning
+    customer
+  sql: case when ${TABLE}.new_vs_repeat < 0 then 'Below 0' when ${TABLE}.new_vs_repeat
+    >= 0 and ${TABLE}.new_vs_repeat < 20 then '[0,20)' when ${TABLE}.new_vs_repeat
+    >= 20 and ${TABLE}.new_vs_repeat < 30 then '[20,30)' when ${TABLE}.new_vs_repeat
+    >= 30 and ${TABLE}.new_vs_repeat < 40 then '[30,40)' when ${TABLE}.new_vs_repeat
+    >= 40 and ${TABLE}.new_vs_repeat < 50 then '[40,50)' when ${TABLE}.new_vs_repeat
+    >= 50 then '[50,inf)' else 'Unknown' end
+  searchable: true
+  canon_date: order_lines.order
+
 - name: order
   field_type: dimension_group
   type: time
