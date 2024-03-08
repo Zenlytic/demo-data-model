@@ -137,6 +137,8 @@ fields:
 - name: new_vs_repeat
   field_type: dimension
   type: tier
+  tiers:
+    "test"
   description: Whether the customer placing the order was a new customer or a returning
     customer
   sql: ${TABLE}.new_vs_repeat
