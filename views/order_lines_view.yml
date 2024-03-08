@@ -140,7 +140,7 @@ fields:
   description: Whether the customer placing the order was a new customer or a returning
     customer
   tiers: test
-  sql: ${personal_field_hisvosj}
+  sql: ${TABLE}.new_vs_repeat
   searchable: true
 
 - name: order
