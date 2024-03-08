@@ -139,12 +139,7 @@ fields:
   type: tier
   description: Whether the customer placing the order was a new customer or a returning
     customer
-  tiers:
-  - 0
-  - 20
-  - 30
-  - 40
-  - 50
+  tiers: [0, 20, 50, 80]
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
