@@ -291,6 +291,11 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
+- name: cumulative_cogs
+  field_type: measure
+  type: cumulative
+  measure: total_cogs
+
 - name: gross_profit
   field_type: measure
   type: number
