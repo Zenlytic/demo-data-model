@@ -13,28 +13,24 @@ fields:
   hidden: yes
   primary_key: yes
   sql: ${TABLE}.spend_id
-  label_prefix:
 
 - name: channel
   field_type: dimension
   type: string
   description: The channel of the ad spend
   sql: ${TABLE}.channel
-  label_prefix:
 
 - name: source
   field_type: dimension
   type: string
   description: The source of the ad spend
   sql: ${TABLE}.source
-  label_prefix:
 
 - name: campaign
   field_type: dimension
   type: string
   description: The campaign of the ad spend
   sql: ${TABLE}.campaign
-  label_prefix:
 
 - name: ad_spend
   field_type: dimension
@@ -42,7 +38,6 @@ fields:
   hidden: yes
   description: The amount spent
   sql: ${TABLE}.ad_spend
-  label_prefix:
 
 - name: spend
   field_type: dimension_group
@@ -58,7 +53,6 @@ fields:
   - quarter
   - year
   sql: ${TABLE}.spend_at
-  label_prefix:
 
 - name: total_marketing_spend
   field_type: measure
@@ -66,7 +60,6 @@ fields:
   description: Total marketing spend across all channels
   value_format_name: usd
   sql: ${ad_spend}
-  label_prefix:
 
 - name: cac
   field_type: measure
@@ -78,7 +71,6 @@ fields:
   sql: ${total_marketing_spend} / nullif(${order_lines.number_of_new_customers_with_orders},
     0)
   is_merged_result: true
-  label_prefix:
 
 - name: cpc
   field_type: measure
@@ -88,7 +80,6 @@ fields:
     of clicks through ads
   value_format_name: usd
   sql: ${total_marketing_spend} / 1304000
-  label_prefix:
 
 - name: roas
   field_type: measure
@@ -100,7 +91,6 @@ fields:
   sql: ${order_lines.total_gross_revenue_from_advertising} / nullif(${total_marketing_spend},
     0)
   is_merged_result: true
-  label_prefix:
 
 - name: proas
   field_type: measure
@@ -111,4 +101,3 @@ fields:
   value_format_name: decimal_1
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   is_merged_result: true
-  label_prefix:
