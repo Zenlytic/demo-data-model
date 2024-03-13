@@ -57,7 +57,7 @@ fields:
 - name: total_marketing_spend
   field_type: measure
   type: sum
-  description: Total marketing spend across all channels 
+  description: Total marketing spend across all channels
   value_format_name: usd
   sql: ${ad_spend}
 
