@@ -10,7 +10,7 @@ fields:
   - name: event_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: false
     primary_key: 'yes'
     sql: ${TABLE}.EVENT_ID
   - name: anonymous_id
