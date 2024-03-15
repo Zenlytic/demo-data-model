@@ -16,19 +16,19 @@ fields:
   - name: anonymous_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: false
     sql: ${TABLE}.ANONYMOUS_ID
     tags:
       - customer
   - name: click_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: false
     sql: ${TABLE}.CLICK_ID
   - name: customer_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: false
     sql: ${TABLE}.CUSTOMER_ID
   - name: session_id
     field_type: dimension
