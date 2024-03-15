@@ -81,7 +81,7 @@ fields:
       clicks through ads
     value_format_name: usd
     sql: ${total_marketing_spend} / 1304000
-    hidden: true
+    hidden: false
   - name: roas
     field_type: measure
     type: number
