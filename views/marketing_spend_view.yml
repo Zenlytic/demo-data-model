@@ -31,10 +31,11 @@ fields:
     description: The campaign of the ad spend
     sql: ${TABLE}.campaign
     hidden: true
+    searchable: false
   - name: ad_spend
     field_type: dimension
     type: number
-    hidden: false
+    hidden: true
     description: The amount spent
     sql: ${TABLE}.ad_spend
   - name: spend
