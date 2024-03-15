@@ -30,7 +30,7 @@ fields:
     type: string
     description: The campaign of the ad spend
     sql: ${TABLE}.campaign
-    hidden: false
+    hidden: true
   - name: ad_spend
     field_type: dimension
     type: number
