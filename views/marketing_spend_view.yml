@@ -24,7 +24,7 @@ fields:
     type: string
     description: The source of the ad spend
     sql: ${TABLE}.source
-    hidden: false
+    hidden: true
   - name: campaign
     field_type: dimension
     type: string
