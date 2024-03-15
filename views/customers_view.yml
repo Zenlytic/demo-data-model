@@ -98,6 +98,13 @@ fields:
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
 
+- name: personal_field_ybmmbtd
+  field_type: dimension
+  type: yesno
+  label: Accepts Marketing (Duplicate)
+  description: 'Whether the customer accepts marketing. '
+  sql: ${TABLE}.ACCEPTS_MARKETING
+
 - name: first_order
   field_type: dimension_group
   type: time
