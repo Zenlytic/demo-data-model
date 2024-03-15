@@ -24,17 +24,17 @@ fields:
     type: string
     description: The source of the ad spend
     sql: ${TABLE}.source
-    hidden: true
+    hidden: false
   - name: campaign
     field_type: dimension
     type: string
     description: The campaign of the ad spend
     sql: ${TABLE}.campaign
-    hidden: true
+    hidden: false
   - name: ad_spend
     field_type: dimension
     type: number
-    hidden: true
+    hidden: false
     description: The amount spent
     sql: ${TABLE}.ad_spend
   - name: spend
@@ -51,14 +51,14 @@ fields:
       - quarter
       - year
     sql: ${TABLE}.spend_at
-    hidden: true
+    hidden: false
   - name: total_marketing_spend
     field_type: measure
     type: sum
     description: Total marketing spend across all channels
     value_format_name: usd
     sql: ${ad_spend}
-    hidden: true
+    hidden: false
   - name: cac
     field_type: measure
     type: number
@@ -71,7 +71,7 @@ fields:
       ${total_marketing_spend} /
       nullif(${order_lines.number_of_new_customers_with_orders}, 0)
     is_merged_result: true
-    hidden: true
+    hidden: false
   - name: cpc
     field_type: measure
     type: number
