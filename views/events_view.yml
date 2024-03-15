@@ -231,4 +231,5 @@ fields:
     sql: ${anonymous_id}
     extra:
       zenlytic.show: true
+    hidden: true
 event_dimension: event_name
