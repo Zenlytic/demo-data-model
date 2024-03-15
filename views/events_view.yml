@@ -120,11 +120,13 @@ fields:
     type: string
     description: The user's (geographical) timezone
     sql: ${TABLE}.GEO_TIMEZONE
+    hidden: true
   - name: os
     field_type: dimension
     type: string
     description: The full description of the user's operating system
     sql: ${TABLE}.OS
+    hidden: true
   - name: os_name
     field_type: dimension
     type: string
