@@ -147,37 +147,44 @@ fields:
     type: string
     description: The referring url scheme (where the user came from)
     sql: ${TABLE}.REFERER_URL_SCHEME
+    hidden: true
   - name: referer_url_port
     field_type: dimension
     type: string
     description: The referring url port (where the user came from)
     sql: ${TABLE}.REFERER_URL_PORT
+    hidden: true
   - name: referer_medium
     field_type: dimension
     type: string
     description: The referring medium (where the user came from)
     sql: ${TABLE}.REFERER_MEDIUM
+    hidden: true
   - name: event_name
     field_type: dimension
     type: string
     description: The action the user took on the site
     sql: ${TABLE}.EVENT_NAME
     searchable: true
+    hidden: true
   - name: page_url_path
     field_type: dimension
     type: string
     description: The page url path (partial) the user was on at the time of the event
     sql: ${TABLE}.PAGE_URL_PATH
+    hidden: true
   - name: page_url
     field_type: dimension
     type: string
     description: The (full) page url the user was on at the time of the event
     sql: ${TABLE}.PAGE_URL
+    hidden: true
   - name: utm_campaign
     field_type: dimension
     type: string
     description: The campaign the user came in on to the site
     sql: ${TABLE}.UTM_CAMPAIGN
+    hidden: true
   - name: event
     field_type: dimension_group
     type: time
@@ -193,6 +200,7 @@ fields:
       - quarter
       - year
     sql: ${TABLE}.EVENT_TIMESTAMP
+    hidden: true
   - name: number_of_events
     field_type: measure
     type: count
@@ -201,6 +209,7 @@ fields:
     extra:
       zenlytic.show: true
     primary_key_count: true
+    hidden: true
   - name: number_of_sessions
     field_type: measure
     type: count_distinct
@@ -211,6 +220,7 @@ fields:
     sql: ${session_id}
     extra:
       zenlytic.show: true
+    hidden: true
   - name: number_of_users
     field_type: measure
     type: count_distinct
