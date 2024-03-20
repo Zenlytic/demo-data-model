@@ -186,7 +186,7 @@ fields:
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
-  hidden: false
+  hidden: true
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: usd
   sql: ${revenue}
