@@ -37,6 +37,7 @@ fields:
   field_type: dimension
   type: string
   hidden: yes
+  filter_type: string
   drill_fields:
   - order_date
   - subscription_vs_otp
