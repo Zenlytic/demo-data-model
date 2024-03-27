@@ -22,9 +22,23 @@ identifiers:
     sql: ${customer_id}
 fields:
   - name: field 0
-    field_type: dimension_group
-    type: time
+    field_type: measure
+    type: sum
     hidden: 'yes'
     primary_key: 'yes'
     description: The id of the customer.
     sql: ${TABLE}.CUSTOMER_ID
+  - hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+    sql: ''
+    type: string
+    field_type: dimension
+  - hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+    sql: ''
+    field_type: dimension_group
+    type: time
