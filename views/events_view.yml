@@ -212,10 +212,3 @@ fields:
     extra:
       zenlytic.show: true
 event_dimension: event_name
-identifiers:
-  - name: identifier 0
-    type: primary
-    sql: ${event_id}
-  - name: identifier 1
-    type: foreign
-    sql: ${anonymous_id}
