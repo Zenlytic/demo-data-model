@@ -21,10 +21,18 @@ identifiers:
     type: primary
     sql: ${customer_id}
 fields:
-  - name: customer_id
-    field_type: dimension
-    type: string
+  - name: field 0
+    field_type: measure
+    type: sum
     hidden: 'yes'
     primary_key: 'yes'
     description: The id of the customer.
     sql: ${TABLE}.CUSTOMER_ID
+  - hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+    sql: ''
+    name: field 1
+    field_type: measure
+    type: sum
