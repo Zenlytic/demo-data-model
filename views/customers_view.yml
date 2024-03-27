@@ -28,7 +28,7 @@ fields:
     primary_key: 'yes'
     description: The id of the customer.
     sql: ${TABLE}.CUSTOMER_ID
-  - hidden: false
+  - hidden: true
     synonyms: []
     searchable: false
     value_format_name: decimal_0
@@ -36,7 +36,9 @@ fields:
     type: string
     field_type: dimension
   - hidden: false
-    synonyms: []
+    synonyms:
+      - hello
+      - fire
     searchable: false
     value_format_name: decimal_0
     sql: ''
