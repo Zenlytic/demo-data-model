@@ -36,3 +36,21 @@ fields:
     name: field 1
     field_type: measure
     type: sum
+  - hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+    sql: ''
+    name: field 2
+  - hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+    sql: ''
+    name: field 3
+  - hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+    sql: ''
+    name: field 4
