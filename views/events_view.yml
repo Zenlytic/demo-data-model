@@ -217,5 +217,8 @@ identifiers:
     type: primary
     sql: ${event_id}
   - name: identifier 1
+    sql: lkj
     type: foreign
-    sql: ${anonymous_id}
+  - name: identifier 2
+    sql: lkj
+    type: primary
