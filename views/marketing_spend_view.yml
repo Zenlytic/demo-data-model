@@ -1,6 +1,6 @@
 version: 1
 type: view
-name: ''
+name: marketing
 description: A view for marketing spend.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
