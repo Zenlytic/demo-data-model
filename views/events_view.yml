@@ -7,12 +7,6 @@ sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
 fields:
-  - name: hello there
-    field_type: dimension
-    type: string
-    hidden: 'yes'
-    primary_key: 'yes'
-    sql: ${TABLE}.EVENT_ID
   - name: anonymous_id
     field_type: dimension
     type: string
@@ -174,14 +168,14 @@ fields:
     datatype: timestamp
     description: The time of interaction with the site
     timeframes:
-      - raw
       - date
-      - week_index
       - week
-      - month_of_year
       - month
       - quarter
       - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
     sql: ${TABLE}.EVENT_TIMESTAMP
   - name: number_of_events
     field_type: measure
@@ -191,6 +185,7 @@ fields:
     extra:
       zenlytic.show: true
     primary_key_count: true
+    timeframes: []
   - name: number_of_sessions
     field_type: measure
     type: count_distinct
