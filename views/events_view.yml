@@ -7,7 +7,7 @@ sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
 fields:
-  - name: event_id
+  - name: ''
     field_type: dimension
     type: string
     hidden: 'yes'
