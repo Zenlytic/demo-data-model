@@ -19,7 +19,7 @@ fields:
     field_type: dimension
     description: ''
     type: string
-    sql: ''
+    sql: ${TABLE}.FLAME
     hidden: false
     synonyms: []
     searchable: false

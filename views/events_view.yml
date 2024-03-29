@@ -76,6 +76,7 @@ fields:
     type: string
     description: The user's browser language setting
     sql: ${TABLE}.BROWSER_LANGUAGE
+    timeframes: []
   - name: ip_address
     field_type: dimension
     type: string
