@@ -22,8 +22,8 @@ identifiers:
     sql: ${customer_id}
 fields:
   - name: customer_id
-    field_type: measure
-    type: sum
+    field_type: dimension
+    type: string
     hidden: 'yes'
     primary_key: 'yes'
     description: The id of the customer.
