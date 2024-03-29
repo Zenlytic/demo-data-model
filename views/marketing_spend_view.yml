@@ -15,3 +15,21 @@ fields:
     value_format_name: decimal_0
     hidden: false
     synonyms: []
+  - name: flame
+    field_type: dimension
+    description: ''
+    type: string
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+  - name: water
+    field_type: measure
+    description: ''
+    type: sum
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
