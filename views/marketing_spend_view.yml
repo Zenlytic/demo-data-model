@@ -8,7 +8,7 @@ default_date: spend
 row_label: Spend Item
 fields:
   - name: ''
-    description: ''
+    description: jk
     field_type: measure
     type: sum
     sql: ''
