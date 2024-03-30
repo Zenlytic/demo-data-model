@@ -15,7 +15,7 @@ elements:
     time_period: 6 months
     filters:
     - field: order_lines.subscription_vs_otp
-      value: ""
+      value: null
   - title: Product sales by SKU (MTD vs last MTD)
     model: pure_organics
     metric: order_lines.total_gross_revenue
