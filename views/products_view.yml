@@ -1,6 +1,6 @@
 version: 1
 type: view
-name: products
+name: product
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
@@ -9,7 +9,7 @@ identifiers:
     type: primary
     sql: ${product_id}
 fields:
-  - name: product_id
+  - name: testing
     field_type: dimension
     type: string
     hidden: 'yes'
