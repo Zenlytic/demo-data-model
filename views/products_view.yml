@@ -10,8 +10,8 @@ identifiers:
     sql: ${product_id}
 fields:
   - name: testing
-    field_type: dimension
-    type: string
+    field_type: measure
+    type: sum
     hidden: 'yes'
     primary_key: 'yes'
     sql: ${TABLE}.PRODUCT_ID
