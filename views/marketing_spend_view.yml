@@ -30,8 +30,8 @@ fields:
     description: The campaign of the ad spend
     sql: ${TABLE}.campaign
   - name: ad_spend
-    field_type: measure
-    type: number
+    field_type: dimension
+    type: string
     hidden: 'yes'
     description: The amount spent
     sql: ${TABLE}.ad_spend
