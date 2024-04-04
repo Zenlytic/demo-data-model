@@ -9,7 +9,7 @@ identifiers:
     type: primary
     sql: ${product_id}
 fields:
-  - name: ''
+  - name: jkl
     field_type: dimension
     type: string
     hidden: 'yes'
