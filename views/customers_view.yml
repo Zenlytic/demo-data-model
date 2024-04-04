@@ -21,7 +21,7 @@ identifiers:
     type: primary
     sql: ${customer_id}
 fields:
-  - name: ''
+  - name: jk
     field_type: dimension
     type: string
     hidden: 'yes'
