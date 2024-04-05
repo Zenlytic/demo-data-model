@@ -15,6 +15,7 @@ fields:
     sql: ${TABLE}.ANONYMOUS_ID
     tags:
       - customer
+    description: Anonymous id description
   - name: click_id
     field_type: dimension
     type: string
