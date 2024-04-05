@@ -14,8 +14,8 @@ identifiers:
     sql: ${customer_id}
 fields:
   - name: order_line_id
-    field_type: measure
-    type: average
+    field_type: dimension
+    type: string
     hidden: false
     primary_key: 'yes'
     sql: ${TABLE}.ORDER_LINE_ID
