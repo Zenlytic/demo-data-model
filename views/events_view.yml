@@ -8,8 +8,8 @@ default_date: event
 row_label: Event
 fields:
   - name: anonymous_id
-    field_type: dimension
-    type: string
+    field_type: measure
+    type: sum
     hidden: 'yes'
     is_primary_key: true
     sql: ${TABLE}.ANONYMOUS_ID
