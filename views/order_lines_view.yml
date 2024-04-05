@@ -15,7 +15,7 @@ identifiers:
 fields:
   - name: order_line_id
     field_type: measure
-    type: sum
+    type: average
     hidden: false
     primary_key: 'yes'
     sql: ${TABLE}.ORDER_LINE_ID
