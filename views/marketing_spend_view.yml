@@ -15,8 +15,8 @@ fields:
     sql: ${TABLE}.spend_id
     description: Represents a unique key for each spend event.
   - name: channel
-    field_type: dimension
-    type: string
+    field_type: measure
+    type: sum
     description: The channel of the ad spend
     sql: ${TABLE}.channel
   - name: source
