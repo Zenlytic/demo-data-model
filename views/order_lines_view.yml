@@ -14,12 +14,13 @@ identifiers:
     sql: ${customer_id}
 fields:
   - name: order_line_id
-    field_type: measure
-    type: sum
+    field_type: dimension
+    type: string
     hidden: 'yes'
     primary_key: 'yes'
     sql: ${TABLE}.ORDER_LINE_ID
     description: testing
+    timeframes: []
   - name: customer_id
     field_type: dimension
     type: string
