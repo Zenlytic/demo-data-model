@@ -19,7 +19,7 @@ identifiers:
   type: primary
   sql: ${customer_id}
 fields:
-- name: customer_id
+- name: 
   field_type: dimension
   type: string
   hidden: yes
