@@ -1,7 +1,11 @@
 version: 1
 type: view
 name: customers
+<<<<<<< HEAD
 description: This view provides a comprehensive overview of customer data for Pure
+=======
+description: "This view provides a comprehensive overview of customer data for Pure
+>>>>>>> 2a50992bd5ba2c7e28ed31c98d584400b8ceea0e
   Organics, including details such as the customer's ID, email address, name, address,
   and location. The `accepts_marketing` field indicates whether the customer has opted
   in to marketing communications, while the `first_order` field provides the date
@@ -9,7 +13,11 @@ description: This view provides a comprehensive overview of customer data for Pu
   `first_promotion`, and `first_campaign` fields provide information about the customer's
   initial marketing interactions with the company. Use this view to gain insights
   into customer behavior, track customer acquisition and retention, and optimize your
+<<<<<<< HEAD
   marketing campaigns to drive revenue and growth.
+=======
+  marketing campaigns to drive revenue and growth. "
+>>>>>>> 2a50992bd5ba2c7e28ed31c98d584400b8ceea0e
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
@@ -24,11 +32,16 @@ fields:
   type: string
   hidden: yes
   primary_key: yes
+<<<<<<< HEAD
+=======
+  description: The id of the customer.
+>>>>>>> 2a50992bd5ba2c7e28ed31c98d584400b8ceea0e
   sql: ${TABLE}.CUSTOMER_ID
 
 - name: accepts_marketing
   field_type: dimension
   type: yesno
+  description: 'Whether the customer accepts marketing. '
   sql: ${TABLE}.ACCEPTS_MARKETING
 
 - name: email
@@ -60,8 +73,6 @@ fields:
   type: string
   description: The customer's city (location)
   sql: ${TABLE}.CITY
-  drill_up: state
-  drill_down: zipcode
 
 - name: state
   field_type: dimension
@@ -69,14 +80,12 @@ fields:
   description: The customer's state (location)
   sql: ${TABLE}.STATE
   searchable: true
-  drill_down: city
 
 - name: zipcode
   field_type: dimension
   type: string
   description: The customer's zip code
   sql: ${TABLE}.ZIPCODE
-  drill_up: city
 
 - name: first_marketing_group
   field_type: dimension
@@ -95,6 +104,13 @@ fields:
   type: string
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
+
+- name: personal_field_ybmmbtd
+  field_type: dimension
+  type: yesno
+  label: Accepts Marketing (Duplicate)
+  description: 'Whether the customer accepts marketing. '
+  sql: ${TABLE}.ACCEPTS_MARKETING
 
 - name: first_order
   field_type: dimension_group
