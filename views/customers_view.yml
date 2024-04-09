@@ -22,7 +22,7 @@ fields:
 - name: 
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: yeet
   primary_key: yes
   description: The id of the customer.
   sql: ${TABLE}.CUSTOMER_ID
