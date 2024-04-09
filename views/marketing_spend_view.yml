@@ -10,8 +10,8 @@ fields:
   - name: unique_key
     field_type: dimension
     type: string
-    hidden: 'yes'
-    primary_key: 'yes'
+    hidden: yes
+    primary_key: yes
     sql: ${TABLE}.spend_id
     description: Represents a unique key for each spend event.
   - name: channel
@@ -32,7 +32,7 @@ fields:
   - name: ad_spend
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: yes
     description: The amount spent
     sql: ${TABLE}.ad_spend
   - name: spend

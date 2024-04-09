@@ -62,8 +62,6 @@ fields:
   type: string
   description: The customer's city (location)
   sql: ${TABLE}.CITY
-  drill_up: state
-  drill_down: zipcode
 
 - name: state
   field_type: dimension
@@ -71,14 +69,12 @@ fields:
   description: The customer's state (location)
   sql: ${TABLE}.STATE
   searchable: true
-  drill_down: city
 
 - name: zipcode
   field_type: dimension
   type: string
   description: The customer's zip code
   sql: ${TABLE}.ZIPCODE
-  drill_up: city
 
 - name: first_marketing_group
   field_type: dimension

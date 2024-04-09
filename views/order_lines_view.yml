@@ -16,13 +16,13 @@ fields:
   - name: order_line_id
     field_type: dimension
     type: string
-    hidden: 'yes'
-    primary_key: 'yes'
+    hidden: yes
+    primary_key: yes
     sql: ${TABLE}.ORDER_LINE_ID
   - name: customer_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: yes
     drill_fields:
       - customers.email
       - customers.state
@@ -35,8 +35,7 @@ fields:
   - name: order_id
     field_type: dimension
     type: string
-    hidden: 'yes'
-    filter_type: string
+    hidden: yes
     drill_fields:
       - order_date
       - subscription_vs_otp
@@ -50,27 +49,27 @@ fields:
   - name: product_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.PRODUCT_ID
   - name: discount
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.DISCOUNT
   - name: revenue
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.REVENUE
   - name: price
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.PRICE
   - name: quantity
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.QUANTITY
   - name: campaign
     field_type: dimension
@@ -80,7 +79,6 @@ fields:
       order.
     sql: ${TABLE}.CAMPAIGN
     searchable: true
-    drill_up: marketing_source
   - name: promotion
     field_type: dimension
     type: string
@@ -101,8 +99,6 @@ fields:
       order.
     sql: ${TABLE}.MARKETING_SOURCE
     searchable: true
-    drill_up: marketing_channel
-    drill_down: campaign
   - name: marketing_channel
     field_type: dimension
     type: string
@@ -111,7 +107,6 @@ fields:
       order.
     sql: ${TABLE}.MARKETING_CHANNEL
     searchable: true
-    drill_down: marketing_source
   - name: last_click_marketing_channel
     field_type: dimension
     type: string
