@@ -15,7 +15,7 @@ fields:
   sql: ${TABLE}.spend_id
 
 - name: channel
-  field_type: dimension
+  field_type: dimenn
   type: string
   description: The channel of the ad spend
   sql: ${TABLE}.channel
