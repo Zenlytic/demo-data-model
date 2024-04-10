@@ -21,7 +21,7 @@ identifiers:
 fields:
 - name: customer_id
   field_type: dimension
-  type: joe
+  type: string
   hidden: yes
   primary_key: yes
   description: The id of the customer.
