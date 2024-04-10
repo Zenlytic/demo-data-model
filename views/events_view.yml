@@ -8,22 +8,14 @@ default_date: event
 row_label: Event
 fields:
   - name: anonymous_id
-    field_type: dimension_group
-    type: time
+    field_type: dimension
+    type: string
     hidden: 'yes'
     primary_key: true
     sql: ${TABLE}.ANONYMOUS_ID
     tags:
       - customer
-    timeframes:
-      - date
-      - week
-      - month
-      - quarter
-      - year
-      - day_of_year
-      - week_of_year
-      - month_of_year
+    timeframes: []
   - name: click_id
     field_type: dimension
     type: string
