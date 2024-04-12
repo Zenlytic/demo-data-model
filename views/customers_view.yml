@@ -30,7 +30,7 @@ fields:
 - name: accepts_marketing
   field_type: dimension
   type: yesno
-  description: 'Whether the customer accepts marketing. '
+  description: Whether the customer accepts marketing. NJM
   sql: ${TABLE}.ACCEPTS_MARKETING
 
 - name: email
