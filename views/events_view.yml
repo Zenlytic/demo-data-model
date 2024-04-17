@@ -10,7 +10,7 @@ fields:
   - name: anonymous_id
     field_type: dimension
     type: string
-    hidden: yes
+    hidden: 'yes'
     primary_key: true
     sql: ${TABLE}.ANONYMOUS_ID
     tags:
@@ -18,17 +18,17 @@ fields:
   - name: click_id
     field_type: dimension
     type: string
-    hidden: yes
+    hidden: 'yes'
     sql: ${TABLE}.CLICK_ID
   - name: customer_id
     field_type: dimension
     type: string
-    hidden: yes
+    hidden: 'yes'
     sql: ${TABLE}.CUSTOMER_ID
   - name: session_id
     field_type: dimension
     type: string
-    hidden: yes
+    hidden: 'yes'
     sql: ${TABLE}.SESSION_ID
   - name: device_is_mobile
     field_type: dimension
@@ -181,7 +181,7 @@ fields:
   - name: number_of_events
     field_type: measure
     type: count
-    sql: "*"
+    sql: '*'
     description: The number of events from interaction with the site
     value_format_name: decimal_0
     extra:
@@ -207,3 +207,7 @@ fields:
     extra:
       zenlytic.show: true
 event_dimension: event_name
+identifiers:
+  - name: event_id
+    sql: ${anonymous_id}
+    type: primary
