@@ -208,6 +208,6 @@ fields:
       zenlytic.show: true
 event_dimension: event_name
 identifiers:
-  - name: event_id
+  - name: anonymous_id
     sql: ${anonymous_id}
     type: primary
