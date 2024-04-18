@@ -190,7 +190,7 @@ fields:
   - name: total_net_revenue
     field_type: measure
     type: number
-    description: Total net revenue = gross revenue - discounts
+    description: Total net revenue = gross revenue - discounts. When the user asks for revenue or sales, always use this field.
     value_format_name: usd
     sql: ${total_gross_revenue} - ${total_discounts}
   - name: subscription_revenue
