@@ -19,13 +19,13 @@ fields:
 - name: product_type
   field_type: dimension
   type: string
-  description: 'The type of the product sold (Eye, Face, Lip, etc). Always use case insensitive filters when searching for products, due to weird namings on our side.'
+  description: 'The type of the product sold (Eye, Face, Lip, etc).'
   sql: ${TABLE}.PRODUCT_TYPE
 
 - name: product_title
   field_type: dimension
   type: string
-  description: The title of the product sold (Everyday SPF Cream, etc)
+  description: The title of the product sold (Everyday SPF Cream, etc).  Always use case insensitive filters when searching for products, due to weird namings on our side.
   sql: ${TABLE}.PRODUCT_TITLE
   tags:
   - product
