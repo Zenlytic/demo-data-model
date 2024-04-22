@@ -6,7 +6,7 @@ identifiers:
     sql: ${customer_id}
     type: primary
 fields:
-  - name: customer_id
+  - name: car_make
     label: ''
     field_type: dimension
     description: ''
@@ -16,7 +16,7 @@ fields:
     synonyms: []
     searchable: false
     value_format_name: decimal_0
-  - name: car_make
+  - name: customer_id
     label: ''
     field_type: dimension
     description: ''
