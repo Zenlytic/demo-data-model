@@ -1,11 +1,24 @@
 version: 1
 type: view
-name: customers
+name: orders
 identifiers:
   - name: customer_id
-    sql: ${customer_id}
+    sql: ''
+    type: foreign
+  - name: order_id
+    sql: ''
     type: primary
 fields:
+  - name: order_id
+    label: ''
+    field_type: dimension
+    description: ''
+    type: string
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
   - name: customer_id
     label: ''
     field_type: dimension
