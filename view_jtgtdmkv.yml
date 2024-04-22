@@ -1,0 +1,28 @@
+version: 1
+type: view
+name: customer_cars
+identifiers:
+  - name: customer_id
+    sql: ${customer_id}
+    type: primary
+fields:
+  - name: customer_id
+    label: ''
+    field_type: dimension
+    description: ''
+    type: string
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+  - name: car_make
+    label: ''
+    field_type: dimension
+    description: ''
+    type: string
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
