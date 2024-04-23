@@ -1,0 +1,31 @@
+version: 1
+type: view
+name: clients
+identifiers:
+  - name: client_id
+    sql: ''
+    type: primary
+  - name: client_car_id
+    sql: ''
+    type: foreign
+fields:
+  - name: client_car_id
+    label: ''
+    field_type: dimension
+    type: string
+    description: ''
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+  - name: client_id
+    label: ''
+    field_type: dimension
+    type: string
+    description: ''
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
