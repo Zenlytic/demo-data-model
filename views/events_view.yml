@@ -208,6 +208,6 @@ fields:
       zenlytic.show: true
 event_dimension: event_name
 identifiers:
-  - name: ''
-    sql: ''
+  - name: testing
+    sql: ${click_id}
     type: primary
