@@ -207,7 +207,3 @@ fields:
     extra:
       zenlytic.show: true
 event_dimension: event_name
-identifiers:
-  - name: testing
-    sql: ${click_id}
-    type: primary
