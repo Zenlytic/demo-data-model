@@ -7,7 +7,7 @@ sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
 fields:
-  - name: 
+  - name: anonymous_id
     field_type: dimension
     type: string
     hidden: hey
@@ -181,7 +181,7 @@ fields:
   - name: number_of_events
     field_type: measure
     type: count
-    sql: "*"
+    sql: '*'
     description: The number of events from interaction with the site
     value_format_name: decimal_0
     extra:
