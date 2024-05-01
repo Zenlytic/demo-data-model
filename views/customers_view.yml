@@ -21,7 +21,6 @@ identifiers:
 fields:
 - name: customer_id
   field_type: dimension
-  type: string
   hidden: yes
   primary_key: yes
   description: The id of the customer.
@@ -35,7 +34,6 @@ fields:
 
 - name: email
   field_type: dimension
-  type: string
   description: The customer's email address
   required_access_grants:
   - pii_access
