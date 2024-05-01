@@ -7,11 +7,11 @@ sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
 fields:
-  - name: anonymous_id
+  - name: 
     field_type: dimension
     type: string
     hidden: yes
-    primary_key: true
+    primary_key: what
     sql: ${TABLE}.ANONYMOUS_ID
     tags:
       - customer
