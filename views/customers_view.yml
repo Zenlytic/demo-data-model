@@ -41,8 +41,8 @@ fields:
       - pii_access
     sql: ${TABLE}.EMAIL
   - name: first_name
-    field_type: dimension
-    type: string
+    field_type: measure
+    type: sum
     sql: ${TABLE}.FIRST_NAME
     label: First Name
   - name: last_name
