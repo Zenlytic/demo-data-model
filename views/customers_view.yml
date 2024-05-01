@@ -44,7 +44,7 @@ fields:
     field_type: dimension
     type: string
     sql: ${TABLE}.FIRST_NAME
-    label: Foobar
+    label: First Name
   - name: last_name
     field_type: dimension
     type: string
