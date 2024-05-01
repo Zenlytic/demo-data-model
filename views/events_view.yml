@@ -10,7 +10,7 @@ fields:
   - name: 
     field_type: dimension
     type: string
-    hidden: yes
+    hidden: hey
     primary_key: what
     sql: ${TABLE}.ANONYMOUS_ID
     tags:
