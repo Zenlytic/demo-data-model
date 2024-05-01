@@ -10,11 +10,20 @@ identifiers:
     sql: ${product_id}
 fields:
   - name: product_id
-    field_type: dimension
-    type: string
+    field_type: dimension_group
+    type: time
     hidden: yes
     primary_key: yes
     sql: ${TABLE}.PRODUCT_ID
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
   - name: product_type
     field_type: measure
     type: sum
