@@ -39,6 +39,6 @@ fields:
     searchable: true
   - name: price
     field_type: dimension
-    type: strings
+    type: string
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
