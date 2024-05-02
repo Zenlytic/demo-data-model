@@ -25,8 +25,8 @@ fields:
       - week_of_year
       - month_of_year
   - name: product_type
-    field_type: measure
-    type: sum
+    field_type: dimension
+    type: string
     description: 'The type of the product sold (Eye, Face, Lip, etc) '
     sql: ${TABLE}.PRODUCT_TYPE
   - name: product_title
@@ -39,6 +39,6 @@ fields:
     searchable: true
   - name: price
     field_type: dimension
-    type: string
+    type: strings
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
