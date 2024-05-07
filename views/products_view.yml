@@ -11,7 +11,7 @@ identifiers:
 fields:
 - name: product_id
   field_type: dimension
-  type: stringxx
+  type: string
   hidden: yes
   primary_key: yes
   sql: ${TABLE}.PRODUCT_ID
