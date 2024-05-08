@@ -9,20 +9,20 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
-  - name: customer_id
+  - name: customer
     type: foreign
     sql: ${customer_id}
 fields:
   - name: order_line_id
     field_type: dimension
     type: string
-    hidden: 'yes'
-    primary_key: 'yes'
+    hidden: yes
+    primary_key: yes
     sql: ${TABLE}.ORDER_LINE_ID
   - name: customer_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: yes
     drill_fields:
       - customers.email
       - customers.state
@@ -35,7 +35,7 @@ fields:
   - name: order_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: yes
     filter_type: string
     drill_fields:
       - order_date
@@ -50,27 +50,27 @@ fields:
   - name: product_id
     field_type: dimension
     type: string
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.PRODUCT_ID
   - name: discount
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.DISCOUNT
   - name: revenue
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.REVENUE
   - name: price
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.PRICE
   - name: quantity
     field_type: dimension
     type: number
-    hidden: 'yes'
+    hidden: yes
     sql: ${TABLE}.QUANTITY
   - name: campaign
     field_type: dimension
