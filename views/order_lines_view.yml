@@ -9,6 +9,9 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
+  - name: customer
+    sql: ${customer_id}
+    type: foreign
 fields:
   - name: order_line_id
     field_type: dimension
