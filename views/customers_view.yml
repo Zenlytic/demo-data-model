@@ -17,7 +17,7 @@ sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
 identifiers:
-  - name: customer_id
+  - name: customer
     sql: ${customer_id}
     type: primary
 fields:
