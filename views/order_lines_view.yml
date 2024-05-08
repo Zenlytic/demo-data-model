@@ -9,7 +9,7 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
-  - name: customer
+  - name: customer_id
     sql: ${customer_id}
     type: foreign
 fields:

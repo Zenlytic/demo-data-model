@@ -17,9 +17,9 @@ sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
 identifiers:
-  - name: customer
+  - name: customer_id
     sql: ${customer_id}
-    type: primary
+    type: foreign
 fields:
   - name: customer_id
     field_type: dimension
