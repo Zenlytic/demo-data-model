@@ -19,7 +19,7 @@ row_label: Customer
 identifiers:
   - name: customer_id
     sql: ${customer_id}
-    type: foreign
+    type: primary
 fields:
   - name: customer_id
     field_type: dimension
