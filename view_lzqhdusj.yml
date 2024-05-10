@@ -1,0 +1,31 @@
+version: 1
+type: view
+name: order_lines
+identifiers:
+  - name: order_line_id
+    sql: ${order_line_id}
+    type: primary
+  - name: customers
+    sql: ${my_other_customer_id}
+    type: foreign
+fields:
+  - name: order_line_id
+    label: ''
+    field_type: dimension
+    type: string
+    description: ''
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
+  - name: my_other_customer_id
+    label: ''
+    field_type: dimension
+    type: string
+    description: ''
+    sql: ''
+    hidden: false
+    synonyms: []
+    searchable: false
+    value_format_name: decimal_0
