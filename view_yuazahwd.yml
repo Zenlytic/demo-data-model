@@ -2,7 +2,7 @@ version: 1
 type: view
 name: customers
 identifiers:
-  - name: customers
+  - name: customer_id
     sql: ${customer_id}
     type: primary
 fields:

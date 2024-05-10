@@ -5,7 +5,7 @@ identifiers:
   - name: order_line_id
     sql: ${order_line_id}
     type: primary
-  - name: customers
+  - name: customer_id
     sql: ${customer_id}
     type: foreign
 fields:
