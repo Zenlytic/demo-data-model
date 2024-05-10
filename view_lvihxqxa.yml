@@ -3,10 +3,10 @@ type: view
 name: customer_cars
 identifiers:
   - name: customers
-    sql: ${my_customer_id}
+    sql: ${customer_id}
     type: primary
 fields:
-  - name: my_customer_id
+  - name: customer_id
     label: ''
     field_type: dimension
     type: string
