@@ -108,7 +108,7 @@ fields:
   description: The time at which the customer's first order was placed.
   timeframes:
   - raw
-  - date
+  - DATE
   - week_index
   - week
   - month_of_year
