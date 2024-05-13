@@ -6,12 +6,12 @@ sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
 identifiers:
-  - name: product_id
-    type: foreign
-    sql: ${product_id}
   - name: order_line_id
     sql: ${order_line_id}
     type: primary
+  - name: customer_id
+    type: foreign
+    sql: ${customer_id}
 fields:
   - name: order_line_id
     field_type: dimension
