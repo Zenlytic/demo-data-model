@@ -20,10 +20,13 @@ identifiers:
   - name: customer_id
     type: primary
     sql: ${customer_id}
+  - name: ''
+    sql: ''
+    type: primary
 fields:
   - name: customer_id
-    field_type: dimension
-    type: string
+    field_type: measure
+    type: sum
     hidden: yes
     primary_key: yes
     description: The id of the customer.
