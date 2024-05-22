@@ -198,7 +198,7 @@ fields:
     field_type: measure
     type: number
     description: Total net revenue = gross revenue - discounts
-    value_format_name: usd
+    value_format_name: usd_1
     sql: ${total_gross_revenue} - ${total_discounts}
   - name: subscription_revenue
     field_type: measure
