@@ -1,10 +1,8 @@
 version: 1
 type: dashboard
 name: product_dashboard
+label: Product Dashboard
 description: Product sales by styles and SKUs
-filters:
-  - field: order_lines.subscription_vs_otp
-    value: Subscription, One Time Purchase
 
 elements:
   - title: Product sales by type last 6 months

@@ -17,7 +17,6 @@ fields:
     field_type: dimension
     type: string
     hidden: yes
-    primary_key: yes
     sql: ${TABLE}.ORDER_LINE_ID
   - name: customer_id
     field_type: dimension
