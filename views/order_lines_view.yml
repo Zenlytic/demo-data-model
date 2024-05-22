@@ -173,7 +173,7 @@ fields:
     type: sum
     label: Big Number
     description: Total gross revenue = revenue from product sales + shipping revenues.
-    value_format_name: usd
+    value_format_name: usd_0
     sql: ${revenue} * 6
   - name: total_gross_revenue_from_advertising
     field_type: measure
