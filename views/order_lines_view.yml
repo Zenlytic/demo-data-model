@@ -168,7 +168,7 @@ fields:
     synonyms:
       - sales
       - revenue
-  - name: big number
+  - name: big_number
     field_type: measure
     type: sum
     label: Big Number
