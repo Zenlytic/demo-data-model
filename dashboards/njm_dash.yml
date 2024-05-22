@@ -1,0 +1,13 @@
+version: 1
+type: dashboard
+name: njm_dashboard
+label: NJM Dashboard
+description: Product sales by styles and SKUs
+
+elements:
+  - title: Product sales by type last 6 months
+    model: pure_organics
+    metric: order_lines.total_gross_revenue
+    plot_type: multi_bar
+    slice_by: [order_lines.order_month]
+    time_period: 6 months
