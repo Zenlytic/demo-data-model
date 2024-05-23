@@ -25,7 +25,7 @@ fields:
     field_type: dimension
     type: string
     sql: ${TABLE}.FIRST_PROMOTION
-    label: Second Promo
+    label: Second Promo2
   - name: accepts_marketing
     field_type: dimension
     type: yesno
