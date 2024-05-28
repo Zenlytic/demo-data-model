@@ -35,7 +35,7 @@ fields:
   - name: order_id
     field_type: dimension
     type: string
-    hidden: yes
+    hidden: false
     drill_fields:
       - order_date
       - subscription_vs_otp
