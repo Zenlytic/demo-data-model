@@ -3,7 +3,7 @@ type: view
 name: events
 description: A view for events
 model_name: pure_organics
-sql_table_name: demo_prod.events
+sql_table_name: ''
 default_date: event
 row_label: Event
 fields:
@@ -181,7 +181,7 @@ fields:
   - name: number_of_events
     field_type: measure
     type: count
-    sql: "*"
+    sql: '*'
     description: The number of events from interaction with the site
     value_format_name: decimal_0
     extra:
