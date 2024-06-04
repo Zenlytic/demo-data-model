@@ -169,6 +169,7 @@ fields:
     datatype: timestamp
     description: The time of interaction with the site
     timeframes:
+      - raw
       - date
       - week
       - month
