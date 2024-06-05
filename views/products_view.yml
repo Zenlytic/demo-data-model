@@ -37,4 +37,4 @@ fields:
   field_type: dimension
   type: string
   description: Blahabababbaba
-  sql: ${TABLE}.PRICE
+  sql: ${TABLE}.PRICE "+"
