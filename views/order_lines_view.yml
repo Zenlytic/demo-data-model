@@ -259,7 +259,7 @@ fields:
       The unique number of units purchased (e.g. customer orders: 2 lip gloss
       and 1 blush = 3 units sold)
     value_format_name: decimal_0
-    sql: ${quantity}
+    sql: ${quantity} / 0
   - name: total_cogs
     field_type: measure
     type: sum
