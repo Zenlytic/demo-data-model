@@ -34,17 +34,3 @@ fields:
     type: string
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - null
-  - timeframes: []
-  - timeframes: []
