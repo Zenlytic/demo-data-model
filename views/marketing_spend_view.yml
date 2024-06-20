@@ -13,7 +13,7 @@ fields:
     hidden: yes
     primary_key: yes
     sql: ${TABLE}.spend_id
-    description: Represents a unique key for each spend event.
+    description: Represents a unique key for each spend event..
   - name: channel
     field_type: dimension
     type: string
