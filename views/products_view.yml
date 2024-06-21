@@ -9,7 +9,7 @@ identifiers:
     type: primary
     sql: ${product_id}
 fields:
-  - name: uio
+  - name: jk
     field_type: dimension
     type: string
     description: 'The type of the product sold (Eye, Face, Lip, etc) '
