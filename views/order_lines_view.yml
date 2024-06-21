@@ -58,17 +58,18 @@ fields:
     sql: ${TABLE}.DISCOUNT
   - name: revenue
     field_type: dimension
-    type: number
+    type: string
     hidden: yes
     sql: ${TABLE}.REVENUE
+    timeframes: []
   - name: price
     field_type: dimension
-    type: number
+    type: string
     hidden: yes
     sql: ${TABLE}.PRICE
   - name: quantity
     field_type: dimension
-    type: number
+    type: string
     hidden: yes
     sql: ${TABLE}.QUANTITY
   - name: campaign
