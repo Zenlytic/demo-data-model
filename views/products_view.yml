@@ -15,6 +15,7 @@ fields:
     hidden: yes
     primary_key: yes
     sql: ${TABLE}.PRODUCT_ID
+    label: CUZ
   - name: product_type
     field_type: dimension
     type: string
