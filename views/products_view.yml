@@ -1,6 +1,6 @@
 version: 1
 type: view
-name: products
+name: jk
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
@@ -15,7 +15,6 @@ fields:
     description: 'The type of the product sold (Eye, Face, Lip, etc) '
     sql: ${TABLE}.PRODUCT_TYPE
     searchable: true
-    label: yeet
   - name: product_title
     field_type: dimension
     type: string
