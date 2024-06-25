@@ -42,17 +42,17 @@ fields:
     sql: ${TABLE}.MARKETING_CHANNEL
   - name: utm_medium
     field_type: dimension
-    type: string
+    type: yesno
     description: The marketing medium the user came through to reach the site initially
     sql: ${TABLE}.UTM_MEDIUM
   - name: utm_source
     field_type: dimension
-    type: string
+    type: number
     description: The marketing source the user came through to reach the site initially
     sql: ${TABLE}.UTM_SOURCE
   - name: promotion
     field_type: dimension
-    type: string
+    type: yesno
     description: The promotion the user came through to reach the site initially
     sql: ${TABLE}.PROMOTION
   - name: device_type
@@ -182,7 +182,7 @@ fields:
   - name: number_of_events
     field_type: measure
     type: count
-    sql: "*"
+    sql: '*'
     description: The number of events from interaction with the site
     value_format_name: decimal_0
     extra:

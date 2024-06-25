@@ -9,9 +9,9 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
-  - name: customer_id
-    type: foreign
-    sql: ${customer_id}
+  - name: order_line_id
+    sql: ${order_line_id}
+    type: primary
 fields:
   - name: order_line_id
     field_type: dimension
@@ -274,6 +274,13 @@ fields:
     description: The total net revenue - allocated cost of goods sold to the order line
     value_format_name: usd
     sql: ${total_net_revenue} - ${total_cogs}
+  - name: jk
+    field_type: measure
+    type: sum
+    sql: null
+    hidden: false
+    synonyms: []
+    value_format_name: decimal_0
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
@@ -282,4 +289,4 @@ fields_for_analysis:
   - promotion
   - campaign
   - products.product_title
-description: Description of order_lines view.
+description: Description of order_lines view.m
