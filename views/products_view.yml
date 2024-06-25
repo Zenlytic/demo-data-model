@@ -1,6 +1,6 @@
 version: 1
 type: view
-name: jk
+name: products
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
