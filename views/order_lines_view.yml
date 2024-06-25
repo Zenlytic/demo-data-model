@@ -12,6 +12,9 @@ identifiers:
   - name: customer_id
     type: foreign
     sql: ${customer_id}
+  - name: order_line_id
+    sql: ${order_line_id}
+    type: primary
 fields:
   - name: order_line_id
     field_type: dimension
