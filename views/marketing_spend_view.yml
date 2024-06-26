@@ -22,12 +22,3 @@ fields:
     description: The source of the ad spend
     sql: ${TABLE}.source
     timeframes: []
-  - field_type: measure
-    value_format_name: decimal_0
-    hidden: false
-    name: some_measure
-    sql: null
-    synonyms: []
-    tags: []
-    type: sum
-    timeframes: []
