@@ -28,8 +28,3 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
-  - name: campaign
-    field_type: measure
-    type: sum
-    description: The campaign of the ad spend
-    sql: ${TABLE}.campaign
