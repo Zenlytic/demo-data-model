@@ -28,3 +28,11 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
+  - field_type: measure
+    value_format_name: decimal_0
+    hidden: false
+    name: some_measure
+    sql: null
+    synonyms: []
+    tags: []
+    type: sum
