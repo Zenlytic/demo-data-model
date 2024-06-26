@@ -5,32 +5,35 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
 identifiers:
-  - name: product_id
-    type: primary
-    sql: ${product_id}
+- name: product_id
+  type: primary
+  sql: ${product_id}
 fields:
-  - name: product_id
-    field_type: dimension
-    type: string
-    hidden: yes
-    primary_key: yes
-    sql: ${TABLE}.PRODUCT_ID
-  - name: product_type
-    field_type: dimension
-    type: string
-    description: 'The type of the product sold (Eye, Face, Lip, etc) '
-    sql: ${TABLE}.PRODUCT_TYPE
-    searchable: true
-  - name: product_title
-    field_type: dimension
-    type: string
-    description: The title of the product sold (Everyday SPF Cream, etc)
-    sql: ${TABLE}.PRODUCT_TITLE
-    tags:
-      - product
-    searchable: true
-  - name: price
-    field_type: dimension
-    type: string
-    description: Blahabababbaba
-    sql: ${TABLE}.PRICE
+- name: product_id
+  field_type: dimension
+  type: string
+  hidden: true
+  primary_key: true
+  sql: ${TABLE}.PRODUCT_ID
+
+- name: product_type
+  field_type: dimension
+  type: string
+  description: 'The type of the product sold (Eye, Face, Lip, etc) '
+  sql: ${TABLE}.PRODUCT_TYPE
+  searchable: true
+
+- name: product_title
+  field_type: dimension
+  type: string
+  description: The title of the product sold (Everyday SPF Cream, etc)
+  sql: ${TABLE}.PRODUCT_TITLE
+  tags:
+  - product
+  searchable: true
+
+- name: price
+  field_type: dimension
+  type: string
+  description: Blahabababbaba
+  sql: ${TABLE}.PRICE
