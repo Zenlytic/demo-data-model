@@ -17,8 +17,16 @@ fields:
     zoe_description: ji
     timeframes: []
   - name: source
-    field_type: dimension
-    type: string
+    field_type: dimension_group
+    type: time
     description: The source of the ad spend
     sql: ${TABLE}.source
-    timeframes: []
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
