@@ -16,6 +16,7 @@ fields:
     description: Represents a unique key for each spend event..
     zoe_description: ji
     timeframes: []
+    link: my link
   - name: source
     field_type: dimension
     type: string
