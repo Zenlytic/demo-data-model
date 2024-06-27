@@ -18,8 +18,8 @@ fields:
     timeframes: []
     link: my link
   - name: source
-    field_type: dimension
-    type: string
+    field_type: measure
+    type: sum
     description: The source of the ad spend
     sql: ${TABLE}.source
     timeframes: []
