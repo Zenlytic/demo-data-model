@@ -29,8 +29,11 @@ fields:
     tags:
       - product
     searchable: true
-  - name: price
-    field_type: dimension
+  - field_type: dimension
+    value_format_name: decimal_0
+    hidden: false
+    name: test_njm
+    sql: null
+    synonyms: []
     type: string
-    description: Blahabababbaba
-    sql: ${TABLE}.PRICE
+    timeframes: []
