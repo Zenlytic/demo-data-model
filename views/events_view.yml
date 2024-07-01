@@ -182,7 +182,7 @@ fields:
   - name: number_of_events
     field_type: measure
     type: count
-    sql: "*"
+    sql: '*'
     description: The number of events from interaction with the site
     value_format_name: decimal_0
     extra:
@@ -207,4 +207,11 @@ fields:
     sql: ${anonymous_id}
     extra:
       zenlytic.show: true
+  - field_type: measure
+    value_format_name: decimal_0
+    hidden: false
+    name: ji
+    sql: null
+    synonyms: []
+    type: sum
 event_dimension: event_name
