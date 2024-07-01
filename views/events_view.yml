@@ -214,4 +214,25 @@ fields:
     sql: null
     synonyms: []
     type: sum
+  - field_type: measure
+    value_format_name: decimal_0
+    hidden: false
+    name: Hello
+    sql: null
+    synonyms: []
+    type: sum
+  - field_type: measure
+    value_format_name: decimal_0
+    hidden: false
+    name: Testing
+    sql: null
+    synonyms: []
+    type: sum
+  - field_type: measure
+    value_format_name: decimal_0
+    hidden: false
+    name: Something
+    sql: null
+    synonyms: []
+    type: sum
 event_dimension: event_name
