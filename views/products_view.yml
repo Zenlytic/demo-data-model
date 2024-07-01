@@ -22,6 +22,7 @@ fields:
     description: 'The type of the product sold (Eye, Face, Lip, etc) '
     sql: ${TABLE}.PRODUCT_TYPE
     searchable: true
+    zoe_description: 'The type of the product. '
   - name: product_title
     field_type: dimension
     type: string
