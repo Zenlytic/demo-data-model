@@ -1,0 +1,12 @@
+version: 1
+type: view
+name: colors
+fields:
+  - name: red
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    synonyms: []
+    required_access_grants: []
+    drill_fields: []
