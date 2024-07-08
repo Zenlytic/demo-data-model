@@ -22,7 +22,7 @@ fields:
   sql: ${TABLE}.FIRST_PRODUCT_ID
 - name: state
   field_type: dimension
-  type: string
+  type: stringgg
   sql: ${TABLE}.STATE
 - name: email
   field_type: dimension
