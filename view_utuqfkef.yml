@@ -2,7 +2,7 @@ version: 1
 type: view
 name: colors
 fields:
-  - name: red
+  - name: brightness
     field_type: dimension_group
     type: time
     value_format_name: decimal_0
@@ -19,3 +19,25 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
+  - name: saturation
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    synonyms: []
+    tags: []
+    drill_fields: []
+    required_access_grants: []
+    timeframes: []
+    intervals: []
+    convert_tz: null
+    datatype: null
+    sql_start: null
+    sql_end: null
+    sql_distinct_key: null
+    canon_date: null
+    non_additive_dimension:
+      name: null
+      window_choice: null
+      window_aware_of_query_dimensions: null
+      window_groupings: []

@@ -99,3 +99,17 @@ fields:
     value_format_name: decimal_1
     sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
     is_merged_result: true
+  - name: ''
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    synonyms: []
+    required_access_grants: []
+    sql_distinct_key: null
+    canon_date: null
+    non_additive_dimension:
+      name: null
+      window_choice: null
+      window_aware_of_query_dimensions: null
+      window_groupings: []
