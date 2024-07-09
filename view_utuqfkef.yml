@@ -3,10 +3,19 @@ type: view
 name: colors
 fields:
   - name: red
-    field_type: measure
-    type: sum
+    field_type: dimension_group
+    type: time
     value_format_name: decimal_0
     sql: null
     synonyms: []
     required_access_grants: []
     drill_fields: []
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
