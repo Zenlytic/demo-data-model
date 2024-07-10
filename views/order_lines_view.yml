@@ -198,7 +198,7 @@ fields:
 - name: total_discounts
   field_type: measure
   type: sum
-  label: Total Discountz
+  label: Total Discountzz
   description: All discounts applied to either the order or the product in the order
   value_format_name: usd
   sql: ${discount}
