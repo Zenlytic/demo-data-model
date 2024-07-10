@@ -19,6 +19,8 @@ fields:
     hidden: yes
     primary_key: yes
     sql: ${TABLE}.ORDER_LINE_ID
+    drill_fields:
+      - marketing_channel
   - name: customer_id
     field_type: dimension
     type: string
