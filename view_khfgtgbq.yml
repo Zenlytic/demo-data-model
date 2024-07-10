@@ -291,3 +291,71 @@ fields:
     sql_end: null
     sql_distinct_key: null
     canon_date: null
+  - name: car17
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    synonyms: []
+    tags: []
+    drill_fields: []
+    required_access_grants: []
+    timeframes: []
+    intervals: []
+    convert_tz: null
+    datatype: null
+    sql_start: null
+    sql_end: null
+    sql_distinct_key: null
+    canon_date: null
+  - name: car18
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    synonyms: []
+    tags: []
+    drill_fields: []
+    required_access_grants: []
+    timeframes: []
+    intervals: []
+    convert_tz: null
+    datatype: null
+    sql_start: null
+    sql_end: null
+    sql_distinct_key: null
+    canon_date: null
+  - name: car19
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    synonyms: []
+    tags: []
+    drill_fields: []
+    required_access_grants: []
+    timeframes: []
+    intervals: []
+    convert_tz: null
+    datatype: null
+    sql_start: null
+    sql_end: null
+    sql_distinct_key: null
+    canon_date: null
+  - name: car20
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    synonyms: []
+    tags: []
+    drill_fields: []
+    required_access_grants: []
+    timeframes: []
+    intervals: []
+    convert_tz: null
+    datatype: null
+    sql_start: null
+    sql_end: null
+    sql_distinct_key: null
+    canon_date: null
