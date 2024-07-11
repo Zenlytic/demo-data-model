@@ -15,6 +15,7 @@ fields:
     sql: ${TABLE}.ANONYMOUS_ID
     tags:
       - customer
+    description: ji
   - name: click_id
     field_type: dimension
     type: string
@@ -182,7 +183,7 @@ fields:
   - name: number_of_events
     field_type: measure
     type: count
-    sql: "*"
+    sql: '*'
     description: The number of events from interaction with the site
     value_format_name: decimal_0
     extra:
