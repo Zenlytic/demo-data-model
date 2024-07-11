@@ -20,18 +20,21 @@ fields:
   type: string
   description: The channel of the ad spend
   sql: ${TABLE}.channel
+  searchable: true
 
 - name: source
   field_type: dimension
   type: string
   description: The source of the ad spend
   sql: ${TABLE}.source
+  searchable: true
 
 - name: campaign
   field_type: dimension
   type: string
   description: The campaign of the ad spend
   sql: ${TABLE}.campaign
+  searchable: true
 
 - name: ad_spend
   field_type: dimension
