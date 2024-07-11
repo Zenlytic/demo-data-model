@@ -45,30 +45,35 @@ fields:
   type: string
   description: The marketing channel the user came through to reach the site initially
   sql: ${TABLE}.MARKETING_CHANNEL
+  searchable: true
 
 - name: utm_medium
   field_type: dimension
   type: string
   description: The marketing medium the user came through to reach the site initially
   sql: ${TABLE}.UTM_MEDIUM
+  searchable: true
 
 - name: utm_source
   field_type: dimension
   type: string
   description: The marketing source the user came through to reach the site initially
   sql: ${TABLE}.UTM_SOURCE
+  searchable: true
 
 - name: promotion
   field_type: dimension
   type: string
   description: The promotion the user came through to reach the site initially
   sql: ${TABLE}.PROMOTION
+  searchable: true
 
 - name: device_type
   field_type: dimension
   type: string
   description: The user's device type (hardware)
   sql: ${TABLE}.DEVICE_TYPE
+  searchable: true
 
 - name: browser_user_agent
   field_type: dimension
@@ -82,6 +87,7 @@ fields:
   type: string
   description: The user's browser language setting
   sql: ${TABLE}.BROWSER_LANGUAGE
+  searchable: false
 
 - name: ip_address
   field_type: dimension
@@ -89,84 +95,98 @@ fields:
   label: IP address
   description: The user's IP address
   sql: ${TABLE}.IP_ADDRESS
+  searchable: false
 
 - name: browser_name
   field_type: dimension
   type: string
   description: The user's browser
   sql: ${TABLE}.BROWSER_NAME
+  searchable: true
 
 - name: geo_region_name
   field_type: dimension
   type: string
   description: The user's geographical region
   sql: ${TABLE}.GEO_REGION_NAME
+  searchable: false
 
 - name: geo_country
   field_type: dimension
   type: string
   description: The user's country
   sql: ${TABLE}.GEO_COUNTRY
+  searchable: false
 
 - name: geo_latitude
   field_type: dimension
   type: string
   description: The user's latitude
   sql: ${TABLE}.GEO_LATITUDE
+  searchable: false
 
 - name: geo_longitude
   field_type: dimension
   type: string
   description: The user's longitude
   sql: ${TABLE}.GEO_LONGITUDE
+  searchable: false
 
 - name: geo_timezone
   field_type: dimension
   type: string
   description: The user's (geographical) timezone
   sql: ${TABLE}.GEO_TIMEZONE
+  searchable: false
 
 - name: os
   field_type: dimension
   type: string
   description: The full description of the user's operating system
   sql: ${TABLE}.OS
+  searchable: false
 
 - name: os_name
   field_type: dimension
   type: string
   description: The name of the user's operating system
   sql: ${TABLE}.OS_NAME
+  searchable: true
 
 - name: os_timezone
   field_type: dimension
   type: string
   description: The user's (operating system) timezone
   sql: ${TABLE}.OS_TIMEZONE
+  searchable: false
 
 - name: referer_url
   field_type: dimension
   type: string
   description: The full referring url (where the user came from)
   sql: ${TABLE}.REFERER_URL
+  searchable: true
 
 - name: referer_url_scheme
   field_type: dimension
   type: string
   description: The referring url scheme (where the user came from)
   sql: ${TABLE}.REFERER_URL_SCHEME
+  searchable: true
 
 - name: referer_url_port
   field_type: dimension
   type: string
   description: The referring url port (where the user came from)
   sql: ${TABLE}.REFERER_URL_PORT
+  searchable: true
 
 - name: referer_medium
   field_type: dimension
   type: string
   description: The referring medium (where the user came from)
   sql: ${TABLE}.REFERER_MEDIUM
+  searchable: true
 
 - name: event_name
   field_type: dimension
@@ -180,18 +200,21 @@ fields:
   type: string
   description: The page url path (partial) the user was on at the time of the event
   sql: ${TABLE}.PAGE_URL_PATH
+  searchable: true
 
 - name: page_url
   field_type: dimension
   type: string
   description: The (full) page url the user was on at the time of the event
   sql: ${TABLE}.PAGE_URL
+  searchable: true
 
 - name: utm_campaign
   field_type: dimension
   type: string
   description: The campaign the user came in on to the site
   sql: ${TABLE}.UTM_CAMPAIGN
+  searchable: true
 
 - name: event
   field_type: dimension_group
