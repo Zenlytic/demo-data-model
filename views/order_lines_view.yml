@@ -49,6 +49,7 @@ fields:
   sql: ${TABLE}.ORDER_ID
   tags:
   - order
+  searchable: false
 
 - name: product_id
   field_type: dimension
@@ -124,6 +125,7 @@ fields:
   description: The last click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.last_click
+  searchable: true
 
 - name: first_click_marketing_channel
   field_type: dimension
@@ -131,6 +133,7 @@ fields:
   description: The first click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.first_click
+  searchable: true
 
 - name: new_vs_repeat
   field_type: dimension

@@ -40,28 +40,33 @@ fields:
   required_access_grants:
   - pii_access
   sql: ${TABLE}.EMAIL
+  searchable: false
 
 - name: first_name
   field_type: dimension
   type: string
   sql: ${TABLE}.FIRST_NAME
+  searchable: false
 
 - name: last_name
   field_type: dimension
   type: string
   sql: ${TABLE}.LAST_NAME
+  searchable: false
 
 - name: address
   field_type: dimension
   type: string
   description: The customer's address (shipping)
   sql: ${TABLE}.ADDRESS
+  searchable: false
 
 - name: city
   field_type: dimension
   type: string
   description: The customer's city (location)
   sql: ${TABLE}.CITY
+  searchable: false
 
 - name: state
   field_type: dimension
@@ -75,24 +80,28 @@ fields:
   type: string
   description: The customer's zip code
   sql: ${TABLE}.ZIPCODE
+  searchable: false
 
 - name: first_marketing_group
   field_type: dimension
   type: string
   description: The first marketing group the user came in through
   sql: ${TABLE}.first_channel
+  searchable: true
 
 - name: first_promotion
   field_type: dimension
   type: string
   description: The first promotion the user came in through
   sql: ${TABLE}.first_promotion
+  searchable: true
 
 - name: first_campaign
   field_type: dimension
   type: string
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
+  searchable: true
 
 - name: personal_field_ybmmbtd
   field_type: dimension

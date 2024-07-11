@@ -37,3 +37,4 @@ fields:
   type: string
   description: Blahabababbaba
   sql: ${TABLE}.PRICE
+  searchable: true
