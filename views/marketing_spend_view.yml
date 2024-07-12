@@ -14,6 +14,7 @@ fields:
     primary_key: yes
     sql: ${TABLE}.spend_id
     description: Represents a unique key for each spend event..
+    zoe_description: Used to uniquely identify marketing spend events.
   - name: channel
     field_type: dimension
     type: string
