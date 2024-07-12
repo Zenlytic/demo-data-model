@@ -16,8 +16,8 @@ fields:
 - name: order_line_id
   field_type: dimension
   type: string
-  hidden: yes
-  primary_key: yes
+  hidden: true
+  primary_key: true
   sql: ${TABLE}.ORDER_LINE_ID
 
 - name: customer_id
@@ -31,6 +31,7 @@ fields:
   sql: ${TABLE}.CUSTOMER_ID
   tags:
   - customer
+  searchable: false
 
 - name: order_id
   field_type: dimension
@@ -43,35 +44,36 @@ fields:
   - promotion
   - total_gross_revenue
   sql: ${TABLE}.ORDER_ID
+  searchable: false
 
 - name: product_id
   field_type: dimension
   type: string
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.PRODUCT_ID
 
 - name: discount
   field_type: dimension
   type: number
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.DISCOUNT
 
 - name: revenue
   field_type: dimension
   type: number
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.REVENUE
 
 - name: price
   field_type: dimension
   type: number
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.PRICE
 
 - name: quantity
   field_type: dimension
   type: number
-  hidden: yes
+  hidden: true
   sql: ${TABLE}.QUANTITY
 
 - name: campaign
@@ -122,6 +124,7 @@ fields:
   description: The last click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.last_click
+  searchable: true
 
 - name: first_click_marketing_channel
   field_type: dimension
@@ -129,6 +132,7 @@ fields:
   description: The first click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.first_click
+  searchable: true
 
 - name: new_vs_repeat
   field_type: dimension
@@ -182,7 +186,7 @@ fields:
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
-  hidden: yes
+  hidden: true
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: usd
   sql: ${revenue}

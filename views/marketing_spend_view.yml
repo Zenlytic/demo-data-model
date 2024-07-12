@@ -9,8 +9,8 @@ fields:
 - name: unique_key
   field_type: dimension
   type: string
-  hidden: yes
-  primary_key: yes
+  hidden: true
+  primary_key: true
   sql: ${TABLE}.spend_id
 
 - name: channel
@@ -18,23 +18,26 @@ fields:
   type: string
   description: The channel of the ad spend
   sql: ${TABLE}.channel
+  searchable: true
 
 - name: source
   field_type: dimension
   type: string
   description: The source of the ad spend
   sql: ${TABLE}.source
+  searchable: true
 
 - name: campaign
   field_type: dimension
   type: string
   description: The campaign of the ad spend
   sql: ${TABLE}.campaign
+  searchable: true
 
 - name: ad_spend
   field_type: dimension
   type: number
-  hidden: yes
+  hidden: true
   description: The amount spent
   sql: ${TABLE}.ad_spend
 
