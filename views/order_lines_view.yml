@@ -126,6 +126,7 @@ fields:
   description: The last click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.last_click
+  searchable: true
 
 - name: first_click_marketing_channel
   field_type: dimension
@@ -133,6 +134,7 @@ fields:
   description: The first click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.first_click
+  searchable: true
 
 - name: new_vs_repeat
   field_type: dimension
@@ -186,10 +188,10 @@ fields:
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
+  hidden: true
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: usd
   sql: ${revenue}
-  hidden: yes
   filters:
   - field: marketing_channel
     value: -Organic
