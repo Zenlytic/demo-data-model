@@ -87,28 +87,21 @@ fields:
   type: string
   description: The first marketing group the user came in through
   sql: ${TABLE}.first_channel
-  searchable: true
+  searchable: false
 
 - name: first_promotion
   field_type: dimension
   type: string
   description: The first promotion the user came in through
   sql: ${TABLE}.first_promotion
-  searchable: true
+  searchable: false
 
 - name: first_campaign
   field_type: dimension
   type: string
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
-  searchable: true
-
-- name: personal_field_ybmmbtd
-  field_type: dimension
-  type: yesno
-  label: Accepts Marketing (Duplicate)
-  description: 'Whether the customer accepts marketing. '
-  sql: ${TABLE}.ACCEPTS_MARKETING
+  searchable: false
 
 - name: first_order
   field_type: dimension_group

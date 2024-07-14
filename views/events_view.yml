@@ -45,21 +45,21 @@ fields:
   type: string
   description: The marketing channel the user came through to reach the site initially
   sql: ${TABLE}.MARKETING_CHANNEL
-  searchable: true
+  searchable: false
 
 - name: utm_medium
   field_type: dimension
   type: string
   description: The marketing medium the user came through to reach the site initially
   sql: ${TABLE}.UTM_MEDIUM
-  searchable: true
+  searchable: false
 
 - name: utm_source
   field_type: dimension
   type: string
   description: The marketing source the user came through to reach the site initially
   sql: ${TABLE}.UTM_SOURCE
-  searchable: true
+  searchable: false
 
 - name: promotion
   field_type: dimension
@@ -238,9 +238,7 @@ fields:
   type: count
   description: The number of events from interaction with the site
   value_format_name: decimal_0
-  sql: '*'
-  extra:
-    zenlytic.show: true
+  sql: ${anonymous_id}
 
 - name: number_of_sessions
   field_type: measure
@@ -249,8 +247,6 @@ fields:
     window)
   value_format_name: decimal_0
   sql: ${session_id}
-  extra:
-    zenlytic.show: true
 
 - name: number_of_users
   field_type: measure
@@ -259,6 +255,5 @@ fields:
     we can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
-  extra:
-    zenlytic.show: true
+  
 event_dimension: event_name
