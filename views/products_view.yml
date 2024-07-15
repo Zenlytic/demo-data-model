@@ -39,10 +39,4 @@ fields:
     type: string
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
-always_filter:
-  - always_filter:
-      field: f0
-      value: v0
-  - always_filter:
-      field: f2
-      value: v2
+always_filter: []
