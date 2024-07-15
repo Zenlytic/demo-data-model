@@ -5,12 +5,16 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
 identifiers:
-  - name: p0
+  - name: primary type
     type: primary
     sql: ${product_id}
-  - name: p2
-    type: primary
+  - name: foreign type
+    type: foreign
     sql: ${price}
+  - name: join type
+    sql: ''
+    type: join
+always_filter: []
 fields:
   - name: product_id
     field_type: dimension
@@ -39,4 +43,3 @@ fields:
     type: string
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
-always_filter: []
