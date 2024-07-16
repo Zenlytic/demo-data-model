@@ -1,7 +1,7 @@
 version: 1
 type: view
 name: products
-description: 'When using fields from this table always slice the data by month.'
+description: When using fields from this table always slice the data by month.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
