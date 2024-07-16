@@ -24,7 +24,7 @@ fields:
   description: 'The type of the product sold (Eye, Face, Lip, etc). When asked to slice by product, always include a filter for products not being null.'
   sql: ${TABLE}.PRODUCT_TYPE
   searchable: true
-  zoe_description: 'The type of the product. '
+  # zoe_description: 'The type of the product. '
 
 - name: product_title
   field_type: dimension
