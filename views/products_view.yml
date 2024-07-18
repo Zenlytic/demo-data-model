@@ -21,7 +21,7 @@ fields:
   field_type: dimension
   type: string
   description: 'The type of the product sold (Eye, Face, Lip, etc) '
-  sql: case when ${TABLE}.PRODUCT_TYPE in ('Eye') then 'Eye | s' when ${TABLE}.PRODUCT_TYPE = 'Lip' then '- Lip Polish' else ${TABLE}.PRODUCT_TYPE end
+  sql: case when ${TABLE}.PRODUCT_TYPE in ('Eye') then 'Eye | s' when ${TABLE}.PRODUCT_TYPE = 'Lip' then '- Lip .Polish' else ${TABLE}.PRODUCT_TYPE end
   searchable: true
   zoe_description: 'The type of the product. '
 
