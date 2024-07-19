@@ -6,16 +6,20 @@ sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
 identifiers:
   - name: product_id
-    type: primary
     sql: ${product_id}
+    type: primary
+    allowed_fanouts: []
   - name: fire
     sql: ''
     type: primary
     allowed_fanouts: ''
   - name: water
     sql: ''
-    type: primary
+    type: join
     allowed_fanouts: ''
+always_filter:
+  - field: ''
+    value: ''
 fields:
   - name: product_id
     field_type: dimension
