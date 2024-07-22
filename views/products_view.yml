@@ -5,43 +5,48 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
 identifiers:
-- name: product_id
-  type: primary
-  sql: ${product_id}
+  - name: product_id
+    type: primary
+    sql: ${product_id}
 fields:
-- name: product_id
-  field_type: dimension
-  type: string
-  hidden: true
-  primary_key: true
-  sql: ${TABLE}.PRODUCT_ID
-  zoe_description: The id of the product.
-  filters:
-    - field: f0
-      value: v0
-    - field: v1
-      value: v1
-
-- name: product_type
-  field_type: dimension
-  type: string
-  description: 'The type of the product sold (Eye, Face, Lip, etc) '
-  sql: ${TABLE}.PRODUCT_TYPE
-  searchable: true
-  zoe_description: 'The type of the product. '
-
-- name: product_title
-  field_type: dimension
-  type: string
-  description: The title of the product sold (Everyday SPF Cream, etc)
-  sql: ${TABLE}.PRODUCT_TITLE
-  tags:
-  - product
-  searchable: true
-
-- name: price
-  field_type: dimension
-  type: string
-  description: Blahabababbaba
-  sql: ${TABLE}.PRICE
-  searchable: true
+  - name: product_id
+    field_type: dimension
+    type: string
+    hidden: true
+    primary_key: true
+    sql: ${TABLE}.PRODUCT_ID
+    zoe_description: The id of the product.
+    filters:
+      - field: f0
+        value: v0
+      - field: v1
+        value: v1
+  - name: product_type
+    field_type: dimension
+    type: string
+    description: 'The type of the product sold (Eye, Face, Lip, etc) '
+    sql: ${TABLE}.PRODUCT_TYPE
+    searchable: true
+    zoe_description: 'The type of the product. '
+  - name: product_title
+    field_type: dimension
+    type: string
+    description: The title of the product sold (Everyday SPF Cream, etc)
+    sql: ${TABLE}.PRODUCT_TITLE
+    tags:
+      - product
+    searchable: true
+  - name: price
+    field_type: dimension
+    type: string
+    description: Blahabababbaba
+    sql: ${TABLE}.PRICE
+    searchable: true
+  - name: my_measure
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    datatype: null
+    filters: []
+    non_additive_dimension: null
