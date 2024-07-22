@@ -16,6 +16,11 @@ fields:
   primary_key: true
   sql: ${TABLE}.PRODUCT_ID
   zoe_description: The id of the product.
+  filters:
+    - field: f0
+      value: v0
+    - field: v1
+      value: v1
 
 - name: product_type
   field_type: dimension
