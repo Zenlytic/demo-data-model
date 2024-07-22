@@ -61,7 +61,7 @@ fields:
   field_type: dimension
   type: number
   hidden: true
-  sql: ${TABLE}.DISCOUNT
+  sql: case when ${products.product_title} in ('blah') then null else discount end;
 
 - name: revenue
   field_type: dimension
