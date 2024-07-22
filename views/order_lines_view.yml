@@ -58,7 +58,7 @@ fields:
     type: number
     hidden: true
     sql: >-
-      case when ${products.product_title} in ('blah') then null else discount
+      case when ${products.product_title} in ('Everyday SPF Cream') then null else discount
       end
   - name: revenue
     field_type: dimension
