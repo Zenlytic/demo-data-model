@@ -42,7 +42,7 @@ fields:
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
     searchable: true
-  - name: my_measure
+  - name: regular_measure
     field_type: measure
     type: sum
     value_format_name: decimal_0
@@ -50,3 +50,12 @@ fields:
     datatype: null
     filters: []
     non_additive_dimension: null
+  - name: non_additive_measure
+    field_type: measure
+    type: sum
+    value_format_name: decimal_0
+    sql: null
+    datatype: null
+    filters: []
+    non_additive_dimension: 
+      name: ''
