@@ -5,38 +5,64 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
 identifiers:
-- name: product_id
-  type: primary
-  sql: ${product_id}
+  - name: product_id
+    type: primary
+    sql: ${product_id}
 fields:
-- name: product_id
-  field_type: dimension
-  type: string
-  hidden: true
-  primary_key: true
-  sql: ${TABLE}.PRODUCT_ID
-  zoe_description: The id of the product.
-
-- name: product_type
-  field_type: dimension
-  type: string
-  description: 'The type of the product sold (Eye, Face, Lip, etc) '
-  sql: ${TABLE}.PRODUCT_TYPE
-  searchable: true
-  zoe_description: 'The type of the product. '
-
-- name: product_title
-  field_type: dimension
-  type: string
-  description: The title of the product sold (Everyday SPF Cream, etc)
-  sql: ${TABLE}.PRODUCT_TITLE
-  tags:
-  - product
-  searchable: true
-
-- name: price
-  field_type: dimension
-  type: string
-  description: Blahabababbaba
-  sql: ${TABLE}.PRICE
-  searchable: true
+  - name: product_id
+    field_type: dimension
+    type: string
+    hidden: true
+    primary_key: true
+    sql: ${TABLE}.PRODUCT_ID
+    zoe_description: The id of the product.
+  - name: product_type
+    field_type: dimension
+    type: string
+    description: 'The type of the product sold (Eye, Face, Lip, etc) '
+    sql: ${TABLE}.PRODUCT_TYPE
+    searchable: true
+    zoe_description: 'The type of the product. '
+  - name: product_title
+    field_type: dimension
+    type: string
+    description: The title of the product sold (Everyday SPF Cream, etc)
+    sql: ${TABLE}.PRODUCT_TITLE
+    tags:
+      - product
+    searchable: true
+  - name: price
+    field_type: dimension
+    type: string
+    description: Blahabababbaba
+    sql: ${TABLE}.PRICE
+    searchable: true
+  - name: product_image_url
+    field_type: dimension
+    type: string
+    value_format_name: decimal_0
+    sql: |
+      SELECT 
+          ProductID,
+          Category,
+          ProductName,
+          Price,
+          CASE
+              WHEN ProductID = 'P1' THEN 'https://example.com/image_P1.jpg'
+              WHEN ProductID = 'P2' THEN 'https://example.com/image_P2.jpg'
+              WHEN ProductID = 'P3' THEN 'https://example.com/image_P3.jpg'
+              WHEN ProductID = 'P4' THEN 'https://example.com/image_P4.jpg'
+              WHEN ProductID = 'P5' THEN 'https://example.com/image_P5.jpg'
+              WHEN ProductID = 'P6' THEN 'https://example.com/image_P6.jpg'
+              WHEN ProductID = 'P7' THEN 'https://example.com/image_P7.jpg'
+              WHEN ProductID = 'P8' THEN 'https://example.com/image_P8.jpg'
+              WHEN ProductID = 'P9' THEN 'https://example.com/image_P9.jpg'
+              WHEN ProductID = 'P10' THEN 'https://example.com/image_P10.jpg'
+              WHEN ProductID = 'P11' THEN 'https://example.com/image_P11.jpg'
+              WHEN ProductID = 'P12' THEN 'https://example.com/image_P12.jpg'
+              ELSE 'https://example.com/default_image.jpg'
+          END AS ImageURL
+      FROM 
+          Products;
+    datatype: null
+    description: image url
