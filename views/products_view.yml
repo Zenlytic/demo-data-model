@@ -40,11 +40,7 @@ fields:
   - name: product_image_url
     field_type: dimension
     type: string
-    sql: |-
-      product_id,
-             product_type,
-             product_title,
-             price,
+    sql: |2-
              case
                  when product_id = 'P1' then 'https://example.com/image_P1.jpg'
                  when product_id = 'P2' then 'https://example.com/image_P2.jpg'
@@ -59,7 +55,6 @@ fields:
                  when product_id = 'P11' then 'https://example.com/image_P11.jpg'
                  when product_id = 'P12' then 'https://example.com/image_P12.jpg'
                  else 'https://example.com/default_image.jpg'
-             end as product_image_url
-      from DEMO_PROD.PRODUCTS;
+             end;
     description: image url
     searchable: true
