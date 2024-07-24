@@ -64,6 +64,5 @@ fields:
           END AS ImageURL
       FROM 
           Products;
-    datatype: null
     description: image url
     searchable: true
