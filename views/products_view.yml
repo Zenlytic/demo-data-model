@@ -43,25 +43,25 @@ fields:
     value_format_name: decimal_0
     sql: |
       SELECT 
-          ProductID,
-          Category,
-          ProductName,
-          Price,
+          products_product_id,
+          products_category,
+          products_product_name,
+          products_price,
           CASE
-              WHEN ProductID = 'P1' THEN 'https://example.com/image_P1.jpg'
-              WHEN ProductID = 'P2' THEN 'https://example.com/image_P2.jpg'
-              WHEN ProductID = 'P3' THEN 'https://example.com/image_P3.jpg'
-              WHEN ProductID = 'P4' THEN 'https://example.com/image_P4.jpg'
-              WHEN ProductID = 'P5' THEN 'https://example.com/image_P5.jpg'
-              WHEN ProductID = 'P6' THEN 'https://example.com/image_P6.jpg'
-              WHEN ProductID = 'P7' THEN 'https://example.com/image_P7.jpg'
-              WHEN ProductID = 'P8' THEN 'https://example.com/image_P8.jpg'
-              WHEN ProductID = 'P9' THEN 'https://example.com/image_P9.jpg'
-              WHEN ProductID = 'P10' THEN 'https://example.com/image_P10.jpg'
-              WHEN ProductID = 'P11' THEN 'https://example.com/image_P11.jpg'
-              WHEN ProductID = 'P12' THEN 'https://example.com/image_P12.jpg'
+              WHEN products_product_id = 'P1' THEN 'https://example.com/image_P1.jpg'
+              WHEN products_product_id = 'P2' THEN 'https://example.com/image_P2.jpg'
+              WHEN products_product_id = 'P3' THEN 'https://example.com/image_P3.jpg'
+              WHEN products_product_id = 'P4' THEN 'https://example.com/image_P4.jpg'
+              WHEN products_product_id = 'P5' THEN 'https://example.com/image_P5.jpg'
+              WHEN products_product_id = 'P6' THEN 'https://example.com/image_P6.jpg'
+              WHEN products_product_id = 'P7' THEN 'https://example.com/image_P7.jpg'
+              WHEN products_product_id = 'P8' THEN 'https://example.com/image_P8.jpg'
+              WHEN products_product_id = 'P9' THEN 'https://example.com/image_P9.jpg'
+              WHEN products_product_id = 'P10' THEN 'https://example.com/image_P10.jpg'
+              WHEN products_product_id = 'P11' THEN 'https://example.com/image_P11.jpg'
+              WHEN products_product_id = 'P12' THEN 'https://example.com/image_P12.jpg'
               ELSE 'https://example.com/default_image.jpg'
-          END AS ImageURL
+          END AS product_image_url
       FROM 
           Products;
     description: image url
