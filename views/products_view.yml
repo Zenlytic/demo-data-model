@@ -41,8 +41,7 @@ fields:
     field_type: dimension
     type: string
     value_format_name: decimal_0
-    sql: |
-      SELECT 
+    sql: |2
           products_product_id,
           products_category,
           products_product_name,
