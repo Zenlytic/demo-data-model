@@ -41,11 +41,11 @@ fields:
     field_type: dimension
     type: string
     value_format_name: decimal_0
-    sql: |-
-      product_id,
+    sql: |2-
+             product_id,
              product_type,
              product_title,
-             price,
+             product_price,
              case
                  when product_id = 'P1' then 'https://example.com/image_P5.jpg'
                  when product_id = 'P2' then 'https://example.com/image_P5.jpg'
