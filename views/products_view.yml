@@ -48,6 +48,6 @@ fields:
                  when ${product_id}  = 'P4' then 'https://example.com/image_P4.jpg'
                  else 'https://example.com/default_image.jpg'
              end
-    description: image url
+    description: image urld
     searchable: true
     value_format_name: image_url
