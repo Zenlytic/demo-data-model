@@ -37,7 +37,7 @@ fields:
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
     searchable: true
-  - name: product_image_url
+  - name: image_url
     field_type: dimension
     type: string
     value_format_name: decimal_0
