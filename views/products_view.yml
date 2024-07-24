@@ -45,7 +45,6 @@ fields:
       product_id,
              product_type,
              product_title,
-             price,
              case
                  when product_id = 'P1' then 'https://example.com/image_P1.jpg'
                  when product_id = 'P2' then 'https://example.com/image_P2.jpg'
