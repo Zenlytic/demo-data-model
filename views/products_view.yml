@@ -50,3 +50,4 @@ fields:
              end
     description: image url
     searchable: true
+    value_format_name: image_url
