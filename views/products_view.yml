@@ -42,8 +42,8 @@ fields:
     type: string
     sql: |2-
              case
-                 when ${product_id} = 'P1' then 'https://example.com/image_P1.jpg'
-                 when ${product_id} = 'P2' then 'https://example.com/image_P2.jpg'
+                 when ${product_id} = 'P1' then 'https://www.apple.com/v/airpods/v/images/overview/airpods_3rd_gen__dhy5bknhvtqq_large.jpg'
+                 when ${product_id} = 'P2' then 'https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mba_13_15__fx2g3qlubdym_large.png'
                  when ${product_id}  = 'P3' then 'https://example.com/image_P3.jpg'
                  when ${product_id}  = 'P4' then 'https://example.com/image_P4.jpg'
                  else 'https://example.com/default_image.jpg'
