@@ -66,3 +66,4 @@ fields:
           Products;
     datatype: null
     description: image url
+    searchable: true
