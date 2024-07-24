@@ -55,6 +55,6 @@ fields:
                  when product_id = 'P11' then 'https://example.com/image_P11.jpg'
                  when product_id = 'P12' then 'https://example.com/image_P12.jpg'
                  else 'https://example.com/default_image.jpg'
-             end;
+             end
     description: image url
     searchable: true
