@@ -47,9 +47,9 @@ fields:
              product_title,
              price,
              case
-                 when product_id = 'P1' then 'https://example.com/image_P1.jpg'
-                 when product_id = 'P2' then 'https://example.com/image_P2.jpg'
-                 when product_id = 'P3' then 'https://example.com/image_P3.jpg'
+                 when product_id = 'P1' then 'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-card-40-iphone15prohero-202309?wid=680&hei=528&fmt=p-jpg&qlt=95&.v=1693086290312'
+                 when product_id = 'P2' then 'https://www.apple.com/v/mac/home/ca/images/overview/select/product_tile_mba_13_15__fx2g3qlubdym_large.png'
+                 when product_id = 'P3' then 'https://www.apple.com/v/airpods/v/images/overview/airpods_3rd_gen__dhy5bknhvtqq_large.jpg'
                  when product_id = 'P4' then 'https://example.com/image_P4.jpg'
                  when product_id = 'P5' then 'https://example.com/image_P5.jpg'
                  when product_id = 'P6' then 'https://example.com/image_P6.jpg'
