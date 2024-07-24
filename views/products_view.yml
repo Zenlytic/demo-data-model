@@ -42,7 +42,7 @@ fields:
     type: string
     value_format_name: decimal_0
     sql: |-
-      select product_id,
+      product_id,
              product_type,
              product_title,
              price,
