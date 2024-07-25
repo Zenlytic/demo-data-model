@@ -117,5 +117,4 @@ fields:
                  when ${state} = 'CA' then 'California
                  else 'Ohio'
              end
-    datatype: null
     description: the full name of the us state
