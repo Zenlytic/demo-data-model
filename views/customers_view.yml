@@ -118,3 +118,13 @@ fields:
              end
     description: my state name
     searchable: true
+  - name: country
+    field_type: dimension
+    type: country
+    sql: |2-
+             case
+                 when ${state} = 'CA' then 'United States of America'
+                 else 'France'
+             end
+    description: my country name
+    searchable: true
