@@ -108,3 +108,14 @@ fields:
       - quarter
       - year
     sql: ${TABLE}.first_order_at
+  - name: state_name
+    field_type: dimension
+    type: us_state
+    value_format_name: decimal_0
+    sql: |-
+      case
+                 when ${state} = 'CA' then 'California
+                 else 'Ohio'
+             end
+    datatype: null
+    description: the full name of the us state
