@@ -110,11 +110,12 @@ fields:
     sql: ${TABLE}.first_order_at
   - name: state_name
     field_type: dimension
-    searchable: true
-    type: us_state
-    sql: |-
-      case
+    type: string
+    sql: |2-
+             case
                  when ${state} = 'CA' then 'California
                  else 'Ohio'
              end
-    description: the full name of the us state
+    description: my state name
+    searchable: true
+    value_format_name: state_name
