@@ -111,7 +111,11 @@ fields:
   - name: state_name
     field_type: dimension
     type: string
-    sql: ${state}
+    sql: |2-
+             case
+                 when ${state} = 'CA' then 'California
+                 else 'Ohio'
+             end
     description: my state name
     searchable: true
     value_format_name: us_state
