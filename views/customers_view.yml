@@ -26,6 +26,24 @@ fields:
   primary_key: true
   description: The id of the customer.
   sql: ${TABLE}.CUSTOMER_ID
+  filters:
+    - field: f0
+      value: v0
+    - field: f1
+      value: v1
+    - field: f2
+      value: v2
+    - field: f3
+      value: v3
+    - field: f4
+      value: v4
+    - field: f5
+      value: v5
+    - field: f6
+      value: v6
+    - field: f7
+      value: v7
+    
 
 - name: accepts_marketing
   field_type: dimension
