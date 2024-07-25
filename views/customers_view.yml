@@ -110,7 +110,7 @@ fields:
     sql: ${TABLE}.first_order_at
   - name: state_name
     field_type: dimension
-    type: string
+    type: us_state_abbreviation
     sql: |2-
              case
                  when ${state} = 'CA' then 'California
