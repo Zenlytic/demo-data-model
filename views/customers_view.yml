@@ -118,4 +118,4 @@ fields:
              end
     description: my state name
     searchable: true
-    value_format_name: state_name
+    value_format_name: us_state
