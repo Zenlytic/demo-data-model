@@ -113,7 +113,7 @@ fields:
     type: us_state_abbreviation
     sql: |2-
              case
-                 when ${state} = 'CA' then 'California
+                 when ${state} = 'CA' then 'California'
                  else 'Ohio'
              end
     description: my state name
