@@ -66,6 +66,7 @@ fields:
 - name: revenue
   field_type: dimension
   type: number
+  description: This field represents the revenue from a single order.
   hidden: false
   sql: ${TABLE}.REVENUE
 
