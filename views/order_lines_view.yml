@@ -173,6 +173,7 @@ fields:
     synonyms:
       - sales
       - revenue
+      - Total Order Value
   - name: total_gross_revenue_from_advertising
     field_type: measure
     type: sum
