@@ -74,7 +74,7 @@ fields:
     type: us_zip_code
     description: The customer's zip code
     sql: ${TABLE}.ZIPCODE
-    searchable: false
+    searchable: true
   - name: first_marketing_group
     field_type: dimension
     type: string
