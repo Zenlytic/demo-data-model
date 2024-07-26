@@ -71,7 +71,7 @@ fields:
     searchable: true
   - name: zipcode
     field_type: dimension
-    type: us_state_zip_code
+    type: us_zip_code
     description: The customer's zip code
     sql: ${TABLE}.ZIPCODE
     searchable: true
