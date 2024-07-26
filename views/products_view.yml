@@ -17,6 +17,9 @@ fields:
     sql: ${TABLE}.PRODUCT_ID
     zoe_description: The id of the product.
     description: jkljlkjklj
+    filters:
+      - field: ''
+        value: ''
   - name: product_type
     field_type: dimension
     type: string
