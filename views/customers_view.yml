@@ -59,7 +59,7 @@ fields:
     searchable: false
   - name: city
     field_type: dimension
-    type: string
+    type: us_county
     description: The customer's city (location)
     sql: ${TABLE}.CITY
     searchable: false
