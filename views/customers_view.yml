@@ -38,7 +38,7 @@ fields:
     searchable: false
   - name: last_name
     field_type: dimension
-    type: string
+    type: us_county
     sql: ${TABLE}.LAST_NAME
     searchable: false
   - name: address
