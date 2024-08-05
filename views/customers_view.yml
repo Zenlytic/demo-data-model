@@ -2,6 +2,7 @@ version: 1
 type: view
 name: customers
 model_name: pure_organics
+description: honestjkljlkj
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
@@ -9,11 +10,11 @@ identifiers:
   - name: customer_idj
     type: primary
     sql: ${customer_id}
-  - name: jjjkjkjkjjkjkjkj
+  - name: jjjkjkjkjjkjkjkjh
     sql: ''
     type: primary
     allowed_fanouts: ''
-  - name: dljkjkjkjkjlkjkj
+  - name: dljkjkjkjkjlkjkjh
     sql: ''
     type: primary
     allowed_fanouts: ''
@@ -47,12 +48,13 @@ fields:
     type: string
     sql: ${TABLE}.FIRST_NAME
     searchable: false
-    description: j
+    description: jjjkjkjkljjkljkljklj
   - name: last_name
     field_type: dimension
     type: string
     sql: ${TABLE}.LAST_NAME
     searchable: false
+    description: jjkljkljjkljkljkj
   - name: address
     field_type: dimension
     type: string
@@ -110,3 +112,4 @@ fields:
       - quarter
       - year
     sql: ${TABLE}.first_order_at
+label: moreso
