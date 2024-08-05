@@ -16,8 +16,3 @@ fields:
     primary_key: true
     sql: ${TABLE}.PRODUCT_ID
     zoe_description: The id of the product.
-  - name: ''
-    field_type: measure
-    type: sum
-    value_format_name: decimal_0
-    sql: null
