@@ -51,6 +51,9 @@ fields:
       WHEN 'Eye' THEN
       'https://www.apple.com/v/iphone-15/c/images/overview/ecosystem/airpods__cs4xf14itggi_large.jpg'
 
+      WHEN 'Lip' THEN
+      'https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjU4dnB5ZDhxMDlqdXRkN2l2YmlzMTdwNjE0emJpaHNzeHNwYmRlNCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/vFKqnCdLPNOKc/giphy.webp'
+
       ELSE
       'https://www.apple.com/v/iphone-15/c/images/overview/usb-c/usbc__bvuxditgibci_large.png'
 
