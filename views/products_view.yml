@@ -48,3 +48,4 @@ fields:
       ELSE "bilbo:
       END
     description: my image url
+    searchable: true
