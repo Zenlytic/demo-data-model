@@ -38,3 +38,9 @@ fields:
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
     searchable: true
+  - name: product_image_url
+    field_type: dimension
+    type: string
+    value_format_name: image_from_url
+    sql: null
+    description: my image url
