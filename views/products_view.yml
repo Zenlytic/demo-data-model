@@ -42,10 +42,19 @@ fields:
     field_type: dimension
     type: string
     value_format_name: image_from_url
-    sql: |-
+    sql: >+
       CASE ${product_type}
-      WHEN 'joe' THEN 'google.com'
-      ELSE 'bilbo'
+
+      WHEN 'Face' THEN
+      'https://www.apple.com/v/tv-home/n/images/overview/hero__dbphk49ymi2q_large.jpg'
+
+      WHEN 'Eye' THEN
+      'https://www.apple.com/v/iphone-15/c/images/overview/ecosystem/airpods__cs4xf14itggi_large.jpg'
+
+      ELSE
+      'https://www.apple.com/v/iphone-15/c/images/overview/usb-c/usbc__bvuxditgibci_large.png'
+
       END
+
     description: my image url
     searchable: true
