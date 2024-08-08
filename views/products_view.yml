@@ -44,8 +44,8 @@ fields:
     value_format_name: image_from_url
     sql: |-
       CASE ${product_type}
-      WHEN "joe" THEN "google.com
-      ELSE "bilbo:
+      WHEN 'joe' THEN 'google.com'
+      ELSE 'bilbo'
       END
     description: my image url
     searchable: true
