@@ -24,4 +24,3 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}."LAST_CLICK"
-  searchable: true
