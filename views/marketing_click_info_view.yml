@@ -24,7 +24,6 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}."LAST_CLICK"
-  searchable: true
 
 
 # To help you get started with defining fields, we've included a quick guide which you can delete at any time.
