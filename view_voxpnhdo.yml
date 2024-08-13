@@ -1,8 +1,8 @@
 version: 1
 type: view
-name: client_cars
+name: account_profit
 identifiers:
-  - name: client
+  - name: accnt
     sql: 'SELECT 1'
-    type: foreign
+    type: primary
     allowed_fanouts: ''

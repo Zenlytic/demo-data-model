@@ -1,0 +1,15 @@
+version: 1
+type: view
+name: products
+fields:
+  - name: productid
+    field_type: dimension
+    type: string
+    value_format_name: decimal_0
+    sql: null
+    datatype: null
+identifiers:
+  - name: productid
+    sql: ${product_id}
+    type: primary
+    allowed_fanouts: ''

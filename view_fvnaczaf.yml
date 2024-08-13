@@ -1,0 +1,19 @@
+version: 1
+type: view
+name: accounts
+fields:
+  - name: productid
+    field_type: dimension
+    type: string
+    value_format_name: decimal_0
+    sql: null
+    datatype: null
+identifiers:
+  - name: productid
+    sql: ${productid}
+    type: foreign
+    allowed_fanouts: ''
+  - name: accnt
+    sql: 'SELECT 1'
+    type: primary
+    allowed_fanouts: ''
