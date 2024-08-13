@@ -1,0 +1,8 @@
+version: 1
+type: view
+name: clients
+identifiers:
+  - name: client
+    sql: 'SELECT 1'
+    type: primary
+    allowed_fanouts: ''

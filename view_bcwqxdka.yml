@@ -1,0 +1,8 @@
+version: 1
+type: view
+name: client_cars
+identifiers:
+  - name: client
+    sql: 'SELECT 1'
+    type: foreign
+    allowed_fanouts: ''
