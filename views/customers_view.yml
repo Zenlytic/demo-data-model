@@ -86,7 +86,6 @@ fields:
     type: string
     description: The first promotion the user came in through
     sql: ${TABLE}.first_promotion
-    searchable: false
   - name: first_campaign
     field_type: dimension
     type: string
@@ -113,7 +112,6 @@ fields:
     type: sum
     value_format_name: decimal_0
     sql: ''
-    searchable: true
   - name: third
     field_type: measure
     type: sum
