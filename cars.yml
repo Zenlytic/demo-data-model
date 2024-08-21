@@ -3,6 +3,7 @@ type: view
 name: cars
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CARS
+default_date: default_date_field
 fields:
   - name: car_id
     primary_key: true
@@ -11,3 +12,17 @@ fields:
     value_format_name: decimal_0
     sql: ''
     searchable: true
+  - name: default_date_field
+    field_type: dimension_group
+    type: time
+    value_format_name: decimal_0
+    sql: ''
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
