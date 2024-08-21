@@ -1,0 +1,13 @@
+version: 1
+type: view
+name: cars
+model_name: pure_organics
+sql_table_name: DEMO_PROD.CARS
+fields:
+  - name: car_id
+    primary_key: true
+    field_type: dimension
+    type: string
+    value_format_name: decimal_0
+    sql: ''
+    searchable: true

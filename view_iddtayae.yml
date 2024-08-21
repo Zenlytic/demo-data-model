@@ -1,9 +1,0 @@
-version: 1
-type: view
-name: view_iddtayae
-fields:
-  - name: default_field_cbeom
-    field_type: measure
-    type: sum
-    value_format_name: decimal_0
-    sql: ''
