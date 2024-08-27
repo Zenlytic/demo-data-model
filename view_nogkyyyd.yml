@@ -39,13 +39,6 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  drill_fields:
-  - order_date
-  - subscription_vs_otp
-  - marketing_channel
-  - campaign
-  - promotion
-  - total_gross_revenue
   sql: ${TABLE}.ORDER_ID
   tags:
   - order
