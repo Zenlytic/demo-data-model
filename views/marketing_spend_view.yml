@@ -58,7 +58,7 @@ fields:
   - day_of_year
   - week_of_year
   - month_of_year
-  sql: ${TABLE}.spend_at
+  sql: cast('9999-12-31' as date)
 
 - name: total_marketing_spend
   field_type: measure
