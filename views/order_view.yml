@@ -166,7 +166,7 @@ fields:
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
 
-- name: lines_total_gross_revenue
+- name: line_total_gross_revenue
   field_type: measure
   type: sum
   label: Total Gross Revenue
