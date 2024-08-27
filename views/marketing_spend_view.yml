@@ -16,6 +16,7 @@ fields:
     sql: ${TABLE}.spend_id
     zoe_description: Used to uniquely identify marketing spend events.
     label: Something else
+    searchable: false
   - name: channel
     field_type: dimension
     type: string
@@ -40,6 +41,7 @@ fields:
     hidden: true
     description: The amount spent
     sql: ${TABLE}.ad_spend
+    searchable: false
   - name: spend
     field_type: dimension_group
     type: time
