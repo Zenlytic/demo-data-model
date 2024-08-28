@@ -9,33 +9,26 @@ identifiers:
     type: primary
     sql: ${product_id}
 fields:
-  - name: product_id
-    field_type: dimension
-    type: string
-    hidden: true
-    primary_key: true
-    sql: ${TABLE}.PRODUCT_ID
-    zoe_description: The id of the product.
-    description: The id of the product.
-    searchable: false
-  - name: product_type
-    field_type: dimension
-    type: string
-    description: 'The type of the product sold (Eye, Face, Lip, etc) '
-    sql: ${TABLE}.PRODUCT_TYPE
-    searchable: true
-    zoe_description: 'The type of the product. '
-  - name: product_title
-    field_type: dimension
-    type: string
-    description: The title of the product sold (Everyday SPF Cream, etc)
-    sql: ${TABLE}.PRODUCT_TITLE
-    tags:
-      - product
-    searchable: true
   - name: price
-    field_type: dimension
-    type: string
+    field_type: dimension_group
+    type: duration
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
-    searchable: true
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
+    intervals:
+      - second
+      - minute
+      - hour
+      - day
+      - week
+      - month
+      - quarter
+      - year
