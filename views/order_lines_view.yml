@@ -299,6 +299,14 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: personal_field_seensqb
+  field_type: measure
+  type: count_distinct
+  label: Number Of Orders
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
