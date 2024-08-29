@@ -39,7 +39,7 @@ fields:
   field_type: dimension
   type: number
   sql: ${TABLE}.SUBSCRIPTION_QUANTITY
-  hidden: yes
+  hidden: no
 
 - name: subscription_length
   field_type: dimension
