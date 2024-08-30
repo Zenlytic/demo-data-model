@@ -101,6 +101,7 @@ fields:
   type: string
   description: Whether the order was from a subscription or a one time purchase (OTP)
   sql: ${TABLE}.SUBSCRIPTION_VS_OTP
+  required_access_grants: pii_access
   searchable: true
 
 - name: marketing_source
