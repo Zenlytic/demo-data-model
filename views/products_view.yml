@@ -4,6 +4,10 @@ name: products
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 row_label: Product
+access_filters:
+  - user_attribute: productt
+    field: products.product_type 
+
 identifiers:
   - name: product_id
     type: primary
