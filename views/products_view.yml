@@ -8,6 +8,7 @@ identifiers:
   - name: product_id
     type: primary
     sql: ${product_id}
+
 fields:
   - name: product_id
     field_type: dimension
@@ -17,6 +18,7 @@ fields:
     sql: ${TABLE}.PRODUCT_ID
     zoe_description: The id of the product.
     description: The id of the product.
+
   - name: product_type
     field_type: dimension
     type: string
@@ -24,6 +26,7 @@ fields:
     sql: ${TABLE}.PRODUCT_TYPE
     searchable: true
     zoe_description: 'The type of the product. '
+
   - name: product_title
     field_type: dimension
     type: string
@@ -32,9 +35,16 @@ fields:
     tags:
       - product
     searchable: true
+
   - name: price
     field_type: dimension
     type: string
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
     searchable: true
+
+  - name: count_products
+    field_type: measure
+    type: sum
+    sql:${product_id}
+    value_format_name: decimal_0
