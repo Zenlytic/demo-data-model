@@ -45,6 +45,6 @@ fields:
 
   - name: count_products
     field_type: measure
-    type: sum
+    type: count_distinct
     sql: ${product_id}
     value_format_name: decimal_0
