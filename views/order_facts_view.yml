@@ -17,10 +17,10 @@ derived_table:
 
   default_date: order_date
 
-  # identifiers:
-  # - name: product_id
-  #   type: foreign
-  #   sql: ${product_id}
+  identifiers:
+  - name: promotion
+    type: foreign
+    sql: ${promotion}
 
   fields:
   - name: order_date
