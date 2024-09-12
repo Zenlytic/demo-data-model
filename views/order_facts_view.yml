@@ -42,7 +42,7 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
-    primary_key: false
+    primary_key: true
     sql: ${TABLE}.order_date
 
   - name: product_id
