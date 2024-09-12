@@ -28,6 +28,7 @@ derived_table:
   - name: order_date
     field_type: dimension
     type: time
+    primary_key: yes
     sql: ${TABLE}.order_date
 
   - name: promotion
