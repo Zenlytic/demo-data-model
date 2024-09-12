@@ -7,9 +7,9 @@ derived_table:
   sql: >
   select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_at) as timestamp_ntz) as timestamp)) as order_date
          ,promotion as promotion
-         ,count(distinct order_id) as number_of_orders
-         ,sum(quantity) as number_of_units
-         ,sum(revenue) as total_gross_revenue
+         ,count(distinct order_id) as orders
+         ,sum(quantity) as units
+         ,sum(revenue) as gross_revenue
   from demo_prod.order_lines
   where DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))>='2024-08-07T00:00:00'
     and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
@@ -32,3 +32,18 @@ derived_table:
     field_type: dimension
     type: string
     sql: ${TABLE}.promotion
+
+  - name: total_orders
+    field_type: measure
+    type: sum
+    sql: ${TABLE}.orders
+
+  - name: total_units
+    field_type: measure
+    type: sum
+    sql: ${TABLE}.units
+
+  - name: total_gross_revenue
+    field_type: measure
+    type: sum
+    sql: ${TABLE}.gross_revenue
