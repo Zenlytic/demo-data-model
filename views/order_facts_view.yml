@@ -2,6 +2,7 @@ version: 1
 type: view
 name: order_facts
 model: pure_organics
+default_date: order_date
 
 derived_table:
   sql: >
