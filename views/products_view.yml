@@ -47,6 +47,7 @@ fields:
   - name: count_products
     field_type: measure
     type: count_distinct
-    sql: ''
+    sql: ${product_id}
     value_format_name: decimal_0
+    canon_date: order_lines.order
     description: Unique count of products
