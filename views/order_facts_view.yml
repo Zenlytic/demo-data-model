@@ -16,7 +16,7 @@ derived_table:
            and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
          group by 1, 2
 
-  default_date: order_date
+  default_date: order
 
   identifiers:
   - name: promotion
