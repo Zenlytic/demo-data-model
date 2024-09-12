@@ -1,7 +1,7 @@
 version: 1
 type: view
 name: order_facts
-model: pure_organics_model
+model: pure_organics
 
 derived_table:
   sql: >
