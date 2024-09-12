@@ -17,6 +17,9 @@ derived_table:
          group by 1, 2
 
   identifiers:
+  - name: order_date
+    type: primary
+    sql: ${order_date}  
   - name: promotion
     type: foreign
     sql: ${promotion}
