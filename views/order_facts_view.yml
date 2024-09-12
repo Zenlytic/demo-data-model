@@ -13,8 +13,8 @@ derived_table:
            ,count(distinct order_lines.order_id) as orders
            ,sum(order_lines.quantity) as units
            ,sum(order_lines.revenue) as gross_revenue
-    from demo_prod.order_lines 
-    left join: demo_prod.products on products.order_lines = products.products_id
+    from demo_prod.order_lines
+    left join: demo_prod.products on order_lines.products_id = products.products_id
     where DATE_TRUNC('DAY',CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))>='2024-08-07T00:00:00'
       and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
     group by 1, 2
