@@ -44,10 +44,10 @@ fields:
   - month_of_year
   sql: ${TABLE}.order_date
 
-# - name: product_id
-#   field_type: dimension
-#   type: string
-#   sql: ${TABLE}.product_id
+- name: product_id
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.product_id
 
 # - name: total_orders
 #   field_type: measure
