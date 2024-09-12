@@ -17,18 +17,18 @@ derived_table:
 
   default_date: order_date
 
-  identifiers:
-  - name: product_id
-    type: foreign
-    sql: ${product_id}
+  # identifiers:
+  # - name: product_id
+  #   type: foreign
+  #   sql: ${product_id}
 
-  fields:
-  - name: order_date
-    field_type: dimension
-    type: time
-    sql: ${TABLE}.order_date
+  # fields:
+  # - name: order_date
+  #   field_type: dimension
+  #   type: time
+  #   sql: ${TABLE}.order_date
 
-  - name: promotion
-    field_type: dimension
-    type: string
-    sql: ${TABLE}.promotion
+  # - name: promotion
+  #   field_type: dimension
+  #   type: string
+  #   sql: ${TABLE}.promotion
