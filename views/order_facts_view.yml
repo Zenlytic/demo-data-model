@@ -3,6 +3,8 @@ type: view
 name: order_facts
 description: Summarized Order Data.
 model_name: pure_organics
+default_date: order_date
+row_label: Order Facts
 
 derived_table:
   sql: >
@@ -15,9 +17,6 @@ derived_table:
          where DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))>='2024-08-07T00:00:00'
            and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
          group by 1, 2
-
-# default_date: order_date
-# row_label: Order Facts
 
   identifiers:
   - name: order_date
