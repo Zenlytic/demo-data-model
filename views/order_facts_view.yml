@@ -50,18 +50,18 @@ fields:
   sql: ${TABLE}.product_id
   searchable: yes
 
-# - name: total_orders
-#   field_type: measure
-#   type: sum
-#   sql: ${TABLE}.orders
+- name: total_orders
+  field_type: measure
+  type: sum
+  sql: ${TABLE}.orders
 
-# - name: total_units
-#   field_type: measure
-#   type: sum
-#   sql: ${TABLE}.units
+- name: total_units
+  field_type: measure
+  type: sum
+  sql: ${TABLE}.units
 
-# - name: total_gross_revenue
-#   field_type: measure
-#   type: sum
-#   sql: ${TABLE}.gross_revenue
+- name: total_gross_revenue
+  field_type: measure
+  type: sum
+  sql: ${TABLE}.gross_revenue
 
