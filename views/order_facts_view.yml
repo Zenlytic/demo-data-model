@@ -48,6 +48,7 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.product_id
+  searchable: yes
 
 # - name: total_orders
 #   field_type: measure
