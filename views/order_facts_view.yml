@@ -52,7 +52,7 @@ fields:
     field_type: dimension
     type: string
     sql: ${TABLE}.product_id
-    searchable: true
+    hidden: true
 
   - name: product_title
     field_type: dimension
