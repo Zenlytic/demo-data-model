@@ -13,7 +13,7 @@ fields:
   - name: product_id
     field_type: dimension
     type: string
-    hidden: true
+    # hidden: true
     primary_key: true
     sql: ${TABLE}.PRODUCT_ID
     zoe_description: The id of the product.
