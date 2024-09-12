@@ -42,6 +42,7 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
+    primary_key: true
     sql: ${TABLE}.order_date
 
   - name: product_id
@@ -61,7 +62,7 @@ fields:
     type: sum
     sql: ${TABLE}.units
     value_format_name: decimal_0
-    
+
   - name: total_gross_revenue
     field_type: measure
     type: sum
