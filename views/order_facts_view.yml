@@ -26,6 +26,7 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
+    searchable: true  
 
 fields:
   - name: order
@@ -42,7 +43,7 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
-    primary_key: true
+    primary_key: false
     sql: ${TABLE}.order_date
 
   - name: product_id
