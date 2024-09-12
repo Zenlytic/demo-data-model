@@ -7,7 +7,7 @@ derived_table:
   sql: >
   select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_lines.order_at) as timestamp_ntz) as timestamp)) as order_date
          ,order_lines.promotion as promotion
-         ,count(distinct(order_lines.order_id)) as number_of_orders
+         ,count(distinct order_lines.order_id) as number_of_orders
          ,sum(order_lines.quantity) as number_of_units
          ,sum(order_lines.revenue) as total_gross_revenue
   from demo_prod.order_lines order_lines
