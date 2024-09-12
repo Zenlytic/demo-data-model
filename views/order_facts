@@ -1,0 +1,16 @@
+version: 1
+type: view
+name: order_facts
+
+derived_table:
+  sql: "select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_lines.order_at) as timestamp_ntz) as timestamp)) as order_date
+         ,order_lines.promotion as order_lines_promotion
+         ,count(distinct(order_lines.order_id)) as order_lines_number_of_orders
+         ,sum(order_lines.quantity) as order_lines_number_of_units
+         ,sum(order_lines.revenue) as order_lines_total_gross_revenue
+  from demo_prod.order_lines order_lines
+  where DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', order_lines.ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))>='2024-08-07T00:00:00'
+    and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', order_lines.ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
+  group by 1, 2"
+
+  
