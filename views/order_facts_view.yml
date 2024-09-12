@@ -26,7 +26,6 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
-    searchable: true  
 
 fields:
   - name: order
