@@ -5,15 +5,15 @@ model: pure_organics
 
 derived_table:
   sql: >
-  select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_at) as timestamp_ntz) as timestamp)) as order_date
-         ,promotion as promotion
-         ,count(distinct order_id) as orders
-         ,sum(quantity) as units
-         ,sum(revenue) as gross_revenue
-  from demo_prod.order_lines
-  where DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))>='2024-08-07T00:00:00'
-    and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
-  group by 1, 2
+         select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_at) as timestamp_ntz) as timestamp)) as order_date
+                ,promotion as promotion
+                ,count(distinct order_id) as orders
+                ,sum(quantity) as units
+                ,sum(revenue) as gross_revenue
+         from demo_prod.order_lines
+         where DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))>='2024-08-07T00:00:00'
+           and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
+         group by 1, 2
 
   default_date: order_date
 
