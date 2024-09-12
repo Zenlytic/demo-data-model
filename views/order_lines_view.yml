@@ -54,7 +54,6 @@ fields:
 - name: product_id
   field_type: dimension
   type: string
-  hidden: false
   sql: ${TABLE}.PRODUCT_ID
 
 - name: discount
