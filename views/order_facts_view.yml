@@ -7,7 +7,7 @@ default_date: order
 derived_table:
   sql: >
          select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_at) as timestamp_ntz) as timestamp)) as order_date
-                ,promotion as promotion
+                ,product_id as product_id
                 ,count(distinct order_id) as orders
                 ,sum(quantity) as units
                 ,sum(revenue) as gross_revenue
@@ -20,9 +20,9 @@ derived_table:
   - name: order_date
     type: primary
     sql: ${order_date}  
-  - name: promotion
+  - name: product_id
     type: foreign
-    sql: ${promotion}
+    sql: ${product_id}
 
   fields:
   - name: order
@@ -41,10 +41,10 @@ derived_table:
     - month_of_year
     sql: ${TABLE}.order_date
 
-  - name: promotion
+  - name: product_id
     field_type: dimension
     type: string
-    sql: ${TABLE}.promotion
+    sql: ${TABLE}.product_id
 
   - name: total_orders
     field_type: measure
