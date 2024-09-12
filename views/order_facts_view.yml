@@ -4,7 +4,7 @@ name: order_facts
 
 derived_table:
   sql: >
-  "select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_lines.order_at) as timestamp_ntz) as timestamp)) as order_date
+  select date_trunc('DAY', cast(cast(convert_timezone('America/New_York', order_lines.order_at) as timestamp_ntz) as timestamp)) as order_date
          ,order_lines.promotion as promotion
          ,count(distinct(order_lines.order_id)) as number_of_orders
          ,sum(order_lines.quantity) as number_of_units
@@ -12,7 +12,7 @@ derived_table:
   from demo_prod.order_lines order_lines
   where DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', order_lines.ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))>='2024-08-07T00:00:00'
     and DATE_TRUNC('DAY', CAST(CAST(CONVERT_TIMEZONE('America/New_York', order_lines.ORDER_AT) as TIMESTAMP_NTZ) as TIMESTAMP))<='2024-09-06T23:59:59'
-  group by 1, 2"
+  group by 1, 2
 
   default_date: order_date
 
