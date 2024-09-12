@@ -39,3 +39,9 @@ fields:
     description: Blahabababbaba
     sql: ${TABLE}.PRICE
     searchable: true
+  - name: count_products
+    field_type: measure
+    type: count_distinct
+    sql: ''
+    value_format_name: decimal_0
+    description: Unique count of products
