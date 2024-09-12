@@ -43,6 +43,7 @@ fields:
   - week_of_year
   - month_of_year
   sql: ${TABLE}.order_date
+  searchable: false
 
 - name: product_id
   field_type: dimension
