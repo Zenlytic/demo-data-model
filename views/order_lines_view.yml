@@ -299,6 +299,13 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: PROFIT_MARGIN_NEW
+  field_type: measure
+  type: number
+  label: Profit Margin
+  description: Profit Margin = Gross Profit / Total Gross Revenue
+  sql: ${GROSS_PROFIT} / ${TOTAL_GROSS_REVENUE}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
