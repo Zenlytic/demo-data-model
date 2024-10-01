@@ -282,6 +282,7 @@ fields:
     sql: ${total_net_revenue} - ${total_cogs}
     zoe_description: This is the gross profit.
   - type: sum
+    value_format_name: decimal_0
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
