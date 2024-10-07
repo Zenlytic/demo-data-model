@@ -110,7 +110,7 @@ fields:
     description: >-
       The marketing channel that the customer came through before placing their
       order.
-    sql: CASE WHEN ${TABLE}.MARKETING_CHANNEL = 'Facebook' THEN '1.0' ELSE ${TABLE}.MARKETING_CHANNEL END
+    sql: CASE WHEN ${TABLE}.MARKETING_CHANNEL = 'Facebook' THEN 'Mantoria Inc. - Mississauga' ELSE ${TABLE}.MARKETING_CHANNEL END
     searchable: true
   - name: last_click_marketing_channel
     field_type: dimension
