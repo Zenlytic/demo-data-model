@@ -110,7 +110,7 @@ fields:
     description: >-
       The marketing channel that the customer came through before placing their
       order.
-    sql: ${TABLE}.MARKETING_CHANNEL
+    sql: CASE WHEN ${TABLE}.MARKETING_CHANNEL = 'Facebook' THEN 'Meta' ELSE ${TABLE}.MARKETING_CHANNEL END
     searchable: true
   - name: last_click_marketing_channel
     field_type: dimension
