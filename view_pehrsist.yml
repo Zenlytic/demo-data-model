@@ -1,0 +1,59 @@
+version: 1
+type: view
+name: zenlytic_pets
+
+derived_table: 
+    sql: >
+        select 'Mark' as owner, 'Dog' as pet_type, 'Sox' as pet_name, 'F' as sex, 'Papillon' as breed, '16' as age, 'Old and lazy' as disposition
+        union select 'Mark' as owner, 'Cat' as pet_type, 'Bootsie' as pet_name, 'F' as sex, 'Tuxedo' as breed, '10' as age, 'Grumpy' as disposition
+        union select 'Mark' as owner, 'Cat' as pet_type, 'Squeaks' as pet_name, 'F' as sex, 'Calico' as breed, '7' as age, 'Shy' as disposition
+        union select 'Mark' as owner, 'Cat' as pet_type, 'Tofu' as pet_name, 'F' as sex, 'Siamese' as breed, '4' as age, 'Sweet' as disposition
+        union select 'Ryan' as owner, 'Toddler' as pet_type, 'Noah' as pet_name, 'M' as sex, 'Canadian short-hair' as breed, '5' as age, 'Generally good; some biting issues' as disposition
+        union select 'Rich' as owner, 'Dog' as pet_type, 'Mad Martigan' as pet_name, 'M' as sex, 'Irish Wolfhound' as breed, '2' as age, 'Friendly' as disposition
+        union select 'Rich' as owner, 'Cat' as pet_type, 'Captian California' as pet_name, 'M' as sex, 'Tabby' as breed, '5' as age, 'Independent, curious' as disposition
+        union select 'Anna' as owner, 'Dog' as pet_type, 'Luna' as pet_name, 'F' as sex, 'Mutt/Brindle' as breed, '4' as age, 'Chill, Independent' as disposition
+        union select 'Ashley' as owner, 'Cat' as pet_type, 'Salem' as pet_name, 'M' as sex, 'Bombay' as breed, '9' as age, 'A true cat, cat. Skittish when there are any noises but cuddly as can be' as disposition
+        union select 'Ashley' as owner, 'Cat' as pet_type, 'Walter' as pet_name, 'M' as sex, 'Bombay' as breed, '9' as age, 'A cat who thinkgs he is a dog, must be the center of conversation. Lap crasher, Zoom Tail feature.' as disposition
+        union select 'Noah' as owner, 'Dog' as pet_type, 'Spoon' as pet_name, 'F' as sex, 'Black Lab' as breed, '3' as age, 'A very good girl' as disposition
+        union select 'Noah' as owner, 'Cat' as pet_type, 'Bonk' as pet_name, 'M' as sex, 'Black Domestic Short Hair' as breed, '5' as age, 'Independent, Lovely -- goes in/out as he pleases' as disposition
+        union select 'Noah' as owner, 'Cat' as pet_type, 'Robot' as pet_name, 'F' as sex, 'Fawn Mackeral Tabby' as breed, '2' as age, 'Lizard-like, very much like her name -- eats spiders, very soft' as disposition
+
+
+fields:
+- name: owner
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.owner       
+
+- name: pet_type
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.pet_type       
+
+- name: pet_name
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.pet_name       
+
+- name: sex
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.sex       
+
+- name: breed
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.breed       
+
+- name: age
+  field_type: dimension
+  type: number
+  sql: ${TABLE}.age      
+
+- name: disposition
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.disposition 
+
+
+
