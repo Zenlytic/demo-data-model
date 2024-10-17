@@ -1,7 +1,7 @@
 version: 1
 type: view
 name: league_receiving
-model_name: pure_organics
+model_name: football
 sql_table_name: '"postgres".public.league_receiving'
 identifiers:
   - name: player_id
