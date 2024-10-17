@@ -8,10 +8,6 @@ identifiers:
     type: primary
     sql: ${player_id}
     allowed_fanouts: []
-  - name: player_id
-    sql: ${player_id}
-    type: foreign
-    allowed_fanouts: ''
 fields:
   - name: player_id
     field_type: dimension
