@@ -2,7 +2,6 @@ version: 1
 type: view
 name: league_players
 model_name: football
-sql_table_name: public.league_players
 identifiers:
   - name: player_id
     type: primary
@@ -29,3 +28,5 @@ fields:
     type: string
     sql: ${TABLE}."position"
     searchable: true
+derived_table: {}
+sql_table_name: public.league_players
