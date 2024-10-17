@@ -7,9 +7,6 @@ identifiers:
   - name: player_id
     type: primary
     sql: ${player_id}
-  - name: team_key
-    type: foreign
-    sql: ${team_key}
 fields:
   - name: player_id
     field_type: dimension
