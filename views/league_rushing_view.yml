@@ -1,7 +1,7 @@
 version: 1
 type: view
 name: league_rushing
-model_name: pure_organics
+model_name: football
 sql_table_name: '"postgres".public.league_rushing'
 identifiers:
   - name: player_id
