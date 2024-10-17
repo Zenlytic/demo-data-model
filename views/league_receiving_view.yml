@@ -13,6 +13,7 @@ fields:
     type: string
     sql: ${TABLE}."player_id"
     searchable: false
+    primary_key: true
   - name: rank
     field_type: dimension
     type: number
