@@ -7,13 +7,11 @@ identifiers:
   - name: player_id
     type: primary
     sql: ${player_id}
+    allowed_fanouts: []
   - name: player_id
     sql: ${player_id}
-    type: join
+    type: foreign
     allowed_fanouts: ''
-    reference: league_players
-    relationship: many_to_one
-    join_type: left_outer
 fields:
   - name: player_id
     field_type: dimension
