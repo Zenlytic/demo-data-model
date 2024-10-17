@@ -28,5 +28,4 @@ fields:
     type: string
     sql: ${TABLE}."position"
     searchable: true
-derived_table: {}
 sql_table_name: public.league_players
