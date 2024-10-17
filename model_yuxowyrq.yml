@@ -2,4 +2,3 @@ version: 1
 type: model
 name: football
 connection: football
-access_grants: []
