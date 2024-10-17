@@ -2,7 +2,7 @@ version: 1
 type: view
 name: league_teams
 model_name: football
-sql_table_name: '"postgres".public.league_teams'
+sql_table_name: public.league_teams
 identifiers:
   - name: team_key
     type: primary
