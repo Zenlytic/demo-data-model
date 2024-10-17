@@ -19,6 +19,8 @@ fields:
     filters:
       - field: f0
         value: v0
+      - field: ''
+        value: ''
   - name: channel
     field_type: dimension
     type: string
