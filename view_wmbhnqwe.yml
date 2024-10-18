@@ -1,0 +1,24 @@
+version: 1
+type: view
+name: product_types
+fields:
+  - name: id
+    field_type: measure
+    type: sum
+    sql: ''
+    value_format_name: decimal_0
+  - name: color
+    field_type: measure
+    type: sum
+    sql: ''
+    value_format_name: decimal_0
+  - name: weight
+    field_type: measure
+    type: sum
+    sql: ''
+    value_format_name: decimal_0
+  - name: size
+    field_type: measure
+    type: sum
+    sql: ''
+    value_format_name: decimal_0
