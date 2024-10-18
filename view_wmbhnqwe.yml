@@ -22,3 +22,13 @@ fields:
     type: sum
     sql: ''
     value_format_name: decimal_0
+  - name: price
+    field_type: measure
+    type: sum
+    sql: ''
+    value_format_name: decimal_0
+  - name: safety_score
+    field_type: measure
+    type: sum
+    sql: ''
+    value_format_name: decimal_0
