@@ -7,28 +7,34 @@ fields:
     type: sum
     sql: ''
     value_format_name: decimal_0
+    description: id of the product type
   - name: color
     field_type: measure
     type: sum
     sql: ''
     value_format_name: decimal_0
+    description: color of the product type
   - name: weight
     field_type: measure
     type: sum
     sql: ''
     value_format_name: decimal_0
+    description: weight of the product type
   - name: size
     field_type: measure
     type: sum
     sql: ''
     value_format_name: decimal_0
+    description: size of the product type
   - name: price
     field_type: measure
     type: sum
     sql: ''
     value_format_name: decimal_0
+    description: price of the product type
   - name: safety_score
     field_type: measure
     type: sum
     sql: ''
     value_format_name: decimal_0
+    description: safety score of the product type
