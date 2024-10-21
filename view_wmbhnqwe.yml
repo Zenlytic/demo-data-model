@@ -28,23 +28,9 @@ fields:
     sql: ''
     value_format_name: decimal_0
     description: size of the product type
-  - name: price
-    field_type: measure
-    type: sum
-    sql: ''
-    value_format_name: decimal_0
-    description: price of the product type
-  - name: safety_score
-    field_type: measure
-    type: sum
-    sql: ''
-    value_format_name: decimal_0
-    description: safety score of the product type
-  - name: quality
-    field_type: measure
-    type: sum
-    sql: ''
-    value_format_name: decimal_0
+  - {}
+  - {}
+  - {}
 derived_table:
   sql: ''
 event_dimension: ''
