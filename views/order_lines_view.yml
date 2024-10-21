@@ -259,7 +259,7 @@ fields:
     value: Repeat
 
 - name: repurchase_rate
-  field_type: measure
+  field_type: dimension
   type: number
   description: Repurchase rate = number of repeat orders / number of orders.
   value_format_name: percent_2
