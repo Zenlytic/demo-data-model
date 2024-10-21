@@ -373,6 +373,9 @@ fields:
     sql: ${TABLE}.ORDER_ID
     value_format_name: decimal_0
     description: Number of new orders
+    filters:
+      - field: new_vs_repeat
+        value: New
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
