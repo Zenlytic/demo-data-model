@@ -366,7 +366,7 @@ fields:
     value_format_name: usd
     sql: ${total_discounts} / nullif(${number_of_orders}, 0)
     hidden: false
-    label: ''
+    label: Average Discounts Per Order
   - name: number_of_new_orders
     field_type: measure
     type: count_distinct
