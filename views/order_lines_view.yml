@@ -378,6 +378,14 @@ fields:
     zoe_description: This is the gross profit.
     
     hidden: false
+
+  - name: average_discounts_per_order
+    field_type: measure
+    type: number
+    description: Average discount applied per order
+    value_format_name: usd
+    sql: ${total_discounts} / nullif(${number_of_orders}, 0)
+    hidden: false
     
 event_name: Purchase
 fields_for_analysis:
