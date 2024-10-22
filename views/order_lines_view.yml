@@ -264,7 +264,7 @@ fields:
     field_type: measure
     type: number
     description: Total net revenue = gross revenue - discounts
-    value_format_name: decimal
+    value_format_name: decimal_pct_4
     sql: ${total_gross_revenue} - ${total_discounts}
     
     hidden: false
