@@ -331,7 +331,7 @@ fields:
     field_type: measure
     type: number
     description: Repurchase rate = number of repeat orders / number of orders.
-    value_format_name: percent_4
+    value_format_name: decimal_pct_4
     sql: ${number_of_repeat_orders} / ${number_of_orders}
     synonyms:
       - Repeat order rate
