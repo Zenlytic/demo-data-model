@@ -275,7 +275,7 @@ fields:
     description: >-
       Subscription revenue = gross revenue (product revenues + shipping, for
       subscriptions only)
-    value_format_name: usd
+    value_format_name: decimal_3
     sql: ${revenue}
     filters:
       - field: subscription_vs_otp
@@ -331,7 +331,7 @@ fields:
     field_type: measure
     type: number
     description: Repurchase rate = number of repeat orders / number of orders.
-    value_format_name: percent_1
+    value_format_name: percent_4
     sql: ${number_of_repeat_orders} / ${number_of_orders}
     synonyms:
       - Repeat order rate
