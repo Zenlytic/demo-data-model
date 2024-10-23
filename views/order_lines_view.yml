@@ -303,7 +303,7 @@ fields:
   field_type: measure
   type: sum
   hidden: false
-  label: Number Of Unitss
+  label: Number Of Units
   description: 'The unique number of units purchased (e.g. customer orders: 2 lip
     gloss and 1 blush = 3 units sold)'
   value_format_name: decimal_0
