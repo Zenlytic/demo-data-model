@@ -13,7 +13,7 @@ fields:
     hidden: true
     primary_key: true
     description: Represents a unique key for each spend event..
-    sql: ${TABLE}.spend_id ooga
+    sql: ${TABLE}.spend_id
     zoe_description: Used to uniquely identify marketing spend events.
     searchable: false
   - name: channel
