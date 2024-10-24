@@ -66,7 +66,7 @@ fields:
   hidden: true
   sql: ${TABLE}.DISCOUNT
 
-- name: revenue
+- name: lines_revenue
   field_type: dimension
   type: number
   hidden: true
@@ -193,7 +193,7 @@ fields:
   label: Total Gross Revenue
   description: Total gross revenue = revenue from product sales + shipping revenues.
   value_format_name: usd
-  sql: ${revenue}
+  sql: ${lines_revenue}
   synonyms:
   - sales
   - revenue
@@ -204,7 +204,7 @@ fields:
   hidden: true
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: usd
-  sql: ${revenue}
+  sql: ${lines_revenue}
   filters:
   - field: marketing_channel
     value: -Organic
@@ -235,7 +235,7 @@ fields:
   description: Subscription revenue = gross revenue (product revenues + shipping,
     for subscriptions only)
   value_format_name: usd
-  sql: ${revenue}
+  sql: ${lines_revenue}
   filters:
   - field: subscription_vs_otp
     value: Subscription
