@@ -65,7 +65,7 @@ fields:
     field_type: dimension
     type: number
     hidden: false
-    sql: ${TABLE}.REVENUE + 1
+    sql: ${TABLE}.REVENUE
   - name: price
     field_type: dimension
     type: number
