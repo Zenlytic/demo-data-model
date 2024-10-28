@@ -261,7 +261,7 @@ fields:
 
 - name: number_of_orders
   field_type: measure
-  type: count_distinct
+  type: count
   hidden: false
   description: The unique number of orders placed
   value_format_name: decimal_0
