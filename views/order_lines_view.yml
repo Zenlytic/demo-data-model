@@ -170,6 +170,9 @@ fields:
   - month
   - quarter
   - year
+  - fiscal_year
+  - fiscal_quarter
+  - fiscal_month
   sql: ${TABLE}.ORDER_AT
 
 - name: between_first_order_and_this_order
