@@ -3,7 +3,7 @@ type: model
 name: pure_organics
 connection: demo
 week_start_day: sunday
-fiscal_month_offset: 1
+fiscal_month_offset: -1
 access_grants:
 - name: pii_access
   user_attribute: department
