@@ -32,7 +32,7 @@ fields:
   field_type: dimension
   type: yesno
   description: 'Whether the customer accepts marketing. '
-  sql: ${TABLE}.ACCEPTS_MARKETING
+  sql: CASE WHEN ${TABLE}.ACCEPTS_MARKETING THEN 'Y' ELSE 'N' END
 
 - name: email
   field_type: dimension
