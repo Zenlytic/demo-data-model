@@ -209,7 +209,7 @@ fields:
             when ${event_name} = 'Cart' then 4
             when ${event_name} = 'Complete Purchase' then 5
             when ${event_name} = 'Subscribe' then 6 end
-  value_format_name: deciaml_0
+  value_format_name: decimal_0
 
 - name: page_url_path
   field_type: dimension
