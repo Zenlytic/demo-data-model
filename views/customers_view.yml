@@ -113,6 +113,5 @@ fields:
     field_type: measure
     type: count_distinct
     sql: ${customer_id}
-    sql_value_name: decimal_0
+    value_format_name: decimal_0
 
-    
