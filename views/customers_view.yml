@@ -109,3 +109,10 @@ fields:
       - quarter
       - year
     sql: ${TABLE}.first_order_at
+  - name: count_customers
+    field_type: measure
+    type: count_distinct
+    sql: ${customer_id}
+    sql_value_name: decimal_0
+
+    
