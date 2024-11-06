@@ -199,6 +199,17 @@ fields:
   sql: ${TABLE}.EVENT_NAME
   searchable: true
 
+- name: event_sequence
+  field_type: dimension
+  type: number
+  description: The sequence of events user took on the site
+  sql: case when ${event_name} = '' then 1
+            when ${event_name} = '' then 2
+            when ${event_name} = '' then 3
+            when ${event_name} = '' then 4
+            when ${event_name} = '' then 5
+            when ${event_name} = '' then 6 end
+
 - name: page_url_path
   field_type: dimension
   type: string
