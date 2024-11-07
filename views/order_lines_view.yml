@@ -326,7 +326,6 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
-
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
