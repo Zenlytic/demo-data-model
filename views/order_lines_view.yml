@@ -327,14 +327,6 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
-- name: CUSTOM_PROFIT_MARGIN
-  field_type: measure
-  type: number
-  label: Custom Profit Margin
-  description: Custom Profit Margin calculated as (Total Net Revenue - Total Cost)
-    / Total Net Revenue * 100
-  sql: ((${order_lines.TOTAL_NET_REVENUE} - ${order_lines.TOTAL_COGS}) / ${order_lines.TOTAL_NET_REVENUE})
-    * 100
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
