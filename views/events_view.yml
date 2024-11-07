@@ -6,8 +6,6 @@ model_name: pure_organics
 sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
-event_dimension: event_name
-
 fields:
 - name: anonymous_id
   field_type: dimension
@@ -205,13 +203,11 @@ fields:
   field_type: dimension
   type: number
   description: The sequence of events user took on the site
-  sql: case when ${event_name} = 'Visit Website' then 1
-            when ${event_name} = 'View Product' then 2
-            when ${event_name} = 'Read Blog' then 3
-            when ${event_name} = 'Cart' then 4
-            when ${event_name} = 'Complete Purchase' then 5
-            when ${event_name} = 'Subscribe' then 6 end
   value_format_name: decimal_0
+  sql: case when ${event_name} = 'Visit Website' then 1 when ${event_name} = 'View
+    Product' then 2 when ${event_name} = 'Read Blog' then 3 when ${event_name} = 'Cart'
+    then 4 when ${event_name} = 'Complete Purchase' then 5 when ${event_name} = 'Subscribe'
+    then 6 end
 
 - name: page_url_path
   field_type: dimension
@@ -273,3 +269,4 @@ fields:
     we can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
+event_dimension: event_name
