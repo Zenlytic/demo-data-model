@@ -236,15 +236,9 @@ fields:
   datatype: timestamp
   description: The time of interaction with the site
   timeframes:
-  - raw
   - date
-  - week
   - month
-  - quarter
-  - year
-  - day_of_year
-  - week_of_year
-  - month_of_year
+  - week
   sql: ${TABLE}.EVENT_TIMESTAMP
 
 - name: number_of_events
