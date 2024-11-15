@@ -25,7 +25,7 @@ fields:
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: true
+  hidden: false
   description: Represents the id of each customer.
   drill_fields:
   - customers.email
