@@ -41,6 +41,9 @@ fields:
   field_type: dimension
   type: string
   hidden: false
+  primary_key: false
+  label: Order Id
+  description: my order id description
   drill_fields:
   - order_date
   - subscription_vs_otp
@@ -48,7 +51,7 @@ fields:
   - campaign
   - promotion
   - total_gross_revenue
-  sql: ${TABLE}.ORDER_ID
+  sql: ${TABLE}.order_id
   tags:
   - order
   searchable: false
@@ -271,10 +274,11 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
+  label: Number Of Repeat Orders
   description: The unique number of orders placed by customers who have placed at
     least one order before
   value_format_name: decimal_0
-  sql: ${order_id}
+  sql: case when ${new_vs_repeat}='Repeat' then ${order_id} end
   filters:
   - field: new_vs_repeat
     value: Repeat
