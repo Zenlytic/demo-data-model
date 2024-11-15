@@ -41,6 +41,9 @@ fields:
   field_type: dimension
   type: string
   hidden: false
+  primary_key: false
+  label: Order Id
+  description: my order id description
   drill_fields:
   - order_date
   - subscription_vs_otp
@@ -48,7 +51,7 @@ fields:
   - campaign
   - promotion
   - total_gross_revenue
-  sql: ${TABLE}.ORDER_ID
+  sql: ${TABLE}.order_id
   tags:
   - order
   searchable: false
@@ -271,10 +274,11 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
+  label: Number Of Repeat Orders
   description: The unique number of orders placed by customers who have placed at
     least one order before
   value_format_name: decimal_0
-  sql: ${order_id}
+  sql: case when ${new_vs_repeat}='Repeat' then ${order_id} end
   filters:
   - field: new_vs_repeat
     value: Repeat
@@ -326,6 +330,15 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: personal_field_zlvekiq
+  field_type: measure
+  type: sum
+  label: Number Of Units
+  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
+    gloss and 1 blush = 3 units sold)'
+  value_format_name: decimal_0
+  sql: ${quantity}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
