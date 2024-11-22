@@ -174,7 +174,7 @@ fields:
   datatype: timestamp
   label: Order Date
   description: The time at which the order was placed. This is the main time field
-    to use for orders-v2
+    to use for orders-v3
   timeframes:
   - raw
   - date
@@ -259,14 +259,6 @@ fields:
   - field: new_vs_repeat
     value: New
 
-- name: number_of_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of orders placed
-  value_format_name: decimal_0
-  sql: ${order_id}
-
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -317,13 +309,21 @@ fields:
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
 
+- name: number_of_orders
+  field_type: measure
+  type: count_distinct
+  hidden: false
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
+
 - name: GROSS_AOV
   field_type: measure
   type: number
   label: Gross Aov
   description: Gross AOV = gross revenues / number of orders
   value_format_name: usd
-  sql: 1*${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  sql: 10*${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
 event_name: Purchase
