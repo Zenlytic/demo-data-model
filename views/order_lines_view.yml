@@ -186,18 +186,6 @@ fields:
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
 
-- name: total_gross_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -267,16 +255,6 @@ fields:
   - field: new_vs_repeat
     value: Repeat
 
-- name: repurchase_rate
-  field_type: measure
-  type: number
-  hidden: false
-  description: Repurchase rate = number of repeat orders / number of orders.
-  value_format_name: percent_1
-  sql: ${number_of_repeat_orders} / ${number_of_orders}
-  synonyms:
-  - Repeat order rate
-
 - name: gross_aov
   field_type: measure
   type: number
@@ -315,7 +293,7 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-- name: SUBSCRIPTION_REVENUE
+- name: subscription_revenue
   field_type: measure
   type: sum
   label: Subscription Revenue
@@ -323,6 +301,28 @@ fields:
     for subscriptions only)
   value_format_name: usd
   sql: 10*case when ${subscription_vs_otp}='Subscription' then ${revenue} end
+
+- name: repurchase_rate
+  field_type: measure
+  type: number
+  hidden: false
+  description: Repurchase rate = number of repeat orders / number of orders.
+  value_format_name: percent_1
+  sql: ${number_of_repeat_orders} / ${number_of_orders}
+  synonyms:
+  - Repeat order rate
+
+
+- name: TOTAL_GROSS_REVENUE
+  field_type: measure
+  type: sum
+  label: Total Gross Revenue
+  description: Total gross revenue = revenue from product sales + shipping revenues.
+  value_format_name: usd
+  sql: 10*${revenue}
+  synonyms:
+  - sales
+  - revenue
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
