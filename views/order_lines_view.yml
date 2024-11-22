@@ -228,18 +228,6 @@ fields:
   value_format_name: usd
   sql: ${total_gross_revenue} - ${total_discounts}
 
-- name: subscription_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  description: Subscription revenue = gross revenue (product revenues + shipping,
-    for subscriptions only)
-  value_format_name: usd
-  sql: ${revenue}
-  filters:
-  - field: subscription_vs_otp
-    value: Subscription
-
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -309,6 +297,15 @@ fields:
   value_format_name: decimal_0
   sql: ${quantity}
 
+- name: gross_profit
+  field_type: measure
+  type: number
+  hidden: false
+  description: The total net revenue - allocated cost of goods sold to the order line
+  value_format_name: usd
+  sql: ${total_net_revenue} - ${total_cogs}
+  zoe_description: This is the gross profit.
+
 - name: total_cogs
   field_type: measure
   type: sum
@@ -318,14 +315,14 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-- name: gross_profit
+- name: SUBSCRIPTION_REVENUE
   field_type: measure
-  type: number
-  hidden: false
-  description: The total net revenue - allocated cost of goods sold to the order line
+  type: sum
+  label: Subscription Revenue
+  description: Subscription revenue = gross revenue (product revenues + shipping,
+    for subscriptions only)
   value_format_name: usd
-  sql: ${total_net_revenue} - ${total_cogs}
-  zoe_description: This is the gross profit.
+  sql: 10*case when ${subscription_vs_otp}='Subscription' then ${revenue} end
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
