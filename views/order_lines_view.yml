@@ -259,14 +259,6 @@ fields:
   - field: new_vs_repeat
     value: New
 
-- name: number_of_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of orders placed
-  value_format_name: decimal_0
-  sql: ${order_id}
-
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -288,16 +280,6 @@ fields:
   sql: ${number_of_repeat_orders} / ${number_of_orders}
   synonyms:
   - Repeat order rate
-
-- name: gross_aov
-  field_type: measure
-  type: number
-  hidden: false
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
 
 - name: number_of_units
   field_type: measure
@@ -326,6 +308,24 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: number_of_orders
+  field_type: measure
+  type: count_distinct
+  hidden: false
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
+
+- name: GROSS_AOV
+  field_type: measure
+  type: number
+  label: Gross Aov
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: 10*${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
