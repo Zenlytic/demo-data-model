@@ -3,7 +3,13 @@ type: view
 name: order_lines
 description: Description of order_lines view.
 model_name: pure_organics
-sql_table_name: DEMO_PROD.ORDER_LINES
+# sql_table_name: DEMO_PROD.ORDER_LINES
+derived_table: 
+  sql: >
+    SELECT
+        *,
+        ROW_NUMBER() OVER (PARTITION BY CUSTOMER_ID ORDER BY ORDER_AT) AS seq_num
+    FROM DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
 identifiers:
@@ -60,10 +66,16 @@ fields:
   sql: ${TABLE}.PRODUCT_ID
   searchable: false
 
+- name: order_sequence_number
+  field_type: dimension
+  type: number
+  sql: ${TABLE}.seq_num
+  description: The sequence of order the customer had made, e.g. 1 = first order, 2 = second order, etc
+
 - name: discount
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.DISCOUNT
 
 - name: revenue
@@ -75,7 +87,7 @@ fields:
 - name: price
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.PRICE
 
 - name: quantity
@@ -153,6 +165,12 @@ fields:
     customer
   sql: ${TABLE}.new_vs_repeat
   searchable: true
+
+- name: is_repeat_order
+  field_type: dimension
+  type: yesno
+  description: Whether this is a repeat order (true) or first order (false)
+  sql: ${new_vs_repeat} = 'Repeat'
 
 - name: order
   field_type: dimension_group
@@ -267,18 +285,6 @@ fields:
   value_format_name: decimal_0
   sql: ${order_id}
 
-- name: number_of_repeat_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of orders placed by customers who have placed at
-    least one order before
-  value_format_name: decimal_0
-  sql: ${order_id}
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
-
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -326,6 +332,29 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: number_of_repeat_orders
+  field_type: measure
+  type: count_distinct
+  hidden: false
+  description: The unique number of orders placed by customers who have placed at
+    least one order before
+  value_format_name: decimal_0
+  sql: ${order_id}
+  filters:
+  - field: new_vs_repeat
+    value: Repeat
+
+- name: personal_field_sdwdvsd
+  field_type: measure
+  type: sum
+  label: Total Gross Revenue
+  description: Total gross revenue = revenue from product sales + shipping revenues.
+  value_format_name: usd
+  sql: ${revenue}
+  synonyms:
+  - sales
+  - revenue
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
