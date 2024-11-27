@@ -10,28 +10,28 @@ access_grants:
   - Executive
   - Finance
   - Marketing
-mappings:
-  marketing_channel:
-    fields:
-    - order_lines.marketing_channel
-    - marketing_spend.channel
-    description: >-
-      The marketing channel that the customer came through before placing their
-      order.
-    group_label: Acquisition
-  marketing_source:
-    fields:
-    - order_lines.marketing_source
-    - marketing_spend.source
-    description: >-
-      The marketing source that the customer came through before placing their
-      order.
-    group_label: Acquisition
-  campaign:
-    fields:
-    - order_lines.campaign
-    - marketing_spend.campaign
-    description: >-
-      The marketing campaign that the customer came through before placing their
-      order.
-    group_label: Acquisition
+# mappings:
+#   marketing_channel:
+#     fields:
+#     - order_lines.marketing_channel
+#     - marketing_spend.channel
+#     description: >-
+#       The marketing channel that the customer came through before placing their
+#       order.
+#     group_label: Acquisition
+#   marketing_source:
+#     fields:
+#     - order_lines.marketing_source
+#     - marketing_spend.source
+#     description: >-
+#       The marketing source that the customer came through before placing their
+#       order.
+#     group_label: Acquisition
+#   campaign:
+#     fields:
+#     - order_lines.campaign
+#     - marketing_spend.campaign
+#     description: >-
+#       The marketing campaign that the customer came through before placing their
+#       order.
+#     group_label: Acquisition
