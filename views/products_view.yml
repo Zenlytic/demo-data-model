@@ -39,11 +39,9 @@ fields:
 - name: product_image_url
   field_type: dimension
   type: string
+  description: Product image url for the product title
   value_format_name: image_from_url
-  sql: >+
-    CASE ${product_title}
-
-    when 'Easygoing Lipstick' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/easygoing_lipstick.jpg'
+  sql: "CASE ${product_title}\nwhen 'Easygoing Lipstick' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/easygoing_lipstick.jpg'
     when 'Everyday Bronzer' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_bronzer.jpg'
     when 'Everyday Concealer' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_concealer.jpg'
     when 'Everyday Eyeshadow' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_eyeshadow.jpg'
@@ -55,10 +53,9 @@ fields:
     when 'Organic Color Correct' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
     when 'Organic Foundation' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_foundation.jpg'
     when 'Your Fav Primer' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
-    END
-
-  description: Product image url for the product title
+    END\n\n"
   searchable: false
+
 - name: price
   field_type: dimension
   type: string
