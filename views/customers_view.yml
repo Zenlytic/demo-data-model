@@ -18,6 +18,13 @@ identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
+
+
+
+
+
+
+  
 fields:
 - name: customer_id
   field_type: dimension
