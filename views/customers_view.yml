@@ -14,16 +14,11 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
+
 identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-
-
-
-
-
-
   
 fields:
 - name: customer_id
@@ -60,6 +55,12 @@ fields:
   field_type: dimension
   type: string
   sql: ${TABLE}.LAST_NAME
+  searchable: false
+
+- name: full_name
+  field_type: dimension
+  type: string
+  sql: concat(${first_name}, ${last_name})
   searchable: false
 
 - name: address
@@ -127,8 +128,17 @@ fields:
   - year
   sql: ${TABLE}.first_order_at
 
+# MEASURES
+
 - name: count_customers
   field_type: measure
-  type: max
+  type: count_distinct
   value_format_name: decimal_0
   sql: ${customer_id}
+
+- name: count_emails
+  field_type: measure
+  type: count_distinct
+  value_format_name: decimal_0
+  sql: ${email}
+

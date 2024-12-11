@@ -3,6 +3,12 @@ type: model
 name: pure_organics
 connection: demo
 week_start_day: sunday
+
+# Access Grants allow you to limit row level data base on user permissions.
+# In this example, we create an access grant called "pii_access" that grants
+# access to individual fields based on the users "department" user_attribute.
+# If the user_attribute contians "Executive", "Finance", or "Marketing" 
+# then the access grant resovles as True, otherwise False.
 access_grants:
 - name: pii_access
   user_attribute: department
@@ -10,6 +16,7 @@ access_grants:
   - Executive
   - Finance
   - Marketing
+
 mappings:
   marketing_channel:
     fields:
