@@ -3,16 +3,42 @@ type: view
 name: order_lines
 description: Description of order_lines view.
 model_name: pure_organics
-sql_table_name: DEMO_PROD.ORDER_LINES
+sql_table_name: demo_prod.order_lines
 default_date: order
 row_label: Order line
+
 identifiers:
+- name: order_id
+  type: primary
+  sql: ${order_id}
+  
 - name: product_id
   type: foreign
   sql: ${product_id}
+  
 - name: customer_id
   type: foreign
   sql: ${customer_id}
+
+- name: product_join
+  type: join
+  refrence: products
+  relationship: many_to_one
+  join_type: left_outer
+  sql_on: ${order_lines.product_id} = ${products.id} 
+      and ${product.category} = 'global'
+
+- name: customer_join
+  type: join
+  referance: customers
+  relationship: many_to_one
+  join_type: left_outer
+  sql_on: ${order_lines.customer_id} = ${customers.id} 
+      and ${customers.status} = 'active'
+      and ${customer.start_date} >= '2024-01-01'
+
+
+
 fields:
 - name: order_line_id
   field_type: dimension
