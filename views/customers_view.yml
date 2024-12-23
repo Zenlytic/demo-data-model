@@ -57,12 +57,6 @@ fields:
   sql: ${TABLE}.LAST_NAME
   searchable: false
 
-- name: full_name
-  field_type: dimension
-  type: string
-  sql: concat(${first_name}, ${last_name})
-  searchable: false
-
 - name: address
   field_type: dimension
   type: string
