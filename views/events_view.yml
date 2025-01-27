@@ -15,24 +15,28 @@ fields:
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
   - customer
+  searchable: false
 
 - name: click_id
   field_type: dimension
   type: string
   hidden: true
   sql: ${TABLE}.CLICK_ID
+  searchable: false
 
 - name: customer_id
   field_type: dimension
   type: string
   hidden: true
   sql: ${TABLE}.CUSTOMER_ID
+  searchable: false
 
 - name: session_id
   field_type: dimension
   type: string
   hidden: true
   sql: ${TABLE}.SESSION_ID
+  searchable: false
 
 - name: device_is_mobile
   field_type: dimension
@@ -195,6 +199,16 @@ fields:
   sql: ${TABLE}.EVENT_NAME
   searchable: true
 
+- name: event_sequence
+  field_type: dimension
+  type: number
+  description: The sequence of events user took on the site
+  value_format_name: decimal_0
+  sql: case when ${event_name} = 'Visit Website' then 1 when ${event_name} = 'View
+    Product' then 2 when ${event_name} = 'Read Blog' then 3 when ${event_name} = 'Cart'
+    then 4 when ${event_name} = 'Complete Purchase' then 5 when ${event_name} = 'Subscribe'
+    then 6 end
+
 - name: page_url_path
   field_type: dimension
   type: string
@@ -255,5 +269,4 @@ fields:
     we can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
-  
 event_dimension: event_name
