@@ -14,7 +14,7 @@ fields:
   primary_key: true
   description: Represents a unique key for each spend event.
   sql: ${TABLE}.spend_id
-  zoe_description: Used to uniquely identify marketing spend events.
+  zoe_description: Used to uniquely identify marketing spend.
   searchable: false
 
 - name: channel
