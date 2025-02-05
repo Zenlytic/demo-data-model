@@ -193,13 +193,13 @@ fields:
 - name: week_day
   field_type: dimension
   type: string
-  sql: case when ${order_day_of_week} = 'Sun' then "1. Sun"
-            when ${order_day_of_week} = 'Mon' then "2. Mon"
-            when ${order_day_of_week} = 'Tue' then "3. Tue"
-            when ${order_day_of_week} = 'Wed' then "4. Wed"
-            when ${order_day_of_week} = 'Thu' then "5. Thu"
-            when ${order_day_of_week} = 'Fri' then "6. Fri"
-            when ${order_day_of_week} = 'Sat' then "7. Sat" end
+  sql: case when ${order_day_of_week} = 'Sun' then '1. Sun'
+            when ${order_day_of_week} = 'Mon' then '2. Mon'
+            when ${order_day_of_week} = 'Tue' then '3. Tue'
+            when ${order_day_of_week} = 'Wed' then  '4. Wed'
+            when ${order_day_of_week} = 'Thu' then '5. Thu'
+            when ${order_day_of_week} = 'Fri' then '6. Fri'
+            when ${order_day_of_week} = 'Sat' then '7. Sat' end
   searchable: false
 
 
