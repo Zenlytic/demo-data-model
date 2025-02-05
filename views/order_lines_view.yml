@@ -14,7 +14,7 @@ identifiers:
 - name: customer_id
   type: foreign
   sql: ${customer_id}
-  
+
 fields:
 - name: order_line_id
   field_type: dimension
@@ -180,6 +180,8 @@ fields:
   timeframes:
   - raw
   - date
+  - day_of_week
+  - day_of_year
   - week_index
   - week
   - month_of_year
