@@ -10,8 +10,8 @@ derived_table:
               ,count(distinct order_lines.order_id) as number_of_orders
               ,sum(order_lines.quantity) as number_of_units
               ,sum(order_lines.cogs) as total_cogs
-        from DEMO_PROD.ORDER_LINES order_lines
-        left join DEMO_PROD.PRODUCTS products on order_lines.product_id = products.product_id
+        from demo_prod.order_lines order_lines
+        left join demo_prod.products products on order_lines.product_id = products.product_id
         group by order_lines.order_at
                 ,products.product_title
                 ,products.product_type
