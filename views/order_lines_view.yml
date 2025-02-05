@@ -191,7 +191,7 @@ fields:
   sql: ${TABLE}.ORDER_AT
 
 - name: week_day
-  label: THis is Day of Week with propoer sorting
+  label: This is Day of Week with proper sorting
   field_type: dimension
   type: string
   hidden: true
