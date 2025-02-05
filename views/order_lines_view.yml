@@ -200,6 +200,7 @@ fields:
             when ${order_day_of_week} = 'Thu' then "5. Thu"
             when ${order_day_of_week} = 'Fri' then "6. Fri"
             when ${order_day_of_week} = 'Sat' then "7. Sat" end
+  searchable: fales
 
 
 
