@@ -29,7 +29,7 @@ fields:
   description: The id of the customer.
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
-  drill_fields: [customer_detail*]
+  drill_fields: [first_name, last_name, state, city]
 
 - name: accepts_marketing
   field_type: dimension
