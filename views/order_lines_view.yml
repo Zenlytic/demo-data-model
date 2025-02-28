@@ -33,7 +33,7 @@ fields:
       - customers.city
       - customers.zipcode
     sql: ${TABLE}.CUSTOMER_ID
-    tags: [customer]
+    tags: [customers]
     searchable: false
 
   - name: order_id
