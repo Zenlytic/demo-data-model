@@ -142,6 +142,6 @@ fields:
   value_format_name: decimal_0
   sql: ${email}
 
-- sets:
-  name: customer_detail
-  fields: [first_name, last_name, state, city]
+sets:
+  - name: customer_detail
+    fields: [first_name, last_name, state, city]
