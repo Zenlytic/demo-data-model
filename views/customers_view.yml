@@ -24,11 +24,9 @@ fields:
 - name: customer_id
   field_type: dimension
   type: string
-  hidden: false
-  primary_key: true
-  description: The id of the customer.
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
+  tags: ['customers']
   drill_fields: [first_name, last_name, state, city]
 
 - name: accepts_marketing
