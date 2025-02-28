@@ -135,6 +135,7 @@ fields:
   type: count_distinct
   value_format_name: decimal_0
   sql: ${customer_id}
+  drill_fields: [customer_detail*]
 
 - name: count_emails
   field_type: measure
