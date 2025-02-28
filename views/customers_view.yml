@@ -29,6 +29,7 @@ fields:
   description: The id of the customer.
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
+  drill_fields: [customer_detail*]
 
 - name: accepts_marketing
   field_type: dimension
@@ -135,7 +136,6 @@ fields:
   type: count_distinct
   value_format_name: decimal_0
   sql: ${customer_id}
-  drill_fields: [customer_detail*]
 
 - name: count_emails
   field_type: measure
