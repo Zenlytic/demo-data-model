@@ -2,35 +2,31 @@ version: 1
 type: view
 name: sample_derived_table
 model_name: pure_organics
-derived_table: 
-    sql: >
-        select order_lines.order_at
-              ,product_title as product_title
-              ,product_type as product_type
-              ,count(distinct order_lines.order_id) as number_of_orders
-              ,sum(order_lines.quantity) as number_of_units
-              ,sum(order_lines.cogs) as total_cogs
-        from DEMO_PROD.ORDER_LINES order_lines
-        left join DEMO_PROD.PRODUCTS products on order_lines.product_id = products.product_id
-        group by order_lines.order_at
-                ,products.product_title
-                ,products.product_type
-
 default_date: order
-
 identifiers:
 - name: primkey
   type: primary
   sql: ${primkey}
-
 fields:
 - name: primkey
   field_type: dimension
   type: string
-  primary_key: true
   hidden: true
+  primary_key: true
   sql: concat(${order_raw}||${product_type})
   searchable: false
+
+- name: product_title
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.product_title
+  searchable: true
+
+- name: product_type
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.product_type
+  searchable: true
 
 - name: order
   field_type: dimension_group
@@ -48,19 +44,7 @@ fields:
   - month
   - quarter
   - year
-  sql: ${TABLE}.order_at  
-
-- name: product_title
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.product_title
-  searchable: true
-
-- name: product_type
-  field_type: dimension
-  type: string
-  sql: ${TABLE}.product_type
-  searchable: true
+  sql: ${TABLE}.order_at
 
 - name: number_of_orders
   field_type: measure
@@ -76,3 +60,10 @@ fields:
   field_type: measure
   type: sum
   sql: ${TABLE}.total_cogs
+derived_table:
+  sql: "select order_lines.order_at\n      ,product_title as product_title\n     \
+    \ ,product_type as product_type\n      ,count(distinct order_lines.order_id) as
+    number_of_orders\n      ,sum(order_lines.quantity) as number_of_units\n      ,sum(order_lines.cogs)
+    as total_cogs\nfrom DEMO_PROD.ORDER_LINES order_lines left join DEMO_PROD.PRODUCTS
+    products on order_lines.product_id = products.product_id group by order_lines.order_at\n\
+    \        ,products.product_title\n        ,products.product_type\n"

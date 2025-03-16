@@ -6,7 +6,6 @@ model_name: pure_organics
 sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
-
 fields:
 - name: anonymous_id
   field_type: dimension
@@ -270,4 +269,12 @@ fields:
     we can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
+- name: personal_field_dgiajcv
+  field_type: measure
+  type: average
+  label: Average Marketing Channel<JOE>
+  value_format_name: decimal_0
+  sql: ${TABLE}.marketing_channel
+  canon_date: events.event
 event_dimension: event_name

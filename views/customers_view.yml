@@ -14,12 +14,10 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
-
 identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-  
 fields:
 - name: customer_id
   field_type: dimension
@@ -128,8 +126,6 @@ fields:
   - year
   sql: ${TABLE}.first_order_at
 
-# MEASURES
-
 - name: count_customers
   field_type: measure
   type: count_distinct
@@ -141,4 +137,3 @@ fields:
   type: count_distinct
   value_format_name: decimal_0
   sql: ${email}
-
