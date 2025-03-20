@@ -1,0 +1,17 @@
+type: topic
+label: Product Inventory
+base_view: products
+model_name: pure_organics
+description: The Product Inventory dataset represents a collection of products, detailing
+  their type, title, image URL, price, and available count. "PRODUCT_TYPE" indicates
+  the category or classification of the product. "PRODUCT_TITLE" provides the name
+  or title of the product. "PRODUCT_IMAGE_URL" offers a link to an image of the product
+  for visual identification. "PRICE" shows the cost of a single unit of the product.
+  "COUNT_PRODUCTS" specifies the available quantity of the product in stock.
+zoe_description: The Product Inventory dataset includes fields such as PRODUCT_TYPE
+  (category), PRODUCT_TITLE (name), PRODUCT_IMAGE_URL (image link), PRICE (cost),
+  and COUNT_PRODUCTS (available quantity). Utilize this dataset to understand product
+  details, manage inventory, or assist with e-commerce functionalities by interpreting
+  data related to product types, names, images, pricing, and stock levels.
+hidden: false
+views: {}

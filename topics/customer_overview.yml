@@ -1,0 +1,19 @@
+type: topic
+label: Customer Overview
+base_view: customers
+model_name: pure_organics
+description: The Customer Overview data model encompasses a detailed snapshot of customer
+  information for Pure Organics. It includes unique identifiers (CUSTOMER_ID), contact
+  information (EMAIL, FIRST_NAME, LAST_NAME, FULL_NAME), and geographical data (ADDRESS,
+  CITY, STATE, ZIPCODE). The view also tracks marketing preferences through the ACCEPTS_MARKETING
+  field and provides insights into initial marketing engagements via FIRST_MARKETING_GROUP,
+  FIRST_PROMOTION, and FIRST_CAMPAIGN. Additionally, it details customer engagement
+  metrics like COUNT_CUSTOMERS and COUNT_EMAILS, supporting analyses on customer behavior,
+  acquisition, and marketing effectiveness.
+zoe_description: The Customer Overview captures essential customer data for Pure Organics.
+  Use it to understand customer demographics, track engagement through marketing permissions
+  and initial interactions, and measure customer activities with COUNT_CUSTOMERS and
+  COUNT_EMAILS. This data is crucial for analyzing behavior, optimizing marketing
+  strategies, and facilitating growth.
+hidden: false
+views: {}
