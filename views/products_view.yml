@@ -38,6 +38,49 @@ fields:
   - product
   searchable: true
 
+- name: product_components
+  field_type: dimension
+  type: string
+  description: A comma separates list of the components and percentages for each product.
+  sql: >
+    CASE ${product_title}
+        when 'Easygoing Lipstick' then 'Beeswax: 1.5g (35%, $0.33), Castor Oil: 0.8g (25%, $0.24), Pigment Blend: 0.7g (30%, $0.29), Vitamin E: 0.3g (10%, $0.10)'
+        when 'Everyday Bronzer' then 'Mica Powder: 2.0g (40%, $0.60), Titanium Dioxide: 1.0g (20%, $0.30), Mineral Oil: 1.0g (25%, $0.38), Shea Butter: 0.5g (15%, $0.23)'
+        when 'Everyday Concealer' then 'Dimethicone: 1.2g (30%, $0.36), Iron Oxides: 0.6g (25%, $0.30), Cyclopentasiloxane: 1.0g (30%, $0.36), Aloe Extract: 0.2g (15%, $0.18)'
+        when 'Everyday Eyeshadow' then 'Mica: 1.5g (30%, $0.24), Bismuth Oxychloride: 0.5g (20%, $0.16), Silica: 1.0g (25%, $0.20), Dimethicone: 0.5g (25%, $0.20)'
+        when 'Everyday SPF Cream' then 'Zinc Oxide: 2.5g (40%, $0.84), Titanium Dioxide: 1.0g (20%, $0.42), Water: 5.0ml (15%, $0.32), Glycerin: 1.0g (15%, $0.32), Emulsifier: 0.5g (10%, $0.21)'
+        when 'Glam Lipstick' then 'Carnauba Wax: 2.0g (40%, $0.70), Castor Oil: 1.0g (20%, $0.35), Pigment Blend: 1.0g (30%, $0.53), Fragrance: 0.5g (10%, $0.18)'
+        when 'Luxury Blush' then 'Mineral Pigments: 1.5g (35%, $1.19), Mica: 1.0g (30%, $1.02), Silk Powder: 0.7g (20%, $0.68), Hyaluronic Acid: 0.3g (15%, $0.51)'
+        when 'Luxury Eyeliner' then 'Wax Blend: 1.8g (30%, $0.89), Iron Oxides: 0.5g (25%, $0.74), Dimethicone: 1.0g (25%, $0.74), Aloe Extract: 0.3g (10%, $0.30), Fragrance: 0.4g (10%, $0.30)'
+        when 'NoChap Lip Gloss SPF 15' then 'Silicone Fluid: 1.5g (30%, $0.33), Vitamin E: 0.5g (15%, $0.17), Beeswax: 1.0g (25%, $0.28), Zinc Oxide: 1.0g (20%, $0.22), Water: 1.0g (10%, $0.11)'
+        when 'Organic Color Correct' then 'Organic Pigments: 1.2g (35%, $0.11), Aloe Vera: 1.0g (30%, $0.10), Coconut Oil: 1.0g (20%, $0.06), Green Tea Extract: 0.5g (15%, $0.05)'
+        when 'Organic Foundation' then 'Organic Pigment: 1.5g (30%, $1.13), Rice Powder: 2.0g (25%, $0.94), Coconut Oil: 1.0g (20%, $0.75), Vitamin E: 0.5g (15%, $0.56), Water: 0.5g (10%, $0.38)'
+        when 'Your Fav Primer' then 'Silicone Blend: 2.0g (35%, $1.59), Glycerin: 1.0g (20%, $0.91), Cyclopentasiloxane: 1.0g (25%, $1.14), Dimethicone: 0.5g (10%, $0.45), Water: 0.5g (10%, $0.45)'
+    END
+  searchable: false
+
+- name: product_costs
+  field_type: dimension
+  type: number
+  description: The cost to produce the product
+  sql: >
+      CASE ${product_title}
+        when 'Easygoing Lipstick' then 0.95
+        when 'Everyday Bronzer' then 1.50
+        when 'Everyday Concealer' then 1.20
+        when 'Everyday Eyeshadow' then 0.80
+        when 'Everyday SPF Cream' then 2.10
+        when 'Glam Lipstick' then 1.75
+        when 'Luxury Blush' then 3.40
+        when 'Luxury Eyeliner' then 2.95
+        when 'NoChap Lip Gloss SPF 15' then 1.10
+        when 'Organic Color Correct' then 0.32
+        when 'Organic Foundation' then 3.75
+        when 'Your Fav Primer' then 4.54
+      END
+
+  searchable: false
+
 - name: product_image_url
   field_type: dimension
   type: string
