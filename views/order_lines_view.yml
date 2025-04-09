@@ -334,7 +334,7 @@ fields:
     field_type: measure
     type: number
     hidden: false
-    description: The total net revenue - allocated cost of goods sold to the order line
+    description: The total net revenue - allocated cost of goods sold to the order lineheellelelel
     value_format_name: usd
     sql: ${total_net_revenue} - ${total_cogs}
     zoe_description: This is the gross profit.
