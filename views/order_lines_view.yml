@@ -149,7 +149,13 @@ fields:
       placing their order.
     sql: ${TABLE}.first_click
     searchable: true
-
+  
+  - name: order_sequence_number
+    field_type: dimension
+    type: number
+    sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
+    window: true
+    
   - name: new_vs_repeat
     field_type: dimension
     type: string
@@ -206,6 +212,13 @@ fields:
     synonyms:
       - sales
       - revenue
+
+  - name: pct_of_total_gross_revenue
+    field_type: measure
+    type: number
+    sql: RATIO_TO_REPORT(${total_gross_revenue}) OVER ()
+    window: true
+    value_format_name: percent_1
 
   - name: total_gross_revenue_from_advertising
     field_type: measure
