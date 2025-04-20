@@ -1,0 +1,54 @@
+semantic_models:
+  - name: marketing_spend
+    description: "A view for marketing spend. <joe changed everything in there>"
+    model: ref('marketing_spend')
+    defaults:
+      agg_time_dimension: spend
+
+    entities:
+      - name: unique_key
+        type: primary
+        expr: spend_id
+
+    dimensions:
+      - name: spend_id
+        type: Categorical
+        description: "Represents a unique key for each spend event."
+
+      - name: channel
+        type: Categorical
+        description: "The channel of the ad spend."
+
+      - name: source
+        type: Categorical
+        description: "The source of the ad spend."
+
+      - name: campaign
+        type: Categorical
+        description: "The campaign of the ad spend."
+
+      - name: ad_spend
+        type: Categorical
+        description: "The amount spent."
+
+      - name: spend
+        type: Time
+        label: "Spend"
+        description: "The date of the ad spend."
+        expr: spend_at
+        type_params:
+          time_granularity: day
+
+    measures:
+      - name: total_marketing_spend
+        description: "Total marketing spend across all channels"
+        agg: sum
+        expr: ad_spend
+        create_metric: true
+
+      - name: cpc
+        label: "CPC"
+        description: "Cost per click = Total marketing spend across all channels / number of clicks through ads"
+        agg: sum
+        expr: ad_spend / 1304000
+        create_metric: true

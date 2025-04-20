@@ -1,0 +1,99 @@
+semantic_models:
+  - name: customers
+    description: |
+      This view provides a comprehensive overview of customer data for Pure Organics,
+      including details such as the customer's ID, email address, name, address, and location.
+      The `accepts_marketing` field indicates whether the customer has opted in to
+      marketing communications, while the `first_order` field provides the date and time
+      of the customer's first order. Additionally, the `first_marketing_group`,
+      `first_promotion`, and `first_campaign` fields provide information about the
+      customer's initial marketing interactions with the company. Use this view to gain
+      insights into customer behavior, track customer acquisition and retention, and
+      optimize your marketing campaigns to drive revenue and growth.
+    model: ref('customers')
+    defaults:
+      agg_time_dimension: first_order         # default_date → agg_time_dimension :contentReference[oaicite:0]{index=0}
+
+    entities:                                 # identifiers → entities :contentReference[oaicite:1]{index=1}
+      - name: customer_id
+        type: primary
+        expr: customer_id
+
+    dimensions:                               # fields → dimensions :contentReference[oaicite:2]{index=2}
+      - name: customer_id
+        type: Categorical
+        description: "The id of the customer."
+
+      - name: accepts_marketing
+        type: Categorica
+        description: "Whether the customer accepts marketing."
+
+      - name: email
+        type: Categorical
+        description: "The customer's email address."
+        expr: EMAIL
+        meta:
+          zenlytic:
+            required_access_grants:
+            - pii_access
+
+      - name: first_name
+        type: Categorical
+
+      - name: last_name
+        type: Categorical
+
+      - name: address
+        type: Categorical
+        description: "The customer's address (shipping)."
+
+      - name: city
+        type: Categorical
+        description: "The customer's city (location)."
+
+      - name: state
+        type: Categorical
+        description: "The customer's state (location)."
+
+      - name: zipcode
+        type: Categorical
+        description: "The customer's zip code."
+
+      - name: first_marketing_group
+        type: Categorical
+        description: "The first marketing group the user came in through."
+        expr: first_channel
+
+      - name: first_promotion
+        type: Categorical
+        description: "The first promotion the user came in through."
+
+      - name: first_campaign
+        type: Categorical
+        description: "The first campaign the user came in through."
+
+      - name: first_order
+        type: Time
+        label: "First Order"
+        description: "The time at which the customer's first order was placed."
+        expr: first_order_at
+        type_params:
+            time_granularity: day
+        meta:
+          zenyltic:
+            timeframes:                        # dimension-group timeframes :contentReference[oaicite:3]{index=3}
+            - raw
+            - date
+            - week_index
+            - week
+            - month_of_year
+            - month
+            - quarter
+            - year
+            - hour_of_day
+            - day_of_week
+            - day_of_month
+            - day_of_year
+            - week_of_month
+            - week_of_year
+            - month_index

@@ -1,0 +1,46 @@
+semantic_models:
+  - name: products                    # corresponds to your original name  
+    label: Product                    # from row_label: Product  
+    model: ref('products')
+    meta:
+      sql_table_name: demo_prod.products       # references the dbt model  
+    entities:                          # your identifiers → entities  
+      - name: product_id
+        type: primary
+        expr: product_id               # original sql: ${product_id}
+
+    dimensions:                        # your fields → dimensions  
+      - name: product_id
+        type: Categorical
+        description: "The id of the product."
+      
+      - name: product_type
+        type: Categorical
+        description: "The type of the product sold (Eye, Face, Lip, etc)"
+
+      - name: product_title
+        type: Categorical
+        description: "The title of the product sold (Everyday SPF Cream, etc)"
+
+      - name: product_image_url
+        type: Categorical
+        description: "Product image URL for the product title"
+        expr: |-
+          CASE product_title
+            WHEN 'Easygoing Lipstick'      THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/easygoing_lipstick.jpg'
+            WHEN 'Everyday Bronzer'        THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_bronzer.jpg'
+            WHEN 'Everyday Concealer'      THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_concealer.jpg'
+            WHEN 'Everyday Eyeshadow'      THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_eyeshadow.jpg'
+            WHEN 'Everyday SPF Cream'      THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_spf_cream.jpg'
+            WHEN 'Glam Lipstick'           THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/glam_lipstick.jpg'
+            WHEN 'Luxury Blush'             THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/lux_blush.jpg'
+            WHEN 'Luxury Eyeliner'          THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/lux_eyeliner.jpg'
+            WHEN 'NoChap Lip Gloss SPF 15'  THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/spf_lip_gloss.jpg'
+            WHEN 'Organic Color Correct'    THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
+            WHEN 'Organic Foundation'       THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_foundation.jpg'
+            WHEN 'Your Fav Primer'          THEN 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
+          END
+
+      - name: price
+        type: Categorical
+        description: "Blahabababbaba"
