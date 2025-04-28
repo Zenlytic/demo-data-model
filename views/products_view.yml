@@ -4,12 +4,10 @@ name: products
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 default_date: order_lines.order
-  
 identifiers:
 - name: product_id
   type: primary
   sql: ${product_id}
-
 fields:
 - name: product_id
   field_type: dimension
@@ -66,8 +64,7 @@ fields:
   searchable: true
 
 - name: count_products
-  label: Count of Products
   field_type: measure
   type: count_distinct
+  label: Count of Products
   sql: ${product_id}
-
