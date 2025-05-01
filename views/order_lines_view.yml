@@ -200,6 +200,14 @@ fields:
   - sales
   - revenue
 
+- name: gross_revenue_at_75th_percentile
+  field_type: measure
+  type: percentile
+  percentile: 75
+  description: Gross revenue for the 75th percentile
+  value_format_name: usd
+  sql: ${revenue}
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
