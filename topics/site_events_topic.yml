@@ -1,0 +1,7 @@
+type: topic
+label: Site Events Topic
+base_view: site_events
+model_name: pure_organics
+description: Anything realted to clicks
+hidden: false
+views: {}
