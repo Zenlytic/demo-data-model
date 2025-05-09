@@ -2,6 +2,6 @@ type: topic
 label: Site Events Topic
 base_view: site_events
 model_name: pure_organics
-description: Anything realted to clicks
+description: Anything related to clicks
 hidden: false
 views: {}
