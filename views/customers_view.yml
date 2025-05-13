@@ -14,12 +14,10 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
-
 identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-  
 fields:
 - name: customer_id
   field_type: dimension
@@ -70,13 +68,6 @@ fields:
   sql: ${TABLE}.ADDRESS
   searchable: false
 
-- name: city
-  field_type: dimension
-  type: string
-  description: The customer's city (location)
-  sql: ${TABLE}.CITY
-  searchable: false
-
 - name: state
   field_type: dimension
   type: string
@@ -110,6 +101,13 @@ fields:
   type: string
   description: The first campaign the user came in through
   sql: ${TABLE}.first_campaign
+  searchable: false
+
+- name: city
+  field_type: dimension
+  type: string
+  description: The customer's city (location)
+  sql: ${TABLE}.CITY
   searchable: false
 
 - name: first_order

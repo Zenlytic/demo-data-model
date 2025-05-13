@@ -4,12 +4,10 @@ name: products
 model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 default_date: order_lines.order
-
 identifiers:
 - name: product_id
   type: primary
   sql: ${product_id}
-
 fields:
 - name: product_id
   field_type: dimension
@@ -28,15 +26,6 @@ fields:
   sql: ${TABLE}.PRODUCT_TYPE
   searchable: true
   zoe_description: 'The type of the product. '
-
-- name: product_title
-  field_type: dimension
-  type: string
-  description: The title of the product sold (Everyday SPF Cream, etc)
-  sql: ${TABLE}.PRODUCT_TITLE
-  tags:
-  - product
-  searchable: true
 
 - name: product_image_url
   field_type: dimension
@@ -57,6 +46,15 @@ fields:
     when 'Your Fav Primer' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
     END\n\n"
   searchable: false
+
+- name: product_title
+  field_type: dimension
+  type: string
+  description: The title of the product sold (Everyday SPF Cream, etc)
+  sql: ${TABLE}.PRODUCT_TITLE
+  tags:
+  - product
+  searchable: true
 
 - name: price
   field_type: dimension

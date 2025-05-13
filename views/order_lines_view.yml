@@ -6,16 +6,13 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
-
 identifiers:
 - name: product_id
   type: foreign
   sql: ${product_id}
-
 - name: customer_id
   type: foreign
   sql: ${customer_id}
-
 fields:
 - name: order_line_id
   field_type: dimension
@@ -91,7 +88,8 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: The marketing campaign that the customer came through before placing their order.
+  description: The marketing campaign that the customer came through before placing
+    their order.
   sql: ${TABLE}.CAMPAIGN
   searchable: true
 
@@ -133,7 +131,8 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: The last click marketing channel that the customer came through before placing their order.
+  description: The last click marketing channel that the customer came through before
+    placing their order.
   sql: ${TABLE}.last_click
   searchable: true
 
@@ -141,7 +140,8 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: The first click marketing channel that the customer came through before placing their order.
+  description: The first click marketing channel that the customer came through before
+    placing their order.
   sql: ${TABLE}.first_click
   searchable: true
 
@@ -149,9 +149,30 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: Whether the customer placing the order was a new customer or a returning customer
+  description: Whether the customer placing the order was a new customer or a returning
+    customer
   sql: ${TABLE}.new_vs_repeat
   searchable: true
+
+- name: order
+  field_type: dimension_group
+  type: time
+  datatype: timestamp
+  hidden: false
+  label: Order Date
+  description: The time at which the order was placed. This is the main time field
+    to use for orders
+  timeframes:
+  - date
+  - week_index
+  - week
+  - month_of_year
+  - month
+  - quarter
+  - year
+  - hour_of_day
+  - day_of_week
+  sql: ${TABLE}.ORDER_AT
 
 - name: between_first_order_and_this_order
   field_type: dimension_group
@@ -166,27 +187,6 @@ fields:
   - year
   sql_start: ${customers.first_order_date}
   sql_end: ${order_date}
-
-- name: order
-  field_type: dimension_group
-  type: time
-  datatype: timestamp
-  hidden: false
-  label: Order Date
-  description: The time at which the order was placed. This is the main time field to use for orders
-  timeframes:
-  - date
-  - week_index
-  - week
-  - month_of_year
-  - month
-  - quarter
-  - year
-  - hour_of_day
-  - day_of_week
-  sql: ${TABLE}.ORDER_AT
-
-#  MEASURES 
 
 - name: total_gross_revenue
   field_type: measure
@@ -234,7 +234,8 @@ fields:
   field_type: measure
   type: sum
   hidden: false
-  description: Subscription revenue = gross revenue (product revenues + shipping,for subscriptions only)
+  description: Subscription revenue = gross revenue (product revenues + shipping,for
+    subscriptions only)
   value_format_name: usd
   sql: ${revenue}
   filters:
@@ -272,7 +273,8 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  description: The unique number of orders placed by customers who have placed at least one order before
+  description: The unique number of orders placed by customers who have placed at
+    least one order before
   value_format_name: decimal_0
   sql: ${order_id}
   filters:
@@ -289,22 +291,13 @@ fields:
   synonyms:
   - Repeat order rate
 
-- name: gross_aov
-  field_type: measure
-  type: number
-  hidden: false
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-
 - name: number_of_units
   field_type: measure
   type: sum
   hidden: false
   label: Number Of Units
-  description: 'The unique number of units purchased (e.g. customer orders: 2 lip gloss and 1 blush = 3 units sold)'
+  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
+    gloss and 1 blush = 3 units sold)'
   value_format_name: decimal_0
   sql: ${quantity}
 
@@ -335,7 +328,27 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
-  
+
+- name: gross_aov
+  field_type: measure
+  type: number
+  hidden: false
+  description: Gross AOV = gross revenues / number of orders
+  value_format_name: usd
+  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+  synonyms:
+  - Average order value
+
+
+- name: personal_field_yzgjywl
+  field_type: measure
+  type: number
+  label: Repurchase Rate
+  description: Repurchase rate = number of repeat orders / number of orders.
+  value_format_name: percent_1
+  sql: ${number_of_repeat_orders} / ${number_of_orders}
+  synonyms:
+  - Repeat order rate
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp
