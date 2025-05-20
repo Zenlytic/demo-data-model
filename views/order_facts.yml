@@ -47,15 +47,15 @@ fields:
   - year
   sql: ${TABLE}.order_at
 
-- name: number_of_orders
-  field_type: measure
-  type: sum
-  sql: ${TABLE}.number_of_orders
+# - name: number_of_orders
+#   field_type: measure
+#   type: sum
+#   sql: ${TABLE}.number_of_orders
 
-- name: number_of_units
-  field_type: measure
-  type: sum
-  sql: ${TABLE}.number_of_units
+# - name: number_of_units
+#   field_type: measure
+#   type: sum
+#   sql: ${TABLE}.number_of_units
 
 - name: total_cogs
   field_type: measure
