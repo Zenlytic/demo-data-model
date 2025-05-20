@@ -6,7 +6,6 @@ model_name: pure_organics
 sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
-
 fields:
 - name: anonymous_id
   field_type: dimension

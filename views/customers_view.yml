@@ -14,12 +14,11 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
-
 identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-  
+
 fields:
 - name: customer_id
   field_type: dimension
@@ -139,3 +138,12 @@ fields:
   type: count_distinct
   value_format_name: decimal_0
   sql: ${email}
+
+- name: typnxxdkmbysxrwbtcdkfoftymigiqgoscebgsfu
+  field_type: measure
+  type: count_distinct
+  label: Duplicate Count Customers
+  value_format_name: decimal_0
+  sql: ${customer_id}
+  canon_date: customers.first_order
+  update_where_timeframe: true
