@@ -8,7 +8,6 @@ identifiers:
 - name: product_id
   type: primary
   sql: ${product_id}
-
 fields:
 - name: product_id
   field_type: dimension
