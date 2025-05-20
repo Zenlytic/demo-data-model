@@ -195,6 +195,16 @@ fields:
   - day_of_week
   sql: ${TABLE}.ORDER_AT
 
+- name: qoxafhjnmmvmupyokcawroefoglviidnbccjfykv
+  field_type: measure
+  type: count_distinct
+  label: Duplicate Number Of Orders
+  description: The unique number of orders placed
+  value_format_name: decimal_0
+  sql: ${order_id}
+  canon_date: order_lines.order
+  update_where_timeframe: true
+
 - name: total_gross_revenue
   field_type: measure
   type: sum
@@ -206,6 +216,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -224,6 +235,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -262,6 +274,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -280,6 +293,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -310,6 +324,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -324,6 +339,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -333,6 +349,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -376,6 +393,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
