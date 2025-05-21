@@ -223,6 +223,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -236,6 +237,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -278,6 +280,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -296,6 +299,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -330,6 +334,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -346,6 +351,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -355,6 +361,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -400,6 +407,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -464,6 +472,17 @@ fields:
   description: The unique number of orders placed
   value_format_name: decimal_0
   sql: ${order_id}
+  canon_date: order_lines.order
+  update_where_timeframe: true
+
+- name: iutucjxbqffccuupoqsxyhosdchofollmalbsfkl
+  field_type: measure
+  type: sum
+  label: Duplicate Number Of Units
+  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
+    gloss and 1 blush = 3 units sold)'
+  value_format_name: decimal_0
+  sql: ${quantity}
   canon_date: order_lines.order
   update_where_timeframe: true
 event_name: Purchase
