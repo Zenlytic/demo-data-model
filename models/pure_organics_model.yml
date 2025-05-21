@@ -9,7 +9,6 @@ access_grants:
   allowed_values:
   - Executive
   - Finance
-  - Marketing
 
 mappings:
   marketing_channel:

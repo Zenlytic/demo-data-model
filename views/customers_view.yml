@@ -14,10 +14,12 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
+
 identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
+
 fields:
 - name: customer_id
   field_type: dimension
@@ -38,8 +40,7 @@ fields:
   field_type: dimension
   type: string
   description: The customer's email address
-  required_access_grants:
-  - pii_access
+  required_access_grants: [pii_access]
   sql: ${TABLE}.EMAIL
   searchable: false
 
@@ -123,6 +124,7 @@ fields:
   - month_of_year
   - month
   - quarter
+  - time
   - year
   sql: ${TABLE}.first_order_at
 
