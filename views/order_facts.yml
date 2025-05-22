@@ -3,7 +3,6 @@ type: view
 name: order_facts
 model_name: pure_organics
 default_date: order
-
 identifiers:
 - name: primkey
   type: primary
