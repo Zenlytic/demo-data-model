@@ -212,6 +212,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -225,6 +226,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -273,6 +275,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -291,6 +294,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -331,6 +335,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -350,6 +355,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -359,6 +365,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -405,6 +412,21 @@ fields:
   description: The unique number of orders placed
   value_format_name: decimal_0
   sql: ${order_id}
+  canon_date: order_lines.order
+  update_where_timeframe: true
+
+- name: nwbrjqectjtvryvrxsahcrtyflvjbtztpywgvpqv
+  field_type: measure
+  type: count_distinct
+  label: Duplicate Number Of Repeat Orders
+  description: The unique number of orders placed by customers who have placed at
+    least one order before
+  value_format_name: decimal_0
+  sql: case when ${new_vs_repeat}='Repeat' then case when ${new_vs_repeat}='Repeat'
+    then ${order_id} end end
+  filters:
+  - field: new_vs_repeat
+    value: Repeat
   canon_date: order_lines.order
   update_where_timeframe: true
 event_name: Purchase
