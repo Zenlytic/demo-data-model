@@ -7,603 +7,449 @@ sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
 identifiers:
-- name: product_id
-  type: foreign
-  sql: ${product_id}
-
-- name: customer_id
-  type: foreign
-  sql: ${customer_id}
-
+  - name: product_id
+    type: foreign
+    sql: ${product_id}
+  - name: customer_id
+    type: foreign
+    sql: ${customer_id}
 fields:
-- name: order_line_id
-  field_type: dimension
-  type: string
-  hidden: true
-  primary_key: true
-  sql: ${TABLE}.ORDER_LINE_ID
-  searchable: false
-
-- name: customer_id
-  field_type: dimension
-  type: string
-  hidden: true
-  description: Represents the id of each customer
-  drill_fields:
-  - customers.email
-  - customers.state
-  - customers.city
-  - customers.zipcode
-  sql: ${TABLE}.CUSTOMER_ID
-  tags:
-  - customer
-  searchable: false
-
-- name: order_id
-  field_type: dimension
-  type: string
-  hidden: false
-  drill_fields:
-  - order_date
-  - subscription_vs_otp
-  - marketing_channel
-  - campaign
-  - promotion
-  - total_gross_revenue
-  sql: ${TABLE}.ORDER_ID
-  tags:
-  - order
-  searchable: false
-
-- name: product_id
-  field_type: dimension
-  type: string
-  hidden: true
-  sql: ${TABLE}.PRODUCT_ID
-  searchable: false
-
-- name: discount
-  field_type: dimension
-  type: number
-  hidden: true
-  sql: ${TABLE}.DISCOUNT
-
-- name: revenue
-  field_type: dimension
-  type: number
-  hidden: true
-  sql: ${TABLE}.REVENUE
-
-- name: price
-  field_type: dimension
-  type: number
-  hidden: true
-  sql: ${TABLE}.PRICE
-
-- name: quantity
-  field_type: dimension
-  type: number
-  hidden: true
-  sql: ${TABLE}.QUANTITY
-
-- name: campaign
-  field_type: dimension
-  type: string
-  hidden: false
-  description: >-
-    The marketing campaign that the customer came through before placing their
-    order.
-  sql: ${TABLE}.CAMPAIGN
-  searchable: true
-
-- name: promotion
-  field_type: dimension
-  type: string
-  hidden: false
-  description: The promotion given to the customer for this order
-  sql: ${TABLE}.PROMOTION
-  searchable: true
-
-- name: subscription_vs_otp
-  field_type: dimension
-  type: string
-  hidden: false
-  description: Whether the order was from a subscription or a one time purchase (OTP)
-  sql: ${TABLE}.SUBSCRIPTION_VS_OTP
-  searchable: true
-
-- name: marketing_source
-  field_type: dimension
-  type: string
-  hidden: false
-  description: >-
-    The marketing source that the customer came through before placing their
-    order.
-  sql: ${TABLE}.MARKETING_SOURCE
-  searchable: true
-
-- name: marketing_channel
-  field_type: dimension
-  type: string
-  hidden: false
-  description: >-
-    The marketing channel that the customer came through before placing their
-    order.
-  sql: ${TABLE}.MARKETING_CHANNEL
-  searchable: true
-
-- name: last_click_marketing_channel
-  field_type: dimension
-  type: string
-  hidden: false
-  description: >-
-    The last click marketing channel that the customer came through before
-    placing their order.
-  sql: ${TABLE}.last_click
-  searchable: true
-
-- name: first_click_marketing_channel
-  field_type: dimension
-  type: string
-  hidden: false
-  description: >-
-    The first click marketing channel that the customer came through before
-    placing their order.
-  sql: ${TABLE}.first_click
-  searchable: true
-
-- name: new_vs_repeat
-  field_type: dimension
-  type: string
-  hidden: false
-  description: >-
-    Whether the customer placing the order was a new customer or a returning
-    customer
-  sql: ${TABLE}.new_vs_repeat
-  searchable: true
-
-- name: order
-  field_type: dimension_group
-  type: time
-  datatype: timestamp
-  hidden: false
-  label: Order Date
-  description: >-
-    The time at which the order was placed. This is the main time field to use
-    for orders
-  timeframes:
-  - date
-  - week_index
-  - week
-  - month_of_year
-  - month
-  - quarter
-  - year
-  - hour_of_day
-  - day_of_week
-  sql: ${TABLE}.ORDER_AT
-
-- name: mbqmwwmboiiqbbbfbwscsqnkwpbiiidujlxlnozm
-  field_type: measure
-  type: sum
-  label: Sum First Click Marketing Channel
-  sql: ${TABLE}.first_click
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: total_gross_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: total_gross_revenue_from_advertising
-  field_type: measure
-  type: sum
-  hidden: true
-  description: Total gross revenue = revenue from product sales + shipping revenues
-  value_format_name: usd
-  sql: ${revenue}
-  filters:
-  - field: marketing_channel
-    value: -Organic
-  synonyms:
-  - sales
-  - revenue
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: total_discounts
-  field_type: measure
-  type: sum
-  hidden: false
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-
-- name: total_net_revenue
-  field_type: measure
-  type: number
-  hidden: false
-  description: Total net revenue = gross revenue - discounts
-  value_format_name: usd
-  sql: ${total_gross_revenue} - ${total_discounts}
-
-- name: subscription_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  description: >-
-    Subscription revenue = gross revenue (product revenues + shipping,for
-    subscriptions only)
-  value_format_name: usd
-  sql: ${revenue}
-  filters:
-  - field: subscription_vs_otp
-    value: Subscription
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: number_of_customers_with_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of customers who placed orders
-  value_format_name: decimal_0
-  sql: ${customer_id}
-
-- name: number_of_new_customers_with_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of new customers who placed orders
-  value_format_name: decimal_0
-  sql: ${customer_id}
-  filters:
-  - field: new_vs_repeat
-    value: New
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: number_of_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of orders placed
-  value_format_name: decimal_0
-  sql: ${order_id}
-
-- name: number_of_repeat_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: >-
-    The unique number of orders placed by customers who have placed at least
-    one order before
-  value_format_name: decimal_0
-  sql: ${order_id}
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: repurchase_rate
-  field_type: measure
-  type: number
-  hidden: false
-  description: Repurchase rate = number of repeat orders / number of orders.
-  value_format_name: percent_1
-  sql: ${number_of_repeat_orders} / ${number_of_orders}
-  synonyms:
-  - Repeat order rate
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: gross_aov
-  field_type: measure
-  type: number
-  hidden: false
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-- name: number_of_units
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Number Of Units
-  description: >-
-    The unique number of units purchased (e.g. customer orders: 2 lip gloss
-    and 1 blush = 3 units sold)
-  value_format_name: decimal_0
-  sql: ${quantity}
-
-- name: total_cogs
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total COGS
-  description: The allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${TABLE}.cogs
-
-- name: gross_profit
-  field_type: measure
-  type: number
-  hidden: false
-  description: The total net revenue - allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${total_net_revenue} - ${total_cogs}
-  zoe_description: This is the gross profit.
-
-- name: rnsqwtpijbqwqdtfywgmfihbonwcghjupijkuvxf
-  field_type: measure
-  type: count_distinct
-  label: Duplicate Number Of Orders
-  description: The unique number of orders placed
-  value_format_name: decimal_0
-  sql: ${order_id}
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: nwbrjqectjtvryvrxsahcrtyflvjbtztpywgvpqv
-  field_type: measure
-  type: count_distinct
-  label: Duplicate Number Of Repeat Orders
-  description: The unique number of orders placed by customers who have placed at
-    least one order before
-  value_format_name: decimal_0
-  sql: case when ${new_vs_repeat}='Repeat' then case when ${new_vs_repeat}='Repeat'
-    then ${order_id} end end
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: gfpnujwkwbefwjbsdrtepikkafgmditfkdzfcbrr
-  field_type: measure
-  type: sum
-  label: Duplicate Total Gross Revenue
-  description: Total gross revenue = revenue from product sales + shipping revenues.
-  value_format_name: usd
-  sql: ${revenue}
-  synonyms:
-  - sales
-  - revenue
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: gabvdvqqflnbgbndxfohelmwwdtrunhcahlyycqq
-  field_type: measure
-  type: count_distinct
-  label: Duplicate Number Of Orders
-  description: The unique number of orders placed
-  value_format_name: decimal_0
-  sql: ${order_id}
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: suixiegacmiaswtmpdkxazoktaxfqybmqiizoeai
-  field_type: measure
-  type: count_distinct
-  label: Duplicate Number Of Repeat Orders
-  description: The unique number of orders placed by customers who have placed at
-    least one order before
-  value_format_name: decimal_0
-  sql: case when ${new_vs_repeat}='Repeat' then case when ${new_vs_repeat}='Repeat'
-    then ${order_id} end end
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: eqhgsflakhwmekggeroghirtmvbtctlrntyytcea
-  field_type: measure
-  type: sum
-  label: Duplicate Number Of Units
-  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
-    gloss and 1 blush = 3 units sold)'
-  value_format_name: decimal_0
-  sql: ${quantity}
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: qjlgyyomwzxvdhmgyswnpivskorxbudcilaassae
-  field_type: measure
-  type: count_distinct
-  label: Dynamic Number Of Customers With Orders
-  description: The unique number of customers who placed orders
-  value_format_name: decimal_0
-  sql: ${customer_id}
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: mzvnfbloatkmrdoigotineimfgsaijeicrlsjyol
-  field_type: measure
-  type: sum
-  label: Duplicate Number Of Units
-  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
-    gloss and 1 blush = 3 units sold)'
-  value_format_name: decimal_0
-  sql: ${quantity}
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: dfhkyiaqtmpddqzkimysuarqylvhodgdkqvkawbr
-  field_type: measure
-  type: count_distinct
-  label: Count Distinct Order Id
-  sql: ${TABLE}.ORDER_ID
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: tqwdwpyioauaxngrbrxyjcgwxbqsybjuodfeuuya
-  field_type: measure
-  type: sum
-  label: Duplicate Total Discounts
-  description: All discounts applied to either the order or the product in the order
-  value_format_name: usd
-  sql: ${discount}
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: rsehctyhoblpuotbnuvfiagthtdvadzbdciluftv
-  field_type: measure
-  type: number
-  label: Duplicate Gross Aov
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-  canon_date: order_lines.order
-  update_where_timeframe: true
+  - name: order_line_id
+    field_type: dimension
+    type: string
+    hidden: true
+    primary_key: true
+    sql: ${TABLE}.ORDER_LINE_ID
+    searchable: false
+
+  - name: customer_id
+    field_type: dimension
+    type: string
+    hidden: true
+    description: Represents the id of each customer
+    drill_fields:
+      - customers.email
+      - customers.state
+      - customers.city
+      - customers.zipcode
+    sql: ${TABLE}.CUSTOMER_ID
+    tags:
+      - customer
+    searchable: false
+
+  - name: order_id
+    field_type: dimension
+    type: string
+    hidden: false
+    drill_fields:
+      - order_date
+      - subscription_vs_otp
+      - marketing_channel
+      - campaign
+      - promotion
+      - total_gross_revenue
+    sql: ${TABLE}.ORDER_ID
+    tags:
+      - order
+    searchable: false
+
+  - name: product_id
+    field_type: dimension
+    type: string
+    hidden: true
+    sql: ${TABLE}.PRODUCT_ID
+    searchable: false
+
+  - name: discount
+    field_type: dimension
+    type: number
+    hidden: true
+    sql: ${TABLE}.DISCOUNT
+
+  - name: revenue
+    field_type: dimension
+    type: number
+    hidden: true
+    sql: ${TABLE}.REVENUE
+
+  - name: price
+    field_type: dimension
+    type: number
+    hidden: true
+    sql: ${TABLE}.PRICE
+
+  - name: quantity
+    field_type: dimension
+    type: number
+    hidden: true
+    sql: ${TABLE}.QUANTITY
+
+  - name: campaign
+    field_type: dimension
+    type: string
+    hidden: false
+    description: >-
+      The marketing campaign that the customer came through before placing their
+      order.
+    sql: ${TABLE}.CAMPAIGN
+    searchable: true
+
+  - name: promotion
+    field_type: dimension
+    type: string
+    hidden: false
+    description: The promotion given to the customer for this order
+    sql: ${TABLE}.PROMOTION
+    searchable: true
+
+  - name: subscription_vs_otp
+    field_type: dimension
+    type: string
+    hidden: false
+    description: Whether the order was from a subscription or a one time purchase (OTP)
+    sql: ${TABLE}.SUBSCRIPTION_VS_OTP
+    searchable: true
+
+  - name: marketing_source
+    field_type: dimension
+    type: string
+    hidden: false
+    description: >-
+      The marketing source that the customer came through before placing their
+      order.
+    sql: ${TABLE}.MARKETING_SOURCE
+    searchable: true
+
+  - name: marketing_channel
+    field_type: dimension
+    type: string
+    hidden: false
+    description: >-
+      The marketing channel that the customer came through before placing their
+      order.
+    sql: ${TABLE}.MARKETING_CHANNEL
+    searchable: true
+
+  - name: last_click_marketing_channel
+    field_type: dimension
+    type: string
+    hidden: false
+    description: >-
+      The last click marketing channel that the customer came through before
+      placing their order.
+    sql: ${TABLE}.last_click
+    searchable: true
+
+  - name: first_click_marketing_channel
+    field_type: dimension
+    type: string
+    hidden: false
+    description: >-
+      The first click marketing channel that the customer came through before
+      placing their order.
+    sql: ${TABLE}.first_click
+    searchable: true
+
+  - name: new_vs_repeat
+    field_type: dimension
+    type: string
+    hidden: false
+    description: >-
+      Whether the customer placing the order was a new customer or a returning
+      customer
+    sql: ${TABLE}.new_vs_repeat
+    searchable: true
+
+  - name: order
+    field_type: dimension_group
+    type: time
+    datatype: timestamp
+    hidden: false
+    label: Order Date
+    description: >-
+      The time at which the order was placed. This is the main time field to use
+      for orders
+    timeframes:
+      - date
+      - week_index
+      - week
+      - month_of_year
+      - month
+      - quarter
+      - year
+      - hour_of_day
+      - day_of_week
+    sql: ${TABLE}.ORDER_AT
+
+  - name: mbqmwwmboiiqbbbfbwscsqnkwpbiiidujlxlnozm
+    field_type: measure
+    type: sum
+    label: Sum First Click Marketing Channel
+    sql: ${TABLE}.first_click
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: total_gross_revenue
+    field_type: measure
+    type: sum
+    hidden: false
+    label: Total Gross Revenue
+    description: Total gross revenue = revenue from product sales + shipping revenues.
+    value_format_name: usd
+    sql: ${revenue}
+    synonyms:
+      - sales
+      - revenue
+
+  - name: total_gross_revenue_from_advertising
+    field_type: measure
+    type: sum
+    hidden: true
+    description: Total gross revenue = revenue from product sales + shipping revenues
+    value_format_name: usd
+    sql: ${revenue}
+    filters:
+      - field: marketing_channel
+        value: '-Organic'
+    synonyms:
+      - sales
+      - revenue
+
+  - name: total_discounts
+    field_type: measure
+    type: sum
+    hidden: false
+    description: All discounts applied to either the order or the product in the order
+    value_format_name: usd
+    sql: ${discount}
+
+  - name: total_net_revenue
+    field_type: measure
+    type: number
+    hidden: false
+    description: Total net revenue = gross revenue - discounts
+    value_format_name: usd
+    sql: ${total_gross_revenue} - ${total_discounts}
+
+  - name: subscription_revenue
+    field_type: measure
+    type: sum
+    hidden: false
+    description: >-
+      Subscription revenue = gross revenue (product revenues + shipping,for
+      subscriptions only)
+    value_format_name: usd
+    sql: ${revenue}
+    filters:
+      - field: subscription_vs_otp
+        value: Subscription
+
+  - name: number_of_customers_with_orders
+    field_type: measure
+    type: count_distinct
+    hidden: false
+    description: The unique number of customers who placed orders
+    value_format_name: decimal_0
+    sql: ${customer_id}
+
+  - name: number_of_new_customers_with_orders
+    field_type: measure
+    type: count_distinct
+    hidden: false
+    description: The unique number of new customers who placed orders
+    value_format_name: decimal_0
+    sql: ${customer_id}
+    filters:
+      - field: new_vs_repeat
+        value: New
+
+  - name: number_of_orders
+    field_type: measure
+    type: count_distinct
+    hidden: false
+    description: The unique number of orders placed
+    value_format_name: decimal_0
+    sql: ${order_id}
+
+  - name: number_of_repeat_orders
+    field_type: measure
+    type: count_distinct
+    hidden: false
+    description: >-
+      The unique number of orders placed by customers who have placed at least
+      one order before
+    value_format_name: decimal_0
+    sql: ${order_id}
+    filters:
+      - field: new_vs_repeat
+        value: Repeat
+
+  - name: repurchase_rate
+    field_type: measure
+    type: number
+    hidden: false
+    description: Repurchase rate = number of repeat orders / number of orders.
+    value_format_name: percent_1
+    sql: ${number_of_repeat_orders} / ${number_of_orders}
+    synonyms:
+      - Repeat order rate
+
+  - name: gross_aov
+    field_type: measure
+    type: number
+    hidden: false
+    description: Gross AOV = gross revenues / number of orders
+    value_format_name: usd
+    sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+    synonyms:
+      - Average order value
+
+  - name: number_of_units
+    field_type: measure
+    type: sum
+    hidden: false
+    label: Number Of Units
+    description: >-
+      The unique number of units purchased (e.g. customer orders: 2 lip gloss
+      and 1 blush = 3 units sold)
+    value_format_name: decimal_0
+    sql: ${quantity}
+
+  - name: total_cogs
+    field_type: measure
+    type: sum
+    hidden: false
+    label: Total COGS
+    description: The allocated cost of goods sold to the order line
+    value_format_name: usd
+    sql: ${TABLE}.cogs
+
+  - name: gross_profit
+    field_type: measure
+    type: number
+    hidden: false
+    description: The total net revenue - allocated cost of goods sold to the order line
+    value_format_name: usd
+    sql: ${total_net_revenue} - ${total_cogs}
+    zoe_description: This is the gross profit.
+
+  - name: rnsqwtpijbqwqdtfywgmfihbonwcghjupijkuvxf
+    field_type: measure
+    type: count_distinct
+    label: Duplicate Number Of Orders
+    description: The unique number of orders placed
+    value_format_name: decimal_0
+    sql: ${order_id}
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: nwbrjqectjtvryvrxsahcrtyflvjbtztpywgvpqv
+    field_type: measure
+    type: count_distinct
+    label: Duplicate Number Of Repeat Orders
+    description: >-
+      The unique number of orders placed by customers who have placed at least
+      one order before
+    value_format_name: decimal_0
+    sql: >-
+      case when ${new_vs_repeat}='Repeat' then case when
+      ${new_vs_repeat}='Repeat' then ${order_id} end end
+    filters:
+      - field: new_vs_repeat
+        value: Repeat
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: gfpnujwkwbefwjbsdrtepikkafgmditfkdzfcbrr
+    field_type: measure
+    type: sum
+    label: Duplicate Total Gross Revenue
+    description: Total gross revenue = revenue from product sales + shipping revenues.
+    value_format_name: usd
+    sql: ${revenue}
+    synonyms:
+      - sales
+      - revenue
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: gabvdvqqflnbgbndxfohelmwwdtrunhcahlyycqq
+    field_type: measure
+    type: count_distinct
+    label: Duplicate Number Of Orders
+    description: The unique number of orders placed
+    value_format_name: decimal_0
+    sql: ${order_id}
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: suixiegacmiaswtmpdkxazoktaxfqybmqiizoeai
+    field_type: measure
+    type: count_distinct
+    label: Duplicate Number Of Repeat Orders
+    description: >-
+      The unique number of orders placed by customers who have placed at least
+      one order before
+    value_format_name: decimal_0
+    sql: >-
+      case when ${new_vs_repeat}='Repeat' then case when
+      ${new_vs_repeat}='Repeat' then ${order_id} end end
+    filters:
+      - field: new_vs_repeat
+        value: Repeat
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: eqhgsflakhwmekggeroghirtmvbtctlrntyytcea
+    field_type: measure
+    type: sum
+    label: Duplicate Number Of Units
+    description: >-
+      The unique number of units purchased (e.g. customer orders: 2 lip gloss
+      and 1 blush = 3 units sold)
+    value_format_name: decimal_0
+    sql: ${quantity}
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: qjlgyyomwzxvdhmgyswnpivskorxbudcilaassae
+    field_type: measure
+    type: count_distinct
+    label: Dynamic Number Of Customers With Orders
+    description: The unique number of customers who placed orders
+    value_format_name: decimal_0
+    sql: ${customer_id}
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: mzvnfbloatkmrdoigotineimfgsaijeicrlsjyol
+    field_type: measure
+    type: sum
+    label: Duplicate Number Of Units
+    description: >-
+      The unique number of units purchased (e.g. customer orders: 2 lip gloss
+      and 1 blush = 3 units sold)
+    value_format_name: decimal_0
+    sql: ${quantity}
+    canon_date: order_lines.order
+    update_where_timeframe: true
+
+  - name: rsehctyhoblpuotbnuvfiagthtdvadzbdciluftv
+    field_type: measure
+    type: number
+    label: Duplicate Gross Aov
+    description: Gross AOV = gross revenues / number of orders
+    value_format_name: usd
+    sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
+    synonyms:
+      - Average order value
+    canon_date: order_lines.order
+    update_where_timeframe: true
 event_name: Purchase
 fields_for_analysis:
-- subscription_vs_otp
-- marketing_source
-- marketing_channel
-- promotion
-- campaign
-- products.product_title
+  - subscription_vs_otp
+  - marketing_source
+  - marketing_channel
+  - promotion
+  - campaign
+  - products.product_title
