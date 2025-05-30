@@ -182,14 +182,6 @@ fields:
       - day_of_week
     sql: ${TABLE}.ORDER_AT
 
-  - name: mbqmwwmboiiqbbbfbwscsqnkwpbiiidujlxlnozm
-    field_type: measure
-    type: sum
-    label: Sum First Click Marketing Channel
-    sql: ${TABLE}.first_click
-    canon_date: order_lines.order
-    update_where_timeframe: true
-
   - name: total_gross_revenue
     field_type: measure
     type: sum
