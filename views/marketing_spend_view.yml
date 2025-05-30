@@ -52,6 +52,7 @@ fields:
   datatype: timestamp
   description: The date of the ad spend
   timeframes:
+  - raw
   - date
   - week
   - month

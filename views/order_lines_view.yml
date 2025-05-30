@@ -170,6 +170,7 @@ fields:
       The time at which the order was placed. This is the main time field to use
       for orders
     timeframes:
+      - raw
       - date
       - week_index
       - week
