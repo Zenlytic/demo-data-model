@@ -160,6 +160,16 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
+- name: kuuciiyhlzhkixxmpmovrjbcrektgpwbukarhxyr
+  field_type: dimension
+  type: string
+  label: Duplicate New Vs Repeat
+  description: Whether the customer placing the order was a new customer or a returning
+    customer
+  sql: ${TABLE}.new_vs_repeat
+  searchable: true
+  canon_date: order_lines.order
+
 - name: order
   field_type: dimension_group
   type: time
@@ -195,6 +205,7 @@ fields:
   - revenue
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -208,6 +219,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 - name: total_discounts
@@ -240,6 +252,7 @@ fields:
     value: Subscription
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -258,6 +271,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 - name: number_of_orders
@@ -282,6 +296,7 @@ fields:
     value: Repeat
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -293,6 +308,7 @@ fields:
   - Repeat order rate
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -302,6 +318,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 - name: number_of_units
