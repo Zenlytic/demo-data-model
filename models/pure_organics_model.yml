@@ -2,4 +2,4 @@ version: '1'
 type: model
 name: pure_organics
 connection: demo
-week_start_day: monday
+week_start_day: tuesday
