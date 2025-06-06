@@ -194,6 +194,14 @@ fields:
       - sales
       - revenue
 
+  - name: market_share_usd
+    field_type: measure
+    type: sum
+    hidden: false
+    label: Market Share USD
+    value_format_name: usd
+    sql: ratio_to_report(${total_gross_revenue}) over ()
+    
   - name: total_gross_revenue_from_advertising
     field_type: measure
     type: sum
