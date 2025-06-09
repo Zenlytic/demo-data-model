@@ -8,5 +8,6 @@ views:
   events:
     join:
       join_type: left_outer
+      join_as: events_two
       relationship: many_to_one
       sql_on: ${events.session_id}=${events.session_id}
