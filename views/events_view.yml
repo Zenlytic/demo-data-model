@@ -6,6 +6,16 @@ model_name: pure_organics
 sql_table_name: demo_prod.events
 default_date: event
 row_label: Event
+
+identifiers:
+- name: event_join 
+  type: join
+  reference: events
+  relationship: many_to_one
+  join_type: left_outer
+  sql_on: ${events.session_id} = ${event_join.session_id} 
+
+
 fields:
 - name: anonymous_id
   field_type: dimension
