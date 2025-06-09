@@ -1,0 +1,12 @@
+type: topic
+label: Session Data
+base_view: events
+model_name: pure_organics
+hidden: false
+
+views:
+  events:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${events.session_id}=${events.session_id}
