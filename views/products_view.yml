@@ -62,4 +62,3 @@ fields:
   description: The Price of the Product
   sql: ${TABLE}.PRICE
   searchable: true
-
