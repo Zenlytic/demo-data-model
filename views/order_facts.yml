@@ -81,4 +81,4 @@ derived_table:
     from DEMO_PROD.ORDER_LINES order_lines  left join DEMO_PROD.PRODUCTS
     products on order_lines.product_id = products.product_id  group by
     order_lines.order_at, products.product_title, products.product_type
-description: description 3
+description: description 4
