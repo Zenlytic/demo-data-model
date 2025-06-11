@@ -60,6 +60,16 @@ fields:
   sql: ${TABLE}.PRODUCT_ID
   searchable: false
 
+- name: ezvkthcnmunkafwkraygxvwnlmyguaovridftjqu
+  field_type: dimension
+  type: string
+  label: Duplicate First Click Marketing Channel
+  description: The first click marketing channel that the customer came through before
+    placing their order.
+  sql: ${TABLE}.first_click
+  searchable: true
+  canon_date: order_lines.order
+
 - name: discount
   field_type: dimension
   type: number
@@ -206,6 +216,7 @@ fields:
 
 
 
+
 - name: total_gross_revenue_from_advertising
   field_type: measure
   type: sum
@@ -219,6 +230,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 
 
@@ -253,6 +265,7 @@ fields:
 
 
 
+
 - name: number_of_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -271,6 +284,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 
 
@@ -297,6 +311,7 @@ fields:
 
 
 
+
 - name: repurchase_rate
   field_type: measure
   type: number
@@ -309,6 +324,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -318,6 +334,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
