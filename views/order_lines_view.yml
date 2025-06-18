@@ -397,38 +397,6 @@ fields:
     sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
     synonyms:
       - Average order value
-
-  - name: atfslesdusoocvxpgmdxngytfshvdfggzvdvscjm
-    field_type: measure
-    type: number
-    label: Duplicate Gross Aov THISISITPANSIT! <3
-    description: Gross AOV = gross revenues / number of orders
-    required_access_grants:
-      - pii_access
-    value_format_name: usd
-    sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-    synonyms:
-      - Average order value
-    group_label: test
-    canon_date: order_lines.order
-    zoe_description: zoe desc
-
-  - name: isyrzqmjdqiazduypzgopeodfdegtdxnhiaufzgi
-    field_type: measure
-    type: sum
-    label: Duplicate Number Of Units 2.0 😍😍😍😎
-    description: >-
-      The unique number of units purchased (e.g. customer orders: 2 lip gloss
-      and 1 blush = 3 units sold)
-    required_access_grants:
-      - pii_access
-    value_format_name: decimal_0
-    sql: ${quantity}
-    synonyms:
-      - test
-    group_label: DFD
-    canon_date: order_lines.order
-    zoe_description: testttt
 event_name: Purchase
 fields_for_analysis:
   - subscription_vs_otp
