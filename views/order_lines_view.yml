@@ -60,17 +60,6 @@ fields:
     sql: ${TABLE}.PRODUCT_ID
     searchable: false
 
-  - name: ezvkthcnmunkafwkraygxvwnlmyguaovridftjqu
-    field_type: dimension
-    type: string
-    label: Duplicate First Click Marketing Channel
-    description: >-
-      The first click marketing channel that the customer came through before
-      placing their order.
-    sql: ${TABLE}.first_click
-    searchable: true
-    canon_date: order_lines.order
-
   - name: discount
     field_type: dimension
     type: number
@@ -200,16 +189,6 @@ fields:
       The first click marketing channel that the customer came through before
       placing their order.
     sql: ${TABLE}.first_click
-    searchable: true
-
-  - name: youpckrgdydctjyrubnrkllwumloxqjcnsxsnjbg
-    field_type: dimension
-    type: string
-    label: EDITED Duplicate Duplicate New Vs Repeat
-    description: >-
-      Whether the customer placing the order was a new customer or a returning
-      customer
-    sql: ${TABLE}.new_vs_repeat
     searchable: true
 
   - name: order
