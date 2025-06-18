@@ -192,14 +192,6 @@ fields:
     sql: ${TABLE}.first_click
     searchable: true
 
-  - name: llmdvzlxaismrtrisachytceqngewwhewxmkhagc
-    field_type: dimension
-    type: string
-    label: Duplicate Subscription Vs Otp <3 <3 <3
-    description: Whether the order was from a subscription or a one time purchase (OTP)
-    sql: ${TABLE}.subscription_vs_otp
-    searchable: true
-
   - name: bqiylwohheytwewddipxbdmljjueaxcxctdrducp
     field_type: dimension
     type: string
