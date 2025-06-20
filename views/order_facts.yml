@@ -7,7 +7,6 @@ identifiers:
 - name: primkey
   type: primary
   sql: ${primkey}
-
 fields:
 - name: primkey
   field_type: dimension
