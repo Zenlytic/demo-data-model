@@ -110,6 +110,13 @@ fields:
   sql: ${TABLE}.first_campaign
   searchable: false
 
+- name: thvahcbjiwyhplwilxowxtdhtecgcyhnuutjulij
+  field_type: dimension
+  type: string
+  label: Duplicate CITY
+  description: The customer's city (location)
+  sql: ${TABLE}.CITY
+
 - name: first_order
   field_type: dimension_group
   type: time
