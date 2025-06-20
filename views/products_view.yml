@@ -71,3 +71,13 @@ fields:
   sql: ${TABLE}.PRODUCT_TYPE
   zoe_description: 'The type of the product. '
   searchable: true
+
+- name: ruwfgbykkswambhtjivepkpyrjlogaeiyyexnlwe
+  field_type: dimension
+  type: string
+  label: Duplicate Product Title
+  description: The title of the product sold (Everyday SPF Cream, etc)
+  sql: ${TABLE}.PRODUCT_TITLE
+  tags:
+  - product
+  searchable: true
