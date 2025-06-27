@@ -6,13 +6,16 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
+
 identifiers:
 - name: product_id
   type: foreign
   sql: ${product_id}
+
 - name: customer_id
   type: foreign
   sql: ${customer_id}
+  
 fields:
 - name: order_line_id
   field_type: dimension
@@ -154,6 +157,8 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
+# DIMENSION GROUPS
+
 - name: order
   field_type: dimension_group
   type: time
@@ -175,6 +180,8 @@ fields:
   - day_of_week
   sql: ${TABLE}.ORDER_AT
 
+# MEASURES
+
 - name: total_gross_revenue
   field_type: measure
   type: sum
@@ -187,20 +194,6 @@ fields:
   - sales
   - revenue
 
-- name: total_gross_revenue_from_advertising
-  field_type: measure
-  type: sum
-  hidden: true
-  description: Total gross revenue = revenue from product sales + shipping revenues
-  value_format_name: usd
-  sql: ${revenue}
-  filters:
-  - field: marketing_channel
-    value: -Organic
-  synonyms:
-  - sales
-  - revenue
-
 - name: total_discounts
   field_type: measure
   type: sum
@@ -208,26 +201,6 @@ fields:
   description: All discounts applied to either the order or the product in the order
   value_format_name: usd
   sql: ${discount}
-
-- name: total_net_revenue
-  field_type: measure
-  type: number
-  hidden: false
-  description: Total net revenue = gross revenue - discounts
-  value_format_name: usd
-  sql: ${total_gross_revenue} - ${total_discounts}
-
-- name: subscription_revenue
-  field_type: measure
-  type: sum
-  hidden: false
-  description: Subscription revenue = gross revenue (product revenues + shipping,for
-    subscriptions only)
-  value_format_name: usd
-  sql: ${revenue}
-  filters:
-  - field: subscription_vs_otp
-    value: Subscription
 
 - name: number_of_customers_with_orders
   field_type: measure
@@ -237,17 +210,6 @@ fields:
   value_format_name: decimal_0
   sql: ${customer_id}
 
-- name: number_of_new_customers_with_orders
-  field_type: measure
-  type: count_distinct
-  hidden: false
-  description: The unique number of new customers who placed orders
-  value_format_name: decimal_0
-  sql: ${customer_id}
-  filters:
-  - field: new_vs_repeat
-    value: New
-
 - name: number_of_orders
   field_type: measure
   type: count_distinct
@@ -256,17 +218,34 @@ fields:
   value_format_name: decimal_0
   sql: ${order_id}
 
-- name: number_of_repeat_orders
+- name: number_of_units
   field_type: measure
-  type: count_distinct
+  type: sum
   hidden: false
-  description: The unique number of orders placed by customers who have placed at
-    least one order before
+  label: Number Of Units
+  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
+    gloss and 1 blush = 3 units sold)'
   value_format_name: decimal_0
-  sql: ${order_id}
-  filters:
-  - field: new_vs_repeat
-    value: Repeat
+  sql: ${quantity}
+
+- name: total_cogs
+  field_type: measure
+  type: sum
+  hidden: false
+  label: Total COGS
+  description: The allocated cost of goods sold to the order line
+  value_format_name: usd
+  sql: ${TABLE}.cogs
+
+# CALCULATED MEASURES
+
+- name: total_net_revenue
+  field_type: measure
+  type: number
+  hidden: false
+  description: Total net revenue = gross revenue - discounts
+  value_format_name: usd
+  sql: ${total_gross_revenue} - ${total_discounts}
 
 - name: repurchase_rate
   field_type: measure
@@ -288,25 +267,6 @@ fields:
   synonyms:
   - Average order value
 
-- name: number_of_units
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Number Of Units
-  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
-    gloss and 1 blush = 3 units sold)'
-  value_format_name: decimal_0
-  sql: ${quantity}
-
-- name: total_cogs
-  field_type: measure
-  type: sum
-  hidden: false
-  label: Total COGS
-  description: The allocated cost of goods sold to the order line
-  value_format_name: usd
-  sql: ${TABLE}.cogs
-
 - name: gross_profit
   field_type: measure
   type: number
@@ -324,6 +284,75 @@ fields:
     by total number of orders.
   sql: ${order_lines.number_of_units} / nullif(${order_lines.number_of_orders}, 0)
   value_format_name: decimal_1
+
+# FILTERED MEASURES
+
+- name: total_gross_revenue_from_advertising
+  field_type: measure
+  type: sum
+  hidden: true
+  description: Total gross revenue = revenue from product sales + shipping revenues
+  value_format_name: usd
+  sql: ${revenue}
+  filters:
+  - field: marketing_channel
+    value: -Organic
+  synonyms:
+  - sales
+  - revenue
+
+- name: subscription_revenue
+  field_type: measure
+  type: sum
+  hidden: false
+  description: Subscription revenue = gross revenue (product revenues + shipping,for
+    subscriptions only)
+  value_format_name: usd
+  sql: ${revenue}
+  filters:
+  - field: subscription_vs_otp
+    value: Subscription
+
+- name: number_of_new_customers_with_orders
+  field_type: measure
+  type: count_distinct
+  hidden: false
+  description: The unique number of new customers who placed orders
+  value_format_name: decimal_0
+  sql: ${customer_id}
+  filters:
+  - field: new_vs_repeat
+    value: New
+
+- name: number_of_repeat_orders
+  field_type: measure
+  type: count_distinct
+  hidden: false
+  description: The unique number of orders placed by customers who have placed at
+    least one order before
+  value_format_name: decimal_0
+  sql: ${order_id}
+  filters:
+  - field: new_vs_repeat
+    value: Repeat
+
+# REFERENCING OTHER VIEWS
+# this uses the count of prodcuts from the products view
+- name: avg_products_per_order
+  field_type: measure
+  type: number
+  hidden: true
+  description: Total gross revenue = revenue from product sales + shipping revenues
+  sql: ${products.count_products} / ${number_of_orders}
+  value_format_name: decimal_1
+
+# WINDOW FUNCTIONS
+# this ranks the order by customer based on order date
+- name: order_sequence_number
+  field_type: dimension
+  type: number
+  sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
+  window: true
 
 event_name: Purchase
 fields_for_analysis:
