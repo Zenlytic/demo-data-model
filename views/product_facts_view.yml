@@ -1,6 +1,6 @@
 version: 1
 type: view
-name: order_facts
+name: product_facts
 model_name: pure_organics
 default_date: order
 identifiers:
@@ -43,7 +43,6 @@ fields:
   - month_of_year
   - month
   - quarter
-  - time
   - year
   sql: ${TABLE}.order_at
 
@@ -61,18 +60,10 @@ fields:
   field_type: measure
   type: sum
   sql: ${TABLE}.total_cogs
-
-- name: ywuuqbnwwufratcmzdatbrajnnmtzbkeylvpdnbl
-  field_type: measure
-  type: sum
-  label: Duplicate Number Of Orders
-  sql: ${TABLE}.number_of_orders
-  canon_date: order_facts.order
-  update_where_timeframe: true
 derived_table:
   sql: "select order_lines.order_at\n      ,product_title as product_title\n     \
     \ ,product_type as product_type\n      ,count(distinct order_lines.order_id) as
     number_of_orders\n      ,sum(order_lines.quantity) as number_of_units\n      ,sum(order_lines.cogs)
-    as total_cogs\nfrom DEMO_PROD.ORDER_LINES order_lines  left join DEMO_PROD.PRODUCTS
-    products on order_lines.product_id = products.product_id  group by order_lines.order_at,
-    products.product_title, products.product_type\n"
+    as total_cogs\nfrom DEMO_PROD.ORDER_LINES order_lines left join DEMO_PROD.PRODUCTS
+    products on order_lines.product_id = products.product_id group by order_lines.order_at\n\
+    \        ,products.product_title\n        ,products.product_type\n"

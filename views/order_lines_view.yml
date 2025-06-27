@@ -88,9 +88,8 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: >-
-    The marketing campaign that the customer came through before placing their
-    order.
+  description: The marketing campaign that the customer came through before placing
+    their order.
   sql: ${TABLE}.CAMPAIGN
   searchable: true
 
@@ -114,9 +113,8 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: >-
-    The marketing source that the customer came through before placing their
-    order.
+  description: The marketing source that the customer came through before placing
+    their order.
   sql: ${TABLE}.MARKETING_SOURCE
   searchable: true
 
@@ -124,9 +122,8 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: >-
-    The marketing channel that the customer came through before placing their
-    order.
+  description: The marketing channel that the customer came through before placing
+    their order.
   sql: ${TABLE}.MARKETING_CHANNEL
   searchable: true
 
@@ -134,8 +131,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: >-
-    The last click marketing channel that the customer came through before
+  description: The last click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.last_click
   searchable: true
@@ -144,8 +140,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: >-
-    The first click marketing channel that the customer came through before
+  description: The first click marketing channel that the customer came through before
     placing their order.
   sql: ${TABLE}.first_click
   searchable: true
@@ -154,8 +149,7 @@ fields:
   field_type: dimension
   type: string
   hidden: false
-  description: >-
-    Whether the customer placing the order was a new customer or a returning
+  description: Whether the customer placing the order was a new customer or a returning
     customer
   sql: ${TABLE}.new_vs_repeat
   searchable: true
@@ -166,9 +160,8 @@ fields:
   datatype: timestamp
   hidden: false
   label: Order Date
-  description: >-
-    The time at which the order was placed. This is the main time field to use
-    for orders
+  description: The time at which the order was placed. This is the main time field
+    to use for orders
   timeframes:
   - raw
   - date
@@ -228,8 +221,7 @@ fields:
   field_type: measure
   type: sum
   hidden: false
-  description: >-
-    Subscription revenue = gross revenue (product revenues + shipping,for
+  description: Subscription revenue = gross revenue (product revenues + shipping,for
     subscriptions only)
   value_format_name: usd
   sql: ${revenue}
@@ -268,9 +260,8 @@ fields:
   field_type: measure
   type: count_distinct
   hidden: false
-  description: >-
-    The unique number of orders placed by customers who have placed at least
-    one order before
+  description: The unique number of orders placed by customers who have placed at
+    least one order before
   value_format_name: decimal_0
   sql: ${order_id}
   filters:
@@ -302,9 +293,8 @@ fields:
   type: sum
   hidden: false
   label: Number Of Units
-  description: >-
-    The unique number of units purchased (e.g. customer orders: 2 lip gloss
-    and 1 blush = 3 units sold)
+  description: 'The unique number of units purchased (e.g. customer orders: 2 lip
+    gloss and 1 blush = 3 units sold)'
   value_format_name: decimal_0
   sql: ${quantity}
 
@@ -325,6 +315,15 @@ fields:
   value_format_name: usd
   sql: ${total_net_revenue} - ${total_cogs}
   zoe_description: This is the gross profit.
+
+- name: units_per_order
+  field_type: measure
+  type: number
+  label: Units per Order
+  description: Number of units per order calculated as total number of units divided
+    by total number of orders.
+  sql: ${order_lines.number_of_units} / nullif(${order_lines.number_of_orders}, 0)
+  value_format_name: decimal_1
 
 event_name: Purchase
 fields_for_analysis:

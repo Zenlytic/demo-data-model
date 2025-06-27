@@ -18,7 +18,12 @@ identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-
+- name: orders_join
+  type: join
+  reference: order_lines
+  relationship: one_to_many
+  join_type: left_outer
+  sql_on: ${order_lines.customer_id} = ${customers.customer_id}
 fields:
 - name: customer_id
   field_type: dimension
@@ -39,7 +44,8 @@ fields:
   field_type: dimension
   type: string
   description: The customer's email address
-  required_access_grants: [pii_access]
+  required_access_grants:
+  - pii_access
   sql: ${TABLE}.EMAIL
   searchable: false
 
