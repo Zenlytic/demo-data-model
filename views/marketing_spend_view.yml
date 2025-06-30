@@ -6,7 +6,6 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.MARKETING_SPEND
 default_date: spend
 row_label: Spend Item
-
 fields:
 - name: unique_key
   field_type: dimension

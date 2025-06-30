@@ -6,7 +6,6 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
 default_date: order
 row_label: Order line
-
 identifiers:
 - name: product_id
   type: foreign
@@ -15,7 +14,7 @@ identifiers:
 - name: customer_id
   type: foreign
   sql: ${customer_id}
-  
+
 fields:
 - name: order_line_id
   field_type: dimension
@@ -157,7 +156,19 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
-# DIMENSION GROUPS
+- name: order_sequence_number
+  field_type: dimension
+  type: number
+  sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
+  window: true
+
+- name: nboodtuspevncfbozbnosllziutgphujoktepxss
+  field_type: dimension
+  type: string
+  label: Duplicate Promotion
+  description: The promotion given to the customer for this order
+  sql: ${TABLE}.PROMOTION
+  searchable: true
 
 - name: order
   field_type: dimension_group
@@ -180,8 +191,6 @@ fields:
   - day_of_week
   sql: ${TABLE}.ORDER_AT
 
-# MEASURES
-
 - name: total_gross_revenue
   field_type: measure
   type: sum
@@ -193,6 +202,7 @@ fields:
   synonyms:
   - sales
   - revenue
+
 
 - name: total_discounts
   field_type: measure
@@ -237,8 +247,6 @@ fields:
   value_format_name: usd
   sql: ${TABLE}.cogs
 
-# CALCULATED MEASURES
-
 - name: total_net_revenue
   field_type: measure
   type: number
@@ -257,6 +265,7 @@ fields:
   synonyms:
   - Repeat order rate
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -266,6 +275,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 - name: gross_profit
   field_type: measure
@@ -282,10 +292,8 @@ fields:
   label: Units per Order
   description: Number of units per order calculated as total number of units divided
     by total number of orders.
-  sql: ${order_lines.number_of_units} / nullif(${order_lines.number_of_orders}, 0)
   value_format_name: decimal_1
-
-# FILTERED MEASURES
+  sql: ${order_lines.number_of_units} / nullif(${order_lines.number_of_orders}, 0)
 
 - name: total_gross_revenue_from_advertising
   field_type: measure
@@ -301,6 +309,7 @@ fields:
   - sales
   - revenue
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -313,6 +322,7 @@ fields:
   - field: subscription_vs_otp
     value: Subscription
 
+
 - name: number_of_new_customers_with_orders
   field_type: measure
   type: count_distinct
@@ -323,6 +333,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: New
+
 
 - name: number_of_repeat_orders
   field_type: measure
@@ -338,22 +349,14 @@ fields:
 
 # REFERENCING OTHER VIEWS
 # this uses the count of prodcuts from the products view
+
 - name: avg_products_per_order
   field_type: measure
   type: number
   hidden: true
   description: Total gross revenue = revenue from product sales + shipping revenues
-  sql: ${products.count_products} / ${number_of_orders}
   value_format_name: decimal_1
-
-# WINDOW FUNCTIONS
-# this ranks the order by customer based on order date
-- name: order_sequence_number
-  field_type: dimension
-  type: number
-  sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
-  window: true
-
+  sql: ${products.count_products} / ${number_of_orders}
 event_name: Purchase
 fields_for_analysis:
 - subscription_vs_otp

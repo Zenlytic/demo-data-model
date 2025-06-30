@@ -3,12 +3,11 @@ type: view
 name: product_facts
 model_name: pure_organics
 default_date: order
-
 identifiers:
 - name: primkey
   type: primary
   sql: ${primkey}
-  
+
 fields:
 - name: primkey
   field_type: dimension
