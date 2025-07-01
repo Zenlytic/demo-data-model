@@ -12,7 +12,7 @@ fields:
     type: string
     description: ''
     hidden: true
-    label: Anonymous Id NJM
+    label: Anonymous Id NJM2
     primary_key: true
     searchable: false
     sql: ${TABLE}.anonymous_id
