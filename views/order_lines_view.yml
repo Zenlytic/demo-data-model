@@ -17,7 +17,6 @@ fields:
   - name: order_line_id
     field_type: dimension
     type: string
-    hidden: true
     primary_key: true
     sql: ${TABLE}.ORDER_LINE_ID
     searchable: false
@@ -25,7 +24,6 @@ fields:
   - name: customer_id
     field_type: dimension
     type: string
-    hidden: true
     description: Represents the id of each customer
     drill_fields:
       - customers.email
@@ -56,32 +54,27 @@ fields:
   - name: product_id
     field_type: dimension
     type: string
-    hidden: true
     sql: ${TABLE}.PRODUCT_ID
     searchable: false
 
   - name: discount
     field_type: dimension
     type: number
-    hidden: true
     sql: ${TABLE}.DISCOUNT
 
   - name: revenue
     field_type: dimension
     type: number
-    hidden: true
     sql: ${TABLE}.REVENUE
 
   - name: price
     field_type: dimension
     type: number
-    hidden: true
     sql: ${TABLE}.PRICE
 
   - name: quantity
     field_type: dimension
     type: number
-    hidden: true
     sql: ${TABLE}.QUANTITY
 
   - name: campaign
