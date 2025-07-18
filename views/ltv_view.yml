@@ -1,0 +1,90 @@
+version: 1
+type: view
+name: ltv
+model_name: pure_organics
+sql_table_name: DEMO_PROD.LTV
+default_date: date_month
+fields:
+- name: customer_id
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."CUSTOMER_ID"
+
+- name: n_orders_in_month
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."N_ORDERS_IN_MONTH"
+
+- name: n_cumulative_orders
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."N_CUMULATIVE_ORDERS"
+
+- name: n_customers_in_month
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."N_CUSTOMERS_IN_MONTH"
+
+- name: gross_sales
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."GROSS_SALES"
+
+- name: date_month
+  field_type: dimension_group
+  type: time
+  datatype: date
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  sql: ${TABLE}."DATE_MONTH"
+
+
+# To help you get started with defining fields, we've included a quick guide which you can delete at any time.
+# The following keys are required for all fields. All the fields above have been created based on the columns
+# in your table.
+
+# - name: (Required) Name of the field. This is used to reference the field in the data model.
+#   field_type: The type of field. This can be 'dimension', 'measure', or 'dimension_group'.
+#   type: This is the data type for a field.
+#         For dimensions, this can be: string, yesno, tier, number
+#         For measures, this is an aggregation type: number, sum, average, count, count_distinct
+#         For dimension groups this can be: time, duration
+#   sql: (Required) This is the SQL expression for the field. You can reference other fields in the table by
+#        using the `name` of the field. For example, if you have a field with name: 'revenue' in the view
+#        'orders', you can reference it as: ${orders.revenue}.
+#        For more information, see https://docs.zenlytic.com/docs/data_modeling/
+#
+
+# The following keys are optional but useful for providing additional context to the field in the UI and Zoe.
+#
+#   label: The is the user-facing label for the field, displayed in the UI and used by Zoe in chat.
+#          It's different from the `name` field, which is used for referencing the field in the data model.
+#
+#   description: This is used to provide context to users about the field.
+#
+#   searchable: This allows Zenlytic to index the categories and allows Zoe to properly use filters.
+#               For example, if you have a field called 'state' and you want to be able to filter
+#               on different states, you would set this to 'yes'.
+#
+#   zoe_description: This is used to provide context to Zoe about the field.
+#                    When this is not provided, Zoe will use the description field.
+#
+#   hidden: This is used to hide the field from both the UI and Zoe. By default, this is set to 'no'.
+#
+#   value_format_name: This is the format to use when displaying the field. Follow this link to see the
+#                      available formats. https://docs.zenlytic.com/docs/data_modeling/formatting
+#
+#   synonyms: This is a list of strings that act as synonyms for the field label.
+#
+#   filters: This is a list of filters that can be applied to the field.
+#
+# For a comprehensive list of options that can be specified for a field, or for more detailed information,
+# please visit: https://docs.zenlytic.com/docs/data_modeling/data_modeling
