@@ -19,7 +19,7 @@ fields:
     type: string
     description: ''
     hidden: true
-    label: Order Line Id NJM
+    label: Order Line Id NJM2
     primary_key: true
     searchable: false
     sql: ${TABLE}.ORDER_LINE_ID
