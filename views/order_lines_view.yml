@@ -1,4 +1,4 @@
-version: 1
+version: 2
 type: view
 name: order_lines
 description: Description of order_lines view.
