@@ -212,6 +212,7 @@ fields:
 
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -276,6 +277,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -285,6 +287,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -325,6 +328,7 @@ fields:
 
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -337,6 +341,7 @@ fields:
   filters:
   - field: subscription_vs_otp
     value: Subscription
+
 
 
 
@@ -353,6 +358,7 @@ fields:
 
 
 
+
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -365,6 +371,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: Repeat
+
 
 
 
