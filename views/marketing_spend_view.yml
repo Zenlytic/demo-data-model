@@ -38,6 +38,27 @@ fields:
   sql: ${TABLE}.campaign
   searchable: true
 
+- name: revenue_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.revenue_from_paid_marketing
+  searchable: false
+
+- name: customers_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.customers_from_paid_marketing
+  searchable: false
+
+- name: gross_profit_from_paid_marketing
+  field_type: dimension
+  type: number
+  hidden: true
+  sql: ${TABLE}.gross_profit_from_paid_marketing
+  searchable: false
+
 - name: ad_spend
   field_type: dimension
   type: string
@@ -77,7 +98,7 @@ fields:
   description: Cost of acquisition = Total marketing spend across all channels / number
     of new customers who placed orders in that period
   value_format_name: usd
-  sql: ${total_marketing_spend} / nullif(${order_lines.number_of_new_customers_with_orders},
+  sql: ${total_marketing_spend} / nullif(sum(${customers_from_paid_marketing}),
     0)
   is_merged_result: true
 
@@ -97,7 +118,7 @@ fields:
   description: Return on advertising spend = Total advertising revenue / Total marketing
     spend across all channels
   value_format_name: decimal_1
-  sql: ${order_lines.total_gross_revenue_from_advertising} / nullif(${total_marketing_spend},
+  sql: SUM(${revenue_from_paid_marketing}) / nullif(${total_marketing_spend},
     0)
   is_merged_result: true
 
@@ -108,5 +129,5 @@ fields:
   description: Profitable return on advertising spend = Total advertising gross profit
     / Total marketing spend across all channels
   value_format_name: decimal_1
-  sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
+  sql: SUM(${gross_profit_from_paid_marketing}) / nullif(${total_marketing_spend}, 0)
   is_merged_result: true

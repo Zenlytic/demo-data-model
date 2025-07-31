@@ -358,7 +358,6 @@ fields:
 
 
 
-
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -373,8 +372,6 @@ fields:
     value: Repeat
 
 
-
-
 - name: avg_products_per_order
   field_type: measure
   type: number
@@ -383,37 +380,3 @@ fields:
   value_format_name: decimal_1
   sql: ${products.count_products} / ${number_of_orders}
 
-- name: mxgqcmzqhndiruzwynlmfmxbtmanivygbndekxkf
-  field_type: measure
-  type: count_distinct
-  label: Duplicate Number Of Orders HEREEEEEEEEEE
-  description: The unique number of orders placed
-  required_access_grants:
-  - pii_access
-  value_format_name: decimal_0
-  sql: ${order_id}
-  zoe_description: test
-  synonyms:
-  - test1
-  canon_date: order_lines.order
-  update_where_timeframe: true
-
-- name: iqbntblyotuqabgmuxrldwiuzvppwglcvjvdzeyj
-  field_type: measure
-  type: number
-  label: Duplicate Gross Aov
-  description: Gross AOV = gross revenues / number of orders
-  value_format_name: usd
-  sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
-  synonyms:
-  - Average order value
-  canon_date: order_lines.order
-  update_where_timeframe: true
-event_name: Purchase
-fields_for_analysis:
-- subscription_vs_otp
-- marketing_source
-- marketing_channel
-- promotion
-- campaign
-- products.product_title
