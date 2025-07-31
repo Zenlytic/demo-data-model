@@ -5,67 +5,77 @@ model_name: pure_organics
 sql_table_name: DEMO_PROD.PRODUCTS
 default_date: order_lines.order
 identifiers:
-- name: product_id
-  type: primary
-  sql: ${product_id}
-
+  - name: product_id
+    type: primary
+    sql: ${product_id}
 fields:
-- name: product_id
-  field_type: dimension
-  type: string
-  hidden: true
-  primary_key: true
-  description: The id of the product.
-  sql: ${TABLE}.PRODUCT_ID
-  zoe_description: The id of the product.
-  searchable: false
+  - name: product_id
+    field_type: dimension
+    type: string
+    hidden: true
+    primary_key: true
+    description: The id of the product.
+    sql: ${TABLE}.PRODUCT_ID
+    zoe_description: The id of the product.
+    searchable: false
+  - name: product_type
+    field_type: dimension
+    type: string
+    description: 'The type of the product sold (Eye, Lip, Face, etc) '
+    sql: ${TABLE}.PRODUCT_TYPE
+    searchable: true
+    zoe_description: 'The type of the product. '
+  - name: product_title
+    field_type: dimension
+    type: string
+    description: The title of the product sold (Everyday SPF Cream, etc)
+    sql: ${TABLE}.PRODUCT_TITLE
+    tags:
+      - product
+    searchable: true
+  - name: product_image_url
+    field_type: dimension
+    type: string
+    description: Product image url for the product title
+    value_format_name: image_from_url
+    sql: >+
+      CASE ${product_title}
 
-- name: product_type
-  field_type: dimension
-  type: string
-  description: 'The type of the product sold (Eye, Lip, Face, etc) '
-  sql: ${TABLE}.PRODUCT_TYPE
-  searchable: true
-  zoe_description: 'The type of the product. '
+      when 'Easygoing Lipstick' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/easygoing_lipstick.jpg'
+      when 'Everyday Bronzer' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_bronzer.jpg'
+      when 'Everyday Concealer' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_concealer.jpg'
+      when 'Everyday Eyeshadow' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_eyeshadow.jpg'
+      when 'Everyday SPF Cream' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_spf_cream.jpg'
+      when 'Glam Lipstick' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/glam_lipstick.jpg' when
+      'Luxury Blush' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/lux_blush.jpg' when
+      'Luxury Eyeliner' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/lux_eyeliner.jpg' when
+      'NoChap Lip Gloss SPF 15' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/spf_lip_gloss.jpg' when
+      'Organic Color Correct' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
+      when 'Organic Foundation' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_foundation.jpg'
+      when 'Your Fav Primer' then
+      'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
+      END
 
-- name: product_title
-  field_type: dimension
-  type: string
-  description: The title of the product sold (Everyday SPF Cream, etc)
-  sql: ${TABLE}.PRODUCT_TITLE
-  tags:
-  - product
-  searchable: true
-
-- name: product_image_url
-  field_type: dimension
-  type: string
-  description: Product image url for the product title
-  value_format_name: image_from_url
-  sql: "CASE ${product_title}\nwhen 'Easygoing Lipstick' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/easygoing_lipstick.jpg'
-    when 'Everyday Bronzer' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_bronzer.jpg'
-    when 'Everyday Concealer' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_concealer.jpg'
-    when 'Everyday Eyeshadow' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_eyeshadow.jpg'
-    when 'Everyday SPF Cream' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/everyday_spf_cream.jpg'
-    when 'Glam Lipstick' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/glam_lipstick.jpg'
-    when 'Luxury Blush' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/lux_blush.jpg'
-    when 'Luxury Eyeliner' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/lux_eyeliner.jpg'
-    when 'NoChap Lip Gloss SPF 15' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/spf_lip_gloss.jpg'
-    when 'Organic Color Correct' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
-    when 'Organic Foundation' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_foundation.jpg'
-    when 'Your Fav Primer' then 'https://exq-art-data.s3.us-east-1.amazonaws.com/organic_color_correct.jpg'
-    END\n\n"
-  searchable: false
-
-- name: price
-  field_type: dimension
-  type: string
-  description: The Price of the Product
-  sql: ${TABLE}.PRICE
-  searchable: true
-
-- name: count_products
-  field_type: measure
-  type: count_distinct
-  description: The Distinct Number of Products
-  sql: ${product_id}
+    searchable: false
+  - name: price
+    field_type: dimension
+    type: string
+    description: The Price of the Product
+    sql: ${TABLE}.PRICE
+    searchable: true
+  - name: count_products
+    field_type: measure
+    type: count_distinct
+    description: The Distinct Number of Products
+    sql: ${product_id}

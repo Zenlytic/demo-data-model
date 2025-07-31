@@ -1,0 +1,4 @@
+connection: zenlytic_managed
+name: zenlytic_managed
+type: model
+version: '1'

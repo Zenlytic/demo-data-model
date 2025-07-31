@@ -1,10 +1,10 @@
 dashboard-paths:
-- dashboards
+  - dashboards
 model-paths:
-- models
+  - models
 name: demo_zenlytic_project
 profile: demo
 topic-paths:
-- topics
+  - topics
 view-paths:
-- views
+  - views
