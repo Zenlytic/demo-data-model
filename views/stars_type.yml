@@ -1,0 +1,40 @@
+name: stars_type
+type: view
+model_name: zenlytic_managed
+sql_table_name: stars_type
+fields:
+  - name: Temperature_K
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEMPERATURE_K"
+    searchable: true
+  - name: Luminosity_Llo
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LUMINOSITY_LLO"
+    searchable: true
+  - name: Radius_Rro
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."RADIUS_RRO"
+    searchable: true
+  - name: Absolute_magnitude_Mv
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ABSOLUTE_MAGNITUDE_MV"
+    searchable: true
+  - name: Star_type
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."STAR_TYPE"
+    searchable: true
+  - name: Star_color
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STAR_COLOR"
+    searchable: true
+  - name: Spectral_Class
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPECTRAL_CLASS"
+    searchable: true
