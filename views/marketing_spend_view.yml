@@ -100,7 +100,6 @@ fields:
   value_format_name: usd
   sql: ${total_marketing_spend} / nullif(sum(${customers_from_paid_marketing}),
     0)
-  is_merged_result: true
 
 - name: cpc
   field_type: measure
@@ -120,7 +119,6 @@ fields:
   value_format_name: decimal_1
   sql: SUM(${revenue_from_paid_marketing}) / nullif(${total_marketing_spend},
     0)
-  is_merged_result: true
 
 - name: proas
   field_type: measure
@@ -130,4 +128,3 @@ fields:
     / Total marketing spend across all channels
   value_format_name: decimal_1
   sql: SUM(${gross_profit_from_paid_marketing}) / nullif(${total_marketing_spend}, 0)
-  is_merged_result: true
