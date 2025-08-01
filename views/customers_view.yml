@@ -19,12 +19,6 @@ identifiers:
   type: primary
   sql: ${customer_id}
 
-- name: orders_join
-  type: join
-  reference: order_lines
-  relationship: one_to_many
-  join_type: left_outer
-  sql_on: ${order_lines.customer_id} = ${customers.customer_id}
 
 fields:
 - name: customer_id
