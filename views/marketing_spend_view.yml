@@ -84,6 +84,18 @@ fields:
   - month_of_year
   sql: ${TABLE}.spend_at
 
+- name: ktqidfkwchnvnygwdctlgchkikmnjwlggelixksa
+  field_type: measure
+  type: number
+  label: Duplicate PROAS
+  description: Profitable return on advertising spend = Total advertising gross profit
+    / Total marketing spend across all channels
+  value_format_name: decimal_1
+  sql: SUM(${gross_profit_from_paid_marketing}) / nullif(${total_marketing_spend},
+    0)
+  canon_date: marketing_spend.spend
+  update_where_timeframe: true
+
 - name: total_marketing_spend
   field_type: measure
   type: sum
