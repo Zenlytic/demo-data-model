@@ -81,7 +81,7 @@ fields:
   type: string
   description: The customer's city (location)
   sql: ${TABLE}.CITY
-  searchable: false
+  searchable: true
 
 - name: state
   field_type: dimension
