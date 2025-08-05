@@ -106,7 +106,7 @@ fields:
 - name: cac
   field_type: measure
   type: number
-  label: CaC
+  label: Cac
   description: Cost of acquisition = Total marketing spend across all channels / number
     of new customers who placed orders in that period
   value_format_name: usd
