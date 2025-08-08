@@ -1,5 +1,0 @@
-base_view: my_file_name
-label: Animals
-model_name: zenlytic_managed
-views: {}
-type: topic
