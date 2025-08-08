@@ -1,0 +1,21 @@
+name: my_file_name
+type: view
+model_name: zenlytic_managed
+sql_table_name: my_file_name
+fields:
+  - name: AnimalId
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ANIMALID"
+    searchable: true
+    primary_key: true
+  - name: Type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TYPE"
+    searchable: true
+  - name: Name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NAME"
+    searchable: true
