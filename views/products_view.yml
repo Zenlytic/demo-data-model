@@ -64,6 +64,17 @@ fields:
   sql: ${TABLE}.PRICE
   searchable: true
 
+- name: hzoajltvtpukikbyvqlgooqzvhrzlzfzbdfkjjub
+  field_type: dimension
+  type: string
+  label: Duplicate Product Title
+  description: The title of the product sold (Everyday SPF Cream, etc)
+  sql: ${TABLE}.PRODUCT_TITLE
+  tags:
+  - product
+  searchable: true
+  canon_date: order_lines.order
+
 - name: count_products
   field_type: measure
   type: count_distinct
