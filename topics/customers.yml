@@ -5,7 +5,6 @@ model_name: pure_organics
 description: Customer data
 zoe_description: Customer data
 hidden: false
-
 views:
   customers:
     join:
