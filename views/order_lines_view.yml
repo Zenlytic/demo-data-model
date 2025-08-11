@@ -18,7 +18,7 @@ fields:
     field_type: dimension
     type: string
     hidden: true
-    label: Order Line Id NJM
+    label: Order Line Id
     primary_key: true
     sql: ${TABLE}.ORDER_LINE_ID
     synonyms: []
