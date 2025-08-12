@@ -68,3 +68,9 @@ fields:
     type: string
     searchable: false
     sql: '-- TODO: NJM'
+
+  - name: My_measure1
+    field_type: measure
+    type: sum
+    sql: '-- TODO: NJM'
+    value_format_name: decimal_0
