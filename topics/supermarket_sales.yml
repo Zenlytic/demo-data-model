@@ -1,0 +1,5 @@
+base_view: supermarket_sales
+label: Supermarket Sales
+model_name: zenlytic_managed
+views: {}
+type: topic
