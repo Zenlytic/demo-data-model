@@ -62,3 +62,9 @@ fields:
     type: sum
     sql: '-- TODO: NJ'
     value_format_name: decimal_0
+
+  - name: Dim1
+    field_type: dimension
+    type: string
+    searchable: false
+    sql: '-- TODO: NJM'
