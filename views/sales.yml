@@ -49,3 +49,10 @@ fields:
     type: string
     searchable: false
     sql: '-- TODO: NJM'
+
+  - name: Measure1
+    field_type: measure
+    type: sum
+    sql: '-- TODO: NJM'
+    synonyms: []
+    value_format_name: decimal_0
