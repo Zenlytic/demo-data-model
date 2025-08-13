@@ -1,0 +1,34 @@
+name: sales_1
+type: view
+model_name: zenlytic_managed
+sql_table_name: sales
+default_date: sale_date
+fields:
+  - name: sale_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SALE_ID"
+    searchable: true
+  - name: product_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PRODUCT_ID"
+    searchable: true
+  - name: amount
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."AMOUNT"
+    searchable: true
+  - name: sale_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."SALE_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
