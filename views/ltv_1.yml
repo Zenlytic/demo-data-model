@@ -1,0 +1,35 @@
+name: ltv_1
+type: view
+model_name: pure_organics
+sql_table_name: DEMO_PROD.LTV
+fields:
+  - name: CUSTOMER_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+  - name: DATE_MONTH
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DATE_MONTH"
+    searchable: true
+  - name: N_CUSTOMERS_IN_MONTH
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."N_CUSTOMERS_IN_MONTH"
+    searchable: true
+  - name: N_ORDERS_IN_MONTH
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."N_ORDERS_IN_MONTH"
+    searchable: true
+  - name: N_CUMULATIVE_ORDERS
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."N_CUMULATIVE_ORDERS"
+    searchable: true
+  - name: GROSS_SALES
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GROSS_SALES"
+    searchable: true
