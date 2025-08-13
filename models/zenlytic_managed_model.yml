@@ -1,4 +1,4 @@
-connection: zenlytic_managed
-name: zenlytic_managed
-type: model
 version: '1'
+type: model
+name: zenlytic_managed
+connection: zenlytic_managed
