@@ -1,0 +1,5 @@
+base_view: products_test
+label: Something
+model_name: zenlytic_managed
+views: {}
+type: topic
