@@ -1,0 +1,5 @@
+base_view: customers
+label: cost
+model_name: zenlytic_managed
+views: {}
+type: topic
