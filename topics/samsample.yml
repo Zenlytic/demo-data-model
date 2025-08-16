@@ -1,0 +1,5 @@
+base_view: industry
+label: samsample
+model_name: zenlytic_managed
+views: {}
+type: topic
