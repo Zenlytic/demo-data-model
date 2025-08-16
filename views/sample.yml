@@ -1,0 +1,31 @@
+name: sample
+type: view
+model_name: zenlytic_managed
+sql_table_name: sample
+fields:
+  - name: ID
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ID"
+    searchable: true
+  - name: Name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NAME"
+    searchable: true
+    primary_key: true
+  - name: Age
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."AGE"
+    searchable: true
+  - name: Country
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COUNTRY"
+    searchable: true
+  - name: Email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
