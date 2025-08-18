@@ -148,3 +148,14 @@ fields:
   sql: >-
     SUM(${gross_profit_from_paid_marketing}) /
     nullif(${total_marketing_spend}, 0)
+
+- name: loztcbdchqeyxeugjjbriaswqlhivrqkytegtaku
+  field_type: measure
+  type: number
+  label: Duplicate Cac
+  description: Cost of acquisition = Total marketing spend across all channels / number
+    of new customers who placed orders in that period
+  value_format_name: usd
+  sql: ${total_marketing_spend} / nullif(sum(${customers_from_paid_marketing}), 0)
+  canon_date: marketing_spend.spend
+  update_where_timeframe: true
