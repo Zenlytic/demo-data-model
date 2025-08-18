@@ -4,32 +4,32 @@ name: pure_organics
 connection: demo
 week_start_day: sunday
 access_grants:
-  - name: pii_access
-    user_attribute: department
-    allowed_values:
-      - Executive
-      - Finance
+- name: pii_access
+  user_attribute: department
+  allowed_values:
+  - Executive
+  - Finance
 mappings:
   marketing_channel:
     fields:
-      - order_lines.marketing_channel
-      - marketing_spend.channel
+    - order_lines.marketing_channel
+    - marketing_spend.channel
     description: >-
       The marketing channel that the customer came through before placing their
       order.
     group_label: Acquisition
   marketing_source:
     fields:
-      - order_lines.marketing_source
-      - marketing_spend.source
+    - order_lines.marketing_source
+    - marketing_spend.source
     description: >-
       The marketing source that the customer came through before placing their
       order.
     group_label: Acquisition
   campaign:
     fields:
-      - order_lines.campaign
-      - marketing_spend.campaign
+    - order_lines.campaign
+    - marketing_spend.campaign
     description: >-
       The marketing campaign that the customer came through before placing their
       order.
