@@ -1,0 +1,5 @@
+base_view: empty1
+label: test
+model_name: zenlytic_managed
+views: {}
+type: topic
