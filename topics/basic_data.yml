@@ -1,0 +1,5 @@
+base_view: basic_data
+label: basic data
+model_name: zenlytic_managed
+views: {}
+type: topic
