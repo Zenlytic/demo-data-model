@@ -1,0 +1,5 @@
+base_view: qa_topic
+label: QA topic
+model_name: pure_organics
+views: {}
+type: topic
