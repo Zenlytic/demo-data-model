@@ -1,0 +1,5 @@
+base_view: 1000_sales_records
+label: Test Sales Topic
+model_name: zenlytic_managed
+views: {}
+type: topic
