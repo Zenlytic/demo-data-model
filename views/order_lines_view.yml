@@ -167,6 +167,7 @@ fields:
     type: number
     sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
     window: true
+    hidden: true
 
   - name: order
     field_type: dimension_group
