@@ -1,10 +1,10 @@
 version: 1
 type: view
 name: order_lines
-description: Description 
+description: Description
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES
-default_date: order3
+default_date: order
 row_label: Order line
 identifiers:
   - name: product_id
