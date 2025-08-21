@@ -279,10 +279,12 @@ fields:
   - name: gross_profit
     field_type: measure
     type: number
-    hidden: false
     description: The total net revenue - allocated cost of goods sold to the order line
-    value_format_name: usd
+    canon_date: order_lines.order
+    label: Gross Profit NJM
+    primary_key: false
     sql: ${total_net_revenue} - ${total_cogs}
+    value_format_name: usd
     zoe_description: This is the gross profit.
 
   - name: units_per_order
