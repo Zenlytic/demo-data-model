@@ -281,7 +281,7 @@ fields:
     type: number
     description: The total net revenue - allocated cost of goods sold to the order line
     canon_date: order_lines.order
-    label: Gross Profit NJM
+    label: Gross Profit NJM9
     primary_key: false
     sql: ${total_net_revenue} - ${total_cogs}
     value_format_name: usd
