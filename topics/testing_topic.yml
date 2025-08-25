@@ -1,0 +1,5 @@
+base_view: testing_topic
+label: testing topic
+model_name: pure_organics
+views: {}
+type: topic
