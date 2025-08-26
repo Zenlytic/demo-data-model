@@ -1,0 +1,5 @@
+base_view: bom_bom_data_bom
+label: Bom Bom Data Bom
+model_name: zenlytic_managed
+views: {}
+type: topic
