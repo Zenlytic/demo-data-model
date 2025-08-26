@@ -146,3 +146,11 @@ fields:
   type: count_distinct
   value_format_name: decimal_0
   sql: ${email}
+
+- name: ltv_dubvbxug
+  field_type: measure
+  type: number
+  label: Ltv
+  sql: SUM(${order_lines.revenue}) - SUM(${order_lines.discount}) / NULLIF(COUNT(DISTINCT
+    ${customers.customer_id}), 0)
+  canon_date: customers.first_order
