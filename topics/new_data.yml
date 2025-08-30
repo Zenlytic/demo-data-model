@@ -1,0 +1,6 @@
+base_view: new_data
+description: ''
+label: New Data
+model_name: zenlytic_managed
+views: {}
+type: topic
