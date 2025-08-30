@@ -1,0 +1,10 @@
+base_view: basic_data_table
+description: >-
+  This is a table description. This is a table description. This is a table
+  description. This is a table description. This is a table description. This is
+  a table description. This is a table description. This is a table
+  description. 
+label: Basic Data Table
+model_name: pure_organics
+views: {}
+type: topic
