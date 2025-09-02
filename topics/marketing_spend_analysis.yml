@@ -16,4 +16,9 @@ zoe_description: >-
   PROAS, which can be used to evaluate campaign success and optimize marketing
   strategies.
 hidden: false
-views: {}
+views:
+  shems:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${marketing_spend.channel}=${shems.CUSTOMER_ID}
