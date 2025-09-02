@@ -1,0 +1,6 @@
+base_view: new_sample
+description: ''
+label: New Sample
+model_name: zenlytic_managed
+views: {}
+type: topic
