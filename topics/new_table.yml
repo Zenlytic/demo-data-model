@@ -1,0 +1,6 @@
+base_view: new_table
+description: ''
+label: New Table
+model_name: pure_organics
+views: {}
+type: topic
