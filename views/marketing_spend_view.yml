@@ -98,6 +98,14 @@ fields:
   canon_date: marketing_spend.spend
   update_where_timeframe: true
 
+- name: customers_from_paid_fcgtukew
+  field_type: measure
+  type: sum
+  label: Customers From Paid
+  description: hjkhjkh
+  sql: ${marketing_spend.customers_from_paid_marketing}
+  canon_date: marketing_spend.spend
+
 - name: total_marketing_spend
   field_type: measure
   type: sum
