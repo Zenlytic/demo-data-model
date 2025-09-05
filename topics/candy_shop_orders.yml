@@ -2,5 +2,10 @@ base_view: candy_shop_orders
 model_name: zenlytic_managed
 label: Candy Shop Orders
 description: ''
-views: {}
+views:
+  candy_shop_customers:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${candy_shop_orders.customer_id}=${candy_shop_customers.customer_id}
 type: topic
