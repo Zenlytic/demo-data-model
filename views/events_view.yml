@@ -272,4 +272,13 @@ fields:
     can't identify)
   value_format_name: decimal_0
   sql: ${anonymous_id}
+
+- name: bounce_rate_xljzjypd
+  field_type: measure
+  type: number
+  label: Bounce Rate
+  sql: (COUNT(DISTINCT CASE WHEN COUNT(*) OVER (PARTITION BY ${events.session_id})
+    = 1 THEN ${events.session_id} END) * 100.0) / COUNT(DISTINCT ${events.session_id})
+  window: true
+  canon_date: events.event
 event_dimension: event_name
