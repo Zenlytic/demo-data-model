@@ -1,10 +1,10 @@
 base_view: sample_data
+model_name: pure_organics
+label: Sample Data
 description: >-
   This is a description. This is a description. This is a description. This is a
   description. This is a description. This is a description. This is a
   description. This is a description. This is a description. This is a
   description. 
-label: Sample Data
-model_name: pure_organics
 views: {}
 type: topic

@@ -1,5 +1,5 @@
 base_view: newer_topic
-label: newer topic
 model_name: pure_organics
+label: newer topic
 views: {}
 type: topic

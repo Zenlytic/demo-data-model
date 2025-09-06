@@ -1,5 +1,5 @@
 base_view: topic_testing
-label: qa topic testing
 model_name: pure_organics
+label: qa topic testing
 views: {}
 type: topic

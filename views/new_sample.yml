@@ -1,5 +1,5 @@
-name: new_sample
 type: view
+name: new_sample
 model_name: zenlytic_managed
 sql_table_name: basic_data
 fields:
@@ -8,21 +8,25 @@ fields:
     type: string
     sql: ${TABLE}."DUPLICATE_PROMOTION"
     searchable: true
+
   - name: Duplicate_Total_Gross_Revenue
     field_type: dimension
     type: string
     sql: ${TABLE}."DUPLICATE_TOTAL_GROSS_REVENUE"
     searchable: true
+
   - name: Duplicate_Repurchase_Rate
     field_type: dimension
     type: string
     sql: ${TABLE}."DUPLICATE_REPURCHASE_RATE"
     searchable: true
+
   - name: Duplicate_Gross_Aov
     field_type: dimension
     type: string
     sql: ${TABLE}."DUPLICATE_GROSS_AOV"
     searchable: true
+
   - name: Duplicate_Total_Net_Revenue_sfsfsfsfsfsfsf
     field_type: dimension
     type: string

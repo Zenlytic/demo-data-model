@@ -1,5 +1,5 @@
-name: industry
 type: view
+name: industry
 model_name: zenlytic_managed
 sql_table_name: industry
 fields:

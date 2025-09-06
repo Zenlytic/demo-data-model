@@ -1,7 +1,7 @@
 type: topic
-label: Order Facts
 base_view: order_facts
 model_name: pure_organics
+label: Order Facts
 description: Rolls up order Data by Title and Type
 zoe_description: Rolls up order Data by Title and Type
 hidden: false

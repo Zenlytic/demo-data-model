@@ -1,5 +1,5 @@
 base_view: testing_topic
-label: testing topic
 model_name: pure_organics
+label: testing topic
 views: {}
 type: topic
