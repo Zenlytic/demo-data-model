@@ -1,0 +1,6 @@
+base_view: pure_data
+model_name: pure_organics
+label: Pure Data
+description: ''
+views: {}
+type: topic
