@@ -1,5 +1,5 @@
 type: view
-name: candy_shop_orders2
+name: candy_shop_orders
 model_name: zenlytic_managed
 sql_table_name: candy_shop_orders
 default_date: order_date
@@ -7,9 +7,9 @@ fields:
   - name: order_id
     field_type: dimension
     type: string
-    primary_key: true
     sql: ${TABLE}."ORDER_ID"
     searchable: true
+    primary_key: true
 
   - name: customer_id
     field_type: dimension
@@ -74,6 +74,7 @@ fields:
   - name: order_date
     field_type: dimension_group
     type: time
+    sql: ${TABLE}."ORDER_DATE"
     timeframes: &ref_0
       - date
       - week
@@ -83,10 +84,9 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
-    sql: ${TABLE}."ORDER_DATE"
 
   - name: order_time
     field_type: dimension_group
     type: time
-    timeframes: *ref_0
     sql: ${TABLE}."ORDER_TIME"
+    timeframes: *ref_0
