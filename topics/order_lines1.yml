@@ -1,0 +1,6 @@
+base_view: order_lines1
+model_name: pure_organics
+label: Order Lines1
+description: ''
+views: {}
+type: topic
