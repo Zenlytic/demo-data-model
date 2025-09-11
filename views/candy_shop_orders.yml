@@ -1,5 +1,5 @@
 type: view
-name: candy_shop_orders
+name: Candy_Shop_Orders
 model_name: zenlytic_managed
 sql_table_name: candy_shop_orders
 default_date: order_date
