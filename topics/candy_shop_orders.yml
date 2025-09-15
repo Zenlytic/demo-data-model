@@ -18,4 +18,9 @@ views:
       join_type: left_outer
       relationship: many_to_one
       sql_on: ${candy_shop_order_items.product_id}=${candy_shop_products.product_id}
+  candy_shop_suppliers:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${candy_shop_products.supplier_id}=${candy_shop_suppliers.supplier_id}
 type: topic
