@@ -1,0 +1,11 @@
+type: view
+name: bdatatry
+model_name: zenlytic_managed
+sql_table_name: bdatatry
+fields:
+  - name: column0
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COLUMN0"
+    searchable: true
+    primary_key: true
