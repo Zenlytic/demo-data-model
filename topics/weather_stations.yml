@@ -2,5 +2,10 @@ base_view: weather_stations
 model_name: zenlytic_managed
 label: Weather Stations
 description: ''
-views: {}
+views:
+  weather_measurements:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${weather_stations.station_id}=${weather_measurements.station_id}
 type: topic
