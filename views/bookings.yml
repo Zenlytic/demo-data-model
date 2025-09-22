@@ -1,0 +1,68 @@
+type: view
+name: bookings
+model_name: zenlytic_managed
+sql_table_name: bookings
+default_date: booking_date
+fields:
+  - name: booking_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BOOKING_ID"
+    searchable: true
+    primary_key: true
+
+  - name: customer_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+
+  - name: showtime_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SHOWTIME_ID"
+    searchable: true
+
+  - name: num_tickets
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."NUM_TICKETS"
+    searchable: true
+
+  - name: total_amount
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_AMOUNT"
+    searchable: true
+
+  - name: payment_method
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PAYMENT_METHOD"
+    searchable: true
+
+  - name: booking_status
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BOOKING_STATUS"
+    searchable: true
+
+  - name: seat_numbers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SEAT_NUMBERS"
+    searchable: true
+
+  - name: booking_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."BOOKING_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
