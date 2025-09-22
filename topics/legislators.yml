@@ -2,20 +2,5 @@ base_view: legislators
 model_name: zenlytic_managed
 label: Legislators
 description: ''
-views:
-  committees:
-    join:
-      join_type: left_outer
-      relationship: one_to_many
-      sql_on: ${legislators.legislator_id}=${committees.committee_id}
-  votes:
-    join:
-      join_type: left_outer
-      relationship: one_to_many
-      sql_on: ${legislators.legislator_id}=${votes.vote_id}
-  bills:
-    join:
-      join_type: left_outer
-      relationship: one_to_many
-      sql_on: ${committees.committee_id}=${bills.committee_id}
+views: {}
 type: topic
