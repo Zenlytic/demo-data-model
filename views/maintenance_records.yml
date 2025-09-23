@@ -1,0 +1,92 @@
+type: view
+name: maintenance_records
+model_name: zenlytic_managed
+sql_table_name: maintenance_records
+default_date: maintenance_date
+fields:
+  - name: maintenance_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAINTENANCE_ID"
+    searchable: true
+    primary_key: true
+
+  - name: station_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATION_ID"
+    searchable: true
+
+  - name: maintenance_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAINTENANCE_TYPE"
+    searchable: true
+
+  - name: technician_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TECHNICIAN_NAME"
+    searchable: true
+
+  - name: issue_description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ISSUE_DESCRIPTION"
+    searchable: true
+
+  - name: parts_replaced
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PARTS_REPLACED"
+    searchable: true
+
+  - name: labor_hours
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LABOR_HOURS"
+    searchable: true
+
+  - name: cost_usd
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COST_USD"
+    searchable: true
+
+  - name: next_scheduled_date
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEXT_SCHEDULED_DATE"
+    searchable: true
+
+  - name: maintenance_priority
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAINTENANCE_PRIORITY"
+    searchable: true
+
+  - name: weather_conditions
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."WEATHER_CONDITIONS"
+    searchable: true
+
+  - name: access_method
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ACCESS_METHOD"
+    searchable: true
+
+  - name: maintenance_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."MAINTENANCE_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
