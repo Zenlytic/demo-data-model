@@ -28,6 +28,14 @@ fields:
   sql: ${TABLE}.product_type
   searchable: true
 
+- name: duplicate_product_title_tdhjpvsq
+  field_type: dimension
+  type: string
+  label: Duplicate Product Title
+  sql: ${${table}.product_title}
+  searchable: true
+  canon_date: order_facts.order
+
 - name: order
   field_type: dimension_group
   type: time
