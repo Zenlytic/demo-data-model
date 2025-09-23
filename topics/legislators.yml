@@ -13,4 +13,9 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${legislators.legislator_id}=${votes.legislator_id}
+  bills:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${committees.committee_id}=${bills.committee_id}
 type: topic
