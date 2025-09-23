@@ -1,4 +1,5 @@
 type: topic
+name: order_facts
 label: Order Facts
 base_view: order_facts
 model_name: pure_organics

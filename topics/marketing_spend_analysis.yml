@@ -1,4 +1,5 @@
 type: topic
+name: marketing
 label: Marketing Spend Analysis
 base_view: marketing_spend
 model_name: pure_organics
