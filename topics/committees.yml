@@ -1,0 +1,7 @@
+base_view: committees
+name: committees
+model_name: zenlytic_managed
+label: Committees
+description: ''
+views: {}
+type: topic
