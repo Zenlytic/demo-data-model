@@ -8,4 +8,9 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${weather_stations.station_id}=${weather_measurements.station_id}
+  weather_alerts:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${weather_stations.station_id}=${weather_alerts.station_id}
 type: topic
