@@ -8,4 +8,9 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${movies.movie_id}=${showtimes.movie_id}
+  bookings:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${showtimes.showtime_id}=${bookings.showtime_id}
 type: topic
