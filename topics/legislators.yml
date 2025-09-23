@@ -8,4 +8,9 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${legislators.legislator_id}=${committees.ranking_member_id}
+  votes:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${legislators.legislator_id}=${votes.legislator_id}
 type: topic
