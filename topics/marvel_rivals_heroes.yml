@@ -13,4 +13,9 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${marvel_rivals_heroes.hero_id}=${marvel_rivals_matches.hero_id}
+  marvel_rivals_maps:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${marvel_rivals_matches.map_id}=${marvel_rivals_maps.map_id}
 type: topic
