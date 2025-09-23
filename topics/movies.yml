@@ -1,0 +1,6 @@
+base_view: movies
+model_name: zenlytic_managed
+label: Movies
+description: ''
+views: {}
+type: topic
