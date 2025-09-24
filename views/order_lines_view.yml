@@ -194,16 +194,15 @@ fields:
   - name: total_gross_revenue
     field_type: measure
     type: sum
-    hidden: false
+    description: Total gross revenue = revenue from product sales + shipping revenues.
+    canon_date: order_lines.order
     label: Total Gross Revenue
-    description: >-
-      Total gross revenue = revenue from product sales + shipping revenues.
-      Testing.
-    value_format_name: usd
+    primary_key: false
     sql: ${revenue}
     synonyms:
       - sales
       - revenue
+    value_format_name: usd
 
   - name: total_discounts
     field_type: measure
