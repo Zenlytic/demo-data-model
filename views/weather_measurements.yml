@@ -1,0 +1,98 @@
+type: view
+name: weather_measurements
+model_name: zenlytic_managed
+sql_table_name: weather_measurements
+default_date: timestamp
+fields:
+  - name: measurement_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MEASUREMENT_ID"
+    searchable: true
+    primary_key: true
+
+  - name: station_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATION_ID"
+    searchable: true
+
+  - name: temperature_celsius
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TEMPERATURE_CELSIUS"
+    searchable: true
+
+  - name: humidity_percent
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HUMIDITY_PERCENT"
+    searchable: true
+
+  - name: pressure_hpa
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PRESSURE_HPA"
+    searchable: true
+
+  - name: wind_speed_kmh
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."WIND_SPEED_KMH"
+    searchable: true
+
+  - name: wind_direction_degrees
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."WIND_DIRECTION_DEGREES"
+    searchable: true
+
+  - name: precipitation_mm
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PRECIPITATION_MM"
+    searchable: true
+
+  - name: visibility_km
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."VISIBILITY_KM"
+    searchable: true
+
+  - name: uv_index
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."UV_INDEX"
+    searchable: true
+
+  - name: air_quality_aqi
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."AIR_QUALITY_AQI"
+    searchable: true
+
+  - name: battery_voltage
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BATTERY_VOLTAGE"
+    searchable: true
+
+  - name: data_quality
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DATA_QUALITY"
+    searchable: true
+
+  - name: timestamp
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."TIMESTAMP"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
