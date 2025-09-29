@@ -1,0 +1,7 @@
+base_view: showtimes
+name: showtimes
+model_name: zenlytic_managed
+label: Showtimes
+description: ''
+views: {}
+type: topic
