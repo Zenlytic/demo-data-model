@@ -1,7 +1,0 @@
-base_view: basic_data1
-name: basic_data1
-model_name: zenlytic_managed
-label: Basic Data1
-description: ''
-views: {}
-type: topic
