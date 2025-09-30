@@ -208,6 +208,7 @@ fields:
 
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -273,6 +274,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -282,6 +284,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -324,6 +327,7 @@ fields:
 
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -336,6 +340,7 @@ fields:
   filters:
   - field: subscription_vs_otp
     value: Subscription
+
 
 
 
@@ -354,6 +359,7 @@ fields:
 
 
 
+
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -366,6 +372,7 @@ fields:
   filters:
   - field: new_vs_repeat
     value: Repeat
+
 
 
 
@@ -389,4 +396,12 @@ fields:
     0%–100% when shown as a percentage).
   sql: (COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
     END) * 1.0) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+  canon_date: order_lines.order
+
+- name: avg_price_per_unit_alhbwxto
+  field_type: measure
+  type: number
+  label: Avg Price Per Unit
+  description: Use this when asked for APU
+  sql: SUM(${order_lines.revenue}) / NULLIF(SUM(${order_lines.quantity}), 0)
   canon_date: order_lines.order
