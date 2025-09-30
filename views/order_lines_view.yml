@@ -209,6 +209,7 @@ fields:
 
 
 
+
 - name: total_discounts
   field_type: measure
   type: sum
@@ -275,6 +276,7 @@ fields:
 
 
 
+
 - name: gross_aov
   field_type: measure
   type: number
@@ -284,6 +286,7 @@ fields:
   sql: ${total_gross_revenue} / nullif(${number_of_orders}, 0)
   synonyms:
   - Average order value
+
 
 
 
@@ -328,6 +331,7 @@ fields:
 
 
 
+
 - name: subscription_revenue
   field_type: measure
   type: sum
@@ -340,6 +344,7 @@ fields:
   filters:
   - field: subscription_vs_otp
     value: Subscription
+
 
 
 
@@ -360,6 +365,7 @@ fields:
 
 
 
+
 - name: number_of_repeat_orders
   field_type: measure
   type: count_distinct
@@ -373,6 +379,7 @@ fields:
   - field: new_vs_repeat
     value: Repeat
 
+
 - name: avg_products_per_order
   field_type: measure
   type: number
@@ -381,3 +388,14 @@ fields:
   value_format_name: decimal_1
   sql: ${products.count_products} / ${number_of_orders}
 
+- name: bargain_hunter_rate_pct_rjjyrarh
+  field_type: measure
+  type: number
+  label: Bargain Hunter Rate Pct
+  description: The percentage of orders that included at least one order line with
+    a discount greater than 5%. It’s calculated as (number of unique orders with any
+    line discounted >5%) divided by (total number of unique orders) × 100, and returns
+    a numeric percentage between 0 and 100 (decimals possible).
+  sql: (COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
+    END) * 1.0) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0) * 100
+  canon_date: order_lines.order
