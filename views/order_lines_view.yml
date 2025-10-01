@@ -394,11 +394,3 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.count_products} / ${number_of_orders}
-
-- name: bargain_hunter_rate_fcdpgkvq
-  field_type: measure
-  type: number
-  label: Bargain Hunter Rate
-  sql: (COUNT(CASE WHEN ${order_lines.discount} > 5 THEN 1 END) * 1.0) / NULLIF(COUNT(*),
-    0)
-  canon_date: order_lines.order
