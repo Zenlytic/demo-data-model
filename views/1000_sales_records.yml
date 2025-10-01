@@ -4,94 +4,94 @@ model_name: zenlytic_managed
 sql_table_name: 1000_sales_records
 default_date: Order Date
 fields:
-  - name: Region
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."REGION"
-    searchable: true
+- name: Region
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."REGION"
+  searchable: true
 
-  - name: Country
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."COUNTRY"
-    searchable: true
+- name: Country
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."COUNTRY"
+  searchable: true
 
-  - name: Item_Type
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."ITEM_TYPE"
-    searchable: true
+- name: Item_Type
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."ITEM_TYPE"
+  searchable: true
 
-  - name: Sales_Channel
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."SALES_CHANNEL"
-    searchable: true
+- name: Sales_Channel
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."SALES_CHANNEL"
+  searchable: true
 
-  - name: Order_Priority
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."ORDER_PRIORITY"
-    searchable: true
+- name: Order_Priority
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."ORDER_PRIORITY"
+  searchable: true
 
-  - name: Order_ID
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."ORDER_ID"
-    searchable: true
+- name: Order_ID
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."ORDER_ID"
+  searchable: true
 
-  - name: Units_Sold
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."UNITS_SOLD"
-    searchable: true
+- name: Units_Sold
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."UNITS_SOLD"
+  searchable: true
 
-  - name: Unit_Price
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."UNIT_PRICE"
-    searchable: true
+- name: Unit_Price
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."UNIT_PRICE"
+  searchable: true
 
-  - name: Unit_Cost
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."UNIT_COST"
-    searchable: true
+- name: Unit_Cost
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."UNIT_COST"
+  searchable: true
 
-  - name: Total_Revenue
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."TOTAL_REVENUE"
-    searchable: true
+- name: Total_Revenue
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."TOTAL_REVENUE"
+  searchable: true
 
-  - name: Total_Cost
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."TOTAL_COST"
-    searchable: true
+- name: Total_Cost
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."TOTAL_COST"
+  searchable: true
 
-  - name: Total_Profit
-    field_type: dimension
-    type: number
-    sql: ${TABLE}."TOTAL_PROFIT"
-    searchable: true
+- name: Total_Profit
+  field_type: dimension
+  type: number
+  sql: ${TABLE}."TOTAL_PROFIT"
+  searchable: true
 
-  - name: Order_Date
-    field_type: dimension_group
-    type: time
-    timeframes: &ref_0
-      - date
-      - week
-      - month
-      - quarter
-      - year
-      - day_of_year
-      - week_of_year
-      - month_of_year
-    sql: ${TABLE}."ORDER_DATE"
+- name: Order_Date
+  field_type: dimension_group
+  type: time
+  timeframes: &ref_0
+  - date
+  - week
+  - month
+  - quarter
+  - year
+  - day_of_year
+  - week_of_year
+  - month_of_year
+  sql: ${TABLE}."ORDER_DATE"
 
-  - name: Ship_Date
-    field_type: dimension_group
-    type: time
-    timeframes: *ref_0
-    sql: ${TABLE}."SHIP_DATE"
+- name: Ship_Date
+  field_type: dimension_group
+  type: time
+  timeframes: *ref_0
+  sql: ${TABLE}."SHIP_DATE"

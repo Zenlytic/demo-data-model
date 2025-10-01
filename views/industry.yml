@@ -3,8 +3,8 @@ name: industry
 model_name: zenlytic_managed
 sql_table_name: industry
 fields:
-  - name: Industry
-    field_type: dimension
-    type: string
-    sql: ${TABLE}."INDUSTRY"
-    searchable: true
+- name: Industry
+  field_type: dimension
+  type: string
+  sql: ${TABLE}."INDUSTRY"
+  searchable: true
