@@ -3,5 +3,10 @@ name: legislators
 model_name: zenlytic_managed
 label: Legislators
 description: ''
-views: {}
+views:
+  committees:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${legislators.legislator_id}=${committees.ranking_member_id}
 type: topic
