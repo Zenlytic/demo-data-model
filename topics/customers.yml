@@ -1,7 +1,7 @@
 type: topic
-label: Customers
 base_view: customers
 model_name: pure_organics
+label: Customers
 description: Customer data
 zoe_description: Customer data
 hidden: false

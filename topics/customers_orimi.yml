@@ -1,0 +1,7 @@
+base_view: customers_orimi
+name: customers_orimi
+model_name: pure_organics
+label: Customers Orimi
+description: ''
+views: {}
+type: topic
