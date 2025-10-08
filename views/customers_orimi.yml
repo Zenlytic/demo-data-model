@@ -1,0 +1,98 @@
+type: view
+name: customers_orimi
+model_name: pure_organics
+sql_table_name: DEMO_PROD.CUSTOMERS_ORIMI
+default_date: FIRST_ORDER_AT
+fields:
+  - name: CUSTOMER_ID
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+    primary_key: true
+
+  - name: FIRST_NAME
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_NAME"
+    searchable: true
+
+  - name: LAST_NAME
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LAST_NAME"
+    searchable: true
+
+  - name: EMAIL
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+
+  - name: ADDRESS
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ADDRESS"
+    searchable: true
+
+  - name: STATE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE"
+    searchable: true
+
+  - name: CITY
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CITY"
+    searchable: true
+
+  - name: ZIPCODE
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ZIPCODE"
+    searchable: true
+
+  - name: ACCEPTS_MARKETING
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."ACCEPTS_MARKETING"
+    searchable: true
+
+  - name: FIRST_PRODUCT_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_PRODUCT_ID"
+    searchable: true
+
+  - name: FIRST_CHANNEL
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_CHANNEL"
+    searchable: true
+
+  - name: FIRST_PROMOTION
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_PROMOTION"
+    searchable: true
+
+  - name: FIRST_CAMPAIGN
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_CAMPAIGN"
+    searchable: true
+
+  - name: FIRST_ORDER_AT
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."FIRST_ORDER_AT"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
