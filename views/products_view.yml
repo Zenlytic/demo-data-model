@@ -79,6 +79,15 @@ fields:
   sql: ${TABLE}.PRICE
   searchable: true
 
+
+- name: fashion_category_dzubjxnv
+  field_type: dimension
+  type: string
+  label: Fashion Category
+  sql: CASE WHEN ${products.product_type} IN ('Cheek', 'Eye', 'Face', 'Lip') THEN
+    'Makeup' ELSE 'Other' END
+  searchable: true
+  canon_date: order_lines.order
 - name: count_products
   field_type: measure
   type: count_distinct
