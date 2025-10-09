@@ -355,3 +355,11 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.count_products} / ${number_of_orders}
+
+- name: eye_revenue_pct_nbxvlatr
+  field_type: measure
+  type: number
+  label: Eye Revenue Pct
+  sql: (SUM(CASE WHEN ${products.product_type} = 'Eye' THEN ${order_lines.revenue}
+    ELSE 0 END) / NULLIF(SUM(${order_lines.revenue}), 0)) * 100
+  canon_date: order_lines.order
