@@ -1,0 +1,62 @@
+type: view
+name: marvel_rivals_heroes
+model_name: zenlytic_managed
+sql_table_name: marvel_rivals_heroes
+default_date: release_date
+fields:
+  - name: hero_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HERO_ID"
+    searchable: true
+    primary_key: true
+
+  - name: hero_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HERO_NAME"
+    searchable: true
+
+  - name: role
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ROLE"
+    searchable: true
+
+  - name: health
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HEALTH"
+    searchable: true
+
+  - name: difficulty
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIFFICULTY"
+    searchable: true
+
+  - name: universe
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."UNIVERSE"
+    searchable: true
+
+  - name: real_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."REAL_NAME"
+    searchable: true
+
+  - name: release_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."RELEASE_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
