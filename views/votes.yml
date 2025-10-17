@@ -1,0 +1,62 @@
+type: view
+name: votes
+model_name: zenlytic_managed
+sql_table_name: votes
+default_date: vote_date
+fields:
+  - name: vote_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."VOTE_ID"
+    searchable: true
+    primary_key: true
+
+  - name: bill_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BILL_ID"
+    searchable: true
+
+  - name: legislator_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LEGISLATOR_ID"
+    searchable: true
+
+  - name: vote_value
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."VOTE_VALUE"
+    searchable: true
+
+  - name: vote_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."VOTE_TYPE"
+    searchable: true
+
+  - name: chamber
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CHAMBER"
+    searchable: true
+
+  - name: notes
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NOTES"
+    searchable: true
+
+  - name: vote_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."VOTE_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
