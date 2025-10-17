@@ -1,0 +1,98 @@
+type: view
+name: marvel_rivals_matches
+model_name: zenlytic_managed
+sql_table_name: marvel_rivals_matches
+default_date: date_played
+fields:
+  - name: match_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MATCH_ID"
+    searchable: true
+    primary_key: true
+
+  - name: player_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PLAYER_ID"
+    searchable: true
+
+  - name: hero_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HERO_ID"
+    searchable: true
+
+  - name: map_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MAP_ID"
+    searchable: true
+
+  - name: game_mode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GAME_MODE"
+    searchable: true
+
+  - name: match_duration
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MATCH_DURATION"
+    searchable: true
+
+  - name: kills
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."KILLS"
+    searchable: true
+
+  - name: deaths
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DEATHS"
+    searchable: true
+
+  - name: assists
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ASSISTS"
+    searchable: true
+
+  - name: damage_dealt
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DAMAGE_DEALT"
+    searchable: true
+
+  - name: healing_done
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HEALING_DONE"
+    searchable: true
+
+  - name: match_result
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MATCH_RESULT"
+    searchable: true
+
+  - name: rank_change
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."RANK_CHANGE"
+    searchable: true
+
+  - name: date_played
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."DATE_PLAYED"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
