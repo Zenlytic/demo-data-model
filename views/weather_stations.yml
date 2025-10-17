@@ -1,0 +1,92 @@
+type: view
+name: weather_stations
+model_name: zenlytic_managed
+sql_table_name: weather_stations
+default_date: installation_date
+fields:
+  - name: station_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATION_ID"
+    searchable: true
+    primary_key: true
+
+  - name: station_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATION_NAME"
+    searchable: true
+
+  - name: latitude
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LATITUDE"
+    searchable: true
+
+  - name: longitude
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LONGITUDE"
+    searchable: true
+
+  - name: elevation_meters
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ELEVATION_METERS"
+    searchable: true
+
+  - name: station_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATION_TYPE"
+    searchable: true
+
+  - name: power_source
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."POWER_SOURCE"
+    searchable: true
+
+  - name: data_transmission
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DATA_TRANSMISSION"
+    searchable: true
+
+  - name: location_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LOCATION_TYPE"
+    searchable: true
+
+  - name: operator
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OPERATOR"
+    searchable: true
+
+  - name: maintenance_contact
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAINTENANCE_CONTACT"
+    searchable: true
+
+  - name: status
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATUS"
+    searchable: true
+
+  - name: installation_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."INSTALLATION_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
