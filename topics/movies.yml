@@ -14,4 +14,9 @@ views:
       join_type: left_outer
       relationship: one_to_many
       sql_on: ${showtimes.showtime_id}=${bookings.showtime_id}
+  patrons:
+    join:
+      join_type: left_outer
+      relationship: many_to_one
+      sql_on: ${bookings.customer_id}=${patrons.customer_id}
 type: topic
