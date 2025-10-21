@@ -1,7 +1,0 @@
-base_view: candy_shop_orders
-name: candy_shop_orders
-model_name: zenlytic_managed
-label: Candy Shop Orders
-description: ''
-views: {}
-type: topic
