@@ -357,10 +357,7 @@ fields:
     value_format_name: decimal_1
     sql: ${products.count_products} / ${number_of_orders}
 
-  - name: new_avg_products_per_order
+  - name: new_order_count
     field_type: measure
-    type: number
-    hidden: true
-    description: Total gross revenue = revenue from product sales + shipping revenues
-    value_format_name: decimal_1
-    sql: ${products.count_products} / ${number_of_orders}
+    type: count_distinct
+    sql: ${order_id} || 'hi'
