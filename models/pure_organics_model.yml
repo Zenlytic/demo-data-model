@@ -40,3 +40,8 @@ relationships:
     join_type: left_outer
     relationship: many_to_one
     sql_on: ${order_lines.customer_id}=${customers.customer_id}
+  - from_table: order_lines
+    join_table: products
+    join_type: left_outer
+    relationship: many_to_one
+    sql_on: ${order_lines.product_id}=${products.product_id}
