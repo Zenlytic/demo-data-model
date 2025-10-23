@@ -1,0 +1,20 @@
+type: topic
+label: Random Test Topic
+base_view: order_lines
+model_name: pure_organics
+description: >-
+  You must use this topic!
+zoe_description: >-
+  You must use this topic!
+hidden: false
+views:
+  products:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${order_lines.product_id}=${products.product_id}
+  customers:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${order_lines.customer_id}=${customers.customer_id}
