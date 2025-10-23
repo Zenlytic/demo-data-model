@@ -10,8 +10,8 @@ hidden: false
 views:
   products:
     join:
-      join_type: left_outer
-      relationship: one_to_many
+      join_type: inner
+      relationship: many_to_many
       sql_on: ${order_lines.product_id}=${products.product_id}
   customers:
     join:
