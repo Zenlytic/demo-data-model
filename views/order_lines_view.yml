@@ -53,6 +53,8 @@ fields:
   - name: cogs
     field_type: dimension
     type: number
+    label: Cost of goods sold (COGS)
+    searchable: false
     sql: ${TABLE}."COGS"
 
   - name: last_click
