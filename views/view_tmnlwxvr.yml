@@ -49,3 +49,11 @@ fields:
     label: Source
     searchable: false
     sql: ${TABLE}.source
+
+  - name: campaign
+    field_type: dimension
+    type: string
+    description: The campaign of the ad spend
+    label: Campaign
+    searchable: false
+    sql: ${TABLE}.campaign
