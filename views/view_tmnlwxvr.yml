@@ -1,6 +1,9 @@
 version: 1
 type: view
 name: marketing_spend
+description: A view for marketing spend.
+model_name: pure_organics
+default_date: spend
 fields:
   - name: revenue_from_paid_marketing
     field_type: dimension
