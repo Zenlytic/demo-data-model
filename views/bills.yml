@@ -1,0 +1,74 @@
+type: view
+name: bills
+model_name: zenlytic_managed
+sql_table_name: bills
+default_date: introduced_date
+fields:
+  - name: bill_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BILL_ID"
+    searchable: true
+    primary_key: true
+
+  - name: bill_number
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILL_NUMBER"
+    searchable: true
+
+  - name: title
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TITLE"
+    searchable: true
+
+  - name: sponsor_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPONSOR_ID"
+    searchable: true
+
+  - name: chamber_origin
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CHAMBER_ORIGIN"
+    searchable: true
+
+  - name: committee_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COMMITTEE_ID"
+    searchable: true
+
+  - name: status
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATUS"
+    searchable: true
+
+  - name: bill_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILL_TYPE"
+    searchable: true
+
+  - name: summary
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SUMMARY"
+    searchable: true
+
+  - name: introduced_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."INTRODUCED_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
