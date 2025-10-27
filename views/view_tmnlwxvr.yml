@@ -123,3 +123,15 @@ fields:
     label: ROAS
     sql: SUM(${revenue_from_paid_marketing}) / nullif(${total_marketing_spend}, 0)
     value_format_name: decimal_1
+
+  - name: proas
+    field_type: measure
+    type: number
+    description: >-
+      Profitable return on advertising spend = Total advertising gross profit /
+      Total marketing spend across all channels
+    label: PROAS
+    sql: >-
+      SUM(${gross_profit_from_paid_marketing}) /
+      nullif(${total_marketing_spend}, 0)
+    value_format_name: decimal_1
