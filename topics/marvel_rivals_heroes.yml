@@ -1,0 +1,7 @@
+base_view: marvel_rivals_heroes
+name: marvel_rivals_heroes
+model_name: zenlytic_managed
+label: Marvel Rivals Heroes
+description: ''
+views: {}
+type: topic
