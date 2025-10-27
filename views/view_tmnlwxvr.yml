@@ -103,3 +103,13 @@ fields:
       ${total_marketing_spend} / nullif(sum(${customers_from_paid_marketing}),
       0)
     value_format_name: usd
+
+  - name: cpc
+    field_type: measure
+    type: number
+    description: >-
+      Cost oer click = Total marketing spend across all channels / number of
+      clicks through ads
+    label: Cpc
+    sql: ${total_marketing_spend} / 1304000
+    value_format_name: usd
