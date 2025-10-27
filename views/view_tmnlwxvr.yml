@@ -41,3 +41,11 @@ fields:
     label: Channel
     searchable: false
     sql: ${TABLE}.channel
+
+  - name: source
+    field_type: dimension
+    type: string
+    description: The source of the ad spend
+    label: Source
+    searchable: false
+    sql: ${TABLE}.source
