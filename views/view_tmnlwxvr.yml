@@ -113,3 +113,13 @@ fields:
     label: Cpc
     sql: ${total_marketing_spend} / 1304000
     value_format_name: usd
+
+  - name: roas
+    field_type: measure
+    type: number
+    description: >-
+      Return on advertising spend = Total advertising revenue / Total marketing
+      spend across all channels
+    label: ROAS
+    sql: SUM(${revenue_from_paid_marketing}) / nullif(${total_marketing_spend}, 0)
+    value_format_name: decimal_1
