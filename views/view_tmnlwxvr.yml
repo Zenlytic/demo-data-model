@@ -57,3 +57,12 @@ fields:
     label: Campaign
     searchable: false
     sql: ${TABLE}.campaign
+
+  - name: ad_spend
+    field_type: dimension
+    type: string
+    description: The amount spent
+    hidden: true
+    label: Ad Spend
+    searchable: false
+    sql: ${TABLE}.ad_spend
