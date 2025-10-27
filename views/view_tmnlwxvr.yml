@@ -12,6 +12,7 @@ fields:
   - name: customers_from_paid_marketing
     field_type: dimension
     type: number
+    hidden: true
     label: Customers From Paid Marketing
     searchable: false
     sql: ${TABLE}.customers_from_paid_marketing
