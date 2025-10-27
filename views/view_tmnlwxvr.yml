@@ -1,3 +1,10 @@
 version: 1
 type: view
 name: marketing_spend
+fields:
+  - name: revenue_from_paid_marketing
+    field_type: dimension
+    type: number
+    label: Revenue From Paid Marketing
+    searchable: false
+    sql: ${TABLE}.revenue_from_paid_marketing
