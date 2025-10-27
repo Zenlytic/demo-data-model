@@ -8,3 +8,10 @@ fields:
     label: Revenue From Paid Marketing
     searchable: false
     sql: ${TABLE}.revenue_from_paid_marketing
+
+  - name: customers_from_paid_marketing
+    field_type: dimension
+    type: number
+    label: Customers From Paid Marketing
+    searchable: false
+    sql: ${TABLE}.customers_from_paid_marketing
