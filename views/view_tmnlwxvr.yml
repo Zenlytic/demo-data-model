@@ -22,3 +22,10 @@ fields:
     label: Gross Profit From Paid Marketing
     searchable: false
     sql: ${TABLE}.gross_profit_from_paid_marketing
+
+  - name: unique_key
+    field_type: dimension
+    type: string
+    label: Unique Key
+    searchable: false
+    sql: ${TABLE}.spend_id
