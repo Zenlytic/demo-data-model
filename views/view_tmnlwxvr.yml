@@ -19,6 +19,7 @@ fields:
   - name: gross_profit_from_paid_marketing
     field_type: dimension
     type: number
+    hidden: true
     label: Gross Profit From Paid Marketing
     searchable: false
     sql: ${TABLE}.gross_profit_from_paid_marketing
