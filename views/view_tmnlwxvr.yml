@@ -26,6 +26,8 @@ fields:
   - name: unique_key
     field_type: dimension
     type: string
+    hidden: true
     label: Unique Key
+    primary_key: true
     searchable: false
     sql: ${TABLE}.spend_id
