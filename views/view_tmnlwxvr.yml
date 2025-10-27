@@ -15,3 +15,10 @@ fields:
     label: Customers From Paid Marketing
     searchable: false
     sql: ${TABLE}.customers_from_paid_marketing
+
+  - name: gross_profit_from_paid_marketing
+    field_type: dimension
+    type: number
+    label: Gross Profit From Paid Marketing
+    searchable: false
+    sql: ${TABLE}.gross_profit_from_paid_marketing
