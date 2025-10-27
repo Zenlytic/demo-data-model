@@ -91,3 +91,15 @@ fields:
     label: Total Marketing Spend
     sql: ${ad_spend}
     value_format_name: usd
+
+  - name: cac
+    field_type: measure
+    type: number
+    description: >-
+      Cost of acquisition = Total marketing spend across all channels / number
+      of new customers who placed orders in that period
+    label: Cac
+    sql: >-
+      ${total_marketing_spend} / nullif(sum(${customers_from_paid_marketing}),
+      0)
+    value_format_name: usd
