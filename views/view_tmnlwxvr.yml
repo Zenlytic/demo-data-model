@@ -83,3 +83,11 @@ fields:
       - day_of_year
       - week_of_year
       - month_of_year
+
+  - name: total_marketing_spend
+    field_type: measure
+    type: sum
+    description: Total marketing spend across all channels
+    label: Total Marketing Spend
+    sql: ${ad_spend}
+    value_format_name: usd
