@@ -1,0 +1,92 @@
+type: view
+name: weather_alerts
+model_name: zenlytic_managed
+sql_table_name: weather_alerts
+default_date: start_time
+fields:
+  - name: alert_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ALERT_ID"
+    searchable: true
+    primary_key: true
+
+  - name: station_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATION_ID"
+    searchable: true
+
+  - name: alert_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ALERT_TYPE"
+    searchable: true
+
+  - name: severity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SEVERITY"
+    searchable: true
+
+  - name: trigger_condition
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TRIGGER_CONDITION"
+    searchable: true
+
+  - name: threshold_value
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."THRESHOLD_VALUE"
+    searchable: true
+
+  - name: actual_value
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ACTUAL_VALUE"
+    searchable: true
+
+  - name: end_time
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."END_TIME"
+    searchable: true
+
+  - name: status
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATUS"
+    searchable: true
+
+  - name: notification_sent
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."NOTIFICATION_SENT"
+    searchable: true
+
+  - name: response_action
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RESPONSE_ACTION"
+    searchable: true
+
+  - name: created_by
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CREATED_BY"
+    searchable: true
+
+  - name: start_time
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."START_TIME"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
