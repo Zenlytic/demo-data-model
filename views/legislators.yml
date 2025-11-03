@@ -1,0 +1,92 @@
+type: view
+name: legislators
+model_name: zenlytic_managed
+sql_table_name: legislators
+default_date: term_start
+fields:
+  - name: legislator_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."LEGISLATOR_ID"
+    searchable: true
+    primary_key: true
+
+  - name: first_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_NAME"
+    searchable: true
+
+  - name: last_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LAST_NAME"
+    searchable: true
+
+  - name: party
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PARTY"
+    searchable: true
+
+  - name: state
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE"
+    searchable: true
+
+  - name: district
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DISTRICT"
+    searchable: true
+
+  - name: chamber
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CHAMBER"
+    searchable: true
+
+  - name: email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+
+  - name: phone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PHONE"
+    searchable: true
+
+  - name: office_address
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OFFICE_ADDRESS"
+    searchable: true
+
+  - name: years_in_office
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."YEARS_IN_OFFICE"
+    searchable: true
+
+  - name: term_start
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."TERM_START"
+    timeframes: &ref_0
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
+
+  - name: term_end
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."TERM_END"
+    timeframes: *ref_0
