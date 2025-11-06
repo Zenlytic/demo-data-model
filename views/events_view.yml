@@ -11,7 +11,6 @@ fields:
   field_type: dimension
   type: string
   hidden: true
-  primary_key: true
   sql: ${TABLE}.ANONYMOUS_ID
   tags:
   - customer
