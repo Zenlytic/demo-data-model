@@ -3,5 +3,10 @@ name: movies
 model_name: zenlytic_managed
 label: Movies
 description: ''
-views: {}
+views:
+  showtimes:
+    join:
+      join_type: left_outer
+      relationship: one_to_many
+      sql_on: ${movies.movie_id}=${showtimes.movie_id}
 type: topic
