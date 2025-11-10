@@ -1,0 +1,92 @@
+type: view
+name: candy_shop_orders
+model_name: zenlytic_managed
+sql_table_name: candy_shop_orders
+default_date: order_date
+fields:
+  - name: order_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ORDER_ID"
+    searchable: true
+    primary_key: true
+
+  - name: customer_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+
+  - name: total_amount
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_AMOUNT"
+    searchable: true
+
+  - name: discount_applied
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DISCOUNT_APPLIED"
+    searchable: true
+
+  - name: payment_method
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PAYMENT_METHOD"
+    searchable: true
+
+  - name: order_status
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ORDER_STATUS"
+    searchable: true
+
+  - name: shipping_method
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SHIPPING_METHOD"
+    searchable: true
+
+  - name: tracking_number
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TRACKING_NUMBER"
+    searchable: true
+
+  - name: estimated_delivery
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ESTIMATED_DELIVERY"
+    searchable: true
+
+  - name: actual_delivery
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ACTUAL_DELIVERY"
+    searchable: true
+
+  - name: notes
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NOTES"
+    searchable: true
+
+  - name: order_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."ORDER_DATE"
+    timeframes: &ref_0
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
+
+  - name: order_time
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."ORDER_TIME"
+    timeframes: *ref_0
