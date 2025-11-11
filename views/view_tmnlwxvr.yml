@@ -3,6 +3,7 @@ type: view
 name: marketing_spend
 description: A view for marketing spend.
 model_name: pure_organics
+sql_table_name: ''
 default_date: spend
 fields:
   - name: revenue_from_paid_marketing
