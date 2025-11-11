@@ -1,0 +1,62 @@
+type: view
+name: marvel_rivals_maps
+model_name: zenlytic_managed
+sql_table_name: marvel_rivals_maps
+default_date: release_date
+fields:
+  - name: map_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MAP_ID"
+    searchable: true
+    primary_key: true
+
+  - name: map_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAP_NAME"
+    searchable: true
+
+  - name: game_mode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GAME_MODE"
+    searchable: true
+
+  - name: location
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LOCATION"
+    searchable: true
+
+  - name: environment_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ENVIRONMENT_TYPE"
+    searchable: true
+
+  - name: map_size
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MAP_SIZE"
+    searchable: true
+
+  - name: destructible_elements
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."DESTRUCTIBLE_ELEMENTS"
+    searchable: true
+
+  - name: release_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."RELEASE_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
