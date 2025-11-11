@@ -1,0 +1,62 @@
+type: view
+name: movies
+model_name: zenlytic_managed
+sql_table_name: movies
+default_date: release_date
+fields:
+  - name: movie_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."MOVIE_ID"
+    searchable: true
+    primary_key: true
+
+  - name: title
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TITLE"
+    searchable: true
+
+  - name: genre
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENRE"
+    searchable: true
+
+  - name: rating
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RATING"
+    searchable: true
+
+  - name: duration_minutes
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DURATION_MINUTES"
+    searchable: true
+
+  - name: director
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTOR"
+    searchable: true
+
+  - name: description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DESCRIPTION"
+    searchable: true
+
+  - name: release_date
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."RELEASE_DATE"
+    timeframes:
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
