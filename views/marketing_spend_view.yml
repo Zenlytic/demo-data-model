@@ -135,3 +135,13 @@ fields:
   sql: >-
     SUM(${gross_profit_from_paid_marketing}) /
     nullif(${total_marketing_spend}, 0)
+
+- name: duplicate_total_marketing_spend_nvymffvi
+  field_type: measure
+  type: sum
+  label: Duplicate Total Marketing Spend
+  description: Total marketing spend across all channels
+  value_format_name: usd
+  sql: ${ad_spend1}
+  canon_date: marketing_spend.spend
+  update_where_timeframe: true
