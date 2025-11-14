@@ -355,3 +355,13 @@ fields:
   description: Total gross revenue = revenue from product sales + shipping revenues
   value_format_name: decimal_1
   sql: ${products.count_products} / ${number_of_orders}
+
+- name: duplicate_total_cogs_jeugghjk
+  field_type: measure
+  type: sum
+  label: Duplicate Total COGS
+  description: The allocated cost of goods sold to the order line
+  value_format_name: usd
+  sql: ${${table}.cogs}
+  canon_date: order_lines.order
+  update_where_timeframe: true
