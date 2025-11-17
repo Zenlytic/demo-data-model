@@ -168,6 +168,16 @@ fields:
 
   sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
   window: true
+
+- name: duplicate_first_click_marketing_channel_wnymqmnt
+  field_type: dimension
+  type: string
+  label: Duplicate First Click Marketing Channel
+  description: The first click marketing channel that the customer came through before
+    placing their order.
+  sql: ${${table}.first_click}
+  searchable: true
+  canon_date: order_lines.order
 - name: order
   field_type: dimension_group
   type: time
