@@ -1,0 +1,16 @@
+type: view
+name: zenlytic_table
+model_name: zenlytic_managed
+sql_table_name: zenlytic_table
+fields:
+  - name: Product_Type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_TYPE"
+    searchable: true
+
+  - name: Total_Gross_Revenue
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_GROSS_REVENUE"
+    searchable: true

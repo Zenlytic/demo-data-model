@@ -1,0 +1,7 @@
+base_view: zenlytic_table
+name: zenlytic_table
+model_name: zenlytic_managed
+label: Zenlytic Table
+description: ''
+views: {}
+type: topic
