@@ -1,0 +1,7 @@
+base_view: products_2
+name: products_2
+model_name: pure_organics
+label: Products 2
+description: ''
+views: {}
+type: topic

@@ -1,0 +1,29 @@
+type: view
+name: products_2
+model_name: pure_organics
+sql_table_name: DEMO_RAW.PRODUCTS
+fields:
+  - name: PRODUCT_ID
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_ID"
+    searchable: true
+
+  - name: PRODUCT_TYPE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_TYPE"
+    searchable: true
+
+  - name: PRODUCT_TITLE
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PRODUCT_TITLE"
+    searchable: true
+    primary_key: true
+
+  - name: PRICE
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PRICE"
+    searchable: true
