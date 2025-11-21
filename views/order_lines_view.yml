@@ -366,3 +366,15 @@ fields:
   sql: SUM(${order_lines.discount}) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}),
     0)
   canon_date: order_lines.order
+
+- name: net_margin_kxsmwfit
+  field_type: measure
+  type: number
+  label: Net Margin
+  description: Net Margin represents the percentage of revenue remaining after deducting
+    discounts and cost of goods sold (COGS), showing overall profitability for each
+    order.
+  sql: CASE WHEN SUM(${order_lines.revenue}) = 0 THEN NULL ELSE ((SUM(${order_lines.revenue})
+    - SUM(${order_lines.discount})) - SUM(ORDER_LINES.COGS)) / SUM(${order_lines.revenue})
+    END
+  canon_date: order_lines.order
