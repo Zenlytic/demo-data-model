@@ -118,6 +118,15 @@ fields:
   sql: ${TABLE}.first_campaign
   searchable: false
 
+
+- name: duplicate_first_marketing_group_jikzfsev
+  field_type: dimension
+  type: string
+  label: Duplicate First Marketing Group
+  description: The first marketing group the user came in through
+  sql: ${${table}.first_channel}
+  searchable: true
+  canon_date: customers.first_order
 - name: first_order
   field_type: dimension_group
   type: time
