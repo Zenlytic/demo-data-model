@@ -10,7 +10,7 @@ description: >-
   the `first_marketing_group`, `first_promotion`, and `first_campaign` fields
   provide information about the customer's initial marketing interactions with
   the company. Use this view to gain insights into customer behavior, track
-  customer acquisition and retention, and optimize your marketing campaigns to
+  customer acquisition and retention, and optimize marketing campaigns to
   drive revenue and growth
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
