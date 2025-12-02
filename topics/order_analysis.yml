@@ -21,8 +21,7 @@ zoe_description: >-
   Channels and sources are detailed for attribution. Revenue metrics
   ('TOTAL_GROSS_REVENUE,' 'NET_REVENUE') measure financial outcomes. Customer
   purchasing behavior is characterized by 'NEW_VS_REPEAT' and metrics like
-  'REPURCHASE_RATE.' Use this model to refine marketing strategies and enhance
-  sales performance.
+  'REPURCHASE_RATE.' 
 hidden: false
 views:
   products:
