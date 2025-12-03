@@ -132,11 +132,8 @@ fields:
     Profitable return on advertising spend = Total advertising gross profit /
     Total marketing spend across all channels
   value_format_name: decimal_1
-<<<<<<< HEAD
   sql: ${order_lines.gross_profit} / nullif(${total_marketing_spend}, 0)
   is_merged_result: true
-=======
   sql: >-
     SUM(${gross_profit_from_paid_marketing}) /
     nullif(${total_marketing_spend}, 0)
->>>>>>> e37c0567370a7382547a3cd1bd2059693d29749c
