@@ -1,0 +1,3452 @@
+type: view
+name: udrt_datamart_primary
+model_name: zenlytic_managed
+sql_table_name: zenlytic_table_2025_12_03t233519_220
+default_date: Adddate
+fields:
+  - name: Division2
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIVISION2"
+    searchable: true
+    primary_key: true
+
+  - name: Division
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIVISION"
+    searchable: true
+
+  - name: Fundraiser
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FUNDRAISER"
+    searchable: true
+
+  - name: Cgsifundraiser
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CGSIFUNDRAISER"
+    searchable: true
+
+  - name: Pgefundraiser
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PGEFUNDRAISER"
+    searchable: true
+
+  - name: Fundraiseruserid
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FUNDRAISERUSERID"
+    searchable: true
+
+  - name: Node
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NODE"
+    searchable: true
+
+  - name: Nodedescription
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NODEDESCRIPTION"
+    searchable: true
+
+  - name: Nodetype
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NODETYPE"
+    searchable: true
+
+  - name: Nodetypedescription
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NODETYPEDESCRIPTION"
+    searchable: true
+
+  - name: Cnsdivision
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CNSDIVISION"
+    searchable: true
+
+  - name: Cnsnode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CNSNODE"
+    searchable: true
+
+  - name: Cnsnodedescription
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CNSNODEDESCRIPTION"
+    searchable: true
+
+  - name: Cnsnodetype
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CNSNODETYPE"
+    searchable: true
+
+  - name: Cnsnodetypedescription
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CNSNODETYPEDESCRIPTION"
+    searchable: true
+
+  - name: Defnode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DEFNODE"
+    searchable: true
+
+  - name: Displayid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DISPLAYID"
+    searchable: true
+
+  - name: Id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ID"
+    searchable: true
+
+  - name: Name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NAME"
+    searchable: true
+
+  - name: Salutationinformalindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SALUTATIONINFORMALINDIVIDUAL"
+    searchable: true
+
+  - name: Salutationstandardindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SALUTATIONSTANDARDINDIVIDUAL"
+    searchable: true
+
+  - name: Salutationinformaljoint
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SALUTATIONINFORMALJOINT"
+    searchable: true
+
+  - name: Salutationstandardjoint
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SALUTATIONSTANDARDJOINT"
+    searchable: true
+
+  - name: Lastname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LASTNAME"
+    searchable: true
+
+  - name: Firstname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRSTNAME"
+    searchable: true
+
+  - name: Middlename
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MIDDLENAME"
+    searchable: true
+
+  - name: Company
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMPANY"
+    searchable: true
+
+  - name: Gender
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENDER"
+    searchable: true
+
+  - name: Birthyear
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BIRTHYEAR"
+    searchable: true
+
+  - name: Age
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."AGE"
+    searchable: true
+
+  - name: Deathyear
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DEATHYEAR"
+    searchable: true
+
+  - name: Role
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ROLE"
+    searchable: true
+
+  - name: Type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TYPE"
+    searchable: true
+
+  - name: Status
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATUS"
+    searchable: true
+
+  - name: Collectionstatus
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COLLECTIONSTATUS"
+    searchable: true
+
+  - name: Statementcycle
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATEMENTCYCLE"
+    searchable: true
+
+  - name: Std
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."STD"
+    searchable: true
+
+  - name: Isstaff
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."ISSTAFF"
+    searchable: true
+
+  - name: Givejointly
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GIVEJOINTLY"
+    searchable: true
+
+  - name: Headofhouse
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."HEADOFHOUSE"
+    searchable: true
+
+  - name: Householddisplayid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDDISPLAYID"
+    searchable: true
+
+  - name: Householdid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDID"
+    searchable: true
+
+  - name: Spsid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPSID"
+    searchable: true
+
+  - name: Relationships
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."RELATIONSHIPS"
+    searchable: true
+
+  - name: Circles
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CIRCLES"
+    searchable: true
+
+  - name: Employment
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMPLOYMENT"
+    searchable: true
+
+  - name: Involvements
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVOLVEMENTS"
+    searchable: true
+
+  - name: Volunteer
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."VOLUNTEER"
+    searchable: true
+
+  - name: Allsources
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ALLSOURCES"
+    searchable: true
+
+  - name: Attributetypes
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTRIBUTETYPES"
+    searchable: true
+
+  - name: Attributedescriptions
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTRIBUTEDESCRIPTIONS"
+    searchable: true
+
+  - name: Attributenotes
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ATTRIBUTENOTES"
+    searchable: true
+
+  - name: Eventsattendedcy
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENTSATTENDEDCY"
+    searchable: true
+
+  - name: Eventsattendedpr1
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENTSATTENDEDPR1"
+    searchable: true
+
+  - name: Eventsattendedpr2
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENTSATTENDEDPR2"
+    searchable: true
+
+  - name: Eventsattendedpr3
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENTSATTENDEDPR3"
+    searchable: true
+
+  - name: Eventsattendedpr4
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENTSATTENDEDPR4"
+    searchable: true
+
+  - name: Eventsattendedpr5
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EVENTSATTENDEDPR5"
+    searchable: true
+
+  - name: Eventsattendedcycount
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EVENTSATTENDEDCYCOUNT"
+    searchable: true
+
+  - name: Eventsattendedpr1Count
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EVENTSATTENDEDPR1COUNT"
+    searchable: true
+
+  - name: Eventsattendedpr2Count
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EVENTSATTENDEDPR2COUNT"
+    searchable: true
+
+  - name: Eventsattendedpr3Count
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EVENTSATTENDEDPR3COUNT"
+    searchable: true
+
+  - name: Eventsattendedpr4Count
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EVENTSATTENDEDPR4COUNT"
+    searchable: true
+
+  - name: Eventsattendedpr5Count
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."EVENTSATTENDEDPR5COUNT"
+    searchable: true
+
+  - name: Tasks
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."TASKS"
+    searchable: true
+
+  - name: Notes
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NOTES"
+    searchable: true
+
+  - name: A_Categorybase
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_CATEGORYBASE"
+    searchable: true
+
+  - name: A_Categorytotal
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_CATEGORYTOTAL"
+    searchable: true
+
+  - name: A_Givensincecampyearbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_GIVENSINCECAMPYEARBASE"
+    searchable: true
+
+  - name: A_Givensincecampyeartotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_GIVENSINCECAMPYEARTOTAL"
+    searchable: true
+
+  - name: A_Givenlastcampyearbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_GIVENLASTCAMPYEARBASE"
+    searchable: true
+
+  - name: A_Givenlastcampyeartotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_GIVENLASTCAMPYEARTOTAL"
+    searchable: true
+
+  - name: A_Lifetimegiving
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_LIFETIMEGIVING"
+    searchable: true
+
+  - name: A_Lifetimebalance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_LIFETIMEBALANCE"
+    searchable: true
+
+  - name: X_Lifetimegiving
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_LIFETIMEGIVING"
+    searchable: true
+
+  - name: X_Lifetimebalance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_LIFETIMEBALANCE"
+    searchable: true
+
+  - name: A_2Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_2YRLEVELBASE"
+    searchable: true
+
+  - name: A_2Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_2YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householda_2Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_2YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householda_2Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_2YRLEVELBASE"
+    searchable: true
+
+  - name: X_2Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_2YRLEVELBASE"
+    searchable: true
+
+  - name: X_2Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_2YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householdx_2Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_2YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householdx_2Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_2YRLEVELBASE"
+    searchable: true
+
+  - name: A_5Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_5YRLEVELBASE"
+    searchable: true
+
+  - name: A_5Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_5YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householda_5Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_5YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householda_5Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_5YRLEVELBASE"
+    searchable: true
+
+  - name: X_5Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_5YRLEVELBASE"
+    searchable: true
+
+  - name: X_5Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_5YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householdx_5Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_5YRLEVELTOTAL"
+    searchable: true
+
+  - name: Householdx_5Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_5YRLEVELBASE"
+    searchable: true
+
+  - name: A26Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A26IEF"
+    searchable: true
+
+  - name: Householda26Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA26IEF"
+    searchable: true
+
+  - name: A26Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A26NONIEF"
+    searchable: true
+
+  - name: Householda26Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA26NONIEF"
+    searchable: true
+
+  - name: A25Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A25IEF"
+    searchable: true
+
+  - name: Householda25Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA25IEF"
+    searchable: true
+
+  - name: A25Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A25NONIEF"
+    searchable: true
+
+  - name: Householda25Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA25NONIEF"
+    searchable: true
+
+  - name: A24Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A24IEF"
+    searchable: true
+
+  - name: Householda24Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA24IEF"
+    searchable: true
+
+  - name: A24Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A24NONIEF"
+    searchable: true
+
+  - name: Householda24Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA24NONIEF"
+    searchable: true
+
+  - name: A_Cyworkers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_CYWORKERS"
+    searchable: true
+
+  - name: A_Pr1Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR1WORKERS"
+    searchable: true
+
+  - name: A_Pr2Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR2WORKERS"
+    searchable: true
+
+  - name: A_Pr3Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR3WORKERS"
+    searchable: true
+
+  - name: A_Pr4Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR4WORKERS"
+    searchable: true
+
+  - name: A_Pr5Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR5WORKERS"
+    searchable: true
+
+  - name: A_Cyp1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYP1BASE"
+    searchable: true
+
+  - name: A_Cyp1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYP1TOTAL"
+    searchable: true
+
+  - name: X_Cyp1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_CYP1BASE"
+    searchable: true
+
+  - name: X_Cyp1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_CYP1TOTAL"
+    searchable: true
+
+  - name: Householda_Cyp1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_CYP1BASE"
+    searchable: true
+
+  - name: Householda_Cyp1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_CYP1TOTAL"
+    searchable: true
+
+  - name: Householdx_Cyp1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_CYP1BASE"
+    searchable: true
+
+  - name: Householdx_Cyp1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_CYP1TOTAL"
+    searchable: true
+
+  - name: A_Cycampaignstatus
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_CYCAMPAIGNSTATUS"
+    searchable: true
+
+  - name: A_Cyclosedate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_CYCLOSEDATE"
+    searchable: true
+
+  - name: A_Cynumberofpledgesbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYNUMBEROFPLEDGESBASE"
+    searchable: true
+
+  - name: A_Cynumberofpledgestotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYNUMBEROFPLEDGESTOTAL"
+    searchable: true
+
+  - name: A_Cylargestgiftbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYLARGESTGIFTBASE"
+    searchable: true
+
+  - name: A_Cylargestgifttotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYLARGESTGIFTTOTAL"
+    searchable: true
+
+  - name: A_Cybalance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYBALANCE"
+    searchable: true
+
+  - name: A_Cybase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYBASE"
+    searchable: true
+
+  - name: A_Cyjune30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYJUNE30BASE"
+    searchable: true
+
+  - name: A_Cyjune30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYJUNE30TOTAL"
+    searchable: true
+
+  - name: A_Cypacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYPACEBASE"
+    searchable: true
+
+  - name: A_Cypacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYPACETOTAL"
+    searchable: true
+
+  - name: A_Cytotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_CYTOTAL"
+    searchable: true
+
+  - name: X_Cybalance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_CYBALANCE"
+    searchable: true
+
+  - name: X_Cybase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_CYBASE"
+    searchable: true
+
+  - name: X_Cytotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_CYTOTAL"
+    searchable: true
+
+  - name: Householda_Cybase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_CYBASE"
+    searchable: true
+
+  - name: Householda_Cytotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_CYTOTAL"
+    searchable: true
+
+  - name: Householdx_Cybase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_CYBASE"
+    searchable: true
+
+  - name: Householdx_Cytotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_CYTOTAL"
+    searchable: true
+
+  - name: A_Pr1Closedate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR1CLOSEDATE"
+    searchable: true
+
+  - name: A_Pr1Numberofpledgesbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1NUMBEROFPLEDGESBASE"
+    searchable: true
+
+  - name: A_Pr1Numberofpledgestotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1NUMBEROFPLEDGESTOTAL"
+    searchable: true
+
+  - name: A_Pr1Largestgiftbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1LARGESTGIFTBASE"
+    searchable: true
+
+  - name: A_Pr1Largestgifttotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1LARGESTGIFTTOTAL"
+    searchable: true
+
+  - name: A_Pr1Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1BALANCE"
+    searchable: true
+
+  - name: A_Pr1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1BASE"
+    searchable: true
+
+  - name: A_Pr1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1TOTAL"
+    searchable: true
+
+  - name: A_Pr1June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1JUNE30BASE"
+    searchable: true
+
+  - name: A_Pr1June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1JUNE30TOTAL"
+    searchable: true
+
+  - name: A_Pr1Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1PACEBASE"
+    searchable: true
+
+  - name: A_Pr1Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR1PACETOTAL"
+    searchable: true
+
+  - name: X_Pr1Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR1BALANCE"
+    searchable: true
+
+  - name: X_Pr1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR1BASE"
+    searchable: true
+
+  - name: X_Pr1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR1TOTAL"
+    searchable: true
+
+  - name: Householda_Pr1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR1BASE"
+    searchable: true
+
+  - name: Householda_Pr1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR1TOTAL"
+    searchable: true
+
+  - name: Householdx_Pr1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR1BASE"
+    searchable: true
+
+  - name: Householdx_Pr1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR1TOTAL"
+    searchable: true
+
+  - name: A_Pr2Closedate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR2CLOSEDATE"
+    searchable: true
+
+  - name: A_Pr2Numberofpledgesbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2NUMBEROFPLEDGESBASE"
+    searchable: true
+
+  - name: A_Pr2Numberofpledgestotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2NUMBEROFPLEDGESTOTAL"
+    searchable: true
+
+  - name: A_Pr2Largestgiftbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2LARGESTGIFTBASE"
+    searchable: true
+
+  - name: A_Pr2Largestgifttotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2LARGESTGIFTTOTAL"
+    searchable: true
+
+  - name: A_Pr2Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2BALANCE"
+    searchable: true
+
+  - name: A_Pr2Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2BASE"
+    searchable: true
+
+  - name: A_Pr2Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2TOTAL"
+    searchable: true
+
+  - name: A_Pr2June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2JUNE30BASE"
+    searchable: true
+
+  - name: A_Pr2June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2JUNE30TOTAL"
+    searchable: true
+
+  - name: A_Pr2Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2PACEBASE"
+    searchable: true
+
+  - name: A_Pr2Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR2PACETOTAL"
+    searchable: true
+
+  - name: X_Pr2Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR2BALANCE"
+    searchable: true
+
+  - name: X_Pr2Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR2BASE"
+    searchable: true
+
+  - name: X_Pr2Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR2TOTAL"
+    searchable: true
+
+  - name: Householda_Pr2Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR2BASE"
+    searchable: true
+
+  - name: Householda_Pr2Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR2TOTAL"
+    searchable: true
+
+  - name: Householdx_Pr2Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR2BASE"
+    searchable: true
+
+  - name: Householdx_Pr2Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR2TOTAL"
+    searchable: true
+
+  - name: A_Pr3Closedate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR3CLOSEDATE"
+    searchable: true
+
+  - name: A_Pr3Numberofpledgesbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3NUMBEROFPLEDGESBASE"
+    searchable: true
+
+  - name: A_Pr3Numberofpledgestotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3NUMBEROFPLEDGESTOTAL"
+    searchable: true
+
+  - name: A_Pr3Largestgiftbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3LARGESTGIFTBASE"
+    searchable: true
+
+  - name: A_Pr3Largestgifttotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3LARGESTGIFTTOTAL"
+    searchable: true
+
+  - name: A_Pr3Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3BALANCE"
+    searchable: true
+
+  - name: A_Pr3Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3BASE"
+    searchable: true
+
+  - name: A_Pr3Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3TOTAL"
+    searchable: true
+
+  - name: A_Pr3June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3JUNE30BASE"
+    searchable: true
+
+  - name: A_Pr3June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3JUNE30TOTAL"
+    searchable: true
+
+  - name: A_Pr3Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3PACEBASE"
+    searchable: true
+
+  - name: A_Pr3Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR3PACETOTAL"
+    searchable: true
+
+  - name: X_Pr3Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR3BALANCE"
+    searchable: true
+
+  - name: X_Pr3Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR3BASE"
+    searchable: true
+
+  - name: X_Pr3Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR3TOTAL"
+    searchable: true
+
+  - name: Householda_Pr3Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR3BASE"
+    searchable: true
+
+  - name: Householda_Pr3Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR3TOTAL"
+    searchable: true
+
+  - name: Householdx_Pr3Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR3BASE"
+    searchable: true
+
+  - name: Householdx_Pr3Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR3TOTAL"
+    searchable: true
+
+  - name: A_Pr4Closedate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR4CLOSEDATE"
+    searchable: true
+
+  - name: A_Pr4Numberofpledgesbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4NUMBEROFPLEDGESBASE"
+    searchable: true
+
+  - name: A_Pr4Numberofpledgestotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4NUMBEROFPLEDGESTOTAL"
+    searchable: true
+
+  - name: A_Pr4Largestgiftbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4LARGESTGIFTBASE"
+    searchable: true
+
+  - name: A_Pr4Largestgifttotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4LARGESTGIFTTOTAL"
+    searchable: true
+
+  - name: A_Pr4Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4BALANCE"
+    searchable: true
+
+  - name: A_Pr4Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4BASE"
+    searchable: true
+
+  - name: A_Pr4Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4TOTAL"
+    searchable: true
+
+  - name: A_Pr4June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4JUNE30BASE"
+    searchable: true
+
+  - name: A_Pr4June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4JUNE30TOTAL"
+    searchable: true
+
+  - name: A_Pr4Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4PACEBASE"
+    searchable: true
+
+  - name: A_Pr4Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR4PACETOTAL"
+    searchable: true
+
+  - name: X_Pr4Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR4BALANCE"
+    searchable: true
+
+  - name: X_Pr4Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR4BASE"
+    searchable: true
+
+  - name: X_Pr4Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR4TOTAL"
+    searchable: true
+
+  - name: Householda_Pr4Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR4BASE"
+    searchable: true
+
+  - name: Householda_Pr4Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR4TOTAL"
+    searchable: true
+
+  - name: Householdx_Pr4Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR4BASE"
+    searchable: true
+
+  - name: Householdx_Pr4Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR4TOTAL"
+    searchable: true
+
+  - name: A_Pr5Closedate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."A_PR5CLOSEDATE"
+    searchable: true
+
+  - name: A_Pr5Numberofpledgesbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5NUMBEROFPLEDGESBASE"
+    searchable: true
+
+  - name: A_Pr5Numberofpledgestotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5NUMBEROFPLEDGESTOTAL"
+    searchable: true
+
+  - name: A_Pr5Largestgiftbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5LARGESTGIFTBASE"
+    searchable: true
+
+  - name: A_Pr5Largestgifttotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5LARGESTGIFTTOTAL"
+    searchable: true
+
+  - name: A_Pr5Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5BALANCE"
+    searchable: true
+
+  - name: A_Pr5Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5BASE"
+    searchable: true
+
+  - name: A_Pr5Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5TOTAL"
+    searchable: true
+
+  - name: A_Pr5June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5JUNE30BASE"
+    searchable: true
+
+  - name: A_Pr5June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5JUNE30TOTAL"
+    searchable: true
+
+  - name: A_Pr5Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5PACEBASE"
+    searchable: true
+
+  - name: A_Pr5Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."A_PR5PACETOTAL"
+    searchable: true
+
+  - name: X_Pr5Balance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR5BALANCE"
+    searchable: true
+
+  - name: X_Pr5Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR5BASE"
+    searchable: true
+
+  - name: X_Pr5Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."X_PR5TOTAL"
+    searchable: true
+
+  - name: Householda_Pr5Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR5BASE"
+    searchable: true
+
+  - name: Householda_Pr5Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDA_PR5TOTAL"
+    searchable: true
+
+  - name: Householdx_Pr5Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR5BASE"
+    searchable: true
+
+  - name: Householdx_Pr5Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HOUSEHOLDX_PR5TOTAL"
+    searchable: true
+
+  - name: Hasaddress
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HASADDRESS"
+    searchable: true
+
+  - name: Hasemail
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HASEMAIL"
+    searchable: true
+
+  - name: Hasphone
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HASPHONE"
+    searchable: true
+
+  - name: Homeboroughzip
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMEBOROUGHZIP"
+    searchable: true
+
+  - name: Homeborough
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMEBOROUGH"
+    searchable: true
+
+  - name: Businessboroughzip
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSBOROUGHZIP"
+    searchable: true
+
+  - name: Businessborough
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSBOROUGH"
+    searchable: true
+
+  - name: Addresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ADDRESSLOCATION"
+    searchable: true
+
+  - name: Address
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ADDRESS"
+    searchable: true
+
+  - name: Addressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ADDRESSEE"
+    searchable: true
+
+  - name: Street
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STREET"
+    searchable: true
+
+  - name: City
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CITY"
+    searchable: true
+
+  - name: State
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE"
+    searchable: true
+
+  - name: Zipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ZIPCODE"
+    searchable: true
+
+  - name: Country
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COUNTRY"
+    searchable: true
+
+  - name: Phonelocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PHONELOCATION"
+    searchable: true
+
+  - name: Phone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PHONE"
+    searchable: true
+
+  - name: Emaillocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAILLOCATION"
+    searchable: true
+
+  - name: Email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+
+  - name: Homeaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMEADDRESS"
+    searchable: true
+
+  - name: Homeaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMEADDRESSEE"
+    searchable: true
+
+  - name: Homestreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMESTREET"
+    searchable: true
+
+  - name: Homecity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMECITY"
+    searchable: true
+
+  - name: Homestate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMESTATE"
+    searchable: true
+
+  - name: Homezipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMEZIPCODE"
+    searchable: true
+
+  - name: Homecountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMECOUNTRY"
+    searchable: true
+
+  - name: Homephone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMEPHONE"
+    searchable: true
+
+  - name: Homeemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOMEEMAIL"
+    searchable: true
+
+  - name: Businessaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSADDRESS"
+    searchable: true
+
+  - name: Businessaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSADDRESSEE"
+    searchable: true
+
+  - name: Businessstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSSTREET"
+    searchable: true
+
+  - name: Businesscity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSCITY"
+    searchable: true
+
+  - name: Businessstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSSTATE"
+    searchable: true
+
+  - name: Businesszipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSZIPCODE"
+    searchable: true
+
+  - name: Businesscountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSCOUNTRY"
+    searchable: true
+
+  - name: Businessphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSPHONE"
+    searchable: true
+
+  - name: Businessemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BUSINESSEMAIL"
+    searchable: true
+
+  - name: Otheraddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERADDRESS"
+    searchable: true
+
+  - name: Otheraddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERADDRESSEE"
+    searchable: true
+
+  - name: Otherstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERSTREET"
+    searchable: true
+
+  - name: Othercity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERCITY"
+    searchable: true
+
+  - name: Otherstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERSTATE"
+    searchable: true
+
+  - name: Otherzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERZIPCODE"
+    searchable: true
+
+  - name: Othercountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERCOUNTRY"
+    searchable: true
+
+  - name: Otherphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHERPHONE"
+    searchable: true
+
+  - name: Otheremail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OTHEREMAIL"
+    searchable: true
+
+  - name: Generaladdresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALADDRESSLOCATION"
+    searchable: true
+
+  - name: Generaladdress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALADDRESS"
+    searchable: true
+
+  - name: Generaladdressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALADDRESSEE"
+    searchable: true
+
+  - name: Generalstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALSTREET"
+    searchable: true
+
+  - name: Generalcity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALCITY"
+    searchable: true
+
+  - name: Generalstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALSTATE"
+    searchable: true
+
+  - name: Generalzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALZIPCODE"
+    searchable: true
+
+  - name: Generalcountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALCOUNTRY"
+    searchable: true
+
+  - name: Generalphonelocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALPHONELOCATION"
+    searchable: true
+
+  - name: Generalphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALPHONE"
+    searchable: true
+
+  - name: Generalemaillocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALEMAILLOCATION"
+    searchable: true
+
+  - name: Generalemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."GENERALEMAIL"
+    searchable: true
+
+  - name: Invitationaddresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONADDRESSLOCATION"
+    searchable: true
+
+  - name: Invitationaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONADDRESS"
+    searchable: true
+
+  - name: Invitationaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONADDRESSEE"
+    searchable: true
+
+  - name: Invitationstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONSTREET"
+    searchable: true
+
+  - name: Invitationcity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONCITY"
+    searchable: true
+
+  - name: Invitationstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONSTATE"
+    searchable: true
+
+  - name: Invitationzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONZIPCODE"
+    searchable: true
+
+  - name: Invitationcountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONCOUNTRY"
+    searchable: true
+
+  - name: Invitationemaillocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONEMAILLOCATION"
+    searchable: true
+
+  - name: Invitationemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."INVITATIONEMAIL"
+    searchable: true
+
+  - name: Billingaddresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGADDRESSLOCATION"
+    searchable: true
+
+  - name: Billingaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGADDRESS"
+    searchable: true
+
+  - name: Billingaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGADDRESSEE"
+    searchable: true
+
+  - name: Billingstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGSTREET"
+    searchable: true
+
+  - name: Billingcity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGCITY"
+    searchable: true
+
+  - name: Billingstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGSTATE"
+    searchable: true
+
+  - name: Billingzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGZIPCODE"
+    searchable: true
+
+  - name: Billingcountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BILLINGCOUNTRY"
+    searchable: true
+
+  - name: Solicitationaddresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONADDRESSLOCATION"
+    searchable: true
+
+  - name: Solicitationaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONADDRESS"
+    searchable: true
+
+  - name: Solicitationaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONADDRESSEE"
+    searchable: true
+
+  - name: Solicitationstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONSTREET"
+    searchable: true
+
+  - name: Solicitationcity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONCITY"
+    searchable: true
+
+  - name: Solicitationstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONSTATE"
+    searchable: true
+
+  - name: Solicitationzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONZIPCODE"
+    searchable: true
+
+  - name: Solicitationcountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONCOUNTRY"
+    searchable: true
+
+  - name: Solicitationphonelocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONPHONELOCATION"
+    searchable: true
+
+  - name: Solicitationphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONPHONE"
+    searchable: true
+
+  - name: Solicitationemaillocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONEMAILLOCATION"
+    searchable: true
+
+  - name: Solicitationemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SOLICITATIONEMAIL"
+    searchable: true
+
+  - name: Newspaperaddresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERADDRESSLOCATION"
+    searchable: true
+
+  - name: Newspaperaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERADDRESS"
+    searchable: true
+
+  - name: Newspaperaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERADDRESSEE"
+    searchable: true
+
+  - name: Newspaperstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERSTREET"
+    searchable: true
+
+  - name: Newspapercity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERCITY"
+    searchable: true
+
+  - name: Newspaperstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERSTATE"
+    searchable: true
+
+  - name: Newspaperzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERZIPCODE"
+    searchable: true
+
+  - name: Newspapercountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."NEWSPAPERCOUNTRY"
+    searchable: true
+
+  - name: Directaddresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTADDRESSLOCATION"
+    searchable: true
+
+  - name: Directaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTADDRESS"
+    searchable: true
+
+  - name: Directaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTADDRESSEE"
+    searchable: true
+
+  - name: Directstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTSTREET"
+    searchable: true
+
+  - name: Directcity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTCITY"
+    searchable: true
+
+  - name: Directstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTSTATE"
+    searchable: true
+
+  - name: Directzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTZIPCODE"
+    searchable: true
+
+  - name: Directcountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTCOUNTRY"
+    searchable: true
+
+  - name: Directphonelocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTPHONELOCATION"
+    searchable: true
+
+  - name: Directphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTPHONE"
+    searchable: true
+
+  - name: Directemaillocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTEMAILLOCATION"
+    searchable: true
+
+  - name: Directemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DIRECTEMAIL"
+    searchable: true
+
+  - name: Committeeaddresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEEADDRESSLOCATION"
+    searchable: true
+
+  - name: Committeeaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEEADDRESS"
+    searchable: true
+
+  - name: Committeeaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEEADDRESSEE"
+    searchable: true
+
+  - name: Committeestreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEESTREET"
+    searchable: true
+
+  - name: Committeecity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEECITY"
+    searchable: true
+
+  - name: Committeestate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEESTATE"
+    searchable: true
+
+  - name: Committeezipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEEZIPCODE"
+    searchable: true
+
+  - name: Committeecountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEECOUNTRY"
+    searchable: true
+
+  - name: Committeeemaillocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEEEMAILLOCATION"
+    searchable: true
+
+  - name: Committeeemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEEEMAIL"
+    searchable: true
+
+  - name: Householdaddresslocation
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDADDRESSLOCATION"
+    searchable: true
+
+  - name: Householdaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDADDRESS"
+    searchable: true
+
+  - name: Householdaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDADDRESSEE"
+    searchable: true
+
+  - name: Householdstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDSTREET"
+    searchable: true
+
+  - name: Householdcity
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDCITY"
+    searchable: true
+
+  - name: Householdstate
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDSTATE"
+    searchable: true
+
+  - name: Householdzipcode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDZIPCODE"
+    searchable: true
+
+  - name: Householdcountry
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."HOUSEHOLDCOUNTRY"
+    searchable: true
+
+  - name: Piiid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PIIID"
+    searchable: true
+
+  - name: Piihouseholdid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PIIHOUSEHOLDID"
+    searchable: true
+
+  - name: Piispsid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."PIISPSID"
+    searchable: true
+
+  - name: Piiname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIINAME"
+    searchable: true
+
+  - name: Piisalutationinformalindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISALUTATIONINFORMALINDIVIDUAL"
+    searchable: true
+
+  - name: Piisalutationstandardindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISALUTATIONSTANDARDINDIVIDUAL"
+    searchable: true
+
+  - name: Piisalutationinformaljoint
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISALUTATIONINFORMALJOINT"
+    searchable: true
+
+  - name: Piisalutationstandardjoint
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISALUTATIONSTANDARDJOINT"
+    searchable: true
+
+  - name: Piilastname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIILASTNAME"
+    searchable: true
+
+  - name: Piifirstname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIFIRSTNAME"
+    searchable: true
+
+  - name: Piimiddlename
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIMIDDLENAME"
+    searchable: true
+
+  - name: Piicompany
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIICOMPANY"
+    searchable: true
+
+  - name: Piigeneralphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIGENERALPHONE"
+    searchable: true
+
+  - name: Piisolicitationphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISOLICITATIONPHONE"
+    searchable: true
+
+  - name: Piidirectphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIDIRECTPHONE"
+    searchable: true
+
+  - name: Piigeneralemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIGENERALEMAIL"
+    searchable: true
+
+  - name: Piiinvitationemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIINVITATIONEMAIL"
+    searchable: true
+
+  - name: Piisolicitationemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISOLICITATIONEMAIL"
+    searchable: true
+
+  - name: Piidirectemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIDIRECTEMAIL"
+    searchable: true
+
+  - name: Piicommitteeemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIICOMMITTEEEMAIL"
+    searchable: true
+
+  - name: Piigeneraladdress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIGENERALADDRESS"
+    searchable: true
+
+  - name: Piigeneralstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIGENERALSTREET"
+    searchable: true
+
+  - name: Piigeneraladdressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIGENERALADDRESSEE"
+    searchable: true
+
+  - name: Piiinvitationaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIINVITATIONADDRESS"
+    searchable: true
+
+  - name: Piiinvitationstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIINVITATIONSTREET"
+    searchable: true
+
+  - name: Piiinvitationaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIINVITATIONADDRESSEE"
+    searchable: true
+
+  - name: Piibillingaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBILLINGADDRESS"
+    searchable: true
+
+  - name: Piibillingstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBILLINGSTREET"
+    searchable: true
+
+  - name: Piibillingaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBILLINGADDRESSEE"
+    searchable: true
+
+  - name: Piisolicitationaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISOLICITATIONADDRESS"
+    searchable: true
+
+  - name: Piisolicitationstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISOLICITATIONSTREET"
+    searchable: true
+
+  - name: Piisolicitationaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISOLICITATIONADDRESSEE"
+    searchable: true
+
+  - name: Piinewspaperaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIINEWSPAPERADDRESS"
+    searchable: true
+
+  - name: Piinewspaperstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIINEWSPAPERSTREET"
+    searchable: true
+
+  - name: Piinewspaperaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIINEWSPAPERADDRESSEE"
+    searchable: true
+
+  - name: Piidirectaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIDIRECTADDRESS"
+    searchable: true
+
+  - name: Piidirectaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIDIRECTADDRESSEE"
+    searchable: true
+
+  - name: Piidirectstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIDIRECTSTREET"
+    searchable: true
+
+  - name: Piicommitteeaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIICOMMITTEEADDRESS"
+    searchable: true
+
+  - name: Piicommitteeaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIICOMMITTEEADDRESSEE"
+    searchable: true
+
+  - name: Piicommitteestreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIICOMMITTEESTREET"
+    searchable: true
+
+  - name: Piihouseholdaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOUSEHOLDADDRESS"
+    searchable: true
+
+  - name: Piihouseholdstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOUSEHOLDSTREET"
+    searchable: true
+
+  - name: Piihouseholdaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOUSEHOLDADDRESSEE"
+    searchable: true
+
+  - name: Piiemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIEMAIL"
+    searchable: true
+
+  - name: Piiaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIADDRESS"
+    searchable: true
+
+  - name: Piiaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIADDRESSEE"
+    searchable: true
+
+  - name: Piistreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIISTREET"
+    searchable: true
+
+  - name: Piiphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIPHONE"
+    searchable: true
+
+  - name: Piihomeaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOMEADDRESSEE"
+    searchable: true
+
+  - name: Piihomeaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOMEADDRESS"
+    searchable: true
+
+  - name: Piihomestreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOMESTREET"
+    searchable: true
+
+  - name: Piihomephone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOMEPHONE"
+    searchable: true
+
+  - name: Piihomeemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIHOMEEMAIL"
+    searchable: true
+
+  - name: Piibusinessaddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBUSINESSADDRESSEE"
+    searchable: true
+
+  - name: Piibusinessaddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBUSINESSADDRESS"
+    searchable: true
+
+  - name: Piibusinessstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBUSINESSSTREET"
+    searchable: true
+
+  - name: Piibusinessphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBUSINESSPHONE"
+    searchable: true
+
+  - name: Piibusinessemail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIBUSINESSEMAIL"
+    searchable: true
+
+  - name: Piiotheraddressee
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIOTHERADDRESSEE"
+    searchable: true
+
+  - name: Piiotheraddress
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIOTHERADDRESS"
+    searchable: true
+
+  - name: Piiotherstreet
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIOTHERSTREET"
+    searchable: true
+
+  - name: Piiotherphone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIOTHERPHONE"
+    searchable: true
+
+  - name: Piiotheremail
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PIIOTHEREMAIL"
+    searchable: true
+
+  - name: Defnodekey
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DEFNODEKEY"
+    searchable: true
+
+  - name: Spousedivision2
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEDIVISION2"
+    searchable: true
+
+  - name: Spousedivision
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEDIVISION"
+    searchable: true
+
+  - name: Spousefundraiser
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEFUNDRAISER"
+    searchable: true
+
+  - name: Spousecgsifundraiser
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSECGSIFUNDRAISER"
+    searchable: true
+
+  - name: Spousepgefundraiser
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEPGEFUNDRAISER"
+    searchable: true
+
+  - name: Spousenode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSENODE"
+    searchable: true
+
+  - name: Spousenodetype
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSENODETYPE"
+    searchable: true
+
+  - name: Spousecnsdivision
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSECNSDIVISION"
+    searchable: true
+
+  - name: Spousecnsnode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSECNSNODE"
+    searchable: true
+
+  - name: Spousecnsnodetype
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSECNSNODETYPE"
+    searchable: true
+
+  - name: Spousedefnode
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEDEFNODE"
+    searchable: true
+
+  - name: Spousedisplayid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEDISPLAYID"
+    searchable: true
+
+  - name: Spouseid
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEID"
+    searchable: true
+
+  - name: Spousename
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSENAME"
+    searchable: true
+
+  - name: Spousefirstname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEFIRSTNAME"
+    searchable: true
+
+  - name: Spousemiddlename
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEMIDDLENAME"
+    searchable: true
+
+  - name: Spouselastname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSELASTNAME"
+    searchable: true
+
+  - name: Spousesalutationinformalindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSESALUTATIONINFORMALINDIVIDUAL"
+    searchable: true
+
+  - name: Spousesalutationstandardindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSESALUTATIONSTANDARDINDIVIDUAL"
+    searchable: true
+
+  - name: Spousepiiname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEPIINAME"
+    searchable: true
+
+  - name: Spousepiifirstname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEPIIFIRSTNAME"
+    searchable: true
+
+  - name: Spousepiimiddlename
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEPIIMIDDLENAME"
+    searchable: true
+
+  - name: Spousepiilastname
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEPIILASTNAME"
+    searchable: true
+
+  - name: Spousepiisalutationinformalindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEPIISALUTATIONINFORMALINDIVIDUAL"
+    searchable: true
+
+  - name: Spousepiisalutationstandardindividual
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEPIISALUTATIONSTANDARDINDIVIDUAL"
+    searchable: true
+
+  - name: Spousestatus
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSESTATUS"
+    searchable: true
+
+  - name: Spouserole
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEROLE"
+    searchable: true
+
+  - name: Spouseheadofhouse
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEHEADOFHOUSE"
+    searchable: true
+
+  - name: Spouseisstaff
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEISSTAFF"
+    searchable: true
+
+  - name: Spousegivejointly
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEGIVEJOINTLY"
+    searchable: true
+
+  - name: Spousegender
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEGENDER"
+    searchable: true
+
+  - name: Spousebirthyear
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEBIRTHYEAR"
+    searchable: true
+
+  - name: Spouseage
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEAGE"
+    searchable: true
+
+  - name: Spousedeathyear
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEDEATHYEAR"
+    searchable: true
+
+  - name: Spouseemployment
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEEMPLOYMENT"
+    searchable: true
+
+  - name: Spouseinvolvements
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEINVOLVEMENTS"
+    searchable: true
+
+  - name: Spouseattributetypes
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEATTRIBUTETYPES"
+    searchable: true
+
+  - name: Spouseattributedescriptions
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEATTRIBUTEDESCRIPTIONS"
+    searchable: true
+
+  - name: Spouseallsources
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEALLSOURCES"
+    searchable: true
+
+  - name: Spouseeventsattendedcy
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEEVENTSATTENDEDCY"
+    searchable: true
+
+  - name: Spouseeventsattendedpr1
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEEVENTSATTENDEDPR1"
+    searchable: true
+
+  - name: Spousea_Cyworkers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_CYWORKERS"
+    searchable: true
+
+  - name: Spousea_Pr1Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_PR1WORKERS"
+    searchable: true
+
+  - name: Spousea_Pr2Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_PR2WORKERS"
+    searchable: true
+
+  - name: Spousea_Pr3Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_PR3WORKERS"
+    searchable: true
+
+  - name: Spousea_Pr4Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_PR4WORKERS"
+    searchable: true
+
+  - name: Spousea_Pr5Workers
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_PR5WORKERS"
+    searchable: true
+
+  - name: Spousea_Lifetimegiving
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_LIFETIMEGIVING"
+    searchable: true
+
+  - name: Spousea_Lifetimebalance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_LIFETIMEBALANCE"
+    searchable: true
+
+  - name: Spousex_Lifetimegiving
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_LIFETIMEGIVING"
+    searchable: true
+
+  - name: Spousex_Lifetimebalance
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_LIFETIMEBALANCE"
+    searchable: true
+
+  - name: Spousea_Categorybase
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_CATEGORYBASE"
+    searchable: true
+
+  - name: Spousea_Givenlastcampyearbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_GIVENLASTCAMPYEARBASE"
+    searchable: true
+
+  - name: Spousea_Givensincecampyearbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_GIVENSINCECAMPYEARBASE"
+    searchable: true
+
+  - name: Spousea_2Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_2YRLEVELBASE"
+    searchable: true
+
+  - name: Spousea_5Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_5YRLEVELBASE"
+    searchable: true
+
+  - name: Spousea26Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA26IEF"
+    searchable: true
+
+  - name: Spousea26Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA26NONIEF"
+    searchable: true
+
+  - name: Spousea25Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA25IEF"
+    searchable: true
+
+  - name: Spousea25Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA25NONIEF"
+    searchable: true
+
+  - name: Spousea24Ief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA24IEF"
+    searchable: true
+
+  - name: Spousea24Nonief
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA24NONIEF"
+    searchable: true
+
+  - name: Spousea_Cyp1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYP1BASE"
+    searchable: true
+
+  - name: Spousea_Cyjune30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYJUNE30BASE"
+    searchable: true
+
+  - name: Spousea_Cypacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYPACEBASE"
+    searchable: true
+
+  - name: Spousea_Cybase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYBASE"
+    searchable: true
+
+  - name: Spousea_Pr1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR1BASE"
+    searchable: true
+
+  - name: Spousea_Pr1June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR1JUNE30BASE"
+    searchable: true
+
+  - name: Spousea_Pr1Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR1PACEBASE"
+    searchable: true
+
+  - name: Spousea_Pr2Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR2BASE"
+    searchable: true
+
+  - name: Spousea_Pr2June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR2JUNE30BASE"
+    searchable: true
+
+  - name: Spousea_Pr2Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR2PACEBASE"
+    searchable: true
+
+  - name: Spousea_Pr3Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR3BASE"
+    searchable: true
+
+  - name: Spousea_Pr3June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR3JUNE30BASE"
+    searchable: true
+
+  - name: Spousea_Pr3Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR3PACEBASE"
+    searchable: true
+
+  - name: Spousea_Pr4Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR4BASE"
+    searchable: true
+
+  - name: Spousea_Pr4June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR4JUNE30BASE"
+    searchable: true
+
+  - name: Spousea_Pr4Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR4PACEBASE"
+    searchable: true
+
+  - name: Spousea_Pr5Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR5BASE"
+    searchable: true
+
+  - name: Spousea_Pr5June30Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR5JUNE30BASE"
+    searchable: true
+
+  - name: Spousea_Pr5Pacebase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR5PACEBASE"
+    searchable: true
+
+  - name: Spousex_2Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_2YRLEVELBASE"
+    searchable: true
+
+  - name: Spousex_5Yrlevelbase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_5YRLEVELBASE"
+    searchable: true
+
+  - name: Spousex_Cyp1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_CYP1BASE"
+    searchable: true
+
+  - name: Spousex_Cybase
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_CYBASE"
+    searchable: true
+
+  - name: Spousex_Pr1Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR1BASE"
+    searchable: true
+
+  - name: Spousex_Pr2Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR2BASE"
+    searchable: true
+
+  - name: Spousex_Pr3Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR3BASE"
+    searchable: true
+
+  - name: Spousex_Pr4Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR4BASE"
+    searchable: true
+
+  - name: Spousex_Pr5Base
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR5BASE"
+    searchable: true
+
+  - name: Spousea_Categorytotal
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."SPOUSEA_CATEGORYTOTAL"
+    searchable: true
+
+  - name: Spousea_Givenlastcampyeartotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_GIVENLASTCAMPYEARTOTAL"
+    searchable: true
+
+  - name: Spousea_Givensincecampyeartotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_GIVENSINCECAMPYEARTOTAL"
+    searchable: true
+
+  - name: Spousea_2Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_2YRLEVELTOTAL"
+    searchable: true
+
+  - name: Spousea_5Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_5YRLEVELTOTAL"
+    searchable: true
+
+  - name: Spousea_Cyp1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYP1TOTAL"
+    searchable: true
+
+  - name: Spousea_Cytotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYTOTAL"
+    searchable: true
+
+  - name: Spousea_Cyjune30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYJUNE30TOTAL"
+    searchable: true
+
+  - name: Spousea_Cypacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_CYPACETOTAL"
+    searchable: true
+
+  - name: Spousea_Pr1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR1TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr1June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR1JUNE30TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr1Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR1PACETOTAL"
+    searchable: true
+
+  - name: Spousea_Pr2Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR2TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr2June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR2JUNE30TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr2Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR2PACETOTAL"
+    searchable: true
+
+  - name: Spousea_Pr3Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR3TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr3June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR3JUNE30TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr3Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR3PACETOTAL"
+    searchable: true
+
+  - name: Spousea_Pr4Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR4TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr4June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR4JUNE30TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr4Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR4PACETOTAL"
+    searchable: true
+
+  - name: Spousea_Pr5Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR5TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr5June30Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR5JUNE30TOTAL"
+    searchable: true
+
+  - name: Spousea_Pr5Pacetotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEA_PR5PACETOTAL"
+    searchable: true
+
+  - name: Spousex_2Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_2YRLEVELTOTAL"
+    searchable: true
+
+  - name: Spousex_5Yrleveltotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_5YRLEVELTOTAL"
+    searchable: true
+
+  - name: Spousex_Cyp1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_CYP1TOTAL"
+    searchable: true
+
+  - name: Spousex_Cytotal
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_CYTOTAL"
+    searchable: true
+
+  - name: Spousex_Pr1Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR1TOTAL"
+    searchable: true
+
+  - name: Spousex_Pr2Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR2TOTAL"
+    searchable: true
+
+  - name: Spousex_Pr3Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR3TOTAL"
+    searchable: true
+
+  - name: Spousex_Pr4Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR4TOTAL"
+    searchable: true
+
+  - name: Spousex_Pr5Total
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."SPOUSEX_PR5TOTAL"
+    searchable: true
+
+  - name: Adddate
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."ADDDATE"
+    timeframes: &ref_0
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
+
+  - name: Statusdate
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."STATUSDATE"
+    timeframes: *ref_0
+
+  - name: A_Cylargestgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_CYLARGESTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Cylargestgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_CYLARGESTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Cylastgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_CYLASTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Cylastgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_CYLASTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr1Largestgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR1LARGESTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr1Largestgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR1LARGESTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr1Lastgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR1LASTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr1Lastgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR1LASTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr2Largestgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR2LARGESTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr2Largestgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR2LARGESTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr2Lastgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR2LASTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr2Lastgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR2LASTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr3Largestgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR3LARGESTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr3Largestgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR3LARGESTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr3Lastgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR3LASTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr3Lastgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR3LASTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr4Largestgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR4LARGESTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr4Largestgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR4LARGESTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr4Lastgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR4LASTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr4Lastgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR4LASTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr5Largestgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR5LARGESTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr5Largestgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR5LARGESTGIFTDATETOTAL"
+    timeframes: *ref_0
+
+  - name: A_Pr5Lastgiftdatebase
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR5LASTGIFTDATEBASE"
+    timeframes: *ref_0
+
+  - name: A_Pr5Lastgiftdatetotal
+    field_type: dimension_group
+    type: time
+    sql: ${TABLE}."A_PR5LASTGIFTDATETOTAL"
+    timeframes: *ref_0

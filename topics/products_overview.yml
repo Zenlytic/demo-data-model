@@ -1,7 +1,7 @@
 type: topic
-label: Products Overview
 base_view: products
 model_name: pure_organics
+label: Products Overview
 description: >-
   The Products Overview captures essential information about the items available
   in an inventory or catalog. It includes: PRODUCT_TYPE, which defines the

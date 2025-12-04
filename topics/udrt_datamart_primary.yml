@@ -1,0 +1,7 @@
+base_view: udrt_datamart_primary
+name: udrt_datamart_primary
+model_name: zenlytic_managed
+label: Udrt Datamart Primary
+description: ''
+views: {}
+type: topic
