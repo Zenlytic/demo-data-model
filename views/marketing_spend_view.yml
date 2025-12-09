@@ -135,3 +135,12 @@ fields:
   sql: >-
     SUM(${gross_profit_from_paid_marketing}) /
     nullif(${total_marketing_spend}, 0)
+
+- name: total_gross_profit_edplouup
+  field_type: measure
+  type: sum
+  label: Total Gross Profit
+  description: Total Gross Profit represents the sum of gross profit earned from all
+    paid marketing activities, showing the total earnings after marketing costs.
+  sql: ${marketing_spend.gross_profit_from_paid_marketing}
+  canon_date: marketing_spend.spend
