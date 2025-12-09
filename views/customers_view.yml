@@ -139,8 +139,9 @@ fields:
   - name: count_customers
     field_type: measure
     type: count_distinct
-    value_format_name: decimal_0
+    description: Test
     sql: ${customer_id}
+    value_format_name: decimal_0
 
   - name: count_emails
     field_type: measure
