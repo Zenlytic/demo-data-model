@@ -48,7 +48,6 @@ fields:
   - marketing_channel
   - campaign
   - promotion
-  - total_gross_revenue
   sql: ${TABLE}.ORDER_ID
   tags:
   - order
@@ -64,25 +63,25 @@ fields:
 - name: discount
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.DISCOUNT
 
 - name: revenue
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.REVENUE
 
 - name: price
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.PRICE
 
 - name: quantity
   field_type: dimension
   type: number
-  hidden: true
+  hidden: false
   sql: ${TABLE}.QUANTITY
 
 - name: campaign
@@ -161,13 +160,7 @@ fields:
   sql: ${TABLE}.new_vs_repeat
   searchable: true
 
-- name: order_sequence_number
-  field_type: dimension
-  type: number
-  hidden: true
 
-  sql: dense_rank() over (partition by ${customer_id} order by ${order_date} asc)
-  window: true
 - name: order
   field_type: dimension_group
   type: time
