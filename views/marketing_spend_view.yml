@@ -144,3 +144,14 @@ fields:
     paid marketing activities, showing the total earnings after marketing costs.
   sql: ${marketing_spend.gross_profit_from_paid_marketing}
   canon_date: marketing_spend.spend
+
+- name: duplicate_total_gross_profit_kgiihbkv
+  field_type: measure
+  type: sum
+  label: Duplicate Total Gross Profit
+  description: Total Gross Profit represents the sum of gross profit earned from all
+    paid marketing activities, showing the total earnings after marketing costs.
+  value_format_name: decimal_0
+  sql: ${${marketing_spend.gross_profit_from_paid_marketing}}
+  canon_date: marketing_spend.spend
+  update_where_timeframe: true
