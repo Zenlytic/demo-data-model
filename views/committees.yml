@@ -1,0 +1,59 @@
+type: view
+name: committees
+model_name: zenlytic_managed
+sql_table_name: committees
+fields:
+  - name: committee_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COMMITTEE_ID"
+    searchable: true
+    primary_key: true
+
+  - name: committee_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEE_NAME"
+    searchable: true
+
+  - name: chamber
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CHAMBER"
+    searchable: true
+
+  - name: committee_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."COMMITTEE_TYPE"
+    searchable: true
+
+  - name: chair_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."CHAIR_ID"
+    searchable: true
+
+  - name: ranking_member_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."RANKING_MEMBER_ID"
+    searchable: true
+
+  - name: jurisdiction
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."JURISDICTION"
+    searchable: true
+
+  - name: meeting_schedule
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."MEETING_SCHEDULE"
+    searchable: true
+
+  - name: office_location
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."OFFICE_LOCATION"
+    searchable: true
