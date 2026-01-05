@@ -1,0 +1,112 @@
+type: view
+name: candy_shop_customers
+model_name: zenlytic_managed
+sql_table_name: candy_shop_customers
+default_date: date_joined
+fields:
+  - name: customer_id
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_ID"
+    searchable: true
+    primary_key: true
+
+  - name: first_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."FIRST_NAME"
+    searchable: true
+
+  - name: last_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."LAST_NAME"
+    searchable: true
+
+  - name: email
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."EMAIL"
+    searchable: true
+
+  - name: phone
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PHONE"
+    searchable: true
+
+  - name: address
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ADDRESS"
+    searchable: true
+
+  - name: city
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CITY"
+    searchable: true
+
+  - name: state
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."STATE"
+    searchable: true
+
+  - name: zip_code
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ZIP_CODE"
+    searchable: true
+
+  - name: total_orders
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_ORDERS"
+    searchable: true
+
+  - name: total_spent
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."TOTAL_SPENT"
+    searchable: true
+
+  - name: customer_tier
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."CUSTOMER_TIER"
+    searchable: true
+
+  - name: preferred_contact
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."PREFERRED_CONTACT"
+    searchable: true
+
+  - name: marketing_opt_in
+    field_type: dimension
+    type: yesno
+    sql: ${TABLE}."MARKETING_OPT_IN"
+    searchable: true
+
+  - name: date_joined
+    field_type: dimension_group
+    type: time
+    datatype: timestamp
+    sql: ${TABLE}."DATE_JOINED"
+    timeframes: &ref_0
+      - date
+      - week
+      - month
+      - quarter
+      - year
+      - day_of_year
+      - week_of_year
+      - month_of_year
+
+  - name: birthday
+    field_type: dimension_group
+    type: time
+    datatype: timestamp
+    sql: ${TABLE}."BIRTHDAY"
+    timeframes: *ref_0
