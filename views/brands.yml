@@ -1,0 +1,17 @@
+type: view
+name: brands
+model_name: zenlytic_managed
+sql_table_name: brands
+fields:
+  - name: brand_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."BRAND_ID"
+    searchable: true
+    primary_key: true
+
+  - name: brand_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."BRAND_NAME"
+    searchable: true

@@ -1,0 +1,7 @@
+base_view: brands
+name: bikes
+model_name: zenlytic_managed
+label: Bikes
+description: ''
+views: {}
+type: topic
