@@ -1,0 +1,7 @@
+base_view: weather_stations
+name: weather_stations
+model_name: zenlytic_managed
+label: Weather Stations
+description: ''
+views: {}
+type: topic
