@@ -1,0 +1,7 @@
+base_view: legislators
+name: legislators
+model_name: zenlytic_managed
+label: Legislators
+description: ''
+views: {}
+type: topic
