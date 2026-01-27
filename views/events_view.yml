@@ -230,6 +230,15 @@ fields:
   sql: ${TABLE}.UTM_CAMPAIGN
   searchable: true
 
+
+- name: duplicate_browser_language_dnfoiuip
+  field_type: dimension
+  type: string
+  label: Duplicate Browser Language DFJKDOIE
+  description: The user's browser language setting
+  sql: ${${table}.BROWSER_LANGUAGE}
+  searchable: true
+  canon_date: events.event
 - name: event
   field_type: dimension_group
   type: time
