@@ -1,0 +1,47 @@
+type: view
+name: marvel_rivals_abilities
+model_name: zenlytic_managed
+sql_table_name: marvel_rivals_abilities
+fields:
+  - name: ability_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."ABILITY_ID"
+    searchable: true
+    primary_key: true
+
+  - name: hero_id
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."HERO_ID"
+    searchable: true
+
+  - name: ability_name
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ABILITY_NAME"
+    searchable: true
+
+  - name: ability_type
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."ABILITY_TYPE"
+    searchable: true
+
+  - name: damage
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."DAMAGE"
+    searchable: true
+
+  - name: cooldown
+    field_type: dimension
+    type: number
+    sql: ${TABLE}."COOLDOWN"
+    searchable: true
+
+  - name: description
+    field_type: dimension
+    type: string
+    sql: ${TABLE}."DESCRIPTION"
+    searchable: true
