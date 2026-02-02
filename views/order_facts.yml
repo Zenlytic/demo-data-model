@@ -14,10 +14,11 @@ derived_table:
     from DEMO_PROD.ORDER_LINES order_lines  left join DEMO_PROD.PRODUCTS
     products on order_lines.product_id = products.product_id  group by
     order_lines.order_at, products.product_title, products.product_type
-identifiers:
-- name: primkey
-  type: primary
-  sql: ${primkey}
+# identifiers:
+# - name: primkey
+#   type: primary
+#   sql: ${primkey}
+
 fields:
 - name: primkey
   field_type: dimension

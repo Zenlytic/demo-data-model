@@ -16,10 +16,11 @@ derived_table:
     order_lines.order_at
             ,products.product_title
             ,products.product_type
-identifiers:
-- name: primkey
-  type: primary
-  sql: ${primkey}
+# identifiers:
+# - name: primkey
+#   type: primary
+#   sql: ${primkey}
+
 fields:
 - name: primkey
   field_type: dimension
