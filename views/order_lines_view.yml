@@ -378,3 +378,14 @@ fields:
     - SUM(${order_lines.discount})) - SUM(ORDER_LINES.COGS)) / SUM(${order_lines.revenue})
     END
   canon_date: order_lines.order
+
+- name: bargain_hunter_rate_mnaeyrfw
+  field_type: measure
+  type: number
+  label: Bargain Hunter Rate
+  description: The Bargain Hunter Rate shows the percentage of orders with a discount
+    greater than 5%.
+  value_format_name: decimal_pct_2
+  sql: (COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
+    END) * 100.0) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+  canon_date: order_lines.order
