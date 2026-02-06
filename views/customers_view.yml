@@ -133,7 +133,7 @@ fields:
   value_format_name: decimal_0
   sql: ${customer_id}
 
-- name: count_emails2
+- name: count_emails
   field_type: measure
   type: count_distinct
   value_format_name: decimal_0
