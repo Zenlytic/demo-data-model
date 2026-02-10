@@ -1,25 +1,31 @@
 version: 1
 type: view
 name: customers
-description: "This view provides a comprehensive overview of customer data for Pure
-  Organics, including details such as the customer's ID, email address, name, address,
-  and location. The `accepts_marketing` field indicates whether the customer has opted
-  in to marketing communications, while the `first_order` field provides the date
-  and time of the customer's first order. Additionally, the `first_marketing_group`,
-  `first_promotion`, and `first_campaign` fields provide information about the customer's
-  initial marketing interactions with the company. Use this view to gain insights
-  into customer behavior, track customer acquisition and retention, and optimize your
-  marketing campaigns to drive revenue and growth. "
+description: >-
+  This view provides a comprehensive overview of customer data for Pure
+  Organics, including details such as the customer's ID, email address, name,
+  address, and location. The `accepts_marketing` field indicates whether the
+  customer has opted in to marketing communications, while the `first_order`
+  field provides the date and time of the customer's first order. Additionally,
+  the `first_marketing_group`, `first_promotion`, and `first_campaign` fields
+  provide information about the customer's initial marketing interactions with
+  the company. Use this view to gain insights into customer behavior, track
+  customer acquisition and retention, and optimize your marketing campaigns to
+  drive revenue and growth
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
 row_label: Customer
-
 identifiers:
 - name: customer_id
   type: primary
   sql: ${customer_id}
-  
+- name: orders_join
+  type: join
+  reference: order_lines
+  relationship: one_to_many
+  join_type: left_outer
+  sql_on: ${order_lines.customer_id} = ${customers.customer_id}
 fields:
 - name: customer_id
   field_type: dimension
@@ -125,10 +131,9 @@ fields:
   - month_of_year
   - month
   - quarter
+  - time
   - year
   sql: ${TABLE}.first_order_at
-
-# MEASURES
 
 - name: count_customers
   field_type: measure
@@ -136,9 +141,8 @@ fields:
   value_format_name: decimal_0
   sql: ${customer_id}
 
-- name: count_emails
+- name: count_emails2
   field_type: measure
   type: count_distinct
   value_format_name: decimal_0
   sql: ${email}
-
