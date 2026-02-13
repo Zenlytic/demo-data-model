@@ -1,0 +1,68 @@
+version: 1
+type: dashboard
+name: revenue_dashboard
+label: Revenue Dashboard
+description: Key Pure Organics company sales metrics
+filters:
+  - field: order_lines.subscription_vs_otp
+    value: Subscription, One Time Purchase
+elements:
+  - title: Subscription revenues last 90 days
+    model: pure_organics
+    metric: order_lines.subscription_revenue
+    slice_by:
+      - order_lines.order_date
+    time_period: 90 days
+  - title: Gross vs net breakdown by product type (last month)
+    model: pure_organics
+    metrics:
+      - order_lines.total_gross_revenue
+      - order_lines.total_discounts
+      - order_lines.total_net_revenue
+    slice_by:
+      - products.product_type
+    time_period: last month
+    show_totals: yes
+  - title: Marketing channel performance (orders)
+    model: pure_organics
+    metric: order_lines.number_of_orders
+    slice_by:
+      - order_lines.order_date
+      - order_lines.marketing_channel
+    time_period: 3 months
+  - title: Facebook orders breakdown (MTD)
+    plot_type: bar
+    model: pure_organics
+    metric: order_lines.number_of_orders
+    slice_by:
+      - products.product_type
+    time_period: month to date
+    filters:
+      - field: order_lines.marketing_channel
+        value: Facebook
+  - title: Top performing campaigns (MTD)
+    model: pure_organics
+    metric: order_lines.total_gross_revenue
+    slice_by:
+      - order_lines.marketing_channel
+      - order_lines.marketing_source
+      - order_lines.campaign
+    time_period: month to date
+    size: full
+    force_table: yes
+    sort:
+      - field: order_lines.total_gross_revenue
+        value: desc
+  - title: Product and channel mix (MTD)
+    model: pure_organics
+    metric: order_lines.total_gross_revenue
+    slice_by:
+      - products.product_type
+      - order_lines.marketing_channel
+    time_period: month to date
+  - title: Subscription vs OTP customers (MTD)
+    model: pure_organics
+    metric: order_lines.number_of_customers_with_orders
+    slice_by:
+      - order_lines.subscription_vs_otp
+    time_period: month to date
