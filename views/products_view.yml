@@ -78,3 +78,9 @@ fields:
   description: The Price of the Product
   sql: ${TABLE}.PRICE
   searchable: true
+
+- name: count_products
+  field_type: measure
+  type: count_distinct
+  description: The Distinct Number of Products
+  sql: ${product_id}
