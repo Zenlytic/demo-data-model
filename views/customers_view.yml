@@ -135,14 +135,3 @@ fields:
   - year
   sql: ${TABLE}.first_order_at
 
-- name: count_customers
-  field_type: measure
-  type: count_distinct
-  value_format_name: decimal_0
-  sql: ${customer_id}
-
-- name: count_emails
-  field_type: measure
-  type: count_distinct
-  value_format_name: decimal_0
-  sql: ${email}
