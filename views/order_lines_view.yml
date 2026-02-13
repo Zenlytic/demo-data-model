@@ -378,3 +378,11 @@ fields:
     - SUM(${order_lines.discount})) - SUM(ORDER_LINES.COGS)) / SUM(${order_lines.revenue})
     END
   canon_date: order_lines.order
+
+- name: bargain_hunter_rate_pct_dshgcpzm
+  field_type: measure
+  type: number
+  label: Bargain Hunter Rate Pct
+  sql: (COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id}
+    END) * 1.0) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0) * 100
+  canon_date: order_lines.order
