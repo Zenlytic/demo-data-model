@@ -79,15 +79,6 @@ fields:
     sql: ${TABLE}.PRICE
     searchable: true
 
-  - name: duplicate_product_type_waxdepof
-    field_type: dimension
-    type: string
-    description: 'The type of the product sold (Eye, Lip, Face, etc) '
-    label: Duplicate Product Type
-    searchable: true
-    sql: ${${table}.PRODUCT_TYPE}
-    zoe_description: 'The type of the product. '
-
   - name: count_products
     field_type: measure
     type: count_distinct
