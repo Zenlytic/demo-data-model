@@ -171,7 +171,7 @@ fields:
 
   - name: duplicate_first_click_marketing_channel_ihzifhqc
     field_type: dimension
-    type: string
+    type: yesno
     description: >-
       The first click marketing channel that the customer came through before
       placing their order.
