@@ -1,7 +1,7 @@
 type: topic
-label: Order Analysis
 base_view: order_lines
 model_name: pure_organics
+label: Order Analysis
 description: >-
   This data model represents a detailed breakdown of order lines, helping
   analyze marketing influences and revenue outcomes. Key fields include
