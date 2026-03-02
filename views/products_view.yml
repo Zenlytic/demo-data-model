@@ -79,6 +79,16 @@ fields:
   sql: ${TABLE}.PRICE
   searchable: true
 
+
+- name: duplicate_product_type_xdmpxhxu
+  field_type: dimension
+  type: string
+  label: Duplicate Product Type
+  description: 'The type of the product sold (Eye, Lip, Face, etc) '
+  sql: ${${table}.PRODUCT_TYPE}
+  zoe_description: 'The type of the product. '
+  searchable: true
+  canon_date: order_lines.order
 - name: count_products
   field_type: measure
   type: count_distinct
