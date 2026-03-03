@@ -32,7 +32,7 @@ fields:
   type: string
   hidden: false
   primary_key: true
-  description: The id of the customer.
+  description: The id of the customer. NJM
   sql: ${TABLE}.CUSTOMER_ID
   searchable: false
 
