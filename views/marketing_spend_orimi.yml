@@ -1,0 +1,46 @@
+version: 1
+type: view
+name: marketing_spend_orimi
+model_name: pure_organics
+sql_table_name: DEMO."DEMO_PROD"."MARKETING_SPEND_ORIMI"
+fields:
+- name: ad_spend
+  sql: ${TABLE}."AD_SPEND"
+  field_type: dimension
+  type: number
+- name: campaign
+  sql: ${TABLE}."CAMPAIGN"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: channel
+  sql: ${TABLE}."CHANNEL"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: source
+  sql: ${TABLE}."SOURCE"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: spend_at
+  sql: ${TABLE}."SPEND_AT"
+  field_type: dimension_group
+  type: time
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  datatype: timestamp
+- name: spend_id
+  sql: ${TABLE}."SPEND_ID"
+  field_type: dimension
+  type: string
+  searchable: false
+default_date: spend_at
