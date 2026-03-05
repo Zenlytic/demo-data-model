@@ -18,11 +18,10 @@ fields:
     field_type: dimension
     type: string
     hidden: true
+    label: Order Line Id NJM
     primary_key: true
-    label: Order Line Id
-    tiers: null
+    searchable: false
     sql: ${TABLE}.ORDER_LINE_ID
-    synonyms: []
 
   - name: customer_id
     field_type: dimension
