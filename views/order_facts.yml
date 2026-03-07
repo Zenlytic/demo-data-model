@@ -97,3 +97,12 @@ fields:
   sql: ${TABLE}.number_of_orders
   canon_date: order_facts.order
   update_where_timeframe: true
+
+- name: duplicate_number_of_orders_agbnwoqj
+  field_type: measure
+  type: sum
+  label: Duplicate Number Of Orders SAMPLE
+  value_format_name: decimal_0
+  sql: ${${table}.number_of_orders}
+  canon_date: order_facts.order
+  update_where_timeframe: true
