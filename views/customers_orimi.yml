@@ -1,0 +1,84 @@
+version: 1
+type: view
+name: customers_orimi
+model_name: pure_organics
+sql_table_name: '"DEMO_PROD"."CUSTOMERS_ORIMI"'
+fields:
+- name: first_product_id
+  sql: ${TABLE}."FIRST_PRODUCT_ID"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: first_promotion
+  sql: ${TABLE}."FIRST_PROMOTION"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: email
+  sql: ${TABLE}."EMAIL"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: accepts_marketing
+  sql: ${TABLE}."ACCEPTS_MARKETING"
+  field_type: dimension
+  type: yesno
+- name: first_campaign
+  sql: ${TABLE}."FIRST_CAMPAIGN"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: first_name
+  sql: ${TABLE}."FIRST_NAME"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: last_name
+  sql: ${TABLE}."LAST_NAME"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: address
+  sql: ${TABLE}."ADDRESS"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: first_channel
+  sql: ${TABLE}."FIRST_CHANNEL"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: customer_id
+  sql: ${TABLE}."CUSTOMER_ID"
+  field_type: dimension
+  type: number
+- name: zipcode
+  sql: ${TABLE}."ZIPCODE"
+  field_type: dimension
+  type: number
+- name: state
+  sql: ${TABLE}."STATE"
+  field_type: dimension
+  type: string
+  searchable: true
+- name: city
+  sql: ${TABLE}."CITY"
+  field_type: dimension
+  type: string
+  searchable: false
+- name: first_order_at
+  sql: ${TABLE}."FIRST_ORDER_AT"
+  field_type: dimension_group
+  type: time
+  timeframes:
+  - raw
+  - date
+  - day_of_year
+  - week
+  - week_of_year
+  - month
+  - month_of_year
+  - quarter
+  - year
+  datatype: timestamp
+default_date: first_order_at
