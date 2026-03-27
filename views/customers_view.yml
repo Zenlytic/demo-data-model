@@ -1,5 +1,5 @@
 version: 1
-type: view
+type: view2
 name: customers
 description: >-
   This view provides a comprehensive overview of customer data for Pure
