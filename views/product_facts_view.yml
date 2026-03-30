@@ -29,7 +29,11 @@ fields:
   sql: concat(${order_raw}||${product_type})
   searchable: false
 
-
+- name: product_title
+  field_type: dimension
+  type: string
+  sql: ${TABLE}.product_title
+  searchable: true
 
 - name: product_type
   field_type: dimension
