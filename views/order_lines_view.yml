@@ -392,3 +392,18 @@ fields:
     then ${order_id} end end
   canon_date: order_lines.order
   update_where_timeframe: true
+
+- name: duplicate_number_of_repeat_orders_drbynmss
+  field_type: measure
+  type: count_distinct
+  label: Duplicate Number Of Repeat Orders
+  description: The unique number of orders placed by customers who have placed at
+    least one order before
+  value_format_name: decimal_0
+  sql: case when ${new_vs_repeat}='Repeat' then case when ${new_vs_repeat}='Repeat'
+    then ${order_id} end end
+  filters:
+  - field: new_vs_repeat
+    value: Repeat
+  canon_date: order_lines.order
+  update_where_timeframe: true
