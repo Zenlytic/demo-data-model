@@ -1,5 +1,4 @@
 type: topic
-my_new_key: test
 label: Customers
 base_view: customers
 model_name: pure_organics
