@@ -12,7 +12,7 @@ description: >-
   the company. Use this view to gain insights into customer behavior, track
   customer acquisition and retention, and optimize your marketing campaigns to
   drive revenue and growth
-  
+required_access_grants: []
 model_name: pure_organics
 sql_table_name: DEMO_PROD.CUSTOMERS
 default_date: first_order
