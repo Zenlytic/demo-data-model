@@ -5,7 +5,7 @@ connection: demo
 week_start_day: sunday
 access_grants:
 - name: pii_access
-  user_attribute: department
+  user_attribute: Department
   allowed_values:
   - Executive
   - Finance
