@@ -3,6 +3,7 @@ type: view
 name: order_facts
 model_name: pure_organics
 default_date: order
+required_access_grants: [pii_access]
 derived_table:
   sql: >
     select order_lines.order_at
