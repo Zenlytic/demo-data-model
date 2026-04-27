@@ -1,1 +1,1 @@
-I'm an astronaut
+I'm an ast
