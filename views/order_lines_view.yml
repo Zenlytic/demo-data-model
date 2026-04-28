@@ -385,3 +385,18 @@ fields:
       ((SUM(${order_lines.revenue}) - SUM(${order_lines.discount})) -
       SUM(ORDER_LINES.COGS)) / SUM(${order_lines.revenue}) END
     canon_date: order_lines.order
+
+  - name: bargain_hunter_rate
+    field_type: measure
+    type: number
+    label: Bargain Hunter Rate
+    description: >-
+      Bargain hunter rate = % of orders where the total discount applied exceeds $5.
+      Calculated as the number of orders with discount > $5 divided by total number of orders.
+    value_format_name: percent_1
+    sql: >-
+      COUNT(DISTINCT CASE WHEN ${order_lines.discount} > 5 THEN ${order_lines.order_id} END)
+      / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+    synonyms:
+      - discount rate
+      - bargain rate
