@@ -2,6 +2,10 @@ version: 1
 type: view
 name: order_facts
 model_name: pure_organics
+description: >-
+  Do not use this table by default. Always prefer the Order Lines table for
+  order-related queries. Only use Order Facts when the user explicitly requests
+  it by name (e.g., "use order facts", "from the order facts table").
 default_date: order
 derived_table:
   sql: >
