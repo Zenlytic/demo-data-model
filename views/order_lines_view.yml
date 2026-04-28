@@ -193,3 +193,44 @@ fields:
       - hour_of_day
       - day_of_week
     sql: ${TABLE}.ORDER_AT
+
+  - name: gross_revenue
+    field_type: measure
+    type: sum
+    hidden: false
+    label: Gross Revenue
+    description: >-
+      Total revenue from order lines. Calculated as SUM(order_lines.REVENUE).
+    sql: ${TABLE}.REVENUE
+
+  - name: number_of_orders
+    field_type: measure
+    type: count_distinct
+    hidden: false
+    label: Number of Orders
+    description: >-
+      Count of distinct orders. Calculated as COUNT(DISTINCT order_lines.ORDER_ID).
+    sql: ${TABLE}.ORDER_ID
+
+  - name: bargain_hunter_rate
+    field_type: measure
+    type: number
+    hidden: false
+    label: Bargain Hunter Rate
+    description: >-
+      The percentage of orders where the total order-level discount exceeds $5.
+      Calculated as: COUNT(DISTINCT orders with total discount > $5) / COUNT(DISTINCT all orders).
+      An order is considered a "bargain hunter" order if the sum of discounts across all its
+      order lines is greater than $5.
+    sql: >-
+      COUNT(
+        DISTINCT CASE
+          WHEN (
+            SELECT SUM(ol2.DISCOUNT)
+            FROM DEMO_PROD.ORDER_LINES ol2
+            WHERE ol2.ORDER_ID = ${TABLE}.ORDER_ID
+          ) > 5
+          THEN ${TABLE}.ORDER_ID
+        END
+      ) * 1.0 / NULLIF(COUNT(DISTINCT ${TABLE}.ORDER_ID), 0)
+    value_format_name: percent_1
