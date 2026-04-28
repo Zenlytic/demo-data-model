@@ -10,6 +10,12 @@ identifiers:
   - name: product_id
     type: foreign
     sql: ${product_id}
+  - name: products_join
+    type: join
+    reference: products
+    relationship: many_to_one
+    join_type: left_outer
+    sql_on: ${order_lines.product_id} = ${products.product_id} AND ${order_lines.product_id} IS NOT NULL
   - name: customer_id
     type: foreign
     sql: ${customer_id}
