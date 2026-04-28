@@ -251,9 +251,13 @@ fields:
     field_type: measure
     type: number
     hidden: false
-    description: Total net revenue = gross revenue - discounts
+    description: >-
+      Total net revenue = gross revenue - discounts, excluding orders from
+      non-domestic addresses (AA, AE, AP military postal codes).
     value_format_name: usd
-    sql: ${total_gross_revenue} - ${total_discounts}
+    sql: >-
+      SUM(CASE WHEN customers.STATE NOT IN ('AA', 'AE', 'AP') THEN ${TABLE}.REVENUE ELSE 0 END)
+      - SUM(CASE WHEN customers.STATE NOT IN ('AA', 'AE', 'AP') THEN ${TABLE}.DISCOUNT ELSE 0 END)
 
   - name: repurchase_rate
     field_type: measure
