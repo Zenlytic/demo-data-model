@@ -26,9 +26,9 @@ Trigger this skill whenever the user asks about:
 ### Retention Definition
 - A customer is **retained in month N** if they placed at least one order in the calendar month that is N months after their cohort month.
 - Retention is measured at the **customer level** (not order level): `COUNT(DISTINCT CUSTOMER_ID)` who ordered in that month.
-- **Retention % for month N** = (customers in cohort who ordered in cohort_month + N) / cohort_size × 100
+- **Retention % for month N** = (customers in cohort who ordered in cohort_month + N) / cohort_size x 100
 - Month 0 = the cohort month itself (always 100% by definition — every customer placed at least one order to be in the cohort).
-- Months 1–12 are the standard reporting window.
+- Months 1-12 are the standard reporting window.
 
 ### Cohort Size
 - Cohort size = `COUNT(DISTINCT CUSTOMER_ID)` whose `first_order_at` falls in that cohort month.
@@ -73,7 +73,7 @@ customer_orders AS (
   FROM DEMO_PROD.ORDER_LINES ol
 ),
 
--- Step 3: Active customers per cohort × month offset
+-- Step 3: Active customers per cohort x month offset
 cohort_activity AS (
   SELECT
     cc.acquisition_channel,
@@ -140,11 +140,11 @@ Every cohort analysis dashboard MUST include the following components:
 ### 1. KPI Summary Cards
 - One card per segment (channel or product type)
 - Show M1, M6, and M12 retention rates
-- Color-code values: green ≥ 90%, amber 70–89%, red < 70%
+- Color-code values: green >= 90%, amber 70-89%, red < 70%
 - Cards must be clickable to drill into cohort-level detail
 
 ### 2. Average Retention Line Chart
-- X-axis: Months since first purchase (M1–M12)
+- X-axis: Months since first purchase (M1-M12)
 - Y-axis: Retention rate (%)
 - One line per segment, using the brand color palette
 - Averaged across all cohort months
@@ -157,15 +157,15 @@ Every cohort analysis dashboard MUST include the following components:
 
 ### 4. Retention Heatmap (REQUIRED — see reference image)
 - **This is a mandatory chart type for all cohort analyses.**
-- Rows = cohort months (e.g., "Apr 2024", "May 2024", …)
-- Columns = months since acquisition (M1, M2, … M12)
-- Cell values = retention % for that cohort × month combination
-- Color scale: red (low retention) → amber → green (high retention)
+- Rows = cohort months (e.g., "Apr 2024", "May 2024", ...)
+- Columns = months since acquisition (M1, M2, ... M12)
+- Cell values = retention % for that cohort x month combination
+- Color scale: red (low retention) -> amber -> green (high retention)
 - Reference image: `assets/retention-heatmap-reference.png` — match this layout closely.
   - The reference shows a triangular/diagonal heatmap where newer cohorts have fewer filled columns (because they haven't had time to mature). Replicate this pattern: only fill cells where data exists; leave future months empty.
   - Each cell should display the retention % as a number inside the colored cell.
   - Row labels = cohort month (left side), with cohort size shown next to the label.
-  - Column headers = week/month number (M1, M2, …).
+  - Column headers = month number (M1, M2, ...).
 - Use Highcharts `heatmap` series type.
 - Cells must be clickable to show the underlying customer count and retention detail.
 
@@ -197,9 +197,9 @@ Use these colors consistently for segments:
 - Lip: `#7A9BA8`
 
 **Heatmap color scale:**
-- Low (≤ 40%): `#B85450` (Error Red)
+- Low (<= 40%): `#B85450` (Error Red)
 - Mid (70%): `#D4A853` (Warning Amber)
-- High (≥ 90%): `#4A7C59` (Success Green)
+- High (>= 90%): `#4A7C59` (Success Green)
 - Max (100%): `#3D5A47` (Forest Green)
 
 ---
@@ -213,12 +213,77 @@ Use these colors consistently for segments:
 
 ---
 
-## Reference Image
+## Reference Image — Retention Heatmap
 
 The file `assets/retention-heatmap-reference.png` shows the target layout for the cohort retention heatmap. Key characteristics to replicate:
 - Triangular shape: each row has one fewer column than the row above (newer cohorts have less history)
 - Cohort month labels on the left, cohort size ("New Users") in a column next to the labels
-- Month numbers (1, 2, 3, …) as column headers
+- Month numbers (1, 2, 3, ...) as column headers
 - Retention % displayed as a number inside each colored cell
 - Color gradient from red (low) to green (high)
-- Empty/white cells for months that haven't occurred yet for a given cohort
+- Empty/white cells for months that have not occurred yet for a given cohort
+
+---
+
+## Brand Design System
+
+Extracted from `assets/fde_discussion.pptx`. Use these when producing any presentation, report, or styled output for Pure Organics.
+
+### Logos
+
+Two logo variants are available in `assets/`:
+
+| File | Usage |
+|------|-------|
+| `assets/logo-white.png` | White logo — use on dark/green backgrounds (title slides with `#062810` or `#09493D` background) |
+| `assets/logo-dark.png` | Dark/black logo — use on light backgrounds (content slides with `#F7F3E8` background) |
+
+- Native dimensions: 5000 x 1405 px (wide horizontal lockup: icon + "zenlytic" wordmark)
+- Always place in the top-left corner of slides, sized to approximately 1.4-1.5" wide x 0.35" tall
+- Do not recolor the logo — use the white variant on dark backgrounds and the dark variant on light backgrounds
+
+### Slide Color Palette
+
+| Hex | Name | Usage |
+|-----|------|-------|
+| `#062810` | Deep Forest Black | Title slide background, darkest accent |
+| `#09493D` | Dark Forest Green | Headings on light slides, section titles, accent bars |
+| `#7CB77F` | Light Green | Subtitle text on dark slides, accent dividers |
+| `#F7F3E8` | Warm Cream | Content slide background (light mode) |
+| `#454547` | Dark Gray | Body text on light slides |
+| `#828287` | Medium Gray | Secondary/caption text, labels |
+| `#FFFFFF` | White | Body text on dark slides, logo on dark backgrounds |
+
+### Typography
+
+| Role | Font | Size | Color |
+|------|------|------|-------|
+| Slide title (dark bg) | Georgia, bold | 32pt | `#FFFFFF` |
+| Slide title (light bg) | Georgia, bold | 24pt | `#09493D` |
+| Section heading | Georgia, bold | 13-14pt | `#09493D` |
+| Subtitle / tagline | Calibri | 14pt | `#7CB77F` (on dark) |
+| Body text | Calibri | 12pt | `#454547` |
+| Caption / label | Calibri | 9-10pt | `#828287` |
+
+### Slide Layout Patterns
+
+**Title slide (dark):**
+- Background: `#062810`
+- Logo: `logo-white.png`, top-left
+- Title: Georgia 32pt bold, white, left-aligned
+- Subtitle: Calibri 14pt, `#7CB77F`, left-aligned below title
+- Short horizontal rule (`#7CB77F`) below subtitle
+
+**Content slide (light):**
+- Background: `#F7F3E8`
+- Logo: `logo-dark.png`, top-left
+- Page title: Georgia 24pt bold, `#09493D`, left-aligned
+- Short horizontal rule (`#09493D`) below title
+- Section headers: Georgia 13pt bold, `#09493D`
+- Left accent bar: thin vertical bar in `#09493D` or `#7CB77F` before each section
+- Body text: Calibri 12pt, `#454547`
+
+### Reference Slide Images
+
+- `assets/brand-slide-dark.jpg` — Title slide (dark green background, white logo, white title)
+- `assets/brand-slide-light.jpg` — Content slide (cream background, dark logo, green headings)
