@@ -10,11 +10,6 @@ access_grants:
   - Executive
   - Finance
 mappings:
-    
-    
-  
-  
-  
   marketing_source:
     fields:
     - order_lines.marketing_source
