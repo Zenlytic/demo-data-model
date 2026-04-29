@@ -10,10 +10,6 @@ access_grants:
   - Executive
   - Finance
 mappings:
-    description: >-
-      The marketing source that the customer came through before placing their
-      order.
-    group_label: Acquisition
   campaign:
     fields:
     - order_lines.campaign
