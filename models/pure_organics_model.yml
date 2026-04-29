@@ -12,8 +12,8 @@ access_grants:
 mappings:
   marketing_source:
     fields:
-    - order_lines.marketing_source
-    - marketing_spend.source
+    
+    
     description: >-
       The marketing source that the customer came through before placing their
       order.
