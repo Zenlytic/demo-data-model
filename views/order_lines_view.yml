@@ -22,7 +22,7 @@ fields:
     label: Order Line Id
     tiers: null
     sql: ${TABLE}.ORDER_LINE_ID
-    
+    description: "Order line id"
     synonyms: []
 
   - name: customer_id
