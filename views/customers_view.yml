@@ -27,6 +27,7 @@ identifiers:
     join_type: left_outer
     sql_on: ${order_lines.customer_id} = ${customers.customer_id}
 fields:
+  - name: customer_id2
   
   - name: customer_id
     field_type: dimension
