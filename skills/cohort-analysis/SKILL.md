@@ -1,7 +1,6 @@
 ---
 name: cohort-analysis
-description: Definitions, assumptions, and build instructions 
-for acquisition cohort analyses at Pure Organics. Trigger this skill whenever the user asks about cohort analysis, retention analysis, LTV by cohort, or customer retention curves. Covers channel cohorts and first-product cohorts.
+description: Definitions, assumptions, and build instructions for acquisition cohort analyses at Pure Organics. Trigger this skill whenever the user asks about cohort analysis, retention analysis, LTV by cohort, or customer retention curves. Covers channel cohorts and first-product cohorts.
 ---
 
 # Pure Organics — Cohort Analysis Skill
