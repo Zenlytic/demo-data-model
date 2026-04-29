@@ -13,7 +13,7 @@ mappings:
   marketing_channel:
     fields:
     - order_lines.marketing_channel
-    - marketing_spend.channel
+    
     description: >-
       The marketing channel that the customer came through before placing
     group_label: Acquisition
