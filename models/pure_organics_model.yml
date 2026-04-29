@@ -10,13 +10,11 @@ access_grants:
   - Executive
   - Finance
 mappings:
-  
     
     
   
-    description: >-
-      The marketing channel that the customer came through before placing
-    group_label: Acquisition
+  
+  
   marketing_source:
     fields:
     - order_lines.marketing_source
