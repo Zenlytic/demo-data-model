@@ -11,9 +11,6 @@ access_grants:
   - Finance
 mappings:
   marketing_source:
-    fields:
-    
-    
     description: >-
       The marketing source that the customer came through before placing their
       order.
