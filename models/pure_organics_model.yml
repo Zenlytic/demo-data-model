@@ -10,7 +10,6 @@ access_grants:
   - Executive
   - Finance
 mappings:
-  marketing_source:
     description: >-
       The marketing source that the customer came through before placing their
       order.
