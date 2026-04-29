@@ -28,7 +28,9 @@ identifiers:
     sql_on: ${order_lines.customer_id} = ${customers.customer_id}
 fields:
   - name: customer_id2
-  
+    field_type: dimension
+    type: string
+    hidden: false
   - name: customer_id
     field_type: dimension
     type: string
