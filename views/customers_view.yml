@@ -48,8 +48,8 @@ fields:
     description: The customer's email address
     required_access_grants:
       - pii_access
-    sql: ${TABLE}.EMAIL
     searchable: false
+    sql: ${TABLE}."EMAIL"
 
   - name: first_name
     field_type: dimension
