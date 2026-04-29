@@ -16,7 +16,7 @@ mappings:
     - marketing_spend.channel
     description: >-
       The marketing channel that the customer came through before placing their
-      o
+      
     group_label: Acquisition
   marketing_source:
     fields:
