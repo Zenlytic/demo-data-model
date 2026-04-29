@@ -31,6 +31,9 @@ fields:
     field_type: dimension
     type: string
     hidden: false
+    primary_key: true
+    description: Something here
+    
   - name: customer_id
     field_type: dimension
     type: string
