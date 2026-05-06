@@ -181,3 +181,86 @@ fields:
       - hour_of_day
       - day_of_week
     sql: ${TABLE}.ORDER_AT
+
+  # ── Measures ──────────────────────────────────────────────────────────────
+
+  - name: gross_revenue
+    field_type: measure
+    type: sum
+    label: Gross Revenue
+    description: Total revenue before discounts (sum of REVENUE).
+    sql: ${TABLE}.REVENUE
+    value_format_name: usd
+
+  - name: total_discounts
+    field_type: measure
+    type: sum
+    label: Total Discounts
+    description: Total discount amount given across all orders.
+    sql: ${TABLE}.DISCOUNT
+    value_format_name: usd
+
+  - name: net_revenue
+    field_type: measure
+    type: number
+    label: Net Revenue
+    description: Gross revenue minus discounts (REVENUE - DISCOUNT).
+    sql: SUM(${TABLE}.REVENUE) - SUM(${TABLE}.DISCOUNT)
+    value_format_name: usd
+
+  - name: total_cogs
+    field_type: measure
+    type: sum
+    label: Total COGS
+    description: Total cost of goods sold.
+    sql: ${TABLE}.COGS
+    value_format_name: usd
+    hidden: true
+
+  - name: net_margin
+    field_type: measure
+    type: number
+    label: Net Margin
+    description: "(Net Revenue - COGS) / Gross Revenue. Shown on the executive dashboard as (Net Rev - COGS) / Gross Rev."
+    sql: (SUM(${TABLE}.REVENUE) - SUM(${TABLE}.DISCOUNT) - SUM(${TABLE}.COGS)) / NULLIF(SUM(${TABLE}.REVENUE), 0)
+    value_format_name: percent_1
+
+  - name: total_orders
+    field_type: measure
+    type: count_distinct
+    label: Total Orders
+    description: Count of distinct orders.
+    sql: ${TABLE}.ORDER_ID
+    value_format_name: decimal_0
+
+  - name: total_customers
+    field_type: measure
+    type: count_distinct
+    label: Total Customers
+    description: Count of distinct customers with orders in the period.
+    sql: ${TABLE}.CUSTOMER_ID
+    value_format_name: decimal_0
+
+  - name: gross_aov
+    field_type: measure
+    type: number
+    label: Gross AOV
+    description: Gross revenue divided by total orders (average order value before discounts).
+    sql: SUM(${TABLE}.REVENUE) / NULLIF(COUNT(DISTINCT ${TABLE}.ORDER_ID), 0)
+    value_format_name: usd
+
+  - name: repurchase_rate
+    field_type: measure
+    type: number
+    label: Repurchase Rate
+    description: "Repeat orders / Total orders. Repeat = orders where new_vs_repeat = 'Repeat'."
+    sql: COUNT(DISTINCT CASE WHEN ${TABLE}.NEW_VS_REPEAT = 'Repeat' THEN ${TABLE}.ORDER_ID END) / NULLIF(COUNT(DISTINCT ${TABLE}.ORDER_ID), 0)
+    value_format_name: percent_1
+
+  - name: subscription_revenue
+    field_type: measure
+    type: number
+    label: Subscription Revenue
+    description: Revenue from subscription orders only.
+    sql: SUM(CASE WHEN ${TABLE}.SUBSCRIPTION_VS_OTP = 'Subscription' THEN ${TABLE}.REVENUE END)
+    value_format_name: usd

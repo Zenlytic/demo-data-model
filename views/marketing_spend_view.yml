@@ -84,3 +84,37 @@ fields:
   - month_of_year
   sql: ${TABLE}.spend_at
 
+# ── Measures ──────────────────────────────────────────────────────────────
+
+- name: total_ad_spend
+  field_type: measure
+  type: sum
+  label: Total Ad Spend
+  description: Total paid marketing spend across all channels.
+  sql: ${TABLE}.ad_spend
+  value_format_name: usd
+
+- name: roas
+  field_type: measure
+  type: number
+  label: ROAS
+  description: Return on Ad Spend = Revenue from paid marketing / Ad Spend.
+  sql: SUM(${TABLE}.revenue_from_paid_marketing) / NULLIF(SUM(${TABLE}.ad_spend), 0)
+  value_format_name: decimal_2
+
+- name: proas
+  field_type: measure
+  type: number
+  label: PROAS
+  description: Profit Return on Ad Spend = Gross Profit from paid marketing / Ad Spend.
+  sql: SUM(${TABLE}.gross_profit_from_paid_marketing) / NULLIF(SUM(${TABLE}.ad_spend), 0)
+  value_format_name: decimal_2
+
+- name: cac
+  field_type: measure
+  type: number
+  label: CAC
+  description: Customer Acquisition Cost = Ad Spend / Customers from paid marketing.
+  sql: SUM(${TABLE}.ad_spend) / NULLIF(SUM(${TABLE}.customers_from_paid_marketing), 0)
+  value_format_name: usd
+
