@@ -381,3 +381,17 @@ fields:
       ((SUM(${order_lines.revenue}) - SUM(${order_lines.discount})) -
       SUM(ORDER_LINES.COGS)) / SUM(${order_lines.revenue}) END
     canon_date: order_lines.order
+
+  - name: first_last_click_match_rate
+    field_type: measure
+    type: number
+    label: First/Last Click Match Rate
+    description: >-
+      The percentage of orders where the first-click marketing channel and the
+      last-click marketing channel are the same, indicating single-touch
+      attribution paths.
+    sql: >-
+      COUNT(DISTINCT CASE WHEN ${order_lines.first_click_marketing_channel} = ${order_lines.last_click_marketing_channel}
+      THEN ${order_lines.order_id} END) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+    value_format_name: percent_1
+    canon_date: order_lines.order
