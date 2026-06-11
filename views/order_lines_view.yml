@@ -391,8 +391,9 @@ fields:
       last-click marketing channel are the same, indicating single-touch
       attribution paths.
     sql: >-
-      COUNT(DISTINCT CASE WHEN ${order_lines.first_click_marketing_channel} = ${order_lines.last_click_marketing_channel}
-      THEN ${order_lines.order_id} END) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+      COUNT(DISTINCT CASE WHEN ${order_lines.first_click_marketing_channel} =
+      ${order_lines.last_click_marketing_channel} THEN ${order_lines.order_id}
+      END) / NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
     value_format_name: percent_1
     canon_date: order_lines.order
 
@@ -402,14 +403,15 @@ fields:
     label: Bargain Hunter Rate
     description: >-
       The percentage of orders where the total discount applied was at least 5%
-      of the order's gross revenue. Calculated as: orders with (discount / revenue >= 5%) / total orders.
+      of the order's gross revenue. Calculated as: orders with (discount /
+      revenue >= 5%) / total orders.
     value_format_name: percent_1
     sql: >-
       COUNT(DISTINCT CASE WHEN (
         SUM(${order_lines.discount}) OVER (PARTITION BY ${order_lines.order_id}) /
         NULLIF(SUM(${order_lines.revenue}) OVER (PARTITION BY ${order_lines.order_id}), 0)
-      ) >= 0.05 THEN ${order_lines.order_id} END) /
-      NULLIF(COUNT(DISTINCT ${order_lines.order_id}), 0)
+      ) >= 0.05 THEN ${order_lines.order_id} END) / NULLIF(COUNT(DISTINCT
+      ${order_lines.order_id}), 0)
     canon_date: order_lines.order
     synonyms:
       - discount rate

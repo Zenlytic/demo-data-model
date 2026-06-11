@@ -1,7 +1,7 @@
 type: topic
-label: User Events Metadata
 base_view: events
 model_name: pure_organics
+label: User Events Metadata
 description: >-
   This dataset captures detailed metadata about user-generated events on a
   platform. Each event record includes information about the user's device

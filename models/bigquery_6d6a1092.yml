@@ -1,0 +1,4 @@
+name: bigquery_6d6a1092
+connection: bigquery
+type: model
+version: '1'

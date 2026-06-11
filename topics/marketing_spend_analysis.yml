@@ -1,7 +1,7 @@
 type: topic
-label: Marketing Spend Analysis
 base_view: marketing_spend
 model_name: pure_organics
+label: Marketing Spend Analysis
 description: >-
   This view encapsulates data related to marketing expenses across various
   channels and sources. It provides insights into different campaigns by
