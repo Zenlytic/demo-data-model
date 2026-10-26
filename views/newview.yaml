@@ -9,7 +9,7 @@ derived_table:
   sql: >
     SELECT *
     FROM DEMO_PROD.CUSTOMERS
-    WHERE WHERE STATE = 'CA'
+    WHERE STATE = 'CA'
 default_date: first_order
 row_label: Customer
 identifiers:
