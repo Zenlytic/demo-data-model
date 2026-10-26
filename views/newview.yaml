@@ -9,7 +9,7 @@ derived_table:
   sql: >
     SELECT *
     FROM DEMO_PROD.CUSTOMERS
-    WHERE STATE = 'CA' OR '{{ user_attributes["cues_all_access"] }}' = 1
+    WHERE STATE = 'CA' OR '{{ user_attributes["cues_all_access"] }}' = 0
 default_date: first_order
 row_label: Customer
 identifiers:
