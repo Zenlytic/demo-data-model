@@ -7,7 +7,7 @@ description: >-
   row here; order lines without a row have no returns data.
 model_name: pure_organics
 sql_table_name: DEMO_PROD.ORDER_LINES_ORIMI
-default_date: order_lines.order
+default_date: return_event
 fields:
   - name: order_line_id
     field_type: dimension
