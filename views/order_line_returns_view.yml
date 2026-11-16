@@ -40,7 +40,7 @@ fields:
     description: Whether the order line was returned because of fit.
     sql: ${TABLE}.RETURNED_FOR_FIT
 
-  - name: return
+  - name: return_event
     field_type: dimension_group
     type: time
     hidden: false
