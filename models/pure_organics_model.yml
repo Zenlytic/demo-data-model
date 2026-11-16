@@ -10,3 +10,9 @@ access_grants:
       - Executive
       - Finance
 
+relationships:
+  - from_table: order_lines
+    join_table: order_line_returns
+    relationship: one_to_one
+    join_type: left_outer
+    sql_on: ${order_lines.order_line_id} = ${order_line_returns.order_line_id}

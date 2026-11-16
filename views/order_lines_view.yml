@@ -247,13 +247,33 @@ fields:
     value_format_name: usd
     sql: ${TABLE}.cogs
 
+  - name: total_returns
+    field_type: measure
+    type: number
+    hidden: false
+    label: Total Returns
+    description: >-
+      Value of returned order lines after discounts (revenue - discounts on
+      lines flagged as returned). Returns data is only available for a subset of
+      2026 order lines.
+    value_format_name: usd
+    sql: SUM(CASE WHEN ${order_line_returns.is_returned} THEN ${revenue} - ${discount} ELSE 0 END)
+    synonyms:
+      - refunds
+      - returned revenue
+
   - name: total_net_revenue
     field_type: measure
     type: number
     hidden: false
-    description: Total net revenue = gross revenue - discounts
+    description: Total net revenue = gross revenue - discounts - returns/refunds
+    zoe_description: >-
+      Net revenue subtracts discounts and the value of returned order lines
+      (refunds). Returns data only exists for a subset of 2026 order lines, so
+      earlier periods are effectively unadjusted for returns. Gross profit is
+      built on this measure.
     value_format_name: usd
-    sql: ${total_gross_revenue} - ${total_discounts}
+    sql: ${total_gross_revenue} - ${total_discounts} - ${total_returns}
 
   - name: repurchase_rate
     field_type: measure

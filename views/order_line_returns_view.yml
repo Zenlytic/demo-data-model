@@ -1,0 +1,56 @@
+version: 1
+type: view
+name: order_line_returns
+description: >-
+  Return details for order lines, one row per order line. Only a subset of
+  order lines (those placed in 2026 that are covered by the returns feed) have a
+  row here; order lines without a row have no returns data.
+model_name: pure_organics
+sql_table_name: DEMO_PROD.ORDER_LINES_ORIMI
+default_date: order_lines.order
+fields:
+  - name: order_line_id
+    field_type: dimension
+    type: string
+    hidden: true
+    primary_key: true
+    searchable: false
+    sql: ${TABLE}.ORDER_LINE_ID
+
+  - name: is_returned
+    field_type: dimension
+    type: yesno
+    hidden: false
+    label: Is Returned
+    description: Whether the order line was returned.
+    sql: ${TABLE}.IS_RETURNED
+
+  - name: return_reason
+    field_type: dimension
+    type: string
+    hidden: false
+    searchable: true
+    description: The reason the order line was returned.
+    sql: ${TABLE}.RETURN_REASON
+
+  - name: returned_for_fit
+    field_type: dimension
+    type: yesno
+    hidden: false
+    description: Whether the order line was returned because of fit.
+    sql: ${TABLE}.RETURNED_FOR_FIT
+
+  - name: return
+    field_type: dimension_group
+    type: time
+    hidden: false
+    label: Return
+    description: The time at which the order line was returned.
+    timeframes:
+      - raw
+      - date
+      - week
+      - month
+      - quarter
+      - year
+    sql: ${TABLE}.RETURN_AT
